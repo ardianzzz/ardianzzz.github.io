@@ -1,0 +1,14 @@
+---
+layout: default
+title: Aksesibilitas & Desain
+---
+
+![](http://lh6.ggpht.com/_fD0JUTei5H8/TDQhig7n45I/AAAAAAAABjI/xEGL_cqehMU/link.jpg)
+
+Saya merasakan adanya kecenderungan bahwa aksesibilitas web hanya diperuntukkan bagi penyandang disabilitas, pengguna *screen reader* misalnya. Padahal kita tahu, arti sesungguhnya adalah keteraksesan. Hal ini menyebabkan seolah-olah aksesibilitas menjadi sesuatu yang termarginalkan, yang tidak terlalu penting  dan tidak diperhatikan dalam desain sebuah website. 
+
+Desain web, kira-kira apa yang kita pikirkan saat membaca/mendengar istilah tersebut? XHTML? CSS? JavaScript? atau Photoshop? Mungkin yang paling umum adalah menyangkut desain antarmuka sebuah website *(front end)* yang tak lebih dari desain grafis semata. Jika merujuk pada [KBBI daring](http://pusatbahasa.diknas.go.id/kbbi/), istilah desain berarti kerangka bentuk/rancangan. Ketika kita menerapkannya pada desain sebuah web apakah rancangan tersebut "hanya" mencakup pada desain grafis saja? Saya rasa tidak. Ketika kita memandang desain web adalah sebuah sistem, kita tidak dapat melepaskan aksesibilitas (dan usabilitas) di dalamnya. Saya berpendapat bahwa tujuan dari desain antarmuka adalah untuk menunjang aksesibilitas dan usabilitas, bukan sebaliknya.
+
+Dengan kata lain, desain antarmuka yang baik melahirkan aksesibilitas dan usabilitas web yang baik. Imbasnya adalah user yang terakomodir semakin banyak, yang berarti peluang mendapatkan trafik yang lebih tinggi lebih besar&#8212;terdengar seperti yang diharapkan oleh  pengelola website. Contoh kasus adalah situs jejaring sosial semacam facebook & twitter yang menyediakan versi mobile. Hal ini disebabkan karena banyak pengguna situs tersebut yang memakai mobile browser yang rata-rata tidak aksesibel pada beberapa JavaScript. Versi mobile memungkinkan facebook twitter tidak "kehilangan" penggunanya saat mereka sedang tidak menghadap komputer&#8212;dan sepertinya justru versi mobile inilah yang lebih diminati karena lebih aksesibel.
+
+Dari contoh di atas dapat kita simpulkan bahwa penerapan aksesibilitas tidak hanya bermanfaat bagi user tetapi juga untuk penyedia konten. Jadi, aksesibilitas menjadi salah satu poin yang penting dalam desain web. Tidak hanya &ldquo;sekedar sarana untuk memfasilitasi penyandang disabilitas&rdquo; tetapi lebih umum, lebih fleksibel, lebih tepatnya [Aksesibilitas Itu Untuk Semua](http://daniiswara.com/2010/07/aksesibilitas-itu-untuk-semua/) (Dani Iswara).  Jika anda adalah seorang desainer/pengembang web tetapi tidak tahu tentang hal tersebut, mungkin sekarang adalah saat yang tepat untuk mencari tahu.
