@@ -49,7 +49,7 @@ body {
 	max-width: 620px;
 	margin:0 auto;
 	text-align: center;
-	padding:50px 20px;
+	padding:20px 20px 50px;
 	overflow: hidden;
 	@include filter-gradient(#ffffff, #ffffff, horizontal);
 	@include background-image(radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%));
@@ -167,20 +167,21 @@ body {
 		text-align:center;
 		position: absolute;
 		top:25px;
-
-		-webkit-transform:rotate(5deg);
 		text-shadow:-1px -1px rgba(0,0,0,0.1);
 
 		.a {
 			font-family: "abril_fatfaceregular", Georgia, Serif;
 			font-size: 42px;
-			line-height: 1;
+			line-height: 1.125;
 			color:#fff;
+			padding-bottom:3px;
+
 		}
 
 		.b {
 			line-height: 1.125;
 			font-variant: small-caps;
+			font-size: 14px;
 		}
 	}
 
@@ -422,10 +423,14 @@ body {
 
 		.datetime {
 			width: 100px;
-			top:13px;
+			top:16px;
 
 			.a {
 				font-size: 36px;
+			}
+
+			.b {
+				font-size: 11px;
 			}
 		}
 	}
