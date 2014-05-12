@@ -988,27 +988,31 @@ input[type="date"] {
 
 		blockquote {
 			display: none;
-			padding:1rem;
-			border:solid .1rem #e5e5e5;
-			background:#fff;
+			padding:1.25rem 1.5rem;
+			border:solid .1rem #bce8f1;
+			background:#d9edf7;
+			color:#31708f;
 			position: absolute;
+			left:-1.8rem;
 			bottom: 100%;
-			z-index: 99;
+			z-index: 999;
 			margin-bottom:-.8rem;
 			width: 180%;
+			border-radius: .3rem;
+			box-shadow: 0 .1rem .1rem rgba(0,0,0,0.0325),.1rem .1rem .2rem rgba(0,0,0,0.0325), 0 .1rem rgba(255,255,255,.325) inset;
 
 			p {
-				margin:0 0 1.5rem;
+				margin:0 0 .75rem;
 			}
 
 			small {
-				color:#666;
+				color:#31708f;
 			}
 
 			&:before {
 				content:"";
 				border:solid .7rem rgba(255,255,255,0);
-				border-top-color:#fff;
+				border-top-color:#d9edf7;
 				position: absolute;
 				left: 2rem;
 				bottom:-1.4rem;
@@ -1017,7 +1021,7 @@ input[type="date"] {
 			&:after {
 				content:"";
 				border:solid .8rem rgba(255,255,255,0);
-				border-top-color:#e5e5e5;
+				border-top-color:#bce8f1;
 				position: absolute;
 				left: 1.9rem;
 				bottom:-1.6rem;
@@ -1029,24 +1033,18 @@ input[type="date"] {
 			position: relative;
 			display: block;
 			padding:1rem;
-			background:rgba(255,255,255,0.5);
-			border:solid .1rem #f1f1f1;
+			background:#fff;
+			border:solid .1rem #d7d7d7;
 
 
 
-			&:hover,&:focus {
-				border-color:#e5e5e5;
-
-				>div {
-					opacity: .8;
-				}
-			}
+			
 
 			>div {
 				height: 0;
 				width: 60%;
 				margin:0 auto;
-				padding-bottom:68.2%;
+				padding-bottom:42%;
 				background-size: contain;
 				background-position: center center;
 				background-repeat: no-repeat;
@@ -1060,6 +1058,14 @@ input[type="date"] {
 		&:hover,.hovered {
 			blockquote {
 				display: block;
+			}
+
+			a {
+				border-color:#bce8f1;
+
+				>div {
+					opacity: .8;
+				}
 			}
 		}
 	}
@@ -1122,6 +1128,12 @@ input[type="date"] {
 	background:#fff;
 	border-radius: .15rem;
 
+	a {
+		display: block;
+		text-decoration: none !important;
+		color:#1F1F21;
+	}
+	
 	figure {
 		margin:0 0 1rem;
 		div.img {
@@ -1146,10 +1158,13 @@ input[type="date"] {
 		font-family: "Open Sans", Sans-serif;
 		font-size: 1.6rem;
 		font-weight: 300;
-		margin:0 0 1.5rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow:ellipsis;
 	}
 
 	.meta {
+		margin-top:1.5rem;
 		font-size: 1.2rem;
 		line-height: 1.35;
 		.datetime {
@@ -1690,13 +1705,13 @@ input[type="date"] {
 	}
 
 	ul {
-		margin:0 0 1.5rem 1.75rem;
+		margin:0 0 1.5rem;
 		list-style: square;
 	}
 
 	ol {
 
-		margin:0 0 1.5rem 1.75rem;
+		margin:0 0 1.5rem;
 		list-style: decimal;
 	}
 
@@ -2062,6 +2077,8 @@ background-color: #ffffff; // Old browsers
 	}
 }
 
-
+#pushstat {
+	display: none !important;
+}
 
 @import "media.scss";

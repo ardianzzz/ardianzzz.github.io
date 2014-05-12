@@ -265,92 +265,53 @@
 			<div class="row">
 				<div class="col grid-3">
 					<div class="event">
-						<figure>
-							<div class="img" style="background-image:url(img/asot.png);">
-								<img src="img/asot.png" alt="">
-							</div>
-						</figure>
+						<a href="context/case-1.html" data-toggle="modal" data-target="#myModal">
+							<figure>
+								<div class="img" style="background-image:url(img/case-1.jpg);">
+									<img src="img/case-1.jpg" alt="">
+								</div>
+							</figure>
 
-						<div class="name">
-							A State of Trance
-						</div>
+							<div class="name">
+								Guinness Arthur's Day
+							</div>
 
-						<div class="meta">
-							<div>
-								<span class="datetime">11&ndash;13 Mar</span> <span class="category">Live Music</span>
-							</div>
-							<div>
-								<span class="org">Ismaya Live</span>
-							</div>
-						</div>
+							<!-- <div class="meta">
+								<div>
+									<span class="datetime">11&ndash;13 Mar</span> <span class="category">Live Music</span>
+								</div>
+								<div>
+									<span class="org">Ismaya Live</span>
+								</div>
+							</div> -->
+						</a>
 					</div>
 				</div>
 				<div class="col grid-3">
 					<div class="event">
-						<figure>
-							<div class="img" style="background-image:url(img/event1.jpg);">
-								<img src="img/event1.jpg" alt="">
-							</div>
-						</figure>
+						<a href="context/case-2.html" data-toggle="modal" data-target="#myModal">
+							<figure>
+								<div class="img" style="background-image:url(img/case-2.jpg);">
+									<img src="img/case-2.jpg" alt="">
+								</div>
+							</figure>
 
-						<div class="name">
-							A State of Trance
-						</div>
+							<div class="name">
+								Coboy Junior Farewell Concert 2014
+							</div>
 
-						<div class="meta">
-							<div>
-								<span class="datetime">11&ndash;13 Mar</span> <span class="category">Live Music</span>
-							</div>
-							<div>
-								<span class="org">Ismaya Live</span>
-							</div>
-						</div>
+							<!-- <div class="meta">
+								<div>
+									<span class="datetime">11&ndash;13 Mar</span> <span class="category">Live Music</span>
+								</div>
+								<div>
+									<span class="org">Ismaya Live</span>
+								</div>
+							</div> -->
+						</a>
 					</div>
 				</div>
-				<div class="col grid-3">
-					<div class="event">
-						<figure>
-							<div class="img" style="background-image:url(img/lovegarage1.jpg);">
-								<img src="img/lovegarage1.jpg" alt="">
-							</div>
-						</figure>
-
-						<div class="name">
-							A State of Trance
-						</div>
-
-						<div class="meta">
-							<div>
-								<span class="datetime">11&ndash;13 Mar</span> <span class="category">Live Music</span>
-							</div>
-							<div>
-								<span class="org">Ismaya Live</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col grid-3">
-					<div class="event">
-						<figure>
-							<div class="img" style="background-image:url(img/dwp13_152_.jpg);">
-								<img src="img/dwp13_152_.jpg" alt="">
-							</div>
-						</figure>
-
-						<div class="name">
-							A State of Trance
-						</div>
-
-						<div class="meta">
-							<div>
-								<span class="datetime">11&ndash;13 Mar</span> <span class="category">Live Music</span>
-							</div>
-							<div>
-								<span class="org">Ismaya Live</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 
 			<div class="action">
@@ -453,7 +414,7 @@
 
 					<div class="col grid-2">
 						<div class="footer-logo">
-							<img src="http://localhost:4000/img/logo.png" alt="">
+							<img src="img/logo-bw.png" alt="">
 						</div>
 					</div>
 
@@ -629,48 +590,6 @@
 </div>
 
 
-<script src="//api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.js"></script>
-
-<script>
-var geoJson = [{
-		type: 'Feature',
-		"geometry": { "type": "Point", "coordinates": [106.8280608,-6.2556210]},
-		"properties": {
-		"logo": "img/logo.png",
-		"url": "http://loket.com",
-		"marker-symbol": "warehouse",
-		"marker-color":"#e74c3c",
-		"name" : "Loket.com Head Office",
-		"tagline" : "",
-		"streetAddress" : "Jakarta Selatan, Indonesia",
-		}
-  }];
-
-	
-var map = L.mapbox.map('map-markers', 'ardianzzz.i6d1324h');
-
-    map.setView([-6.2536210,106.8280608], 15);
-	//map.scrollWheelZoom.disable();
-	
-	map.markerLayer.on('layeradd', function(e) {
-	    var marker = e.layer,
-	        feature = marker.feature;
-
-	    // Create custom popup content
-	    var popupContent =  '<div class="popup_vcard"><div class="fn"><a target="_blank" class="url" href="' + feature.properties.url + '">' 
-			                         + feature.properties.name +
-			                        '</a></div><div class="title">' + feature.properties.tagline + '</div><div class="adr">' + feature.properties.streetAddress + '</div></div>';
-
-	    // http://leafletjs.com/reference.html#popup
-	    marker.bindPopup(popupContent,{
-	        closeButton: true,
-	        minWidth: 200
-	    });
-	});
-	
-	
-	map.markerLayer.setGeoJSON(geoJson);
-</script>
 
 </body>
 </html>

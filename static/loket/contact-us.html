@@ -235,7 +235,7 @@ var map = L.mapbox.map('map-markers', 'ardianzzz.hfpes37ck');
 
 					<div class="col grid-2">
 						<div class="footer-logo">
-							<img src="http://localhost:4000/img/logo.png" alt="">
+							<img src="img/logo-bw.png" alt="">
 						</div>
 					</div>
 
@@ -411,48 +411,6 @@ var map = L.mapbox.map('map-markers', 'ardianzzz.hfpes37ck');
 </div>
 
 
-<script src="//api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.js"></script>
-
-<script>
-var geoJson = [{
-		type: 'Feature',
-		"geometry": { "type": "Point", "coordinates": [106.8280608,-6.2556210]},
-		"properties": {
-		"logo": "img/logo.png",
-		"url": "http://loket.com",
-		"marker-symbol": "warehouse",
-		"marker-color":"#e74c3c",
-		"name" : "Loket.com Head Office",
-		"tagline" : "",
-		"streetAddress" : "Jakarta Selatan, Indonesia",
-		}
-  }];
-
-	
-var map = L.mapbox.map('map-markers', 'ardianzzz.i6d1324h');
-
-    map.setView([-6.2536210,106.8280608], 15);
-	//map.scrollWheelZoom.disable();
-	
-	map.markerLayer.on('layeradd', function(e) {
-	    var marker = e.layer,
-	        feature = marker.feature;
-
-	    // Create custom popup content
-	    var popupContent =  '<div class="popup_vcard"><div class="fn"><a target="_blank" class="url" href="' + feature.properties.url + '">' 
-			                         + feature.properties.name +
-			                        '</a></div><div class="title">' + feature.properties.tagline + '</div><div class="adr">' + feature.properties.streetAddress + '</div></div>';
-
-	    // http://leafletjs.com/reference.html#popup
-	    marker.bindPopup(popupContent,{
-	        closeButton: true,
-	        minWidth: 200
-	    });
-	});
-	
-	
-	map.markerLayer.setGeoJSON(geoJson);
-</script>
 
 </body>
 </html>
