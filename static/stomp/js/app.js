@@ -1,11 +1,16 @@
 $(document).ready(function() {
 	$('.seat,.item').click(function() {
-		//$('.modal').modal('show');
-		
 		$('.seats').toggleClass('modalShow');
 		return false;
 	
 	});
+	
+	  
+	$('.item').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 300);
+        return false;
+    });
+
 	
 	$('.close').click(function() {
 		$('.seats').toggleClass('modalShow');
