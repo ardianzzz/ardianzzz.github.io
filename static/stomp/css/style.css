@@ -256,21 +256,20 @@ i, em {
   color: #8E8E93; }
 /* line 264, ../sass/style.scss */
 .qty-control .qtyminus {
-  bottom: 0;
-  border-top: solid 1px #fff !important; }
-/* line 268, ../sass/style.scss */
+  bottom: -1px; }
+/* line 267, ../sass/style.scss */
 .qty-control .qtyminus:hover, .qty-control .qtyminus:active {
   background: #f96969;
   color: #fff; }
-/* line 274, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 .qty-control .qtyplus {
   top: 0; }
-/* line 277, ../sass/style.scss */
+/* line 276, ../sass/style.scss */
 .qty-control .qtyplus:hover, .qty-control .qtyplus:active {
   background: #6ab94c;
   color: #fff; }
 
-/* line 289, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 .qty-input input[type=text] {
   -webkit-appearance: none;
   line-height: 80px;
@@ -285,7 +284,7 @@ i, em {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none; }
-/* line 306, ../sass/style.scss */
+/* line 305, ../sass/style.scss */
 .qty-input:after {
   content: "";
   position: absolute;
@@ -295,7 +294,7 @@ i, em {
   left: 0;
   z-index: 2; }
 
-/* line 318, ../sass/style.scss */
+/* line 317, ../sass/style.scss */
 .action {
   padding: 10px;
   text-align: right;
@@ -306,16 +305,16 @@ i, em {
   left: 0;
   background: #fff;
   z-index: 999; }
-/* line 330, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 .action .btn {
   min-width: 120px; }
-/* line 334, ../sass/style.scss */
+/* line 333, ../sass/style.scss */
 .action .cart {
   float: left;
   line-height: 38px;
   font-size: 18px;
   color: #8E8E93; }
-/* line 340, ../sass/style.scss */
+/* line 339, ../sass/style.scss */
 .action .cart svg {
   float: left;
   width: 24px;
@@ -372,4 +371,16 @@ table th {
     border: 0; }
   /* line 435, ../sass/style.scss */
   .legend .item span {
-    float: right; } }
+    float: right; }
+
+  /* line 443, ../sass/style.scss */
+  .action .btn, .modal-action .btn {
+    width: 100%; }
+  /* line 447, ../sass/style.scss */
+  .action .pull-left, .modal-action .pull-left {
+    width: 50%;
+    padding-right: 5px; }
+  /* line 453, ../sass/style.scss */
+  .action .pull-right, .modal-action .pull-right {
+    width: 50%;
+    padding-left: 5px; } }

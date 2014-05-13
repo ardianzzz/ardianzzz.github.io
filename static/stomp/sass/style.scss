@@ -262,8 +262,7 @@ font-style:italic;
 	}
 	
 	.qtyminus {
-		bottom:0;
-		border-top:solid 1px #fff !important;
+		bottom:-1px;
 		
 		&:hover,&:active {
 			background:$red;
@@ -345,6 +344,7 @@ font-style:italic;
 			fill:#8E8E93;
 		}
 	}
+	
 }
 
 .pricetable {
@@ -437,5 +437,22 @@ table {
 			}
 		}
 		
+	}
+	
+	.action,.modal-action {
+		.btn {
+			width:100%;
+		}
+		
+		.pull-left{
+			width:50%;
+			padding-right:5px;
+		}
+	
+	
+		.pull-right{
+			width:50%;
+			padding-left:5px;
+		}
 	}
 }

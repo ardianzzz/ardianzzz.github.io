@@ -59,7 +59,7 @@ font-style:italic;
 	text-align: center;
 	white-space: nowrap;
 	cursor: pointer;
-	border: 1px solid #eee;
+	border: 0;
 	font-weight: 700;
 	outline: none !important;
 	color: #8E8E93;
@@ -76,7 +76,6 @@ font-style:italic;
 
 .btn-blue {
 	background:$blue;
-	border-color:$blue;
 	color:#fff;
 	
 	&:hover {
@@ -86,7 +85,6 @@ font-style:italic;
 
 .btn-green {
 	background: #4CD964;
-	border-color:#4CD964;
 	color:#fff;
 	
 	&:hover {
@@ -264,8 +262,7 @@ font-style:italic;
 	}
 	
 	.qtyminus {
-		bottom:0;
-		border-top:solid 1px #fff !important;
+		bottom:-1px;
 		
 		&:hover,&:active {
 			background:$red;
@@ -331,6 +328,7 @@ font-style:italic;
 	
 	.btn {
 		min-width:120px;
+		width:100%;
 	}
 	
 	.cart {
@@ -346,6 +344,17 @@ font-style:italic;
 			margin:7px 5px 7px 0;
 			fill:#8E8E93;
 		}
+	}
+	
+	.pull-left{
+		width:50%;
+		padding-right:5px;
+	}
+	
+	
+	.pull-right{
+		width:50%;
+		padding-left:5px;
 	}
 }
 
