@@ -3,11 +3,13 @@ $(document).ready(function() {
 		//$('.modal').modal('show');
 		
 		$('.seats').toggleClass('modalShow');
+		return false;
 	
 	});
 	
 	$('.close').click(function() {
 		$('.seats').toggleClass('modalShow');
+		return false;
 	});
 	
 	$('.modal-content').click(function() {
