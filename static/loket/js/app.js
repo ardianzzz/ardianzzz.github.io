@@ -925,7 +925,14 @@ for (var i=0, sw; sw = switches[i++]; ) {
 
 
 
+$('.client-list li').hover(function(){
+	$(this).toggleClass('hovered');
+});
 
+$('body').on('hide.bs.modal', '#myModal', function () {
+	$(this).removeData('bs.modal');
+	$(this).data('modal', null);
+});
 
 
 

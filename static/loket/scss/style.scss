@@ -1,3 +1,21 @@
+/*!
+
+
+██╗      ██████╗ ██╗  ██╗███████╗████████╗ ██████╗ ██████╗ ███╗   ███╗
+██║     ██╔═══██╗██║ ██╔╝██╔════╝╚══██╔══╝██╔════╝██╔═══██╗████╗ ████║
+██║     ██║   ██║█████╔╝ █████╗     ██║   ██║     ██║   ██║██╔████╔██║
+██║     ██║   ██║██╔═██╗ ██╔══╝     ██║   ██║     ██║   ██║██║╚██╔╝██║
+███████╗╚██████╔╝██║  ██╗███████╗   ██║██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║
+╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝
+
+2014 © Loket.com — All Right Reserved
+
+
+
+!*/
+
+
+
 @import "compass";
 @import "compass/reset";
 
@@ -110,6 +128,22 @@ img {
 a {
 	text-decoration: none;
 }
+
+
+html{
+	background-color:#fff;
+	width: 100%;
+	height: 101%;
+	background-image:url(../img/bgbg2.jpg);
+	-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	background-size:cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 
 
 .logo {
@@ -430,6 +464,13 @@ input[type="date"] {
 				}
 
 				&:active {
+					box-shadow: 0 .1rem .2rem rgba(0,0,0,0.1) inset;
+				}
+			}
+
+			&.current {
+				a {
+					background: rgba(0,0,0,0.05);
 					box-shadow: 0 .1rem .2rem rgba(0,0,0,0.1) inset;
 				}
 			}
@@ -885,7 +926,7 @@ input[type="date"] {
 			width: 4rem;
 			height: 4rem;
 			display: block;
-			fill:#D6CEC3;
+			fill:#ababab;
 			float: left;
 		}
 	}
@@ -1121,12 +1162,8 @@ input[type="date"] {
 
 .event {
 	position: relative;
-	padding:1rem 1rem 2rem;
 	margin: 0 0 2rem;
-	box-shadow: 0 0 .1rem rgba(0,0,0,0.1),0 .1rem .1rem rgba(0,0,0,0.1),0 .1rem .2rem rgba(0,0,0,0.1);
 	text-align: center;
-	background:#fff;
-	border-radius: .15rem;
 
 	a {
 		display: block;
@@ -1135,7 +1172,13 @@ input[type="date"] {
 	}
 	
 	figure {
+		background:#fff;
 		margin:0 0 1rem;
+		padding:.75rem;
+		box-shadow: 0 0 .1rem rgba(0,0,0,0.1),0 .1rem .1rem rgba(0,0,0,0.1),0 .1rem .2rem rgba(0,0,0,0.1);	
+		border-radius: .25rem;
+		position: relative;
+
 		div.img {
 			position: relative;
 			overflow: hidden;
@@ -1155,12 +1198,14 @@ input[type="date"] {
 	}
 
 	.name {
-		font-family: "Open Sans", Sans-serif;
-		font-size: 1.6rem;
-		font-weight: 300;
-		white-space: nowrap;
+		font-size: 1.3rem;
+		font-weight: 400;
+		//white-space: nowrap;
 		overflow: hidden;
 		text-overflow:ellipsis;
+		text-align: center;
+		padding: 0 2rem;
+		line-height: 1.35;
 	}
 
 	.meta {
@@ -1696,7 +1741,7 @@ input[type="date"] {
 	h3 {
 		font-size: 1.25em;
 		font-weight: 600;
-		font-family: "Open Sans", Sans-serif;
+		//font-family: "Open Sans", Sans-serif;
 	}
 
 
@@ -2079,6 +2124,15 @@ background-color: #ffffff; // Old browsers
 
 #pushstat {
 	display: none !important;
+}
+
+
+
+.section {
+	background:#f7f7f7;
+}
+.hero-wrapper,.page-header,.site-footer {
+	background-color:transparent;
 }
 
 @import "media.scss";

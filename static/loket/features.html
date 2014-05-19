@@ -1,102 +1,83 @@
 <!doctype html>
 <html>
 <head>
+
+
+<!-- 
+
+
+
+
+	
+██╗      ██████╗ ██╗  ██╗███████╗████████╗ ██████╗ ██████╗ ███╗   ███╗
+██║     ██╔═══██╗██║ ██╔╝██╔════╝╚══██╔══╝██╔════╝██╔═══██╗████╗ ████║
+██║     ██║   ██║█████╔╝ █████╗     ██║   ██║     ██║   ██║██╔████╔██║
+██║     ██║   ██║██╔═██╗ ██╔══╝     ██║   ██║     ██║   ██║██║╚██╔╝██║
+███████╗╚██████╔╝██║  ██╗███████╗   ██║██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║
+╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝
+
+2014 © Loket.com — All Right Reserved 
+
+
+
+
+
+
+-->
+
 	<title>Loket.com</title>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
-
-
-
-	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
-
-	
 	<script type="text/javascript" src="js/app.js"></script>
 
-	<script>
-		$(document).ready(function(){
-			$('.client-list li').hover(function(){
-				$(this).toggleClass('hovered');
-			});
-
-			$('body').on('hide.bs.modal', '#myModal', function () {
-				$(this).removeData('bs.modal');
-				$(this).data('modal', null);
-			});
-		});
-	</script>
-
-	<style>
-
-		html{
-			background-color:#fff;
-			width: 100%;
-			height: 101%;
-			background-image:url(http://24.media.tumblr.com/dcb216f6635c0121bc3e9b266cefd3e4/tumblr_n3iu8lXLtT1sfie3io1_1280.jpg);
-			-webkit-background-size: cover;
-			  -moz-background-size: cover;
-			  -o-background-size: cover;
-			background-size:cover;
-			background-position: top center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-		}
-
-
-		.section {
-			background:#f7f7f7;
-			//background: url(https://d13yacurqjgara.cloudfront.net/assets/noise-f1-99be850299aaf3f1e91225fa7a97228c.gif);
-		}
-		.hero-wrapper,.page-header,.site-footer {
-			background-color:transparent;
-		}
-
-
-		
-	</style>
 </head>
 <body>
-
-
-	<div class="site-header">
-		<div class="hook">
-			<div class="container">
+<div class="site-header">
+	<div class="hook">
+		<div class="container">
+			
+			<em class="logo">
+				<a href="index.html">
+					<img src="img/logo.png" alt="Loket.com">
+				</a>
+			</em>
+			
+			<nav class="site-navigation" role="navigation">
 				
-				<em class="logo">
-					<a href="index.html">
-						<img src="img/logo.png" alt="Loket.com">
-					</a>
-				</em>
+				  <ul>
+				    
+				      
+				      
+				      <li class="">
+				        <a href="/index.html">Home</a>
+				      </li>
+				    
+				      
+				      
+				        
+				      
+				      <li class="current">
+				        <a href="/features.html">Features</a>
+				      </li>
+				    
+				      
+				      
+				      <li class="">
+				        <a href="/services.html">Services</a>
+				      </li>
+				    
+				  </ul>
 				
-				<nav class="site-navigation" role="navigation">
-					<ul>
-						<li class="active">
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="features.html">Features</a>
-						</li>
-						<li>
-							<a href="services.html">Services</a>
-						</li>
-						<li>
-							<a href="how-to.html"><abbr title="Frequently Asked Question">F.A.Q</abbr></a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+			</nav>
 		</div>
 	</div>
+</div>
 
-
-
-
-
-		<div class="main" id="main" role="main">
+<div class="main" id="main" role="main">
 
 
 	<div class="page-header">
@@ -273,15 +254,11 @@
 
 </div>
 
-
-
 <div class="site-footer">
 	<div class="site-footer-cover">
-
-			<div class="ribbon">
-				For Ticket Enquiries or Support Please Contact <a href="mailto:info@loket.com">info@loket.com</a> or Call <a href="tel:02192092019">021-920 920 19</a>
-			</div>
-
+		<div class="ribbon">
+			For Ticket Enquiries or Support Please Contact <a href="mailto:info@loket.com">info@loket.com</a> or Call <a href="tel:02192092019">021-920 920 19</a>
+		</div>
 		<div class="primary-footer">
 
 			<div class="container">
@@ -298,7 +275,7 @@
 							<div>
 
 								<h4>Address</h4>
-								<p>Komplek Ruko Fancy Mampang Lt. 2<br>Mampang Prapatan, Jakarta Selatan<br>Indonesia, 12345</p>
+								<p>Komplek Ruko Fancy Mampang Lt. 2<br>Mampang Prapatan, Jakarta Selatan<br>Indonesia</p>
 
 								
 							</div>
@@ -312,8 +289,8 @@
 
 								<h4>Phone</h4>
 								<ul>
-									<li class="tel">(021) 920 920 19</li>
-									<li class="tel">(021) 920 920 39</li>
+									<li class="tel"><a href="tel:02192092019">(021) 920 920 19</a></li>
+									<li class="tel"><a href="tel:02192092039">(021) 920 920 39</a></li>
 								</ul>
 								
 							</div>
@@ -327,8 +304,8 @@
 
 								<h4>Email</h4>
 								<ul>
-									<li class="tel">(021) 920 920 19</li>
-									<li class="tel">(021) 920 920 39</li>
+									<li class="email"><a href="mailto:info@loket.com">info@loket.com</a></li>
+									<li class="email"><a href="mailto:payment@loket.com">payment@loket.com</a></li>
 								</ul>
 								
 							</div>
@@ -398,14 +375,8 @@
 							</div>
 						</div>
 					</div> -->
-					
-
-
-					
 				</div>
 			</div>
-
-			
 		</div>
 		<div class="secondary-footer">
 			<div class="container">
@@ -418,17 +389,13 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="container">
-
-			
-
+			<!-- <div class="container">
 				<div class="row">
 					<div class="col grid-12">
 						
 					</div>
 					<div class="col grid-6">
-						<!-- <div class="result">
+						<div class="result">
 
 							<div class="icon">
 								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M28.647 10.761l-7.152-7.152c-1.504-1.504-4.148-1.515-5.664-.024l-12.197 12.003c-.761.749-1.183 1.751-1.188 2.82-.004 1.071.409 2.075 1.164 2.828l7.153 7.153c.756.756 1.767 1.173 2.844 1.173 1.065 0 2.068-.409 2.82-1.149l12.196-12.004c.761-.749 1.184-1.751 1.188-2.82.004-1.069-.409-2.073-1.164-2.828zm-1.895 3.748l-12.195 12.004c-.508.497-1.408.493-1.909-.008l-1.7-1.7c.947-1.047.924-2.659-.083-3.669-1.011-1.009-2.624-1.031-3.669-.084l-1.7-1.699c-.248-.249-.384-.58-.383-.932s.14-.684.391-.929l12.197-12.003c.252-.248.588-.384.951-.384.364 0 .705.139.959.392l1.7 1.7c-.948 1.047-.925 2.659.083 3.668 1.011 1.009 2.623 1.031 3.669.084l1.699 1.699c.249.249.384.58.383.932s-.14.683-.392.929zM15.468 22.723l-6.209-6.208 7.532-7.239 6.209 6.208-7.532 7.239zm-4.307-6.191l4.324 4.323 5.608-5.388-4.321-4.323-5.611 5.388z"/></svg>
@@ -437,10 +404,10 @@
 
 							<b>197,098,456</b>
 							<span>Tickets delivered</span>
-						</div> -->
+						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
@@ -454,7 +421,7 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        ...
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -463,8 +430,6 @@
     </div>
   </div>
 </div>
-
-
 
 </body>
 </html>
