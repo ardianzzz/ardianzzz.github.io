@@ -1,0 +1,25 @@
+CACHE MANIFEST
+# 2014-07-01 11:29:25 +0700
+
+# Explicitly cached 'master entries'.
+CACHE:
+index.html
+css/main.css
+img/ari.jpg
+img/fikri.jpg
+img/rino.jpg
+img/ndik.jpg
+img/tp.jpg
+img/m1.jpg
+img/m2.jpg
+img/m3.jpg
+
+# Resources that require the user to be online.
+NETWORK:
+*
+
+# static.html will be served if main.py is inaccessible
+# offline.jpg will be served in place of all images in images/large/
+# offline.html will be served in place of all other .html files
+FALLBACK:
+index.html
