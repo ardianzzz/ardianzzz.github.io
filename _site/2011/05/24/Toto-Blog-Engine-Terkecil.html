@@ -1,0 +1,358 @@
+<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Ardian Trimurti &mdash; IX Designer, Front-End Developer</title><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="stylesheets/site.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script></head><body><!--
+    
+    
+    
+    
+    
+    
+    
+  _    _      _ _                                          
+ | |  | |    | | |                                         
+ | |__| | ___| | | ___                                     
+ |  __  |/ _ \ | |/ _ \                                    
+ | |  | |  __/ | | (_) |                                   
+ |_|__|_|\___|_|_|\___/              _____          _      
+  / ____|                           / ____|        | |     
+ | (___   ___  _   _ _ __ ___ ___  | |     ___   __| | ___ 
+  \___ \ / _ \| | | | '__/ __/ _ \ | |    / _ \ / _` |/ _ \
+  ____) | (_) | |_| | | | (_|  __/ | |___| (_) | (_| |  __/
+ |_____/ \___/ \__,_|_|  \___\___|  \_____\___/ \__,_|\___|
+ \ \    / (_)                         \ \                  
+  \ \  / / _  _____      _____ _ __  (_) |                 
+   \ \/ / | |/ _ \ \ /\ / / _ \ '__|   | |                 
+    \  /  | |  __/\ V  V /  __/ |     _| |                 
+     \/   |_|\___| \_/\_/ \___|_|    (_) |                 
+                                      /_/                  
+                                                           
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+-->
+        <p>Toto adalah sebuah blogengine sederhana buah tangan Alexis Sellier yang juga populer sebagai pembuat less CSS preprosessor. Dengan jargon “git-powered, minimalist blog engine for the hackers of Oz”, Toto bisa dijadikan sebagai salah satu alternatif blog engine yang cukup menarik untuk digunakan.</p>
+
+<p>Engine Toto “hanya” sebuah file rackapp dengan kode tidak lebih dari 300 baris, sangat simpel. Toto sangat ringan cepat dan tidak memerlukan database seperti MySQL dan semacamnya.Tulisan/posting akan disimpan dalam bentuk text file sehingga kita bisa menggunakan text editor favorit. Untuk mengakomodasi komentar, secara default Toto menggunakan Disqus.</p>
+
+<h2 id="instalasi">Instalasi</h2>
+
+<p>Toto ditulis dalam bahasa Ruby, untuk itu pastikan anda telah menginstall Ruby &amp; Rubygem. Untuk menginstall Toto, jalankan perintah berikut di Terminal:</p>
+
+<pre><code>$ sudo gem install toto
+</code></pre>
+
+<p>ps: Jika kita menggunakan RVM, tidak perlu memakai “sudo”</p>
+
+<p>Setelah gem terinstall, kita bisa mengkloning Dorothy — template defaultnya Toto —</p>
+
+<pre><code>$ git clone git://github.com/cloudhead/dorothy.git myblog
+</code></pre>
+
+<p>Template Toto berada pada folder “templates” dengan susunan sebagai berikut:</p>
+
+<pre><code>templates/
+|
++- layout.rhtml      # layout utama
+|
++- index.builder     # atom feed layout
+|
++- pages/            # pages (home, archive dsb) berada disini
+   |
+   +- index.rhtml    # default page
+   |
+   +- article.rhtml  # article page
+   |
+   +- about.rhtml
+</code></pre>
+
+<p>Dorothy sangat simpel dan mudah untuk dikustomisasi. Kita bisa mengedit semua file dalam folder “templates” untuk mendapatkan tampilan yang kita inginkan.</p>
+
+<p>Membuat Tulisan Baru</p>
+
+<p>Untuk memulai sebuah tulisan baru, caranya sangat mudah yaitu dengan menuliskan perintah berikut:</p>
+
+<pre><code>$ rake new
+</code></pre>
+
+<p>Kemuduian masuk ke direktori blog. Toto secara otomatis menggenerate text file dengan nama YY-MM-DD-judul-tulisan.txt kemudian buka file dan cermati:</p>
+
+<pre><code>title: Judul Tulisan
+date: 1900/05/17
+
+Once upon a time...
+</code></pre>
+
+<p>Dua baris pertama (YAML) berfungsi sebagai metadata, tidak usah diutak-atik kecuali bila perlu. Untuk menulis artikel, yang harus kita lakukan hanyalah mengganti tulisan “Once upon a time…” dengan tulisan yang diinginkan. Secara default, Toto menggunakan Markdown untuk mempermudah proses penulisan. Hal ini berarti kita masih bisa menggunakan plain HTML untuk menuliskan konten.</p>
+
+<p>Menjalankan Toto di Server Lokal</p>
+
+<p>Saya menggunakan Thin untuk menjalankan Toto. Pertama-tama install Thin melalui gem dengan perintah berikut:</p>
+
+<pre><code>$sudo gem install thin
+</code></pre>
+
+<p>Setelah terinstall, masuk ke direktori blog, kemudian jalankan Thin</p>
+
+<pre><code>$ cd myblog
+$ thin start -R config.ru
+</code></pre>
+
+<p>Buka browser kemudian buka http://localhost:3000 dan voila!</p>
+
+ 
+		<script src="//api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+        <script src="js/app.js"></script>
+	</body>
+</html>
