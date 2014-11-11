@@ -15095,7 +15095,31 @@
     "alti":67.420000
   }
 ];
+
+
+// var zxc = $('.wrapper-col-a').width();
+//         $('.page-title').css('width', zxc-1);
+//         $('.map-wrapper').css('left', zxc);
+
     
+var tiles = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '2014 &copy; Balai Besar Wilayah Sungai Republik Indonesia'
+    }),
+    latlng = L.latLng(-37.82, 175.24);
+
+var map = L.map('map', {center: latlng, zoom: 13, maxZoom: 17, layers: [tiles]});
+
+var myStyle = {
+    "color": "#FF9500",
+    "weight": 2,
+    "opacity": 0.65
+};
+var line = new L.geoJson(geojson, {
+    style: myStyle
+});
+
+
+
 
 
 
@@ -15125,7 +15149,7 @@ $container.handsontable({
   ],
   //rowHeaders: true,
   //colHeaders: true,
-  //stretchH: 'all',
+  stretchH: 'all',
   minSpareRows: 1,
   contextMenu: true,
   afterChange: dataToMarkers
@@ -15135,52 +15159,56 @@ $container.handsontable('render'); //refresh the grid to display the new value
 
 
 function dataToMarkers() {
-  // Create a new geojson object that'll represent the table values.
-
-
-    var zxc = $('.wrapper-col-a').width();
-        $('.page-title').css('width', zxc-1);
-        $('.map-wrapper').css('left', zxc);
-
-   var tiles = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                maxZoom: 18,
-                attribution: '2014 &copy; Balai Besar Wilayah Sungai Republik Indonesia'
-            }),
-            latlng = L.latLng(-37.82, 175.24);
-
-        var map = L.map('map', {center: latlng, zoom: 13, maxZoom: 16, layers: [tiles]});
-
-        var myStyle = {
-            "color": "#ff7800",
-            "weight": 3,
-            "opacity": 0.65
-        };
-        var line = new L.geoJson(geojson, {
-            style: myStyle
-        });
-        map.addLayer(line);
+  // Create a new geojson object that'll represent the table values
     
+   
 
-
+var markers = L.markerClusterGroup();
   var titik = [];
+
   // For each table row, create a marker.
   for (var i = 0; i < data.length; i++) {
-
- 
     // Blank rows shouldn't be included - they're easy to detect and skip.
     if (data[i].lon === null || data[i].lat === null) continue;
-    titik.push([data[i].lon, data[i].lat, data[i].lat]);
+    titik.push([data[i].lon, data[i].lat, data[i].name, data[i].alti, data[i].channel]);
+
   }
 
-  var markers = L.markerClusterGroup();
-
-
-    for (var i = 0; i < titik.length; i++) {
+  for (var i = 0; i < titik.length; i++) {
         var a = titik[i];
         var marker = L.marker(new L.LatLng(a[1], a[0]));
-        marker.bindPopup('<div class="point-data"><figure><div><img src="http://duniasipil31.files.wordpress.com/2011/07/bangunan-irigasi.jpg"></div></figure><div class="meta"><div class="name">Bagi sadap (BGp1d)</div><div class="di"><span>D.I.</span> : Sal. Sekunder  BGp</div><div class="lat"><span>Lat</span> : -7.5509086</div><div class="long"><span>Long</span> : 111.8393329</div></div></div>');
+        marker.bindPopup('<div class="point-data"><figure><div><img src="http://duniasipil31.files.wordpress.com/2011/07/bangunan-irigasi.jpg"></div></figure><div class="meta"><div class="name">' + a[2] +'</div><div class="di"><span>D.I.</span> : ' + a[4] + '</div><div class="lat"><span>Lat</span> :' + a[1] +'</div><div class="long"><span>Long</span> : '+ a[0] +'</div><div class="alti"><span>Alti</span> : ' + a[3] +'mdpl</div></div></div>');
         markers.addLayer(marker);
     }
+
+
+    map.addLayer(markers);    
+    map.fitBounds(markers.getBounds());
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+   
+
+   
+
+    map.addLayer(line);
+
 
 
 var el = L.control.elevation({
@@ -15193,17 +15221,6 @@ var el = L.control.elevation({
     var gjl = L.geoJson(geojson,{
         onEachFeature: el.addData.bind(el)
     }).addTo(map);
-
-
-   
-
-   
-
-    map.addLayer(markers);
-    map.fitBounds(markers.getBounds());
-
-}
-
 
 
 
