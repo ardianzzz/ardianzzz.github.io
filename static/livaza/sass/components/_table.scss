@@ -1,0 +1,93 @@
+.table {
+	width:100%;
+	margin: 0 0 1.6rem;
+	font-size: 1.5rem;
+
+	th,td {
+
+		input[type=checkbox],input[type=radio] {
+			display: block;
+			margin:0;
+			padding:0;
+			font-size: 100%;
+			font-family: inherit;
+		}
+	}
+
+	th {
+		padding: 1.2rem;
+		text-align: left;
+
+		border-bottom:solid .1rem #e5e5e5;
+
+			}
+
+	td {
+		vertical-align: top;
+		padding: .8rem 1.2rem;
+		border-right: solid .1rem #e5e5e5;
+		border-bottom: solid .1rem #e5e5e5;
+
+		&:last-of-type {
+			border-right:0;
+		}
+	}
+
+	tbody {
+		tr	{
+			
+
+			&:hover {
+				td {
+					background:#fffded;
+				}
+			}
+
+			&:last-of-type {
+				td {
+					border-bottom:0;
+				}
+			}
+		}
+	}
+
+
+	&--bordered {
+		border:solid .1rem #e5e5e5;
+	}
+
+
+	&--keymetrics {
+		border:solid .1rem #eee;
+
+
+		td {
+			padding: 1.2rem;
+			line-height: 1.25;
+			b {
+				display: block;
+				font-size: 2.4rem;
+				letter-spacing: -.1rem;
+			}
+
+			span {
+				display: block;
+				color:$text-color-gray;
+			}
+		}
+
+		tbody {
+			tr	{
+				&:nth-child(2n){
+					background:rgba(255,255,255,0);
+				}
+
+				&:hover {
+					td {
+						background:rgba(255,255,255,0);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>Panel</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/vendor/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col col--8">
+			<div class="panel">
+				<div class="panel__header">
+					<h3 class="panel__title">
+						Panel Title
+					</h3>
+
+					<div class="panel__control">
+
+						<a href="#" class="panel__control__btn">&nbsp;</a>
+						<a href="#" class="panel__control__btn">&nbsp;</a>
+					</div>
+				</div>
+				<div class="panel__body">
+					<div class="chart-wrapper">
+						<canvas id="chart_1" style="height:20rem;"></canvas>
+						<script>
+							//#chart_1
+							var data_1 = {
+							    labels: ["January", "February", "March", "April", "May", "June", "July"],
+							    datasets: [
+							        {
+							            label: "My First dataset",
+							            fillColor: "rgba(220,220,220,0.2)",
+							            strokeColor: "rgba(220,220,220,1)",
+							            pointColor: "rgba(220,220,220,1)",
+							            pointStrokeColor: "#fff",
+							            pointHighlightFill: "#fff",
+							            pointHighlightStroke: "rgba(220,220,220,1)",
+							            data: [65, 59, 80, 81, 56, 55, 40]
+							        },
+							        {
+							            label: "My Second dataset",
+							            fillColor: "rgba(151,187,205,0.2)",
+							            strokeColor: "rgba(151,187,205,1)",
+							            pointColor: "rgba(151,187,205,1)",
+							            pointStrokeColor: "#fff",
+							            pointHighlightFill: "#fff",
+							            pointHighlightStroke: "rgba(151,187,205,1)",
+							            data: [28, 48, 40, 19, 86, 27, 90]
+							        }
+							    ]
+							};
+
+							var ctx = document.getElementById("chart_1").getContext("2d");
+							window.myBar = new Chart(ctx).Line(data_1, {
+								responsive : true,
+								 scaleFontSize: 12,
+								 barValueSpacing : 4,
+							});
+										
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col col--4">
+			<div class="panel">
+				<div class="panel__header">
+					<h3 class="panel__title">
+						Panel Title
+					</h3>
+				</div>
+				<div class="panel__body">
+					<div style="height:200px;background:#f8f8f8;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col col--4">
+			<div class="panel">
+				<div class="panel__header">
+					<h3 class="panel__title">
+						Panel Title
+					</h3>
+				</div>
+				<div class="panel__body">
+					<div style="height:200px;background:#f8f8f8;"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+	
+
+</body>
+</html>

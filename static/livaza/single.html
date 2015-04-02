@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Panel</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1024px, initial-scale=1.0, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/ui/slider.js"></script>
+	<script type="text/javascript" src="js/ui/dropdown.js"></script>
+	<script type="text/javascript" src="js/ui/tooltip.js"></script>
+	<script type="text/javascript" src="js/ui/modal.js"></script>
+	<script type="text/javascript" src="js/ui/scrollbar.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var h = $('.site-header').height();
+			var w = $('.page-product').width();
+			var h1 = $('.single-product__aside').height();
+			var h2 = $('.single-product__action').height();
+			var h3 = h + h1 - h2;
+
+
+
+			var h4 = $('.page-product').height();
+			var h5 = h4;
+
+
+
+			var hw1 = $(window).height();
+			var hw2 = hw1 - 48;
+
+
+
+			var hx = $('.sidebar__container').height();
+			var h6 = h + h5 - hw2;
+
+
+
+
+			$('.page-product__header').css('width',w);
+
+			$('.sidebar__container').css('height',hw2);
+
+			$(".sidebar__container").mCustomScrollbar({
+			scrollInertia:0,
+			});
+
+
+			$(window).scroll(function () {
+				if ($(this).scrollTop() >= h) {
+					$('body').addClass('scrolled');
+					$('.sidebar__container').addClass('fixed');
+
+					$('.single-product__action').addClass('fixed');
+				}else{
+					$('body').removeClass('scrolled');
+					$('.sidebar__container').removeClass('fixed');
+					$('.single-product__action').removeClass('fixed');
+				}
+
+				if ($(this).scrollTop() >= h3) {
+					$('.single-product__action').addClass('fixed2');
+				}else{
+					$('.single-product__action').removeClass('fixed2');
+				}
+
+				if ($(this).scrollTop() >= h6) {
+					$('.sidebar__container').addClass('fixed2');
+				}else{
+					$('.sidebar__container').removeClass('fixed2');
+				}
+			});
+
+			$(".page-product__control dropdown-menu li a").click(function(){
+			  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');			  
+			});
+
+			$('.dropdown-menu--cart').on('click', function(){
+				return false;
+			});
+
+			$('.flexslider').flexslider();
+
+
+			$('.site-navigation__menu > li > a').mouseenter(function(){
+				$(this).parent().addClass('hovered');
+			});
+
+			$('.site-navigation__menu > li > a').focusin(function(){
+
+
+				$('.site-navigation__menu > li').removeClass('focused');
+				$(this).parent().addClass('focused');
+
+				$('.site-navigation__search input').focusin(function(){
+					$('.site-navigation__menu > li').removeClass('focused');
+				});
+
+				$('html').on('click', function(){
+					$('.site-navigation__menu > li').removeClass('focused');
+				});
+			});
+
+			
+
+			$('.site-navigation__menu > li > a').mouseleave(function(){
+				$(this).parent().removeClass('hovered');
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div class="accesibility">
+
+</div>
+
+<header class="site-header" id="site-header" role="banner">
+	<div class="site-header__top">
+		<div class="container">
+			<ul class="pull-left">
+				<li><a href=""><img src="img/id.png" alt="Indonesia" class="flag"></a></li>
+				<li><a href="#">Gift Ideas</a></li>
+				<li><a href="#">Gift e-card</a></li>
+				<li><a href="#">Invite <span class="amp">&amp;</span> Reward</a></li>
+			</ul>
+			<ul class="pull-right">
+				<li><a href="#">Free Shipping</a></li>
+				<li><a href="#">Best Quality</a></li>
+				<li><a href="#">7 Days Return Policy</a></li>
+			</ul>
+
+			<!-- <span><img src="img/id.png" alt="Indonesia"></span>
+			<span>Welcome, please <a href="#">Sign in</a></span> -->
+		</div>
+	</div>
+	<div class="site-header">
+		<div class="container">
+
+			<div class="site-header__misc">
+				<ul>
+					<li><a href="tel:(021) 95 8500 40"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M415.9 335.5c-14.6-15-56.1-43.1-83.3-43.1-6.3 0-11.8 1.4-16.3 4.3-13.3 8.5-23.9 15.1-29 15.1-2.8 0-5.8-2.5-12.4-8.2l-1.1-1c-18.3-15.9-22.2-20-29.3-27.4l-1.8-1.9c-1.3-1.3-2.4-2.5-3.5-3.6-6.2-6.4-10.7-11-26.6-29l-.7-.8c-7.6-8.6-12.6-14.2-12.9-18.3-.3-4 3.2-10.5 12.1-22.6 10.8-14.6 11.2-32.6 1.3-53.5-7.9-16.5-20.8-32.3-32.2-46.2l-1-1.2c-9.8-12-21.2-18-33.9-18-14.1 0-25.8 7.6-32 11.6-.5.3-1 .7-1.5 1-13.9 8.8-24 20.9-27.8 33.2-5.7 18.5-9.5 42.5 17.8 92.4 23.6 43.2 45 72.2 79 107.1 32 32.8 46.2 43.4 78 66.4 35.4 25.6 69.4 40.3 93.2 40.3 22.1 0 39.5 0 64.3-29.9 26-31.4 15.2-50.6-.4-66.7zm-11.5 55.9c-20 24.2-31.5 24.2-52.3 24.2-20.3 0-51.8-14-84.2-37.3-31-22.4-44.8-32.7-75.9-64.6-32.9-33.7-53.6-61.8-76.4-103.5-24.1-44.1-21.4-63.4-16.5-79.3 2.6-8.5 10.4-17.6 21-24.2.5-.3 1-.7 1.6-1 5.3-3.4 14.1-9.1 23.7-9.1 8 0 15.1 4 21.9 12.3l1 1.2c25.5 31.2 45.4 58.8 30.4 79.2-10.6 14.3-16.2 24-15.3 34 .8 9.7 7.3 17 17.1 28l.7.8c16.1 18.2 20.7 23 27.1 29.5 1.1 1.1 2.2 2.3 3.5 3.6l1.8 1.9c7.4 7.7 11.5 11.9 30.3 28.4l1.1 1c8 7 13.9 12.1 22.5 12.1 8.9 0 18.7-5.6 37.3-17.5 1.9-1.2 4.6-1.9 8-1.9 21.7 0 59.1 24.8 72.2 38.3 12 12.2 18 21.4-.6 43.9z"/></svg> (021) 95 8500 40</a></li>
+					<li><a href="mailto:support@livaza.com"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 128v256h384V128H64zm192 139.9L93.2 144h325.6L256 267.9zM80 368V154.1l115.1 87.6L127 319l2 2 78.9-69.6L256 288l48.1-36.6L383 321l2-2-68.1-77.4L432 154.1V368H80z"/></svg> support@livaza.com</a></li>
+					<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm0 398.7c-105.1 0-190.7-85.5-190.7-190.7 0-105.1 85.5-190.7 190.7-190.7 105.1 0 190.7 85.5 190.7 190.7 0 105.1-85.6 190.7-190.7 190.7zM259.6 146c-43.2 0-67.3 20.3-67.6 62.2h18.8c-.6-30.4 15.5-46.5 47.9-46.5 23.2 0 42.6 16.2 42.6 39.8 0 15.3-8.3 27.7-19.4 38.1-22.6 20.8-29 36-30.1 64.5h19c1.1-25.8.5-30.7 23.3-53.3 15.2-14.2 25.9-28.3 25.9-50.2 0-34.2-27.4-54.6-60.4-54.6zM260.3 332.3c-9.4 0-17 7.5-17 16.8s7.6 16.9 17 16.9 17-7.5 17-16.9c0-9.3-7.6-16.8-17-16.8z"/></svg> Help</a></li>
+				</ul>
+
+				
+			</div>
+			<div class="site-logo">
+				<img src="img/logo.png" alt="Livaza">
+			</div>
+
+			<div class="site-header__user">
+				<ul>
+					<li class="profile dropdown">
+						<a href="#" data-toggle="dropdown">
+							<div class="avatar">
+								<img src="https://s3.amazonaws.com/uifaces/faces/twitter/madysondesigns/128.jpg" alt="">
+							</div>
+							Good morning<br>
+							Marissa Hayes
+						</a>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="#">My Profile</a></li>
+								<li><a href="#">My Address</a></li>
+								<li><a href="#">Setting</a></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="cart dropdown">
+						<a href="#" data-toggle="dropdown">
+							<svg xmlns="http://www.w3.org/2000/svg" width="373.406" height="373.406" viewBox="0 0 373.406 373.406"><path d="M170.055 310.142c-14.292 0-25.918 11.627-25.918 25.918s11.627 25.918 25.918 25.918 25.917-11.627 25.917-25.918-11.626-25.918-25.917-25.918zm0 31.836c-3.264 0-5.918-2.654-5.918-5.918s2.655-5.918 5.918-5.918 5.918 2.654 5.918 5.918-2.655 5.918-5.918 5.918zM292.265 310.142c-14.29 0-25.918 11.627-25.918 25.918s11.628 25.918 25.918 25.918c14.293 0 25.92-11.627 25.92-25.918s-11.627-25.918-25.92-25.918zm0 31.836c-3.263 0-5.918-2.654-5.918-5.918s2.655-5.918 5.918-5.918c3.265 0 5.92 2.654 5.92 5.918s-2.656 5.918-5.92 5.918zM332.66 281.64h-203c-5.523 0-10 4.477-10 10s4.477 10 10 10h203c5.522 0 10-4.477 10-10s-4.477-10-10-10zM368.98 105.755c-4.166-5.067-16.49-7.76-16.49-7.76-.537-.117-1.427-.213-1.978-.212l-248 .077c-.55 0-1.444.07-1.988.157l-1.933-1.095c-.46-.3-.927-.985-1.035-1.524L85.442 35.144c-.108-.54-3.015-23.715-28.957-23.715H10c-5.5 0-10 4.5-10 10s4.5 10 10 10H56.487c8.192 0 9.24 7.117 9.35 7.656l16.094 80.052c.11.54.284 1.422.39 1.962 0 0 18.166 93.82 24.263 125.085.105.54 1.848 23.764 28.905 23.764h185.026c27.332 0 28.193-19.983 28.906-23.765 5.698-30.24 23.812-120.77 23.812-120.77.104-.54.184-1.43.173-1.98-.002 0-.26-12.613-4.426-17.68zM113.217 168.32c-.55 0-1.088-.442-1.197-.98l-9.557-47.542c-.108-.54-.143-1.098-.076-1.24l.083-.1c.352-.43 1.027-.528 1.027-.528.544-.08 1.44-.146 1.99-.146h32.683c.55 0 1.09.44 1.197.98l9.766 48.575c.108.54-.253.98-.803.98h-35.112zm51.523 81.628h-29.253c-7.39 0-9.178-7.093-9.284-7.633l-.89-4.51c-.105-.54-.274-1.424-.373-1.965l-8.52-46.538c-.1-.54.27-.983.82-.983h35.11c.55 0 1.09.44 1.198.978l11.996 59.668c.108.54-.253.982-.803.982zm56.4-1c0 .55-.45 1-1 1h-33c-.55 0-1.087-.44-1.196-.98L173.948 189.3c-.108-.54.253-.98.803-.98h45.39c.55 0 1 .45 1 1v59.628zm0-81.63c0 .55-.45 1-1 1h-49.41c-.55 0-1.088-.44-1.196-.98l-9.766-48.574c-.108-.54.253-.98.803-.98h59.568c.55 0 1 .45 1 1v48.535zm55.205 81.65c-.107.54-.646.978-1.196.978h-33.01c-.55 0-1-.45-1-1v-59.63c0-.55.45-1 1-1h45.397c.55 0 .912.442.804.98l-11.995 59.67zm15.214-80.65h-49.422c-.55 0-1-.45-1-1v-48.535c0-.55.45-1 1-1h59.58c.55 0 .91.44.804.98l-9.767 48.575c-.108.54-.647.98-1.196.98zm38.237 73.997c-.105.54-1.534 7.633-9.282 7.633h-22.967c-.55 0-.91-.44-.804-.98L308.74 189.3c.108-.54.646-.98 1.197-.98h29.505c.55 0 .913.44.807.98l-10.453 53.015zm24.052-122.748c-.027.55-.138 1.44-.243 1.98l-9.027 45.79c-.105.54-.644.98-1.193.98H313.96c-.55 0-.912-.44-.804-.98l9.766-48.574c.108-.54.647-.98 1.197-.98h26.395c.55 0 1.444.066 1.99.146 0 0 .674.1 1.026.526.35.43.32 1.11.32 1.11z"/></svg>
+
+							<span class="note">2</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu--cart">
+							<div class="minicart">
+								<div class="minicart__title">
+									You have 1 item(s) in your cart!
+								</div>
+								<div class="minicart__table">
+									<table class="table">
+										<thead>
+											<tr>
+												<th colspan="2">Product</th>
+												<th style="text-align:center;">Qty</th>
+												<th style="text-align:right;">Price</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td style="width:1%">
+													<div class="table__thumb" style="background-image:url(img/sample1.jpg)"></div>
+												</td>
+												<td>
+													Wheely Wood Table
+												</td>
+												<td style="text-align:center;">1</td>
+												<td style="text-align:right">IDR 4,400,000</td>
+											</tr>
+											<tr>
+												<td style="width:1%">
+													<div class="table__thumb" style="background-image:url(img/sample2.png)"></div>
+												</td>
+												<td>
+													Catchy Match Sofa
+												</td>
+												<td style="text-align:center;">1</td>
+												<td style="text-align:right">IDR 9,000,000</td>
+											</tr>
+											<tr>
+												<td style="width:1%">
+													<div class="table__thumb" style="background-image:url(img/sample3.png)"></div>
+												</td>
+												<td>
+													Doggy Dog Accent Chair
+												</td>
+												<td style="text-align:center;">1</td>
+												<td style="text-align:right">IDR 2,295,000</td>
+											</tr>
+											<tr>
+												<td style="width:1%">
+													<div class="table__thumb" style="background-image:url(img/sample1.jpg)"></div>
+												</td>
+												<td>
+													Wheely Wood Table
+												</td>
+												<td style="text-align:center;">1</td>
+												<td style="text-align:right">IDR 4,400,000</td>
+											</tr>
+											<tr>
+												<td style="width:1%">
+													<div class="table__thumb" style="background-image:url(img/sample2.png)"></div>
+												</td>
+												<td>
+													Catchy Match Sofa
+												</td>
+												<td style="text-align:center;">1</td>
+												<td style="text-align:right">IDR 9,000,000</td>
+											</tr>
+											<tr>
+												<td style="width:1%">
+													<div class="table__thumb" style="background-image:url(img/sample3.png)"></div>
+												</td>
+												<td>
+													Doggy Dog Accent Chair
+												</td>
+												<td style="text-align:center;">1</td>
+												<td style="text-align:right">IDR 2,295,000</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="minicart__action">
+									<div class="minicart__subtotal">
+										Subtotal IDR 15,695,000
+									</div>
+									<a href="#" class="btn btn--green btn--medium">Checkout</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<nav class="site-navigation">
+
+			<ul class="site-navigation__menu">
+				<li>
+					<a href="#">Furniture</a>
+					<div class="site-navigation__panel">
+						<div class="site-navigation__grid">
+							<ul class="site-navigation__submenu">
+								<li><a href="furniture/chairs">Chairs</a></li>
+								<li><a href="furniture/arm-chairs">Arm Chairs</a></li>
+								<li><a href="furniture/ottomans">Ottomans</a></li>
+								<li><a href="furniture/sofa-1-seater">Sofa 1 Seater</a></li>
+								<li><a href="furniture/sofa-2-seaters">Sofa 2 Seaters</a></li>
+								<li><a href="furniture/sofa-3-seaters">Sofa 3 Seaters</a></li>
+								<li><a href="furniture/sofa-4-seaters">Sofa 4 Seaters</a></li>
+								<li><a href="furniture/stools">Stools</a></li>
+								<li><a href="furniture/console-tables">Console Tables</a></li>
+								<li><a href="furniture/dining-tables">Dining Tables</a></li>
+							</ul>
+							<ul class="site-navigation__submenu">
+								<li><a href="furniture/coffee-tables">Coffee Tables</a></li>
+								<li><a href="furniture/tables">Tables</a></li>
+								<li><a href="furniture/sideboards">Sideboards</a></li>
+								<li><a href="furniture/storages">Storages</a></li>
+								<li><a href="furniture/tv-tables">TV Tables</a></li>
+								<li><a href="furniture/book-shelves">Book Shelves</a></li>
+								<li><a href="furniture/beddings">Beddings</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">Bedrooom</a>
+					<div class="site-navigation__panel">
+						<ul class="site-navigation__submenu">
+							<li><a href="products/category/bedroom/chairs-2">Chairs</a></li>
+							<li><a href="products/category/bedroom/arm-chairs-2">Arm Chairs</a></li>
+							<li><a href="products/category/bedroom/ottomans-2">Ottomans</a></li>
+							<li><a href="products/category/bedroom/sofa-1-seater-2">Sofa 1 Seater</a></li>
+							<li><a href="products/category/bedroom/sofa-2-seaters-2">Sofa 2 Seaters</a></li>
+							<li><a href="products/category/bedroom/console-tables-2">Console Tables</a></li>
+							<li><a href="products/category/bedroom/tables-2">Tables</a></li>
+							<li><a href="products/category/bedroom/tv-tables-2">TV Tables</a></li>
+							<li><a href="products/category/bedroom/book-shelves-2">Book Shelves</a></li>
+							<li><a href="products/category/bedroom/beddings-2">Beddings</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">Living Room</a>
+					<div class="site-navigation__panel">
+						<div class="site-navigation__grid">
+							<ul class="site-navigation__submenu">
+								<li><a href="products/category/living-room/chairs-3">Chairs</a></li>
+								<li><a href="products/category/living-room/arm-chairs-3">Arm Chairs</a></li>
+								<li><a href="products/category/living-room/ottomans-3">Ottomans</a></li>
+								<li><a href="products/category/living-room/sofa-1-seater-3">Sofa 1 Seater</a></li>
+								<li><a href="products/category/living-room/sofa-2-seaters-3">Sofa 2 Seaters</a></li>
+								<li><a href="products/category/living-room/sofa-3-seaters-2">Sofa 3 Seaters</a></li>
+								<li><a href="products/category/living-room/sofa-4-seaters-2">Sofa 4 Seaters</a></li>
+								<li><a href="products/category/living-room/stools-2">Stools</a></li>
+								<li><a href="products/category/living-room/console-tables-3">Console Tables</a></li>
+								<li><a href="products/category/living-room/coffee-tables-2">Coffee Tables</a></li>
+							</ul>
+							<ul class="site-navigation__submenu">
+								<li><a href="products/category/living-room/tables-3">Tables</a></li>
+								<li><a href="products/category/living-room/sideboards-2">Sideboards</a></li>
+								<li><a href="products/category/living-room/storages-2">Storages</a></li>
+								<li><a href="products/category/living-room/tv-tables-3">TV Tables</a></li>
+								<li><a href="products/category/living-room/book-shelves-3">Book Shelves</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">Dining Room</a>
+					<div class="site-navigation__panel">
+						<ul class="site-navigation__submenu">
+							<li><a href="dining-room/chairs-4">Chairs</a></li>
+							<li><a href="dining-room/arm-chairs-4">Arm Chairs</a></li>
+							<li><a href="dining-room/stools-3">Stools</a></li>
+							<li><a href="dining-room/dining-tables-2">Dining Tables</a></li>
+							<li><a href="dining-room/tables-4">Tables</a></li>
+							<li><a href="dining-room/sideboards-3">Sideboards</a></li>
+							<li><a href="dining-room/storages-3">Storages</a></li>
+							<li><a href="dining-room/tv-tables-4">TV Tables</a></li>
+						</ul>
+					</div>
+				</li>	
+				<li>
+					<a href="#">Lighting</a>
+					<div class="site-navigation__panel">
+						<ul class="site-navigation__submenu">
+							<li><a href="lighting/wall">Wall</a></li>
+							<li><a href="lighting/ceiling">Ceiling</a></li>
+							<li><a href="lighting/standing">Standing</a></li>
+							<li><a href="lighting/table">Table</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">Accesories</a>
+					<div class="site-navigation__panel">
+						<ul class="site-navigation__submenu">
+							<li><a href="accessories/cushions">Cushions</a></li>
+							<li><a href="accessories/accessories-2">Accessories</a></li>
+							<li><a href="accessories/bowls">Bowls</a></li>
+							<li><a href="accessories/hangers">Hangers</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">Designer</a>
+					<div class="site-navigation__panel">
+						<ul class="site-navigation__submenu">
+							<li><a href="lighting/wall">Explore designer</a></li>
+							<li><a href="lighting/ceiling">Register as designer</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+			<div class="site-navigation__search">
+				<input type="text" class="form-control form-control--small" placeholder="Search">
+				<button type="submit">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448.3 424.7L335 311.3c20.8-26 33.3-59.1 33.3-95.1 0-84.1-68.1-152.2-152-152.2-84 0-152 68.2-152 152.2s68.1 152.2 152 152.2c36.2 0 69.4-12.7 95.5-33.8L425 448l23.3-23.3zM120.1 312.6c-25.7-25.7-39.8-59.9-39.8-96.3s14.2-70.6 39.8-96.3 59.9-40 96.2-40c36.3 0 70.5 14.2 96.2 39.9s39.8 59.9 39.8 96.3-14.2 70.6-39.8 96.3c-25.7 25.7-59.9 39.9-96.2 39.9-36.3.1-70.5-14.1-96.2-39.8z"/></svg>
+				</button>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<div class="main" id="main" role="main">
+	<div class="container">
+
+
+		<div class="page-product">
+			<div class="page-product__header">
+				<ul class="breadcrumbs">
+					<li>
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" width="575.284" height="575.285" viewBox="0 0 575.284 575.285"><path d="M167.295 287.88c-.77.673-1.224 1.653-1.224 2.693V395.25c0 1.53.98 2.876 2.425 3.366l67.883 22.632c.367.122.747.184 1.126.184.734 0 1.47-.233 2.07-.674.93-.673 1.48-1.738 1.48-2.876v-117.37c0-1.762-1.285-3.255-3.036-3.513l-67.883-9.94c-1.016-.16-2.056.148-2.84.82zM132.387 281.59L84.54 274.61c-1.015-.16-2.056.16-2.827.82-.783.673-1.224 1.652-1.224 2.692v88.582c0 1.53.978 2.877 2.423 3.366l47.846 15.948c.367.123.746.184 1.113.184.734 0 1.47-.232 2.08-.673.92-.672 1.47-1.737 1.47-2.875V285.09c0-1.763-1.286-3.256-3.036-3.5zM573.174 203.67L424.678 4.842s-1.42-2.24-4.7-3.55C416.698-.03 413.503.9 413.503.9l-233.32 59.794V40.057c0-4.957-3.414-9.253-8.236-10.38l-19.5-4.503s-1.26-.343-3.035-.245c-1.774.097-2.913.574-2.913.574l-35.167 12.46c-4.247 1.505-7.087 5.52-7.087 10.024v32.18l-36.928 9.448c-2.975.77-5.472 2.778-6.867 5.52l-59.3 117.53c-1.653 3.268-1.518 7.148.367 10.282 1.885 3.133 5.25 5.08 8.91 5.166l28.104.587v208.56c0 3.977 2.204 7.612 5.73 9.436L287.92 573.49s2.118 1.175 4.896 1.21c2.778.025 4.92-1.21 4.92-1.21l236.1-122.964c3.512-1.836 5.715-5.46 5.727-9.437l.416-222.097 23.916 1.652s6.255.71 9.78-5.018c3.892-6.266-.502-11.958-.502-11.958zM282.204 546.51L59.83 430.795V229.14l177.468 3.734H237.332l44.884.808v312.83h-.01zm247.898-349.526c-2.95-.208-5.84.82-7.993 2.828-2.155 2.007-3.38 4.834-3.392 7.772l-.416 227.04-60.942 31.752V269.606c0-1.004-.417-1.946-1.15-2.62s-1.702-1.003-2.693-.918l-58.63 4.872c-1.836.16-3.256 1.7-3.256 3.537v226.11L303.48 546.5V223.23c0-5.815-4.65-10.54-10.453-10.65l-32.9-.6L415.62 28.307 542.23 197.82l-12.128-.834z"/></svg>
+						</a>
+					</li>
+					<li><a href="#">Furniture</a></li>
+					<li><a href="#">Chair</a></li>
+				</ul>
+				<!-- <h2 class="page-product__title">Wheely Wood Table</h2> -->
+
+				<div class="page-product__control">
+					<ul class="dropdown-menu">
+						<li>Most Popular</li>
+						<li>Relevance</li>
+						<li>Price &mdash; Low to High</li>
+						<li>Price &mdash; Hight to Low</li>
+						<li>Newest</li>
+					</ul>
+				</div>
+			</div>
+		
+				
+				
+			<div class="page-product__body">
+
+
+
+				<div class="single-product">
+
+					<div class="single-product__aside">
+						<div class="single-product__action">
+							<div class="single-product__header">
+								<h2 class="single-product__title">Wheely Wood Table</h2>
+								<!-- <div class="single-product__meta"><i>by</i> <a href="#">Livaza Designer</a></div> -->
+							</div>
+
+							<div class="single-product__price">
+								<span class="currency">IDR</span> 4,400,000<sup>.00</sup>
+							</div>
+
+
+
+							<div class="single-product__form">
+								<div class="form-group">
+									<div class="form-label">Availibility</div>      
+									<div class="form-input">Made to Order</div>
+								</div>
+								<div class="form-group">
+									<label class="form-label">Color</label>
+									<div class="form-input">
+										<select class="form-control form-control--small" value="1" style="width:auto;">
+											<option>Brown</option>
+											<option>Blue</option>
+											<option>Red</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-label">Quantity</label>
+									<div class="form-input">
+										<input type="number" class="form-control form-control--small" value="1" style="width:8rem;">
+									</div>
+								</div>
+
+								<div class="single-product__form__action">
+									<a href="#" class="btn btn--green">Add to Cart</a>
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+
+
+						
+					<div class="single-product__main">
+						
+						<div class="single-product__image">
+							
+
+							<div class="flexslider">
+								<ul class="slides">
+									<li>
+										<figure>
+											<img src="img/sample1.jpg" alt="" width="2000" style="height:389px;">
+										</figure>
+									</li>
+									<li>
+										<figure>
+											<img src="img/sample2.png" alt="" width="2000" style="height:389px;">
+										</figure>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="single-product__description">
+							<h3 class="single-product__description__title">Product Details</h3>
+
+							<div class="single-product__description__content">
+								<table class="table table--bordered">
+									<tbody>
+										<tr>
+											<td>General Dimensions</td>
+											<td>L = 122 cm; W = 42 cm; D = 63 cm</td>
+										</tr>
+										<tr>
+											<td>Material</td>
+											<td>Iron+Teak</td>
+										</tr>
+										<tr>
+											<td>Estimated production time</td>
+											<td>8&ndash;10 weeks</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h3 class="single-product__description__title">Product Description</h3>
+							<div class="single-product__description__content">
+								This beautiful crafted TV stand is a piece of industrial style, which combines practicality with a minimalistic edge. This is a true example of a modern look with a rustic charm; perfect for housing your TV 
+							</div>
+						</div>
+					</div>	
+				</div>
+
+
+				<div class="page-section">
+					<div class="page-section__header">
+						<h2 class="page-section__title">You Might Also Like These Products</h2>
+					</div>
+
+					<div class="page-section__body">
+						<div class="row">
+							<div class="col col--3">
+								<div class="product-box">
+									<figure class="product-box__image">
+										<img src="img/sample1.jpg" alt="">
+									</figure>
+									<div class="product-box__title">Wheely Wood Table</div>
+									<div class="product-box__price">IDR 4,400,000</div>
+								</div>
+							</div>
+							<div class="col col--3">
+								<div class="product-box">
+									<figure class="product-box__image">
+										<img src="img/sample2.png" alt="">
+									</figure>
+									<div class="product-box__title">Catchy Match Sofa</div>
+									<div class="product-box__price">IDR 9,000,000</div>
+								</div>
+							</div>
+							<div class="col col--3">
+								<div class="product-box">
+									<figure class="product-box__image">
+										<img src="img/sample3.png" alt="">
+									</figure>
+									<div class="product-box__title">Doggy Dog Accent Chair</div>
+									<div class="product-box__price">IDR 2,295,000</div>
+								</div>
+							</div>
+							<div class="col col--3">
+								<div class="product-box">
+									<figure class="product-box__image">
+										<img src="img/sample1.jpg" alt="">
+									</figure>
+									<div class="product-box__title">Wheely Wood Table</div>
+									<div class="product-box__price">IDR 4,400,000</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+
+
+
+				
+			</div>
+
+
+		</div>
+
+
+
+	</div>
+</div>
+
+<footer class="site-footer" id="site-footer">
+	<div class="container">
+
+		
+		<div class="site-footer__container">
+
+			<div class="site-footer__newsletter">
+				<div class="form-group">
+					<label>Be the first! Sign up now for <br>the up-to-the minute offers sales <span class="amp">&amp;</span> news</label>
+					<div class="form-input">
+						<input type="email" class="form-control form-control--small" placeholder="Your email" required>
+						<button class="btn btn--red btn--medium">Submit</button>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col col--4">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col--3">
+					<div class="site-footer__logo">	
+						<img src="img/footer-logo.jpg" alt="">
+					</div>
+
+					<ul class="site-footer__contact">
+						<li><a href="mailto:support@livaza.com"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 128v256h384V128H64zm192 139.9L93.2 144h325.6L256 267.9zM80 368V154.1l115.1 87.6L127 319l2 2 78.9-69.6L256 288l48.1-36.6L383 321l2-2-68.1-77.4L432 154.1V368H80z"/></svg> support@livaza.com</a></li>
+
+						<li><a href="tel:(021) 95 8500 40"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M415.9 335.5c-14.6-15-56.1-43.1-83.3-43.1-6.3 0-11.8 1.4-16.3 4.3-13.3 8.5-23.9 15.1-29 15.1-2.8 0-5.8-2.5-12.4-8.2l-1.1-1c-18.3-15.9-22.2-20-29.3-27.4l-1.8-1.9c-1.3-1.3-2.4-2.5-3.5-3.6-6.2-6.4-10.7-11-26.6-29l-.7-.8c-7.6-8.6-12.6-14.2-12.9-18.3-.3-4 3.2-10.5 12.1-22.6 10.8-14.6 11.2-32.6 1.3-53.5-7.9-16.5-20.8-32.3-32.2-46.2l-1-1.2c-9.8-12-21.2-18-33.9-18-14.1 0-25.8 7.6-32 11.6-.5.3-1 .7-1.5 1-13.9 8.8-24 20.9-27.8 33.2-5.7 18.5-9.5 42.5 17.8 92.4 23.6 43.2 45 72.2 79 107.1 32 32.8 46.2 43.4 78 66.4 35.4 25.6 69.4 40.3 93.2 40.3 22.1 0 39.5 0 64.3-29.9 26-31.4 15.2-50.6-.4-66.7zm-11.5 55.9c-20 24.2-31.5 24.2-52.3 24.2-20.3 0-51.8-14-84.2-37.3-31-22.4-44.8-32.7-75.9-64.6-32.9-33.7-53.6-61.8-76.4-103.5-24.1-44.1-21.4-63.4-16.5-79.3 2.6-8.5 10.4-17.6 21-24.2.5-.3 1-.7 1.6-1 5.3-3.4 14.1-9.1 23.7-9.1 8 0 15.1 4 21.9 12.3l1 1.2c25.5 31.2 45.4 58.8 30.4 79.2-10.6 14.3-16.2 24-15.3 34 .8 9.7 7.3 17 17.1 28l.7.8c16.1 18.2 20.7 23 27.1 29.5 1.1 1.1 2.2 2.3 3.5 3.6l1.8 1.9c7.4 7.7 11.5 11.9 30.3 28.4l1.1 1c8 7 13.9 12.1 22.5 12.1 8.9 0 18.7-5.6 37.3-17.5 1.9-1.2 4.6-1.9 8-1.9 21.7 0 59.1 24.8 72.2 38.3 12 12.2 18 21.4-.6 43.9z"/></svg> (021) 95 8500 40</a></li>
+					</ul>
+				</div>
+				<div class="col col--2">
+					<div class="site-footer__co">
+						<h4>The Company</h4>
+						<ul>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Affiliates</a></li>
+							<li><a href="#">Investors</a></li>
+							<li><a href="#">Press Release</a></li>
+							<li><a href="#">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col col--2">
+					<div class="site-footer__co">
+						<h4>Category</h4>
+						<ul>
+							<li><a href="#">Furniture</a></li>
+							<li><a href="#">Bedroom</a></li>
+							<li><a href="#">Living Room</a></li>
+							<li><a href="#">Dining Room</a></li>
+							<li><a href="#">Lighting</a></li>
+							<li><a href="#">Accessories</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col col--2">
+					<div class="site-footer__co">
+						<h4>Customers</h4>
+						<ul>
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Why Shop With Us</a></li>
+							<li><a href="#">Invite <span class="amp">&amp;</span> Rewards</a></li>
+							<li><a href="#">Gift e-card</a></li>
+							<li><a href="#">Loyalty points</a></li>
+							<li><a href="#">Submit your own design</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col col--3">
+					<div class="site-footer__co">
+
+						<h4>Find Us</h4>
+
+					<ul class="site-footer__social">
+
+						<li>
+							<a href="#" data-toggle="tooltip" data-title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64z"/></svg></a>
+						</li>
+						<li><a href="#" data-toggle="tooltip" data-title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6-18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6.8 15 2.5 22.1-80.5-4-151.9-42.6-199.6-101.3-8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7-16-.4-31-4.8-44-12.1v1.2c0 47 33.4 86.1 77.7 95-8.1 2.2-16.7 3.4-25.5 3.4-6.2 0-12.3-.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3-33.1 26-74.9 41.5-120.3 41.5-7.8 0-15.5-.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-.1-8.4-.3-12.5C462.6 146 479 129 492 109.5z"/></svg></a></li>
+
+						<li>
+							<a href="#" data-toggle="tooltip" data-title="Google+"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M242.1 275.6l-18.2-13.7-.1-.1c-5.8-4.6-10-8.3-10-14.7 0-7 5-11.8 10.9-17.4l.5-.4c20-15.2 44.7-34.3 44.7-74.6 0-26.9-11.9-44.7-23.3-57.7h13L320 64H186.5c-25.3 0-62.7 3.2-94.6 28.6l-.1.3C70 110.9 57 137.4 57 163.5c0 21.2 8.7 42.2 23.9 57.4 21.4 21.6 48.3 26.1 67.1 26.1 1.5 0 3 0 4.5-.1-.8 3-1.2 6.3-1.2 10.3 0 10.9 3.6 19.3 8.1 26.2-24 1.9-58.1 6.5-84.9 22.3-39.4 22.7-42.5 56-42.5 65.6 0 38.2 35.7 76.8 115.5 76.8 91.6 0 139.5-49.8 139.5-99 0-37.1-22.8-55.6-44.9-73.5zM116.7 139.9c0-13.4 3-23.5 9.3-30.9 6.5-7.9 18.2-13.1 29-13.1 19.9 0 32.9 15 40.4 27.6 9.2 15.5 14.9 36.1 14.9 53.6 0 4.9 0 20-10.2 29.8-7 6.7-18.7 11.4-28.6 11.4-20.5 0-33.5-14.7-40.7-27-10.4-17.8-14.1-38.2-14.1-51.4zM237.8 368c0 27.4-25.2 44.5-65.8 44.5-48.1 0-80.3-20.6-80.3-51.3 0-26.1 21.5-36.8 37.8-42.5 18.9-6.1 44.3-7.3 50.1-7.3 3.9 0 6.1 0 8.7.2 36.6 25.2 49.5 36.1 49.5 56.4zM402 142V64h-34v78h-80v34h80v81h34v-81h78v-34z"/></svg></a>
+						</li>
+
+						<li><a href="#" data-toggle="tooltip" data-title="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 32C132.3 32 32 132.3 32 256c0 91.7 55.2 170.5 134.1 205.2-.6-15.6-.1-34.4 3.9-51.4 4.3-18.2 28.8-122.1 28.8-122.1s-7.2-14.3-7.2-35.4c0-33.2 19.2-58 43.2-58 20.4 0 30.2 15.3 30.2 33.6 0 20.5-13.1 51.1-19.8 79.5-5.6 23.8 11.9 43.1 35.4 43.1 42.4 0 71-54.5 71-119.1 0-49.1-33.1-85.8-93.2-85.8-67.9 0-110.3 50.7-110.3 107.3 0 19.5 5.8 33.3 14.8 43.9 4.1 4.9 4.7 6.9 3.2 12.5-1.1 4.1-3.5 14-4.6 18-1.5 5.7-6.1 7.7-11.2 5.6-31.3-12.8-45.9-47-45.9-85.6 0-63.6 53.7-139.9 160.1-139.9 85.5 0 141.8 61.9 141.8 128.3 0 87.9-48.9 153.5-120.9 153.5-24.2 0-46.9-13.1-54.7-27.9 0 0-13 51.6-15.8 61.6-4.7 17.3-14 34.5-22.5 48 20.1 5.9 41.4 9.2 63.5 9.2 123.7 0 224-100.3 224-224C480 132.3 379.7 32 256 32z"/></svg>
+						</a></li>
+
+						<li><a href="#" data-toggle="tooltip" data-title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><circle cx="256" cy="255.833" r="80"/><path d="M177.805 176.887c21.154-21.154 49.28-32.93 79.195-32.93s58.04 11.838 79.195 32.992c13.422 13.42 23.01 29.55 28.232 47.55H448.5v-113c0-26.51-20.49-47-47-47h-288c-26.51 0-49 20.49-49 47v113h85.072c5.222-18 14.81-34.19 28.233-47.613zM416.5 147.7c0 7.07-5.73 12.8-12.8 12.8h-38.4c-7.07 0-12.8-5.73-12.8-12.8v-38.4c0-7.07 5.73-12.8 12.8-12.8h38.4c7.07 0 12.8 5.73 12.8 12.8v38.4zM336.195 335.28c-21.154 21.153-49.28 32.678-79.195 32.678s-58.04-11.462-79.195-32.616c-21.115-21.115-32.76-49.842-32.803-78.842H64.5v143c0 26.51 22.49 49 49 49h288c26.51 0 47-22.49 47-49v-143h-79.502c-.043 29-11.687 57.664-32.803 78.78z"/></svg></a></li>
+
+
+
+					</ul>
+
+						<h4>We Accept</h4>
+
+
+						<div class="site-footer__payment">
+							<img src="img/p1.png" alt="">
+							<img src="img/p2.png" alt="">
+							<img src="img/p3.png" alt="">
+							<img src="img/p4.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="site-footer__fin">
+				<small>©2015 Livaza. All Rights Reserved</small>
+
+			</div>
+		</div>
+	</div>
+</footer>
+ 
+</body>
+</html>

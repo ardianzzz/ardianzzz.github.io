@@ -1,0 +1,60 @@
+
+.mCSB_container {
+	width: auto;
+	overflow: hidden
+}
+.mCSB_container.mCS_no_scrollbar {
+	margin-right: 0
+}
+.mCustomScrollBox>.mCSB_scrollTools {
+	width: 0.1rem;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+.mCSB_scrollTools .mCSB_draggerContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: auto
+}
+.mCSB_scrollTools a+.mCSB_draggerContainer {
+	margin: 2rem 0
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+	width: 0.1rem;
+	height: 100%;
+	margin: 0 auto
+}
+.mCSB_scrollTools .mCSB_dragger {
+	cursor: pointer;
+	width: 100%;
+	height: 30px
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	width: 0.1rem;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background: #4a4a4a;
+}
+.mCustomScrollBox {
+	-ms-touch-action: none
+}
+.sidebar-wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background: #cdcdcd
+}
+
+.sidebar {
+	.mCSB_scrollTools .mCSB_draggerContainer {
+		top:1.6rem;
+		bottom: 1.6rem;
+	}
+	/*.mCustomScrollBox {
+		margin-right: -.1rem !important;
+		max-width: 22.1rem !important;
+		padding-right: .1rem;
+	}*/
+}

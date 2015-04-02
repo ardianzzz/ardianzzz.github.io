@@ -1,0 +1,190 @@
+
+.btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance:none;
+    -webkit-font-smoothing:antialiased;
+    display: inline-block;
+    padding: .8rem 2.4rem;
+    line-height: 2.2rem;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    position:relative;
+    border:solid .1rem rgba(0,0,0,0);
+    /*border-radius: .2rem;*/
+    text-decoration:none !important;
+    vertical-align:middle;
+    //box-shadow: 0 -.1rem .1rem rgba(0,0,0,0.05) inset;
+    border-radius:.2rem;
+
+    font-family:"Helvetica Neue", Helvetica, Arial, Sans-serif;
+
+    &:hover,&:focus {
+      position:relative;
+      outline: 0;
+    }
+
+    &:active {
+        box-shadow: inset 0 .2rem .3rem rgba(0,0,0,.1);
+    }
+
+
+    &--default {
+        color: #4a4a4a;
+        border-color:darken(#d7d7d7,2%);
+        border-top-color:lighten(#d7d7d7, 4%);
+        border-bottom-color:darken(#d7d7d7, 4%);
+        text-shadow:.1rem .1rem rgba(255,255,255,.5);
+        background-color: #f7f7f7;/*
+        @include filter-gradient(lighten(#d7d7d7,12%), #d7d7d7, vertical);
+        @include background-image(linear-gradient(top,  lighten(#d7d7d7,12%) 0%,#d7d7d7 100%));*/
+
+        &:hover,&:focus {
+            background-color: lighten(#f7f7f7, 6%);/*
+            @include filter-gradient(lighten(#d7d7d7,16%), lighten(#d7d7d7, 6%), vertical);
+            @include background-image(linear-gradient(top,  lighten(#d7d7d7,16%) 0%, lighten(#d7d7d7, 6%) 100%));*/
+        }
+    }
+
+
+    &--blue {
+        color:#fff;
+        text-shadow:-.1rem -.1rem rgba(0,0,0,0.1);
+        border-color:#007AFF;
+        border-top-color:lighten(#007AFF, 4%);
+        border-bottom-color:darken(#007AFF, 4%);
+        background-color: #007AFF;
+        @include filter-gradient(lighten(#007AFF,12%), #007aff, vertical);
+        @include background-image(linear-gradient(top,  lighten(#007AFF,12%) 0%,#007aff 100%));
+
+        &:hover,&:focus {
+            background-color: lighten(#007AFF, 6%);
+            @include filter-gradient(lighten(#007AFF,16%), lighten(#007aff, 6%), vertical);
+            @include background-image(linear-gradient(top,  lighten(#007AFF,16%) 0%, lighten(#007aff, 6%) 100%));
+        }
+
+    }
+
+    &--red {
+        border-color:#FF3B30;
+        border-top-color:lighten(#FF3B30, 4%);
+        border-bottom-color:darken(#FF3B30, 4%);
+        text-shadow:-.1rem -.1rem rgba(0,0,0,0.1);
+        background-color: #FF3B30;
+        color:#fff;
+
+        &:hover,&:focus {
+            background-color: lighten(#FF3B30, 6%);
+        }
+
+
+    }
+
+    &--green {
+        border-color:#4CD964;
+        border-top-color:lighten(#4CD964, 4%);
+        border-bottom-color:darken(#4CD964, 4%);
+        /*text-shadow:-.1rem -.1rem rgba(0,0,0,0.1);*/
+        background-color: #4CD964;
+        color: #fff;
+        /*@include filter-gradient(lighten(#4CD964,12%), #4CD964, vertical);
+        @include background-image(linear-gradient(top, lighten(#4CD964,12%) 0%,#4CD964 100%));
+        color:#fff;*/
+
+        &:hover,&:focus {
+            background-color: lighten(#4CD964, 6%);
+           /* @include filter-gradient(lighten(#4CD964,16%), lighten(#4CD964, 6%), vertical);
+            @include background-image(linear-gradient(top, lighten(#4CD964,16%) 0%, lighten(#4CD964, 6%) 100%));*/
+        }
+    }
+
+
+     &--dark {
+        border-color:#4A4A4A;
+        border-top-color:lighten(#4A4A4A, 4%);
+        border-bottom-color:darken(#4A4A4A, 4%);
+        text-shadow:-.1rem -.1rem rgba(0,0,0,0.1);
+        background-color: #4A4A4A;
+        @include filter-gradient(lighten(#4A4A4A,12%), #4A4A4A, vertical);
+        @include background-image(linear-gradient(top,  lighten(#4A4A4A,12%) 0%,#4A4A4A 100%));
+        color:#fff;
+
+        &:hover,&:focus {
+            background-color: lighten(#4A4A4A, 6%);
+            @include filter-gradient(lighten(#4A4A4A,16%), lighten(#4A4A4A, 6%), vertical);
+            @include background-image(linear-gradient(top, lighten(#4A4A4A,16%) 0%, lighten(#4A4A4A, 6%) 100%));
+        }
+    }
+
+
+    &--medium {
+        padding: .3rem 1.2rem;
+        line-height: 2.4rem;
+        font-size: 1.4rem;
+        font-weight:500;
+    }
+
+    &--small {
+        padding: .3rem 1.2rem;
+        line-height: 1.6rem;
+        font-size: 1.2rem;
+        font-weight:500;
+    }
+
+}
+
+
+
+
+.btn-group {
+    display: inline-block;
+    vertical-align: middle;
+    .btn {
+        border-radius: 0;
+        margin:0;
+        float: left;
+        margin-left: -.1rem !important;
+      
+    
+        &:first-of-type {
+            border-radius:.2rem 0 0 .2rem; 
+        }
+        &:last-of-type {
+            border-radius:0 .2rem .2rem 0;
+        }
+
+        &:hover,&:focus {
+          position:relative;
+          z-index:1;
+        }
+
+    }
+
+    .btn--small {
+    
+        &:first-of-type {
+            border-radius:.2rem 0 0 .2rem; 
+        }
+        &:last-of-type {
+            border-radius:0 .2rem .2rem 0;
+        }
+
+        
+    }
+
+    &+.btn-group {
+      margin-left: .2rem;
+    }
+
+    &+.btn {
+      margin-left:.2rem;
+    }
+}
+

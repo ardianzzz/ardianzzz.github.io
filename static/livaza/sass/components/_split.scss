@@ -1,0 +1,144 @@
+.split-pane-container {
+  position: absolute;
+  top:9.6rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background:#f7f7f7;
+  overflow: hidden;
+}
+
+
+.split-pane {
+  position: absolute;
+  right:.8rem;
+  left:.8rem;
+  top:.8rem;
+  bottom:.8rem;
+  border:solid .1rem #d7d7d7;
+  background:#fff;
+
+
+  .map {
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background:#2b2b2b;
+  }
+
+
+
+
+
+  &.fixed-top > .split-pane-component, &.fixed-bottom > .split-pane-component, &.horizontal-percent > .split-pane-component {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+    top: auto;
+    bottom: 0;
+  }
+  &.fixed-top > .split-pane-component:first-child, &.fixed-bottom > .split-pane-component:first-child, &.horizontal-percent > .split-pane-component:first-child {
+    top: 0;
+    bottom: auto;
+  }
+  &.fixed-top > .split-pane-divider, &.fixed-bottom > .split-pane-divider, &.horizontal-percent > .split-pane-divider {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    cursor: ns-resize;
+    cursor: n-resize\9;
+    z-index: 2;
+  }
+  &.fixed-left > .split-pane-component, &.fixed-right > .split-pane-component, &.vertical-percent > .split-pane-component {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    left: auto;
+    right: 0;
+    z-index: 1;
+    
+
+  }
+  &.fixed-left > .split-pane-component:first-child, &.fixed-right > .split-pane-component:first-child, &.vertical-percent > .split-pane-component:first-child {
+    left: 0;
+    right: auto;
+  }
+  &.fixed-left > .split-pane-divider, &.fixed-right > .split-pane-divider, &.vertical-percent > .split-pane-divider {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    cursor: ew-resize;
+    cursor: w-resize\9;
+    z-index: 2;
+  }
+}
+
+.split-pane-resize-shim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+}
+
+.split-pane {
+  &.fixed-left > .split-pane-resize-shim, &.fixed-right > .split-pane-resize-shim, &.vertical-percent > .split-pane-resize-shim {
+    cursor: ew-resize;
+    cursor: w-resize\9;
+  }
+  &.fixed-top > .split-pane-resize-shim, &.fixed-bottom > .split-pane-resize-shim, &.horizontal-percent > .split-pane-resize-shim {
+    cursor: ns-resize;
+    cursor: n-resize\9;
+  }
+}
+
+.vertical-divider {
+  width: 10px;
+  background-color: #f7f7f7;
+  background-image:url(http://jsfiddle.net/img/handle-v.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-right:solid 1px #d7d7d7;
+  border-left:solid 1px #d7d7d7;
+
+  &:before {
+    content:"";
+    position: absolute;
+    top:-1px;
+    height: 1px;
+    background:#f7f7f7;
+    right: 0;
+    left: 0;
+  }
+
+  &:after {
+    content:"";
+    position: absolute;
+    bottom:-1px;
+    height: 1px;
+    background:#f7f7f7;
+    right: 0;
+    left: 0;
+  }
+}
+
+
+.horizontal-divider {
+  height: 8px;
+  background:#ecf0f1 center center no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAECAYAAABREWWJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAAYdEVYdENyZWF0aW9uIFRpbWUAMTQuMDEuMjAxMNh/L3IAAAAgSURBVAiZYzx9+vR/BjIB4////8nWzHLmzBly9VJmMwALIg3EdKSVwwAAAABJRU5ErkJggg==);
+  border-top:solid 1px #d7d77d;
+  border-bottom:solid 1px #d7d7d7;
+  box-shadow:0 1px rgba(255,255,255,0.875) inset;
+  
+  &:hover {
+    border-color:#aaa;
+  }
+}
