@@ -1647,6 +1647,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
         var snapper = new Snap({
-      element: document.getElementById('snap')
+      element: document.getElementById('snap'),
+      slideIntent: 20
     });
 });
