@@ -412,309 +412,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
-;if("document" in self&&!("classList" in document.createElement("_"))){(function(j){"use strict";if(!("Element" in j)){return}var a="classList",f="prototype",m=j.Element[f],b=Object,k=String[f].trim||function(){return this.replace(/^\s+|\s+$/g,"")},c=Array[f].indexOf||function(q){var p=0,o=this.length;for(;p<o;p++){if(p in this&&this[p]===q){return p}}return -1},n=function(o,p){this.name=o;this.code=DOMException[o];this.message=p},g=function(p,o){if(o===""){throw new n("SYNTAX_ERR","An invalid or illegal string was specified")}if(/\s/.test(o)){throw new n("INVALID_CHARACTER_ERR","String contains an invalid character")}return c.call(p,o)},d=function(s){var r=k.call(s.getAttribute("class")||""),q=r?r.split(/\s+/):[],p=0,o=q.length;for(;p<o;p++){this.push(q[p])}this._updateClassName=function(){s.setAttribute("class",this.toString())}},e=d[f]=[],i=function(){return new d(this)};n[f]=Error[f];e.item=function(o){return this[o]||null};e.contains=function(o){o+="";return g(this,o)!==-1};e.add=function(){var s=arguments,r=0,p=s.length,q,o=false;do{q=s[r]+"";if(g(this,q)===-1){this.push(q);o=true}}while(++r<p);if(o){this._updateClassName()}};e.remove=function(){var t=arguments,s=0,p=t.length,r,o=false;do{r=t[s]+"";var q=g(this,r);if(q!==-1){this.splice(q,1);o=true}}while(++s<p);if(o){this._updateClassName()}};e.toggle=function(p,q){p+="";var o=this.contains(p),r=o?q!==true&&"remove":q!==false&&"add";if(r){this[r](p)}return !o};e.toString=function(){return this.join(" ")};if(b.defineProperty){var l={get:i,enumerable:true,configurable:true};try{b.defineProperty(m,a,l)}catch(h){if(h.number===-2146823252){l.enumerable=false;b.defineProperty(m,a,l)}}}else{if(b[f].__defineGetter__){m.__defineGetter__(a,i)}}}(self))};
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Modals v6.0.1
- * Simple modal dialogue pop-up windows, by Chris Ferdinandi.
- * http://github.com/cferdinandi/modals
- * 
- * Free to use under the MIT License.
- * http://gomakethings.com/mit/
- */
-
-(function (root, factory) {
-    if ( typeof define === 'function' && define.amd ) {
-        define('modals', factory(root));
-    } else if ( typeof exports === 'object' ) {
-        module.exports = factory(root);
-    } else {
-        root.modals = factory(root);
-    }
-})(window || this, function (root) {
-
-    'use strict';
-
-    //
-    // Variables
-    //
-
-    var publicApi = {}; // Object for public APIs
-    var supports = !!document.querySelector && !!root.addEventListener; // Feature test
-    var state = 'closed';
-    var settings;
-
-    // Default settings
-    var defaults = {
-        modalActiveClass: 'active',
-        modalBGClass: 'modal-bg',
-        backspaceClose: true,
-        callbackBeforeOpen: function () {},
-        callbackAfterOpen: function () {},
-        callbackBeforeClose: function () {},
-        callbackAfterClose: function () {}
-    };
-
-
-    //
-    // Methods
-    //
-
-    /**
-     * A simple forEach() implementation for Arrays, Objects and NodeLists
-     * @private
-     * @param {Array|Object|NodeList} collection Collection of items to iterate
-     * @param {Function} callback Callback function for each iteration
-     * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
-     */
-    var forEach = function (collection, callback, scope) {
-        if (Object.prototype.toString.call(collection) === '[object Object]') {
-            for (var prop in collection) {
-                if (Object.prototype.hasOwnProperty.call(collection, prop)) {
-                    callback.call(scope, collection[prop], prop, collection);
-                }
-            }
-        } else {
-            for (var i = 0, len = collection.length; i < len; i++) {
-                callback.call(scope, collection[i], i, collection);
-            }
-        }
-    };
-
-    /**
-     * Merge defaults with user options
-     * @private
-     * @param {Object} defaults Default settings
-     * @param {Object} options User options
-     * @returns {Object} Merged values of defaults and options
-     */
-    var extend = function ( defaults, options ) {
-        var extended = {};
-        forEach(defaults, function (value, prop) {
-            extended[prop] = defaults[prop];
-        });
-        forEach(options, function (value, prop) {
-            extended[prop] = options[prop];
-        });
-        return extended;
-    };
-
-    /**
-     * Get the closest element up the DOM with the matching selector
-     * @param  {Element} elem The starting element
-     * @param  {String} selector The CSS selector to check for
-     * @return {Boolean|Element} Returns false is no matching element is found
-     */
-    var getClosest = function (elem, selector) {
-
-        var firstChar = selector.charAt(0);
-
-        // Get closest match
-        for ( ; elem && elem !== document; elem = elem.parentNode ) {
-            if ( firstChar === '.' ) {
-                if ( elem.classList.contains( selector.substr(1) ) ) {
-                    return elem;
-                }
-            } else if ( firstChar === '#' ) {
-                if ( elem.id === selector.substr(1) ) {
-                    return elem;
-                }
-            } else if ( firstChar === '[' ) {
-                if ( elem.hasAttribute( selector.substr(1, selector.length - 2) ) ) {
-                    return elem;
-                }
-            }
-        }
-
-        return false;
-
-    };
-
-    /**
-     * Stop YouTube, Vimeo, and HTML5 videos from playing when leaving the slide
-     * @private
-     * @param  {Element} content The content container the video is in
-     * @param  {String} activeClass The class asigned to expanded content areas
-     */
-    var stopVideos = function ( content, activeClass ) {
-        if ( !content.classList.contains( activeClass ) ) {
-            var iframe = content.querySelector( 'iframe');
-            var video = content.querySelector( 'video' );
-            if ( iframe ) {
-                var iframeSrc = iframe.src;
-                iframe.src = iframeSrc;
-            }
-            if ( video ) {
-                video.pause();
-            }
-        }
-    };
-
-    /**
-     * Open the target modal window
-     * @public
-     * @param  {Element} toggle The element that toggled the open modal event
-     * @param  {String} modalID ID of the modal to open
-     * @param  {Object} options
-     * @param  {Event} event
-     */
-    publicApi.openModal = function (toggle, modalID, options) {
-
-        // Define the modal
-        var settings = extend( settings || defaults, options || {} );  // Merge user options with defaults
-        var modal = document.querySelector(modalID);
-
-        // Define the modal background
-        var modalBg = document.createElement('div');
-        modalBg.setAttribute('data-modal-bg', null);
-        modalBg.classList.add( settings.modalBGClass );
-
-        settings.callbackBeforeOpen( toggle, modalID ); // Run callbacks before opening a modal
-
-        // Activate the modal
-        modal.classList.add( settings.modalActiveClass );
-        document.body.appendChild(modalBg);
-        state = 'open';
-
-        settings.callbackAfterOpen( toggle, modalID ); // Run callbacks after opening a modal
-
-    };
-
-    /**
-     * Close all modal windows
-     * @public
-     * @param  {Object} options
-     * @param  {Event} event
-     */
-    publicApi.closeModals = function (toggle, options) {
-
-        // Selectors and variables
-        var settings = extend( defaults, options || {} ); // Merge user options with defaults
-        var openModals = document.querySelectorAll('[data-modal-window].' + settings.modalActiveClass);
-        var modalsBg = document.querySelectorAll('[data-modal-bg]'); // Get modal background element
-
-        if ( openModals.length > 0 || modalsBg.length > 0 ) {
-
-            settings.callbackBeforeClose(); // Run callbacks before closing a modal
-
-            // Close all modals
-            forEach(openModals, function (modal) {
-                if ( modal.classList.contains( settings.modalActiveClass ) ) {
-                    stopVideos(modal); // If active, stop video from playing
-                    modal.classList.remove( settings.modalActiveClass );
-                }
-            });
-
-            // Remove all modal backgrounds
-            forEach(modalsBg, function (bg) {
-                document.body.removeChild(bg);
-            });
-
-            // Set state to closed
-            state = 'closed';
-
-            settings.callbackAfterClose(); // Run callbacks after closing a modal
-
-        }
-
-    };
-
-    /**
-     * Handle toggle click events
-     * @private
-     */
-    var eventHandler = function (event) {
-        var toggle = event.target;
-        var open = getClosest(toggle, '[data-modal]');
-        var close = getClosest(toggle, '[data-modal-close]');
-        var modal = getClosest(toggle, '[data-modal-window]');
-        var key = event.keyCode;
-
-        if ( key && state === 'open' ) {
-            if ( key === 27 || ( settings.backspaceClose && ( key === 8 || key === 46 ) ) ) {
-                publicApi.closeModals(null, settings);
-            }
-        } else if ( toggle ) {
-            if ( modal && !close ) {
-                return;
-            } else if ( open ) {
-                event.preventDefault();
-                publicApi.openModal( open, open.getAttribute('data-modal'), settings );
-            } else if ( state === 'open' ) {
-                event.preventDefault();
-                publicApi.closeModals(toggle, settings);
-            }
-        }
-    };
-
-    /**
-     * Destroy the current initialization.
-     * @public
-     */
-    publicApi.destroy = function () {
-        if ( !settings ) return;
-        document.removeEventListener('click', eventHandler, false);
-        document.removeEventListener('touchstart', eventHandler, false);
-        document.removeEventListener('keydown', eventHandler, false);
-        settings = null;
-    };
-
-    /**
-     * Initialize Modals
-     * @public
-     * @param {Object} options User settings
-     */
-    publicApi.init = function ( options ) {
-
-        // feature test
-        if ( !supports ) return;
-
-        // Destroy any existing initializations
-        publicApi.destroy();
-
-        // Merge user options with defaults
-        settings = extend( defaults, options || {} );
-
-        // Listen for events
-        document.addEventListener('click', eventHandler, false);
-        //document.addEventListener('touchstart', eventHandler, false);
-        document.addEventListener('keydown', eventHandler, false);
-
-    };
-
-
-    //
-    // Public APIs
-    //
-
-    return publicApi;
-
-});
-
-
 /*
  * Snap.js
  *
@@ -729,25 +426,48 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+/**
+ * Get closest DOM element up the tree that contains a class, ID, or data attribute
+ * @param  {Node} elem The base element
+ * @param  {String} selector The class, id, data attribute, or tag to look for
+ * @return {Node} Null if no match
+ */
+var getClosest = function (elem, selector) {
 
+    var firstChar = selector.charAt(0);
 
+    // Get closest match
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
 
+        // If selector is a class
+        if ( firstChar === '.' ) {
+            if ( elem.classList.contains( selector.substr(1) ) ) {
+                return elem;
+            }
+        }
 
-    [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
-        var cxc = el.parentNode;
-        el.addEventListener('click', function() {
-        el.parentNode.classList.add('fade');
-        })
-    });
+        // If selector is an ID
+        if ( firstChar === '#' ) {
+            if ( elem.id === selector.substr(1) ) {
+                return elem;
+            }
+        } 
 
-    [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
-        var cxcy = el.parentNode;
-        el.addEventListener('click', function() {
-            cxcy.parentNode.classList.toggle('open');
-        })
-    });
+        // If selector is a data attribute
+        if ( firstChar === '[' ) {
+            if ( elem.hasAttribute( selector.substr(1, selector.length - 2) ) ) {
+                return elem;
+            }
+        }
 
-   
+        // If selector is a tag
+        if ( elem.tagName.toLowerCase() === selector ) {
+            return elem;
+        }
 
-});
+    }
+
+    return false;
+
+};
+
