@@ -131,29 +131,32 @@
 
 
 		<div class="product__controls">
-			<!-- <div class="form-group form-group--flex">
-				<label>Warna</label>
-				<div class="form-group__input">
-					<select class="form-control" style="width:10rem;">
-						<option>Pilih</option>
-						<option>Black</option>
-						<option>Red</option>
-						<option>Tosca</option>
-					</select>
+			<button  data-toggle="buy" class="btn btn--red btn--large btn--block">
+				<span class="buy">Beli</span>
+				<span class="cancel">Batal</span>
+			</button>
+		</div>
+
+		<div class="product__color">
+			<div class="select-color">
+				<div class="color">
+					<a href="#">Red</a>
 				</div>
-			</div>
-
-			<div class="form-group form-group--flex">
-				<label>Jumlah</label>
-				<div class="form-group__input">
-					<input type="number" class="form-control form-control--small" value="1" style="width:10rem;">
+				<div class="color">
+					<a href="#">Green</a>
 				</div>
-			</div> -->
-
-			
-
-			<div class="form-action">
-				<button class="btn btn--red btn--large btn--block">Beli</button>
+				<div class="color">
+					<a href="#">Blue</a>
+				</div>
+				<div class="color">
+					<a href="#">Midori</a>
+				</div>
+				<div class="color">
+					<a href="#">Alizarin</a>
+				</div>
+				<div class="color">
+					<a href="#">Turquoise</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -207,20 +210,25 @@
 		</div>	
 
 		<div class="product__color">
-			<div class="color">
-				<a href="#">Red</a>
-			</div>
-			<div class="color">
-				<a href="#">Green</a>
-			</div>
-			<div class="color">
-				<a href="#">Blue</a>
-			</div>
-			<div class="color">
-				<a href="#">Midori</a>
-			</div>
-			<div class="color">
-				<a href="#">Alizarin</a>
+			<div class="select-color">
+				<div class="color">
+					<a href="#">Red</a>
+				</div>
+				<div class="color">
+					<a href="#">Green</a>
+				</div>
+				<div class="color">
+					<a href="#">Blue</a>
+				</div>
+				<div class="color">
+					<a href="#">Midori</a>
+				</div>
+				<div class="color">
+					<a href="#">Alizarin</a>
+				</div>
+				<div class="color">
+					<a href="#">Turquoise</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -267,20 +275,25 @@
 		</div>	
 
 		<div class="product__color">
-			<div class="color">
-				<a href="#">Red</a>
-			</div>
-			<div class="color">
-				<a href="#">Green</a>
-			</div>
-			<div class="color">
-				<a href="#">Blue</a>
-			</div>
-			<div class="color">
-				<a href="#">Midori</a>
-			</div>
-			<div class="color">
-				<a href="#">Alizarin</a>
+			<div class="select-color">
+				<div class="color">
+					<a href="#">Red</a>
+				</div>
+				<div class="color">
+					<a href="#">Green</a>
+				</div>
+				<div class="color">
+					<a href="#">Blue</a>
+				</div>
+				<div class="color">
+					<a href="#">Midori</a>
+				</div>
+				<div class="color">
+					<a href="#">Alizarin</a>
+				</div>
+				<div class="color">
+					<a href="#">Turquoise</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -354,7 +367,10 @@
 	    [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
 			var closestElem = getClosest(el, '.checkout-item');
 	        el.addEventListener('click', function() {
-		        closestElem.classList.add('fade');
+				var answer = confirm("Sista yakin batal beli?");
+	        	if (answer) {
+			        closestElem.classList.add('fade');
+				}
 	        })
 	    });
 

@@ -148,15 +148,10 @@
 
 		</div>
 
-		<div class="form__action">
-
+		<div class="no-login">
 			<span class="label">Atau sista juga dapat</span>
-		
-			<a href="checkout-step-1.html" class="btn btn--line btn--block">Lanjutkan tanpa login</a>
-
+			<a href="checkout-step-1.html" class="btn btn--link btn--block">Lanjut tanpa login</a>
 		</div>
-
-		
 	</div>
 
 </div>
@@ -175,9 +170,12 @@
 
 	    // toggle remove cart
 	    [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
-	        var cxc = el.parentNode;
+			var closestElem = getClosest(el, '.checkout-item');
 	        el.addEventListener('click', function() {
-	        el.parentNode.classList.add('fade');
+				var answer = confirm("Sista yakin batal beli?");
+	        	if (answer) {
+			        closestElem.classList.add('fade');
+				}
 	        })
 	    });
 
