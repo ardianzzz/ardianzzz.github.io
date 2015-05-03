@@ -149,6 +149,55 @@
 </div>
 
 
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+
+		// toggle buy button
+	    [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
+			var closestElem = getClosest(el, '.product');
+	        el.addEventListener('click', function() {
+	            closestElem.classList.toggle('open');
+	        })
+	    });
+
+	     // toggle remove cart
+	    [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
+			var closestElem = getClosest(el, '.checkout-item');
+	        el.addEventListener('click', function() {
+		        closestElem.classList.add('fade');
+	        })
+	    });
+
+
+	    // snapjs
+		var addEvent = function addEvent(element, eventName, func) {
+		  if (element.addEventListener) {
+		      return element.addEventListener(eventName, func, false);
+
+		    } else if (element.attachEvent) {
+		        return element.attachEvent("on" + eventName, func);
+		    };
+		};
+
+		addEvent(document.querySelector('#open-left'), 'click', function(e){
+		    snapper.open('left');
+		    e.preventDefault();
+		});
+
+
+		addEvent(document.querySelector('#open-right'), 'click', function(e){
+		    snapper.open('right');
+		    e.preventDefault();
+		});
+
+		var snapper = new Snap({
+			element: document.getElementById('snap'),
+			slideIntent: 20
+		});
+
+	});
+</script>
+
 
     </div>
 </div>
