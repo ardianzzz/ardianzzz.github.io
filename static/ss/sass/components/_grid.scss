@@ -1,0 +1,186 @@
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/**
+ * Grid helper
+ */
+
+.row {
+    @extend .clearfix;
+    margin:0 -.6rem;
+}
+
+[class*='col--'] {
+    float:left;
+    padding:0 .6rem;
+}
+
+.col {
+    &--2a {width: 20%}
+    &--12{width:100%}
+    &--11{width:91.66666666666666%}
+    &--10{width:83.33333333333334%}
+    &--9{width:75%}
+    &--8{width:66.66666666666666%}
+    &--7{width:58.333333333333336%}
+    &--6{width:50%}
+    &--5{width:41.66666666666667%}
+    &--4{width:33.33333333333333%}
+    &--3{width:25%}
+    &--2{width:16.666666666666664%}
+    &--1{width:8.333333333333332%}
+}
+
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+
+.container {
+  @extend .clearfix;
+    width: 100%;
+    max-width:76.8rem;
+    margin:0 auto;
+    position: relative;
+    padding:0 1.2rem;
+}
+
+
+
+
+
+/**
+ * Modals v6.0.1
+ * Simple modal dialogue pop-up windows, by Chris Ferdinandi.
+ * http://github.com/cferdinandi/modals
+ * 
+ * Free to use under the MIT License.
+ * http://gomakethings.com/mit/
+ */
+
+/*  Hide modal window by default */
+.modal {
+    display: none;
+    visibility: hidden;
+    z-index: 9999;
+    background-color: rgba(0,0,0,.88);
+    padding: 0;
+    -webkit-font-smoothing:antialiased;
+
+    display: block;
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        max-height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+
+
+    
+
+    .dialog {
+        padding:3.2rem 2.4rem;
+
+        .form {
+            border:0;
+        }
+    }
+
+    
+
+    &.active {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        max-height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    
+
+   /* .cancel {
+        margin:4.8rem auto 0;
+        width: 12rem;
+        text-align: center;
+        padding:.6rem .8rem;
+        border:solid .1rem rgba(255,255,255,.2);
+        color: rgba(255,255,255,.8);
+        border-radius: .2rem;
+        font-size: 1.1rem;
+        display: block;
+        background: rgba(255,255,255,.04);
+    }*/
+
+
+
+    
+}
+
+
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  width: 100%;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  background: #f5f5f5;
+}
+.swipe-wrap__content {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+
+.swipe__position {
+list-style: none;
+margin:0;
+padding:0;
+position: absolute;
+bottom: .2rem;
+width: 100%;
+text-align: center;
+
+   li {
+        display: inline-block;
+        width: .8rem;
+        height: .8rem;
+        background:#C7C7CC;
+        border-radius: 50%;
+        margin:0;
+        &.on {
+            background: #007AFF;
+        }
+   }
+}
+
+
+
+
