@@ -17,145 +17,85 @@
     <div class="snap-content" id="snap">
         <header class="site-header" id="site-header" role="banner">
             <h1 class="site-header__logo">
-        <a href="index.html">
+        <span>
             Sale Stock
-        </a>
+        </span>
     </h1>
-            <div class="drawer drawer--left">
-                <a href="#" class="hamburger" id="open-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-                        <path d="M96 241h320v32H96zM96 145h320v32H96zM96 337h320v32H96z" />
-                    </svg>
-                </a>
-            </div>
-            <div class="drawer drawer--right">
-                <a href="checkout.html" class="cart" id="open-right">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M0 4.03v2h3.25l3.688 9.345c.15.38.527.625.937.625h11c.406 0 .784-.253.938-.625l1.625-4 2.437-5.97c.063-.153.11-.34.094-.5-.018-.16-.096-.298-.19-.436-.185-.277-.478-.44-.81-.44H7.937c-.324 0-.625.144-.813.407-.188.264-.23.6-.125.907l2.094 6c.14.4.507.656.937.656h9l-.81 2H8.562l-3.72-9.344c-.15-.38-.527-.625-.937-.625H0zm9.344 2H21.47L19.843 10H10.75L9.344 6.03zM9.5 17c-.834 0-1.5.697-1.5 1.53 0 .835.666 1.5 1.5 1.5s1.5-.665 1.5-1.5c0-.833-.666-1.53-1.5-1.53zm8 0c-.833 0-1.5.698-1.5 1.53 0 .835.667 1.5 1.5 1.5s1.53-.665 1.53-1.5c0-.832-.697-1.53-1.53-1.53z" />
-                    </svg>
-                    <span class="site-header__notification">2</span>
-                </a>
-                <div class="cart-notification">
-                    Barang Sista berhasil masuk keranjang
-                </div>
-            </div>
         </header>
         <div class="main" id="main" role="main">
             <div class="container">
-                <div class="product">
-                    <div class="product__figure">
-                        <div class="product__image">
-                            <div class="product__image__placeholder"></div>
-                        </div>
+                <div class="step">
+                    <div class="step__mark active">
+                        <b></b>
+                        <span>Pengiriman</span>
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
-                            <i class="product__title__placeholder">&nbsp;</i>
-                        </div>
-                        <div class="product__price">
-                            <ins><i class="product__price__placeholder">&nbsp;</i></ins>
-                        </div>
-                        <div class="product__size">
-                            &nbsp;
-                        </div>
+                    <div class="step__mark">
+                        <b></b>
+                        <span>Pembayaran</span>
                     </div>
-                    <div class="product__action">
-                        <span class="btn btn--line product__action__placeholder">Beli</span>
+                    <div class="step__mark">
+                        <b></b>
+                        <span>Review</span>
                     </div>
                 </div>
-                <div class="product">
-                    <div class="product__figure">
-                        <div class="product__image">
-                            <div class="product__image__placeholder"></div>
+                <div class="form">
+                    <h3 class="form__title">
+			Alamat Pengiriman
+		</h3>
+                    <div class="form__body">
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" placeholder="Soraya Indah">
+                            <span class="help-block">Wajib diisi ya Sista</span>
+                        </div>
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Nomor Telepon</label>
+                            <input type="tel" class="form-control" placeholder="085966456777">
+                            <span class="help-block">Wajib diisi ya Sista</span>
+                        </div>
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Alamat</label>
+                            <textarea class="form-control" rows="3" placeholder="Jalan Ciater Raya Blok i6/21 Griya Loka, BSD City"></textarea>
+                            <span class="help-block">Wajib diisi ya Sista</span>
+                        </div>
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Provinsi</label>
+                            <select class="form-control">
+                                <option>DKI Jakarta</option>
+                                <option>Jawa Barat</option>
+                                <option>Jawa Tengah</option>
+                                <option>Jawa Timur</option>
+                                <option>DI Yogyakarta</option>
+                                <option>Aceh</option>
+                                <option>Sumatera</option>
+                            </select>
+                            <span class="help-block">Wajib diisi ya Sista</span>
+                        </div>
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Kabupaten</label>
+                            <select class="form-control">
+                                <option>Pilih Kabupaten</option>
+                            </select>
+                            <span class="help-block">Wajib diisi ya Sista</span>
+                        </div>
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Kecamatan</label>
+                            <select class="form-control">
+                                <option>Pilih Kecamatan</option>
+                            </select>
+                            <span class="help-block">Wajib diisi ya Sista</span>
+                        </div>
+                        <div class="form-group form-group--error">
+                            <label class="form-label">Kode Pos</label>
+                            <input type="number" class="form-control" placeholder="15311">
+                            <span class="help-block">Wajib diisi ya Sista</span>
                         </div>
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
-                            <i class="product__title__placeholder">&nbsp;</i>
-                        </div>
-                        <div class="product__price">
-                            <ins><i class="product__price__placeholder">&nbsp;</i></ins>
-                        </div>
-                        <div class="product__size">
-                            &nbsp;
-                        </div>
-                    </div>
-                    <div class="product__action">
-                        <span class="btn btn--line product__action__placeholder">Beli</span>
+                    <div class="form__action">
+                        <a href="checkout-step-2.html" type="submit" class="btn btn--red btn--block">Selanjutnya</a>
                     </div>
                 </div>
-                <!-- <div class="product-list__preloader">
-		<div class="preloader">
-			<div class="preloader__loader">
-				<div class="spinner">
-					
-				</div>
-			</div>
-		</div>
-	</div> -->
             </div>
-            <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function() {
-
-                // toggle buy button
-                [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
-                    var closestElem = getClosest(el, '.product');
-                    el.addEventListener('click', function() {
-                        closestElem.classList.toggle('open');
-                    })
-                });
-
-                // toggle add item
-                [].forEach.call(document.querySelectorAll('[data-toggle=add-item]'), function(el) {
-                    el.addEventListener('click', function() {
-                        document.body.classList.add('addcart');
-                        setTimeout(function() {
-                            document.body.classList.remove('addcart');
-                        }, 2000);
-                    })
-                });
-
-
-                // toggle remove cart
-                [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
-                    var closestElem = getClosest(el, '.checkout-item');
-                    el.addEventListener('click', function() {
-                        var answer = confirm("Sista yakin batal beli?");
-                        if (answer) {
-                            closestElem.classList.add('fade');
-                        }
-                    })
-                });
-
-
-                // snapjs
-                var addEvent = function addEvent(element, eventName, func) {
-                    if (element.addEventListener) {
-                        return element.addEventListener(eventName, func, false);
-
-                    } else if (element.attachEvent) {
-                        return element.attachEvent("on" + eventName, func);
-                    };
-                };
-
-                addEvent(document.querySelector('#open-left'), 'click', function(e) {
-                    snapper.open('left');
-                    e.preventDefault();
-                });
-
-
-                addEvent(document.querySelector('#open-right'), 'click', function(e) {
-                    snapper.open('right');
-                    e.preventDefault();
-                });
-
-                var snapper = new Snap({
-                    element: document.getElementById('snap'),
-                    slideIntent: 20
-                });
-
-            });
-            </script>
         </div>
     </div>
     <div class="snap-drawer snap-drawer-left">
@@ -358,15 +298,6 @@
             </div>
             <div class="checkout__action">
                 <a href="form-login.html" class="btn btn--red btn--block">Selesai Belanja</a>
-            </div>
-        </div>
-    </div>
-    <div class="preloader preloader--wrapper">
-        <div class="preloader__loader">
-            <div class="spinner"></div>
-            <div class="preloader__label">
-                Sedang proses Sista,
-                <br> tunggu sebentar ya :)
             </div>
         </div>
     </div>

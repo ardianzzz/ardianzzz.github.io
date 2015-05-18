@@ -1,75 +1,68 @@
 $text-color:#4a4a4a;
 $text-color-gray:#8E8E93;
 $link-color:#dc5555;
-
-
-
-*,*:before,*:after {
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  -ms-box-sizing:border-box;
-  box-sizing:border-box;
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-	font-size:62.5%;
-	height:100%;
-	-webkit-tap-highlight-color:rgba(255,255,255,0);
+    font-size: 62.5%;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
-	font-size:1.4em;
-	line-height: 1.6;
-	height:100%;
-	color:$text-color;
-
-
-	>div,header,footer {
-		font-size:1.4rem;
-	}
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+    font-size: 1.4em;
+    line-height: 1.6;
+    height: 100%;
+    color: $text-color;
+    >div, header, footer {
+        font-size: 1.4rem;
+    }
 }
 
 figure {
-	margin:0;
-	padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 a {
-	text-decoration: none;
-	color:$link-color;
-
-	&:hover,&:focus {
-		text-decoration:underline;
-	}
+    text-decoration: none;
+    color: $link-color;
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
 }
 
 hr {
-	border:0;
-	border-bottom:solid .1rem #eee;
+    border: 0;
+    border-bottom: solid .1rem #eee;
 }
 
-
-pre,code {
-	font-family: Monaco, Consolas, Monospace;
-	font-size: 1.4rem;
+pre,
+code {
+    font-family: Monaco, Consolas, Monospace;
+    font-size: 1.4rem;
 }
-
 
 p {
-	a:hover,&:focus {
-		text-decoration:underline;
-	}
+    a:hover, &:focus {
+        text-decoration: underline;
+    }
 }
-
 
 .amp {
-  font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif;
-  font-style: italic;
-  font-weight:400;
+    font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+    font-style: italic;
+    font-weight: 400;
 }
-
