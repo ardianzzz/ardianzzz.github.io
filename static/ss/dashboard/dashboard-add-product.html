@@ -68,7 +68,12 @@
 			    
 			    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 			        e.preventDefault(); $(this).parent('div').remove(); x--;
-			    })
+			    });
+
+
+			    $('#selectAll').click(function (e) {
+				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+				});
 			});
         </script>
     </head>
@@ -117,7 +122,102 @@
 
 
     <div class="main" id="main" role="main">
-      <div class="container">
+    	<!-- <div class="sidebar">
+
+			<div class="site-navigation__scroll">
+				<div class="site-navigation__menu">
+
+					<h4>Categories</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Sale
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								New Arrivals
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Jumpsuit
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Dress
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Atasan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Bawahan
+							</a>
+						</li>
+					</ul>
+
+					<h4>Bantuan</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								 Cara Pemesanan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Pengiriman Barang
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Reseller
+							</a>
+						</li>
+					</ul>
+
+					<h4>Tentang kami</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Tentang Sale Stock
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Karir
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Legal
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="site-navigation__footer">
+					<small>
+						Copyright &copy; 2015 Sale Stock
+						<br>
+						All Rights Reserved
+					</small>
+				</div>
+			</div>
+
+    	</div> -->
+
+    	<div class="mainbar">
+	    	<div class="container">
 	<div class="page-navigation">	
 		<ul>
 			<li class="active" style="width:16.66666%">
@@ -556,6 +656,7 @@
 
 </div>
 
+    	</div>
     </div>
 
     <footer class="site-footer" id="site-footer">

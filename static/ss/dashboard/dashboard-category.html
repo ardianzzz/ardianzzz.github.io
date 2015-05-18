@@ -68,7 +68,12 @@
 			    
 			    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 			        e.preventDefault(); $(this).parent('div').remove(); x--;
-			    })
+			    });
+
+
+			    $('#selectAll').click(function (e) {
+				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+				});
 			});
         </script>
     </head>
@@ -117,7 +122,102 @@
 
 
     <div class="main" id="main" role="main">
-      <div class="container">
+    	<!-- <div class="sidebar">
+
+			<div class="site-navigation__scroll">
+				<div class="site-navigation__menu">
+
+					<h4>Categories</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Sale
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								New Arrivals
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Jumpsuit
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Dress
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Atasan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Bawahan
+							</a>
+						</li>
+					</ul>
+
+					<h4>Bantuan</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								 Cara Pemesanan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Pengiriman Barang
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Reseller
+							</a>
+						</li>
+					</ul>
+
+					<h4>Tentang kami</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Tentang Sale Stock
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Karir
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Legal
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="site-navigation__footer">
+					<small>
+						Copyright &copy; 2015 Sale Stock
+						<br>
+						All Rights Reserved
+					</small>
+				</div>
+			</div>
+
+    	</div> -->
+
+    	<div class="mainbar">
+	    	<div class="container">
 	<div class="page-navigation">	
 		<ul>
 			<li>
@@ -170,120 +270,223 @@
 				<li><a href="dashboard-draft.html">Draft <span class="badge">12</span></a></li>
 				<li><a href="dashboard-product-end.html">End Sale <span class="badge">32K</span></a></li>
 				<li class="active"><a href="dashboard-category.html">Categories <span class="badge">6</span></a></li>
-				<li><a href="dashboard-search.html">Search</a></li>
 			</ul>
 		</div>
 
 		<div class="page-body__control">
-			<a href="#" class="btn btn--default btn--small">Add new Category</a>
-			<!-- <ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
-			</ul> -->
+
+			<div class="btn-group">
+				<a href="#" class="btn btn--default btn--small">Edit</a>
+				<a href="#" class="btn btn--default btn--small">Delete</a>
+			</div>
+
+			<div class="page-body__search">
+				<input type="text" class="form-control form-control--small">
+				<button class="btn btn--default btn--small">Search</button>
+			</div>
 		</div>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th style="width:60%">Category name</th>
-					<th style="width:12rem;">Stock</th>
-					<th style="width:12rem;">Sold</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<a href="#">Sale</a>
-					</td>
-					<td>
-						43
-					</td>
-					<td>
-						4356
-					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Edit</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="#">New Arrivals</a>
-					</td>
-					<td>
-						48
-					</td>
-					<td>
-						3436
-					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Edit</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="#">Jumpsuit</a>
-					</td>
-					<td>
-						76
-					</td>
-					<td>
-						2657
-					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Edit</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="#">Dress</a>
-					</td>
-					<td>
-						26
-					</td>
-					<td>
-						9857
-					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Edit</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="#">Atasan</a>
-					</td>
-					<td>
-						98
-					</td>
-					<td>
-						12457
-					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Edit</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="#">Bawahan</a>
-					</td>
-					<td>
-						198
-					</td>
-					<td>
-						7457
-					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Edit</a>
-					</td>
-				</tr>
-				
-				
-			</tbody>
+
+		<div class="clearfix">
+
+			<div class="page-body__form">
+				<h3>New Category</h3>
+
+
+				<div class="form-group">
+					<label class="form-label">Title (Bahasa Indonesia)</label>
+					<input type="text" class="form-control form-control--small">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Parent Category</label>
+					<select class="form-control form-control--small">
+						<option>-- Please Select --</option>
+						<option>Blouse</option>
+						<option>Jumpsuit</option>
+						<option>Dress</option>
+						<option>Atasan</option>
+						<option>Bawahan</option>
+						<option>Tas</option>
+					</select>
+				</div>
+
+				<h4>SEO</h4>
+				<div class="form-group">
+					<label class="form-label">Page Title</label>
+					<input type="text" class="form-control form-control--small">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Description</label>
+					<textarea class="form-control form-control--small" rows="2"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Keywords</label>
+					<textarea class="form-control form-control--small" rows="2"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Publish</label>
+					<div class="form-input">
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>Yes</span>
+							</label>
+						</div>
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-action">
+					<button class="btn btn--red btn--small">Create New Category</button>
+				</div>
+			</div>
+
+			<div class="page-body__table">
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width:1%;">
+								<div class="checkbox">
+									<label><input type="checkbox" id="selectAll"><span></span></label>
+								</div>
+							</th>
+							<th style="width:40%">Category name</th>
+							<th>Special Type</th>
+							<th style="text-align:center;">Published</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="width:1%">
+								<div class="checkbox">
+									<label><input type="checkbox"><span></span></label>
+								</div>
+							</td>
+							<td>
+								<a href="#">Sale</a>
+							</td>
+							<td>
+								Sale
+							</td>
+							<td style="text-align:center;">
+								Yes
+							</td>
+							<td style="text-align:right">
+								<a href="#">Edit</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:1%">
+								<div class="checkbox">
+									<label><input type="checkbox"><span></span></label>
+								</div>
+							</td>
+							<td>
+								<a href="#">New Arrivals</a>
+							</td>
+							<td>
+								New
+							</td>
+							<td style="text-align:center;">
+								Yes
+							</td>
+							<td style="text-align:right">
+								<a href="#">Edit</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:1%">
+								<div class="checkbox">
+									<label><input type="checkbox"><span></span></label>
+								</div>
+							</td>
+							<td>
+								<a href="#">Jumpsuit</a>
+							</td>
+							<td>
+								[Empty]
+							</td>
+							<td style="text-align:center;">
+								Yes
+							</td>
+							<td style="text-align:right">
+								<a href="#">Edit</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:1%">
+								<div class="checkbox">
+									<label><input type="checkbox"><span></span></label>
+								</div>
+							</td>
+							<td>
+								<a href="#">Dress</a>
+							</td>
+							<td>
+								[Empty]
+							</td>
+							<td style="text-align:center;">
+								Yes
+							</td>
+							<td style="text-align:right">
+								<a href="#">Edit</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:1%">
+								<div class="checkbox">
+									<label><input type="checkbox"><span></span></label>
+								</div>
+							</td>
+							<td>
+								<a href="#">Atasan</a>
+							</td>
+							<td>
+								[Empty]
+							</td>
+							<td style="text-align:center;">
+								Yes
+							</td>
+							<td style="text-align:right">
+								<a href="#">Edit</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:1%">
+								<div class="checkbox">
+									<label><input type="checkbox"><span></span></label>
+								</div>
+							</td>
+							<td>
+								<a href="#">Out of Stock</a>
+							</td>
+							<td>
+								Sold Out
+							</td>
+							<td style="text-align:center;">
+								No
+							</td>
+							<td style="text-align:right">
+								<a href="#">Edit</a>
+							</td>
+						</tr>
+						
+					</tbody>
 
 
 
-		</table>
-
+				</table>
+			</div>
+		</div>
 
 
 		<div class="page-body__secondary-control">
@@ -305,6 +508,7 @@
 
 </div>
 
+    	</div>
     </div>
 
     <footer class="site-footer" id="site-footer">

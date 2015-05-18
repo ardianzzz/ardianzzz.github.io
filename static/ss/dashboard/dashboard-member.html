@@ -68,7 +68,12 @@
 			    
 			    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 			        e.preventDefault(); $(this).parent('div').remove(); x--;
-			    })
+			    });
+
+
+			    $('#selectAll').click(function (e) {
+				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+				});
 			});
         </script>
     </head>
@@ -117,7 +122,102 @@
 
 
     <div class="main" id="main" role="main">
-      <div class="container">
+    	<!-- <div class="sidebar">
+
+			<div class="site-navigation__scroll">
+				<div class="site-navigation__menu">
+
+					<h4>Categories</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Sale
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								New Arrivals
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Jumpsuit
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Dress
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Atasan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Bawahan
+							</a>
+						</li>
+					</ul>
+
+					<h4>Bantuan</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								 Cara Pemesanan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Pengiriman Barang
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Reseller
+							</a>
+						</li>
+					</ul>
+
+					<h4>Tentang kami</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Tentang Sale Stock
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Karir
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Legal
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="site-navigation__footer">
+					<small>
+						Copyright &copy; 2015 Sale Stock
+						<br>
+						All Rights Reserved
+					</small>
+				</div>
+			</div>
+
+    	</div> -->
+
+    	<div class="mainbar">
+	    	<div class="container">
 	<div class="page-navigation">	
 		<ul>
 			<li style="width:16.66666%">
@@ -173,85 +273,109 @@
 		</div>
 
 		<div class="page-body__control">
-			<b>Page 1 of 23</b>
-			<ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<!-- <li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li> -->
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
-			</ul>
+			<div class="btn-group">
+				<a href="#" class="btn btn--default btn--small">Edit</a>
+				<a href="#" class="btn btn--default btn--small">Delete</a>
+			</div>
+
+
+			
+			<div class="page-body__search">
+				<input type="text" class="form-control form-control--small">
+				<button class="btn btn--default btn--small">Search</button>
+			</div>
+
 		</div>
 
 		<table class="table">
 			<thead>
 				<tr>
+					<th style="width:1%;">
+						<div class="checkbox">
+							<label><input type="checkbox" id="selectAll"><span></span></label>
+						</div>
+					</th>
 					<th>Name</th>
 					<th>Email</th>
 					<th>Phone</th>
-					<th>&nbsp;</th>
+					<th>Region</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>
-						<div class="table__avatar" style="background-image:url(http://www.produtosdebeleza.com/wp-content/uploads/2012/12/cabelo-selena-gomez-chanel-falso-200x200.png)"></div>
-						<a href="#">Selena Gemez</a>
+					<td style="width:1%">
+						<div class="checkbox">
+							<label><input type="checkbox"><span></span></label>
+						</div>
 					</td>
 					<td>
-						<a href="mailto:selena.gemez@gmx.com">selena.gemez@gmx.com</a>
+						<a href="#">Rudi Sumitro</a>
+					</td>
+					<td>
+						selena.gemez@gmx.com
 					</td>
 					<td>
 						+62 82166548976
 					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Profile</a>
+					<td>
+						Jakarta
 					</td>
 				</tr>
 				<tr>
+					<td style="width:1%">
+						<div class="checkbox">
+							<label><input type="checkbox"><span></span></label>
+						</div>
+					</td>
 					<td>
-						<div class="table__avatar" style="background-image:url(http://www.produtosdebeleza.com/wp-content/uploads/2012/12/cabelo-selena-gomez-chanel-falso-200x200.png)"></div>
 						<a href="#">Selena Gemez</a>
 					</td>
 					<td>
-						<a href="mailto:selena.gemez@gmx.com">selena.gemez@gmx.com</a>
+						selena.gemez@gmx.com
 					</td>
 					<td>
 						+62 82166548976
 					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Profile</a>
+					<td>
+						Jakarta
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<div class="table__avatar" style="background-image:url(http://www.produtosdebeleza.com/wp-content/uploads/2012/12/cabelo-selena-gomez-chanel-falso-200x200.png)"></div>
-						<a href="#">Selena Gemez</a>
+					<td style="width:1%">
+						<div class="checkbox">
+							<label><input type="checkbox"><span></span></label>
+						</div>
 					</td>
 					<td>
-						<a href="mailto:selena.gemez@gmx.com">selena.gemez@gmx.com</a>
+						<a href="#">Agong Herkules</a>
+					</td>
+					<td>
+						selena.gemez@gmx.com
 					</td>
 					<td>
 						+62 82166548976
 					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Profile</a>
+					<td>
+						Jakarta
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<div class="table__avatar" style="background-image:url(http://www.produtosdebeleza.com/wp-content/uploads/2012/12/cabelo-selena-gomez-chanel-falso-200x200.png)"></div>
-						<a href="#">Selena Gemez</a>
+					<td style="width:1%">
+						<div class="checkbox">
+							<label><input type="checkbox"><span></span></label>
+						</div>
 					</td>
 					<td>
-						<a href="mailto:selena.gemez@gmx.com">selena.gemez@gmx.com</a>
+						<a href="#">Mbak Yeyen</a>
+					</td>
+					<td>
+						selena.gemez@gmx.com
 					</td>
 					<td>
 						+62 82166548976
 					</td>
-					<td style="text-align:right">
-						<a href="#" class="btn btn--default btn--small">Profile</a>
+					<td>
+						Jakarta
 					</td>
 				</tr>
 				
@@ -264,6 +388,7 @@
 
 
 		<div class="page-body__secondary-control">
+			<b>Page 1 of 23</b>
 			<ul class="pagination">
 				<li><a href="#">First</a></li>
 				<li><a href="#">Prev</a></li>
@@ -282,6 +407,7 @@
 
 </div>
 
+    	</div>
     </div>
 
     <footer class="site-footer" id="site-footer">
