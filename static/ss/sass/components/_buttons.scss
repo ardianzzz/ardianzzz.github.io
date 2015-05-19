@@ -54,6 +54,12 @@
         border-top-color: lighten(#dd4b39, 6%);
         text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
     }
+
+    &.disabled,
+    &:disabled {
+        opacity: .72;
+        cursor: not-allowed;
+    }
 }
 
 .btn:hover,

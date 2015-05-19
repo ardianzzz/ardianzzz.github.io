@@ -911,8 +911,6 @@ body.addcart {
     &__title {
         line-height: 2rem;
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         a {
             color: #1F1F21;
             display: inline-block;
@@ -948,7 +946,10 @@ body.addcart {
     &__info {
         padding: .8rem 1.2rem;
         float: left;
-        //border-bottom:solid .1rem #eee;
+        width: 18.4rem;
+        width: -webkit-calc(100% - 11rem);
+        width: -moz-calc(100% - 11rem);
+        width: calc(100% - 11rem);
     }
     &__price {
         line-height: 2rem;
