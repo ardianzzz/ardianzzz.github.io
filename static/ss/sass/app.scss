@@ -402,7 +402,7 @@ body {
         z-index: 3;
         color: #fff;
         line-height: 1.2rem;
-        font-size: .9rem;
+        font-size: 1rem;
         font-weight: 700;
         text-align: center;
         line-height: 1.8rem;
@@ -986,6 +986,8 @@ body.addcart {
         }
         .btn {
             min-width: 8rem;
+            text-decoration: none !important;
+
             .buy {
                 display: block;
             }
