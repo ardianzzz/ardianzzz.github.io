@@ -694,7 +694,7 @@
 </div>
 
 
-<div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static">
+<div class="modal fade" id="addProductModal" tabindex="-1" data-backdrop="static">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -702,6 +702,25 @@
         <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
       </div>
       <div class="modal-body">
+
+      		<div class="form-group">
+				<div class="form-input">
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l">
+							<span>Publish</span>
+						</label>
+					</div>
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l" checked>
+							<span>Unpublish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+
         	<div class="form-group">
         		<label class="form-label">Code</label>
         		<div class="form-input">
@@ -784,10 +803,113 @@
         			<input type="text" class="form-control">
         		</div>
         	</div>
+
+        	<div class="form-group">
+				<label class="form-label">Options</label>
+				<div class="form-input">
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Featured</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>New</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Publish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn--red">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="previewProductModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Product Preview</h4>
+      </div>
+      <div class="modal-body">
+        	
+      		<div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Sophia Polka Skirt
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__description">
+                        <div>
+                            <b>Warna</b> Warna Creme, Grey, Dusty Burgundy, dan Lite Grey
+                        </div>
+                        <div>
+                            <b>Ukuran</b> Satu ukuran muat sampai size L kecil
+                            <br> Lingkar pinggang 68-86cm, Panjang 97cm
+                        </div>
+                        <div>
+                            <b>Bahan</b> Bahan Linen
+                        </div>
+                        <div>
+                            <b>Informasi Lain</b> Tali pinggang hidup, Pinggang belakang karet
+                        </div>
+                    </div>
+                    
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Edit</button>
       </div>
     </div>
   </div>
