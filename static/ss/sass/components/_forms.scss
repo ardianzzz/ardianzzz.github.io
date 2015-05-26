@@ -66,8 +66,7 @@ legend {
     &:focus {
         outline: 0;
         background: #fff;
-        border-color: #D73C3C;
-        box-shadow: 0 0 0 2px lighten(#D73C3C, 38%);
+        border-color: #4a4a4a;
     }
     &--small {
         padding: .3rem .6rem;
@@ -109,8 +108,7 @@ textarea.form-control {
     }
     &--error {
         .form-control {
-            border-color: #D73C3C !important;
-            box-shadow: 0 0 0 2px lighten(#D73C3C, 38%) !important;
+            border-color: #D73C3C;
         }
         .form-label {
             color: #D73C3C;
