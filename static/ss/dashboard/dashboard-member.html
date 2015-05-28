@@ -47,12 +47,28 @@
         <link rel="stylesheet" href="css/dashboard.css">
         <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="js/dropzone.js"></script>
+        <script type="text/javascript" src="js/handsontable.js"></script>
         <script type="text/javascript" src="js/helper.js"></script>
         <script type="text/javascript">
         	$(document).ready(function() {
+			    
+			    $('[data-tooltip]').tooltip({
+			    	container:'body'
+			    });
+
 			    $('#selectAll').click(function (e) {
 				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
 				});
+
+			 
+
+			    $('.table__delete').click(function(){
+					var answer = confirm('Hapus Konten?');
+					if (answer) {
+						$(this).closest('tr').remove();
+					}
+			    });
+
 
 				var myDropzone = new Dropzone("#uploader", { 
 					url: "/img",
@@ -79,11 +95,36 @@
 			    </div>
 			    <div class="site-header__navigation">
 			  		<ul>
-			            <li class="active"><a href="dashboard-category.html">Categories</a></li>
-			            <li><a href="dashboard-product.html">Product</a></li>
-			            <li><a href="dashboard-customer.html">Customers</a></li>
-			            <li><a href="dashboard-order.html">Orders</a></li>
-			            <li><a href="dashboard-setting.html">Setting</a></li>
+			            <li class="active">
+			            	<a href="dashboard-category.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M417.4 224H94.6C77.7 224 64 238.3 64 256s13.7 32 30.6 32h322.8c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32zM417.4 96H94.6C77.7 96 64 110.3 64 128s13.7 32 30.6 32h322.8c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32zM417.4 352H94.6C77.7 352 64 366.3 64 384s13.7 32 30.6 32h322.8c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32z"/></svg> 
+
+				            	Categories
+				            </a>
+				        </li>
+			            <li><a href="dashboard-product.html">
+			            	<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M480 96L320 48c-13.988 27.227-30.77 40.223-63.77 40.223C223.724 87.676 205.723 75 192 48L32 96l32 88 64-8-16 288h288l-16-288 64 8 32-88z"/></svg>
+
+			            	Product
+			            </a></li>
+			            <li>
+			            	<a href="dashboard-customer.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M425.3 324.8c-41.4-15.7-38.9-9.4-38.9-38.5 0-18.8 9.3-11.9 15.2-47.7 2.3-14.1 4.2-4.7 9.1-27.3 2.6-11.8-1.8-12.7-1.2-18.3.5-5.6 1-10.7 2-22.2 1.2-14.4-11.6-52-57.4-52s-58.6 37.6-57.4 52c.9 11.6 1.5 16.6 2 22.2.5 5.6-3.8 6.5-1.2 18.3 4.9 22.6 6.8 13.1 9.1 27.3 5.9 35.8 15.1 29 15.1 47.7 0 13.4 3.1 19-14.9 27.5 5.4 1.9 11.7 4.2 19.3 7.1 54.4 20.7 53.1 40.8 54.5 50.3 1 6.5 1.5 58.3 1.7 76.8H480s0-80.5-1.5-89.9c-1.1-7.4-11-17.2-53.2-33.3zM357 448s0-14.1-.2-30.4c-.2-18.6-.7-40-1.7-46.4-1.5-9.5-14.3-22.2-68.6-42.9-7.5-2.8-13.8-5.1-19.3-7.1-33.3-11.8-30.9-15.7-30.9-48 0-24.3 12-8.5 19.6-54.6 3-18.2 5.4-6.1 11.7-35.2 3.4-15.2-2.3-16.4-1.6-23.7.7-7.3 1.4-13.8 2.6-28.7 1.6-18.5-14.9-67.1-74.1-67.1-59.2 0-75.6 48.5-74.1 67.1 1.2 14.9 1.9 21.4 2.7 28.7.7 7.3-5 8.4-1.6 23.7 6.4 29.1 8.8 17 11.8 35.2 7.6 46.1 19.5 30.3 19.5 54.6 0 37.6 3.3 34.8-50.2 55.1C48.3 349 35.5 361.7 34 371.2c-2 12.1-2 76.8-2 76.8h325z"/></svg>
+			            		Customers
+			            	</a>
+			            </li>
+			            <li>
+			            	<a href="dashboard-order.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 160h-64v-4.5C384 87 329 32 260.5 32h-8C184 32 128 87 128 155.5v4.5H64L32 480h448l-32-320zm-288-4.5c0-50.7 41.8-91.5 92.5-91.5h8c50.7 0 91.5 40.8 91.5 91.5v4.5H160v-4.5zM67.8 448l24.9-256H128v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9 256H67.8z"/></svg> 
+			            		Orders
+			            	</a>
+			            </li>
+			            <li>
+			            	<a href="dashboard-setting.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M411.1 256c0-23.9 14.8-42.8 36.9-55.8-4-13.3-9.3-26.2-15.8-38.2-24.9 6.5-45-3.2-62-20.2-16.9-16.9-22.1-37.1-15.6-62-12-6.5-24.8-11.8-38.2-15.8-13 22.2-36.4 36.9-60.4 36.9-23.9 0-47.4-14.7-60.4-36.9-13.4 4-26.2 9.3-38.2 15.8 6.5 24.9 1.3 45-15.6 62-16.9 16.9-37.1 26.7-61.9 20.2-6.6 12-11.9 24.8-15.9 38.2 22.2 13 37 31.9 37 55.8s-14.8 47.4-37 60.4c4 13.4 9.3 26.2 15.8 38.2 24.9-6.5 45-1.3 61.9 15.6 17 16.9 22.1 37.1 15.6 62 12.1 6.5 24.8 11.8 38.2 15.8 13-22.2 36.5-36.9 60.4-36.9s47.4 14.7 60.4 36.9c13.4-4 26.2-9.3 38.2-15.8-6.5-24.9-1.3-45 15.6-62 16.9-16.9 37.1-26.7 62-20.2 6.5-12.1 11.8-24.9 15.8-38.2-22.1-13-36.8-31.9-36.8-55.8zM256 354.3c-54.2 0-98.3-44-98.3-98.3s44-98.3 98.3-98.3 98.3 44 98.3 98.3-44 98.3-98.3 98.3z"/></svg> 
+			            		Setting
+			            	</a>
+			            </li>
 			        </ul>
 			  	</div>
 
@@ -386,13 +427,13 @@
 			</div>
       		<div class="modal-body">
       			<div class="form-group">
-					<label class="form-label">Title (Bahasa Indonesia)</label>
-					<input type="text" class="form-control form-control--small">
+					<label class="form-label">Title</label>
+					<input type="text" class="form-control">
 				</div>
 
 				<div class="form-group">
 					<label class="form-label">Parent Category</label>
-					<select class="form-control form-control--small">
+					<select class="form-control">
 						<option>-- Please Select --</option>
 						<option>Blouse</option>
 						<option>Jumpsuit</option>
@@ -406,15 +447,15 @@
 				<h4 class="modal-subheader">SEO</h4>
 				<div class="form-group">
 					<label class="form-label">Page Title</label>
-					<input type="text" class="form-control form-control--small">
+					<input type="text" class="form-control">
 				</div>
 				<div class="form-group">
 					<label class="form-label">Meta Description</label>
-					<textarea class="form-control form-control--small" rows="2"></textarea>
+					<textarea class="form-control" rows="2"></textarea>
 				</div>
 				<div class="form-group">
 					<label class="form-label">Meta Keywords</label>
-					<textarea class="form-control form-control--small" rows="2"></textarea>
+					<textarea class="form-control" rows="2"></textarea>
 				</div>
 
 				<div class="form-group">
@@ -527,6 +568,11 @@
 	        	</div>
         	</fieldset>
 
+        	<div class="form-group">
+        		<label class="form-label">Variants</label>
+        		<div id="table"></div>
+        	</div>
+
 
         	<div class="row">
         		<div class="col col--6">
@@ -587,6 +633,38 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+	$('#addProductModal').on('shown.bs.modal', function (e) {
+		$("#table").handsontable({
+			  colHeaders: ['Size', 'Color', 'Product Code', 'Stock', 'Price'],
+			    rowHeaders: true,
+			    stretchH: 'all',
+			    columnSorting: true,
+			    contextMenu: true,
+			  columns: [
+			    {
+			      data: 'Size',
+			    },
+			    {
+			      data: 'Color',
+			    },
+			    {
+			      data: 'Product Code'
+			    },
+			    {
+			      data: 'Stock',
+			      type: 'numeric'
+			    },
+			    {
+			      data: 'Price',
+			      type: 'numeric'
+
+			    }
+			  ],
+			});
+	});
+</script>
 
 
 <div class="modal fade" id="previewProductModal" tabindex="-1">
@@ -686,106 +764,181 @@
         <h4 class="modal-title" id="myModalLabel">Invoice</h4>
       </div>
       <div class="modal-body">
+<div class="invoice">
+		<div class="invoice-header">
+			<div class="invoice-header__logo">
+				<img src="img/ss-logo.png" alt="">
+			</div>
+			<div class="invoice-header__id">
+				<b>Invoice</b>
+				<b>201546529</b>
+			</div>
+		</div>
 
-      		<div style="width:800px;padding:10px;margin:0px auto;font-family:'Arial',tahoma;font-size:12px;line-height:1.5">
-<div style="width:100%;height:75px">
-<div style="float:left;height:75px;width:50%">
-<script pagespeed_no_defer="">(function(){var g=encodeURIComponent,h=window,k=document,l="width",m="documentElement",n="height",p="length",q=this,r=function(b,d){var a=b.split("."),c=q;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a[p]&&(e=a.shift());)a[p]||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var t=function(b){var d=b[p];if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var u=function(b){var d=h;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var v,w=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:h.innerHeight||k[m].clientHeight||k.body.clientHeight,width:h.innerWidth||k[m].clientWidth||k.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},x=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e)if(a=!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=k.body;a=c.top+("pageYOffset"in h?h.pageYOffset:(k[m]||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in
-h?h.pageXOffset:(k[m]||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e[n]&&c<=b.e[l])}a&&(b.a.push(e),b.d[e]=!0)};w.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&x(this,b)};r("pagespeed.CriticalImages.checkImageForCriticality",function(b){v.checkImageForCriticality(b)});r("pagespeed.CriticalImages.checkCriticalImages",function(){y(v)});var y=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d[p];++c)a=a.concat(t(k.getElementsByTagName(d[c])));if(0!=a[p]&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)x(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a[p])for(a+="&ci="+g(b.a[0]),c=1;c<b.a[p];++c){var e=","+g(b.a[c]);131072>=a[p]+e[p]&&(a+=e)}b.g&&(e="&rd="+g(JSON.stringify(z())),131072>=a[p]+e[p]&&(a+=e),d=!0);A=a;if(d){c=b.f;b=b.h;var f;if(h.XMLHttpRequest)f=new XMLHttpRequest;else if(h.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(s){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(B){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+g(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},z=function(){var b={},d=k.getElementsByTagName("IMG");if(0==d[p])return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a[l]&&0<a[n]&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a[l]>=b[a.src].k&&a[n]>=b[a.src].j)&&(b[e]={rw:a[l],rh:a[n],ow:a.naturalWidth,oh:a.naturalHeight})}return b},A="";r("pagespeed.CriticalImages.getBeaconData",function(){return A});r("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var s=new w(b,d,a,e,f);v=s;c&&u(function(){h.setTimeout(function(){y(s)},0)})});})();pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','https://sale-stock.mysirclo.com/admin/content/orders/55012/invoice','tcxblwIK4K',true,false,'x3tD-EHrADc');</script><img style="max-height:70px" src="data:image/png;base64,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" alt="Sale Stock" pagespeed_url_hash="456722770" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1"> </div>
-<div style="float:right;height:75px;width:50%;text-align:right">
-<span style="font-size:20px;font-weight:bold;display:block">INVOICE</span>
-<span style="font-size:14px;font-weight:bold;display:block;padding:15px 0px 0px">ID: 201546529 </span>
-</div>
-</div>
-<div style="height:60px;clear:both">
-<span style="font-size:20px;font-weight:bold;display:block">Order ID: 201546529 </span>
-<span style="font-size:12px;display:block">26 May 2015 </span>
-</div>
-<table style="border-collapse:collapse" width="100%">
-<tbody><tr>
-<th style="text-align:left;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold">Picture</th>
-<th style="text-align:left;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold">SKU</th>
-<th style="text-align:left;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold">Description</th>
-<th style="text-align:right;width:115px;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold">Price</th>
-<th style="text-align:right;width:80px;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold">Quantity</th>
-<th style="text-align:right;width:115px;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold">Amount</th>
-</tr>
-<tr>
-<td style="border-top:2px solid #fff;background-color:#eee;padding:5px 10px;font-size:13px;font-weight:bold"><a target="_blank" href="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg"><img style="max-width:64px" src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" pagespeed_url_hash="3369545040" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1"></a></td>
-<td style="border-top:2px solid #fff;background-color:#eee;padding:5px 10px;font-size:13px;font-weight:bold">MIN-JSJS-4922TEA-R68</td>
-<td style="border-top:2px solid #fff;background-color:#eee;padding:5px 10px;font-size:13px;font-weight:bold">Aerilyn Cape Twistcone Jumpsuit (Teal)</td>
-<td style="border-top:2px solid #fff;background-color:#eee;text-align:right;width:115px;padding:5px 10px;font-size:13px">IDR 118,000.00</td>
-<td style="text-align:right;width:80px;border-top:2px solid #fff;background-color:#eee;padding:5px 10px;font-size:13px">1</td>
-<td style="border-top:2px solid #fff;background-color:#eee;text-align:right;width:115px;padding:5px 10px;font-size:13px">IDR 118,000.00</td>
-</tr></tbody></table>
-<table style="border-collapse:collapse" width="100%">
-<tbody><tr>
-<td style="padding:5px 0px;text-align:right;font-size:13px;font-weight:bold">Item Total: </td>
-<td style="padding:5px 10px;width:123px;text-align:right;font-size:13px;font-weight:normal">IDR 118,000.00</td>
-</tr>
-<tr>
-<td style="padding:5px 0px;text-align:right;font-size:13px;font-weight:bold">Shipping and Handling: </td>
-<td style="padding:5px 10px;width:123px;text-align:right;font-size:13px">IDR 25,000.00</td>
-</tr>
-<tr>
-<td style="padding:5px 0px;text-align:right;font-size:13px;font-weight:bold">Shipping Discount: </td>
-<td style="padding:5px 10px;width:123px;text-align:right;font-size:13px">IDR -25,000.00</td>
-</tr>
-<tr>
-<td style="padding:5px 0px;text-align:right;font-size:13px;font-weight:bold">Total: </td>
-<td style="padding:5px 10px;width:123px;text-align:right;font-size:13px;font-weight:bold">IDR 118,000.00</td>
-</tr>
-</tbody></table>
-<br>
-<table style="border-collapse:collapse" border="1" width="100%">
-<tbody>
-<tr>
-<td style="padding:8px 8px;text-align:left;font-size:13px">
-<strong>Message:</strong><br>
-Tolong di bungkus yang rapi<br>
-<br>
-Discount(s):<br>
-FREEONGKIR (IDR 0.00) </td>
-<td style="padding:8px 8px;text-align:right;font-size:13px;width:300px">
-<table width="100%">
-<tbody><tr>
-<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Payment Method:</td>
-<td style="font-size:13px;text-align:right">bank-transfer</td>
-</tr>
-<tr>
-<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Shipping:</td>
-<td style="font-size:13px;text-align:right">aCommerce REG</td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-</tbody>
-</table>
-<br>
-<table style="border-collapse:collapse;width:100%;margin-top:15px">
-<tbody><tr>
-<th style="width:50%;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold;text-align:left">Delivery Address</th>
-<th style="width:50%;background-color:#333;color:#fff;padding:5px 10px;font-size:13px;font-weight:bold;text-align:left">Billing Address</th>
-</tr>
-<tr>
-<td style="width:50%;border-top:2px solid #fff;background-color:#eee;color:#000;padding:10px 10px;font-size:13px">
-<strong>sylvana sella </strong><br>
-jln.Bandeng Gg.belida No.4 <br>
-Kota Pekanbaru - Marpoyan Damai 28282<br>
-Riau, Indonesia<br>
-Tel: 085263979627<br>
-Email: sylvanasella@yahoo.com<br>
-</td>
-<td style="width:50%;border-top:2px solid #fff;background-color:#eee;color:#000;padding:10px 10px;font-size:13px">
-<strong>sylvana sella </strong><br>
-jln.Bandeng Gg.belida No.4 <br>
-Kota Pekanbaru - Marpoyan Damai 28282<br>
-Riau, Indonesia<br>
-Tel: 085263979627<br>
-Email: sylvanasella@yahoo.com<br>
-</td>
-</tr>
-</tbody></table></div>
+		<div class="invoice-body">
+			<div class="invoice-body__info">
+				Order ID: 201546529
+
+				26 May 2015
+			</div>
+			<div class="invoice-body__recap">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								Product
+							</th>
+							<th>
+								SKU
+							</th>
+							<th style="text-align:right">
+								Price
+							</th>
+							<th style="text-align:right">
+								Quantity
+							</th>
+							<th style="text-align:right">
+								Amount
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="4" style="text-align:right">Item Total</td>
+							<td style="text-align:right"><b>118.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Shipping and Handling</td>
+							<td style="text-align:right"><b>25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Shipping Discount</td>
+							<td style="text-align:right"><b>-25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Total</td>
+							<td style="text-align:right"><b>118.000</b></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<table style="border-collapse:collapse" border="1" width="100%">
+				<tbody>
+				<tr>
+				<td style="padding:8px 8px;text-align:left;font-size:13px">
+				<strong>Message:</strong><br>
+				Tolong di bungkus yang rapi<br>
+				<br>
+				Discount(s):<br>
+				FREEONGKIR (IDR 0.00) </td>
+				<td style="padding:8px 8px;text-align:right;font-size:13px;width:300px">
+				<table width="100%">
+				<tbody><tr>
+				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Payment Method:</td>
+				<td style="font-size:13px;text-align:right">bank-transfer</td>
+				</tr>
+				<tr>
+				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Shipping:</td>
+				<td style="font-size:13px;text-align:right">aCommerce REG</td>
+				</tr>
+				</tbody></table>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+
+
+				<table class="table">
+					<tbody><tr>
+						<th>Delivery Address</th>
+						<th>Billing Address</th>
+					</tr>
+					<tr>
+						<td style="width:50%;">
+							<strong>sylvana sella </strong><br>
+							jln.Bandeng Gg.belida No.4 <br>
+							Kota Pekanbaru - Marpoyan Damai 28282<br>
+							Riau, Indonesia<br>
+							Tel: 085263979627<br>
+							Email: sylvanasella@yahoo.com<br>
+						</td>
+						<td style="width:50%;">
+							<strong>sylvana sella </strong><br>
+							jln.Bandeng Gg.belida No.4 <br>
+							Kota Pekanbaru - Marpoyan Damai 28282<br>
+							Riau, Indonesia<br>
+							Tel: 085263979627<br>
+							Email: sylvanasella@yahoo.com<br>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+	</div>
 
       </div>
       <div class="modal-footer">
