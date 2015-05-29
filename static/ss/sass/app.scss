@@ -397,17 +397,21 @@ body {
         background: #dc5555;
         position: absolute;
         top: 50%;
-        right: 50%;
-        margin: -1.8rem -2rem 0 0;
+        right: 80%;
+        margin: -1rem 0 0;
         z-index: 3;
         color: #fff;
-        line-height: 1.2rem;
-        font-size: .9rem;
+        font-size: 1.1rem;
         font-weight: 700;
         text-align: center;
-        line-height: 1.8rem;
-        width: 1.8rem;
+        line-height: 2rem;
+        width: 2rem;
         text-align: center;
+        -webkit-font-smoothing:antialiased;
+
+        &.empty {
+            background:#c7c7cc;
+        }
     }
 }
 
@@ -1965,6 +1969,7 @@ body.addcart,
 
 .preloader {
     padding: 1.6rem 0;
+    text-align: center;
     .spinner {
         width: 3.2rem;
         height: 3.2rem;
@@ -1976,9 +1981,10 @@ body.addcart,
     }
     &__label {
         font-size: 1.2rem;
-        position: absolute;
-        bottom: -2rem;
         text-align: center;
+        margin: .8rem 0 0;
+        color: #8E8E93;
+
     }
     &--wrapper {
         position: fixed;
@@ -2006,7 +2012,6 @@ body.addcart,
             width: 16rem;
         }
         .preloader__label {
-            margin: .8rem 0 0;
             position: relative;
             bottom: auto;
             line-height: 1.4;
