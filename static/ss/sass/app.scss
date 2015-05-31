@@ -583,6 +583,8 @@ body {
         font-size: 1.6rem;
         position: relative;
         font-weight: 700;
+        margin:0 -1.2rem;
+        padding:0 .8rem 0 1.2rem;
         -webkit-font-smoothing:antialiased;
 
         a, span {
@@ -594,7 +596,10 @@ body {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            padding-right: 3.2rem;
+            text-decoration: none !important;
         }
+
         svg {
             fill: #8E8E93;
             width: 2.4rem;
