@@ -207,6 +207,7 @@ body {
     -webkit-transition-timing-function: linear, linear;
     transition-timing-function: linear, linear;
     -webkit-overflow-scrolling: touch;
+    outline: 1px solid transparent;
     /*-webkit-transition: width 0.3s ease;
     -moz-transition: width 0.3s ease;
     -ms-transition: width 0.3s ease;
@@ -1068,7 +1069,7 @@ body.addcart,
     border-radius: .2rem;
     position: relative;
     max-width: 48rem;
-    @extend .clearfix;
+
     &.open {
         .product__action, .product__controls {
             .btn {
@@ -1530,6 +1531,76 @@ body.addcart,
     background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
     background-size: 800px 104px;
     position: relative;
+}
+
+
+.twocol {
+    margin:0 -.4rem;
+
+    .product {
+        width: 50%;
+        float: left;
+        border:0;
+        box-shadow: none;
+        background:rgba(255,255,255,0);
+        padding:0 .4rem;
+        margin:.8rem 0 0;
+
+        >div {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top:0;
+            right: .6rem;
+            left: .6rem;
+            bottom: 0;
+            background:#fff;
+            border:solid .1rem #e5e5e5;
+            border-radius: .3rem;
+            box-shadow: 0 .1rem .1rem rgba(0,0,0,0.04);
+        }
+    
+        &__figure {
+            padding:.4rem;
+        }
+
+        &__strip {
+            left:0;
+        }
+
+
+    }
+}
+
+@media (max-width:480px) {
+    .twocol {
+        .product {
+            &__info {
+                float: none;
+                width: auto;
+                margin: 0 0 2.4rem;
+                padding:0 .8rem;
+            }
+
+            &__price {
+                white-space: nowrap;
+
+            }
+
+            &__action {
+                float: none;
+                padding:.8rem;
+
+                .btn {
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
 .site-footer {
