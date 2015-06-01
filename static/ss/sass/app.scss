@@ -207,17 +207,17 @@ body {
     -webkit-transition-timing-function: linear, linear;
     transition-timing-function: linear, linear;
     -webkit-overflow-scrolling: touch;
-    -webkit-transition: width 0.3s ease;
+    /*-webkit-transition: width 0.3s ease;
     -moz-transition: width 0.3s ease;
     -ms-transition: width 0.3s ease;
     -o-transition: width 0.3s ease;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease;*/
 }
 
 .snap-drawer-left {
     left: 0;
     z-index: 1;
-    background: #2b2b2b;
+    /*background: #2b2b2b;*/
 }
 
 .snap-drawer-right {
