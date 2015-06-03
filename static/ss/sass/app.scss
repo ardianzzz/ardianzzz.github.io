@@ -401,6 +401,17 @@ body {
             border: solid .1rem #e5e5e5;
             border-radius: .3rem;
             padding: .3rem;
+            background: #f9f9f9;
+            box-shadow: 0 .1rem rgba(255,255,255,.88) inset, 0 -.1rem rgba(0,0,0,0.02) inset;
+        }
+
+        .cart {
+            padding:1rem;
+            margin-left:-.4rem;
+            svg {
+                width: 2.8rem;
+                height: 2.8rem;
+            }
         }
         &--left {
             left: 0;
@@ -410,21 +421,21 @@ body {
         }
     }
     &__notification {
-        border-radius: 50%;
-        background: #dc5555;
-        position: absolute;
-        top: 50%;
-        right: 80%;
-        margin: -1rem 0 0;
-        z-index: 3;
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 700;
-        text-align: center;
-        line-height: 2rem;
-        width: 2rem;
-        text-align: center;
-        -webkit-font-smoothing:antialiased;
+          border-radius: 50%;
+          background: #D73C3C;
+          position: absolute;
+          top: 50%;
+          right: 80%;
+          margin: -20px -36px 0;
+          z-index: 3;
+          color: #fff;
+          font-size: 1.1rem;
+          font-weight: 700;
+          text-align: center;
+          line-height: 2.2rem;
+          width: 2.2rem;
+          text-align: center;
+          -webkit-font-smoothing: antialiased;
 
         &.empty {
             background:#c7c7cc;
@@ -1554,7 +1565,7 @@ body.addcart,
         &:after {
             content: "";
             position: absolute;
-            top:0;
+            top:.3rem;
             right: .6rem;
             left: .6rem;
             bottom: 0;
@@ -1563,9 +1574,16 @@ body.addcart,
             border-radius: .3rem;
             box-shadow: 0 .1rem .1rem rgba(0,0,0,0.04);
         }
+
+
     
         &__figure {
             padding:.4rem;
+        }
+
+        &__image {
+            box-shadow: none;
+            border-radius: .3rem .3rem 0 0;
         }
 
         &__strip {
