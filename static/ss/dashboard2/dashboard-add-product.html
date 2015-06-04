@@ -10,46 +10,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
-        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
-        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
-
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <meta name="msapplication-TileColor" content="#222222">
-
-
-        <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
-        <!--
-        <link rel="canonical" href="http://www.example.com/" >
-        -->
-
-        <!-- Add to homescreen for Chrome on Android -->
-        <!--
-        <meta name="mobile-web-app-capable" content="yes">
-        -->
-
-        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-        <!--
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="">
-        -->
-
-        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-        <!--
-        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-        -->
 
         <link rel="stylesheet" href="css/dashboard.css">
         <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="js/vendor/d3.min.js"></script>
         <script type="text/javascript" src="js/vendor/c3.min.js"></script>
-		<script type="text/javascript" src="js/editor/parser.js"></script>
-		<script type="text/javascript" src="js/editor/wysihtml5.js"></script>
+        <script type="text/javascript" src="js/handsontable.js"></script>
         <script type="text/javascript" src="js/helper.js"></script>
         <script type="text/javascript">
         	$(document).ready(function() {
@@ -68,12 +34,67 @@
 			    
 			    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 			        e.preventDefault(); $(this).parent('div').remove(); x--;
-			    });
+			    })
 
+
+
+			    // Sortable rows
+				$('.table--sorted').sortable({
+					containerSelector: 'table',
+					itemPath: '> tbody',
+					itemSelector: 'tr',
+					placeholder: '<tr class="placeholder"/>',
+					onDrop: function ($item, container, _super, event) {
+					  $item.removeClass('dragged').removeAttr("style");
+					  $('body').removeClass('dragging');
+					  $('.btn-sort').addClass('show');
+					}
+				});
+
+				$('.btn-sort').click(function(){
+					return false;
+				});
+
+
+				$('[data-filter]').click(function () {
+					$('.page-body__filter').toggleClass('open');
+					$(this).toggleClass('active');
+					return false;
+				});
+
+
+				$('[data-tooltip]').tooltip({
+			    	container:'body'
+			    });
 
 			    $('#selectAll').click(function (e) {
 				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
 				});
+
+
+				$('table input[type=checkbox]').click(function() {
+					if($(this).is(':checked')) {
+						$('.btn-check').addClass('show');
+					}
+					else {
+						$('.btn-check').removeClass('show');
+					}
+				});
+
+			 
+			    $('.table__edit').click(function(){
+					$('[data-tooltip]').tooltip('hide');
+			 	});
+
+			    $('.table__delete').click(function(){
+					$('[data-tooltip]').tooltip('hide');
+					var answer = confirm('Hapus Konten?');
+					if (answer) {
+						$(this).closest('tr').remove();
+						return false;
+					}
+			    });
+
 			});
         </script>
     </head>
@@ -83,23 +104,29 @@
     	<header class="site-header" id="site-header" role="banner">
     		<div class="container">
 			    <div class="site-header__logo">
-			        <a href="/">
-			            <img src="img/logo.png" alt="Sale Stock Indonesia - Toko Baju Online - Dress, Maxi Dress, Rok, Celana, Blazer, Atasan Murah">
+			    	<a href="/">
+			        	<svg xmlns="http://www.w3.org/2000/svg" width="138.182" height="24" viewBox="0 0 138.182 24"><g fill="#d73c3c"><path d="M21.598 13.27h3.953l-1.975-4.484zm43.907-2.606c-.027-.044-.05-.096-.08-.134C63.03 7.425 57.717 0 56.025 0H2.453C1.097 0 0 1.097 0 2.453v19.095C0 22.9 1.097 24 2.45 24h53.576c1.765 0 7.005-7.425 9.4-10.53.03-.04.05-.088.08-.135.265-.377.422-.836.422-1.335 0-.5-.158-.958-.422-1.335zm-52.943 6.084c-.712.59-1.66.888-2.817.888-1.624 0-3.094-.544-4.368-1.618l-.165-.138 1.154-1.385.165.135c1.045.86 2.14 1.294 3.263 1.294.588 0 1.06-.13 1.407-.382.35-.254.52-.585.52-1.01 0-.424-.16-.747-.49-.98-.33-.24-.882-.446-1.69-.64-.8-.193-1.414-.372-1.82-.53-.414-.16-.787-.374-1.11-.635-.646-.49-.96-1.222-.96-2.238 0-1.017.358-1.777 1.097-2.328.727-.542 1.64-.816 2.716-.816.692 0 1.388.116 2.07.34.61.204 1.152.487 1.613.838l.166.126-.98 1.38-.177-.134c-.3-.225-.682-.42-1.135-.575-1.118-.376-2.298-.36-2.94.05-.348.22-.516.543-.516.987 0 .445.167.777.514 1.013.342.232 1.077.485 2.188.754 1.11.27 1.96.65 2.522 1.14.57.492.848 1.197.848 2.154 0 .96-.35 1.717-1.073 2.313zm14.826.693l-1.09-2.474h-5.447l-1.088 2.475H17.8l4.79-10.88h1.966l4.793 10.88h-1.962zm13.115 0H33.7V6.56h1.836v9.138h4.967v1.744zM52.497 8.29H46.69v2.88h5.807v1.635H46.69v2.908l5.807-.02v1.73l-7.643.023V6.56h7.643v1.727zm24.68 2.855c-1.11-.27-1.845-.52-2.187-.755-.346-.234-.514-.567-.514-1.01 0-.445.168-.77.513-.988.644-.41 1.825-.425 2.94-.048.454.153.836.345 1.137.575l.178.135.98-1.383-.168-.127c-.465-.353-1.007-.634-1.612-.835-.68-.225-1.377-.345-2.07-.345-1.073 0-1.988.278-2.715.82-.74.55-1.098 1.312-1.098 2.326 0 1.017.315 1.748.96 2.237.324.26.697.476 1.11.637.406.158 1.02.333 1.822.528.806.192 1.358.402 1.688.635.33.24.49.56.49.985 0 .423-.17.755-.52 1.01-.348.253-.82.38-1.408.38-1.12 0-2.218-.435-3.26-1.292l-.168-.137-1.152 1.386.164.138c1.275 1.072 2.743 1.617 4.368 1.617 1.155 0 2.103-.297 2.817-.887.723-.596 1.075-1.35 1.075-2.31s-.278-1.665-.848-2.154c-.565-.488-1.414-.87-2.524-1.14zm7.706-2.903h3.298v9.2h1.84v-9.2h3.3V6.56h-8.437zm18.897-1.867c-1.61 0-2.982.54-4.08 1.61-1.093 1.067-1.648 2.42-1.648 4.017 0 1.595.555 2.945 1.65 4.014 1.093 1.07 2.467 1.613 4.078 1.613 1.61 0 2.984-.543 4.08-1.613 1.094-1.07 1.65-2.42 1.65-4.015 0-1.598-.556-2.95-1.65-4.018-1.096-1.07-2.47-1.61-4.08-1.61zm2.733 8.42c-.738.764-1.658 1.153-2.732 1.153-1.074 0-1.994-.39-2.732-1.152-.737-.763-1.112-1.703-1.112-2.793s.375-2.03 1.112-2.797c.74-.762 1.658-1.152 2.733-1.152 1.076 0 1.996.39 2.733 1.154.74.767 1.113 1.707 1.113 2.798 0 1.09-.372 2.03-1.112 2.793zm13.535-6.62c.62 0 1.168.098 1.626.293.412.175.855.477 1.315.896l.158.143 1.168-1.275-.142-.147c-1.103-1.14-2.478-1.72-4.086-1.72-1.68 0-3.09.547-4.19 1.62-1.1 1.073-1.657 2.436-1.657 4.047 0 1.61.547 2.964 1.628 4.018 1.077 1.052 2.454 1.586 4.093 1.586 1.568 0 2.932-.592 4.052-1.76l.145-.15-1.185-1.214-.15.137c-.444.394-.875.69-1.28.877-.454.213-1.002.32-1.636.32-1.01 0-1.9-.373-2.638-1.112-.738-.738-1.112-1.67-1.112-2.77s.378-2.02 1.12-2.725c.745-.707 1.678-1.065 2.772-1.065zm13.698 3.15l4.374-4.763h-2.337l-4.98 5.307V6.56h-1.837v10.88h1.838V14.39l1.587-1.71 3.612 4.763h2.18z"></path></g></svg>
 			        </a>
 			    </div>
 			  
 
-			    <div class="site-header__navigation">
-			        <ul>
+
+			        <ul class="site-header__user">
 			            <li>
 			            	<a href="#">
 			            		<div class="site-header__avatar">
-			            			<img src="http://media.tumblr.com/tumblr_m1yxby2v7s1rn1ymq.jpg" alt="">
+			            			<img src="img/cewe.png" alt="">
 			            		</div>
 
 			            		<span>
 			            			Mbak Yeyen
 			            		</span>
+			            	</a>
+			            </li>
+			            <li>
+
+			            	<a href="#">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M86.4 480h339.2c12.3 0 22.4-9.9 22.4-22.1V246c0-12.2-10-22-22.4-22H404v-30.9c0-41.5-16.2-87.6-42.6-115.4-26.3-27.8-64-45.7-105.3-45.7h-.2c-41.3 0-79 17.9-105.3 45.6C124.2 105.4 108 151.5 108 193v31H86.4C74 224 64 233.9 64 246v211.9c0 12.2 10 22.1 22.4 22.1zM161 193.1c0-27.3 9.9-61.1 28.1-80.3v-.3C206.7 93.9 231 83 255.9 83h.2c24.9 0 49.2 10.9 66.8 29.5v.2l-.1.1c18.3 19.2 28.1 53 28.1 80.3V224H161v-30.9z"/></svg>
 			            	</a>
 			            </li>
 			        </ul>
@@ -122,102 +149,7 @@
 
 
     <div class="main" id="main" role="main">
-    	<!-- <div class="sidebar">
-
-			<div class="site-navigation__scroll">
-				<div class="site-navigation__menu">
-
-					<h4>Categories</h4>
-
-					<ul>
-						<li>
-							<a href="#">
-								Sale
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								New Arrivals
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Jumpsuit
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Dress
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Atasan
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Bawahan
-							</a>
-						</li>
-					</ul>
-
-					<h4>Bantuan</h4>
-
-					<ul>
-						<li>
-							<a href="#">
-								 Cara Pemesanan
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Pengiriman Barang
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Reseller
-							</a>
-						</li>
-					</ul>
-
-					<h4>Tentang kami</h4>
-
-					<ul>
-						<li>
-							<a href="#">
-								Tentang Sale Stock
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Karir
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Legal
-							</a>
-						</li>
-					</ul>
-
-				</div>
-
-
-				<div class="site-navigation__footer">
-					<small>
-						Copyright &copy; 2015 Sale Stock
-						<br>
-						All Rights Reserved
-					</small>
-				</div>
-			</div>
-
-    	</div> -->
-
-    	<div class="mainbar">
-	    	<div class="container">
+      <div class="container">
 	<div class="page-navigation">	
 		<ul>
 			<li class="active" style="width:16.66666%">
@@ -656,7 +588,6 @@
 
 </div>
 
-    	</div>
     </div>
 
     <footer class="site-footer" id="site-footer">
@@ -666,6 +597,545 @@
 			</div>
 		</div>
 	</footer>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- MODALBOX -->
+	<div class="modal fade" id="categoryModal" tabindex="-1" data-backdrop="static">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Add New Category</h4>
+			</div>
+      		<div class="modal-body">
+      			<div class="form-group">
+					<label class="form-label">Title</label>
+					<input type="text" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Parent Category</label>
+					<select class="form-control">
+						<option>-- Please Select --</option>
+						<option>Blouse</option>
+						<option>Jumpsuit</option>
+						<option>Dress</option>
+						<option>Atasan</option>
+						<option>Bawahan</option>
+						<option>Tas</option>
+					</select>
+				</div>
+
+				<h4 class="modal-subheader">SEO</h4>
+				<div class="form-group">
+					<label class="form-label">Page Title</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Description</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Keywords</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Publish</label>
+					<div class="form-input">
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>Yes</span>
+							</label>
+						</div>
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn--red">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="addProductModal" tabindex="-1" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
+      </div>
+      <div class="modal-body">
+
+      		<div class="form-group">
+				<div class="form-input">
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l">
+							<span>Publish</span>
+						</label>
+					</div>
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l" checked>
+							<span>Unpublish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+
+        	<div class="form-group">
+        		<label class="form-label">Code</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+        		<label class="form-label">Title</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+
+
+        	<div class="form-image">
+        		<div class="dropzone" id="uploader"></div>
+        	</div>
+
+        	<fieldset>
+        		<legend>Specification</legend>
+
+        		<div class="form-group">
+	        		<label class="form-label">Warna</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Ukuran</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Bahan</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Informasi Lain</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+        	</fieldset>
+
+        	<div class="form-group">
+        		<label class="form-label">Variants</label>
+        		<div id="table"></div>
+        	</div>
+
+
+        	<div class="row">
+        		<div class="col col--6">
+		        	<div class="form-group">
+		        		<label class="form-label">Price</label>
+		        		<div class="form-input">
+		        			<input type="text" class="form-control">
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="col col--6">
+		        	<div class="form-group">
+		        		<label class="form-label">Sale Price</label>
+		        		<div class="form-input">
+		        			<input type="text" class="form-control">
+		        		</div>
+		        	</div>
+		        </div>
+		    </div>
+
+
+        	<div class="form-group">
+        		<label class="form-label">Weight</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+				<label class="form-label">Options</label>
+				<div class="form-input">
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Featured</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>New</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Publish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn--red">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$('#addProductModal').on('shown.bs.modal', function (e) {
+		$("#table").handsontable({
+			  colHeaders: ['Size', 'Color', 'Product Code', 'Stock', 'Price'],
+			    rowHeaders: true,
+			    stretchH: 'all',
+			    columnSorting: true,
+			    contextMenu: true,
+			  columns: [
+			    {
+			      data: 'Size',
+			    },
+			    {
+			      data: 'Color',
+			    },
+			    {
+			      data: 'Product Code'
+			    },
+			    {
+			      data: 'Stock',
+			      type: 'numeric'
+			    },
+			    {
+			      data: 'Price',
+			      type: 'numeric'
+
+			    }
+			  ],
+			});
+	});
+</script>
+
+
+<div class="modal fade" id="previewProductModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Product Preview</h4>
+      </div>
+      <div class="modal-body">
+        	
+      		<div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Sophia Polka Skirt
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__description">
+                        <div>
+                            <b>Warna</b> Warna Creme, Grey, Dusty Burgundy, dan Lite Grey
+                        </div>
+                        <div>
+                            <b>Ukuran</b> Satu ukuran muat sampai size L kecil
+                            <br> Lingkar pinggang 68-86cm, Panjang 97cm
+                        </div>
+                        <div>
+                            <b>Bahan</b> Bahan Linen
+                        </div>
+                        <div>
+                            <b>Informasi Lain</b> Tali pinggang hidup, Pinggang belakang karet
+                        </div>
+                    </div>
+                    
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="invoice" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Invoice</h4>
+      </div>
+      <div class="modal-body">
+<div class="invoice">
+		<div class="invoice-header">
+			<div class="invoice-header__logo">
+				<img src="img/ss-logo.png" alt="">
+			</div>
+			<div class="invoice-header__id">
+				<b>Invoice</b>
+				<b>201546529</b>
+			</div>
+		</div>
+
+		<div class="invoice-body">
+			<div class="invoice-body__info">
+				Order ID: 201546529
+
+				26 May 2015
+			</div>
+			<div class="invoice-body__recap">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								Product
+							</th>
+							<th>
+								SKU
+							</th>
+							<th style="text-align:right">
+								Price
+							</th>
+							<th style="text-align:right">
+								Quantity
+							</th>
+							<th style="text-align:right">
+								Amount
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="4" style="text-align:right">Item Total</td>
+							<td style="text-align:right"><b>118.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Shipping and Handling</td>
+							<td style="text-align:right"><b>25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Shipping Discount</td>
+							<td style="text-align:right"><b>-25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Total</td>
+							<td style="text-align:right"><b>118.000</b></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<table style="border-collapse:collapse" border="1" width="100%">
+				<tbody>
+				<tr>
+				<td style="padding:8px 8px;text-align:left;font-size:13px">
+				<strong>Message:</strong><br>
+				Tolong di bungkus yang rapi<br>
+				<br>
+				Discount(s):<br>
+				FREEONGKIR (IDR 0.00) </td>
+				<td style="padding:8px 8px;text-align:right;font-size:13px;width:300px">
+				<table width="100%">
+				<tbody><tr>
+				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Payment Method:</td>
+				<td style="font-size:13px;text-align:right">bank-transfer</td>
+				</tr>
+				<tr>
+				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Shipping:</td>
+				<td style="font-size:13px;text-align:right">aCommerce REG</td>
+				</tr>
+				</tbody></table>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+
+
+				<table class="table">
+					<tbody><tr>
+						<th>Delivery Address</th>
+						<th>Billing Address</th>
+					</tr>
+					<tr>
+						<td style="width:50%;">
+							<strong>sylvana sella </strong><br>
+							jln.Bandeng Gg.belida No.4 <br>
+							Kota Pekanbaru - Marpoyan Damai 28282<br>
+							Riau, Indonesia<br>
+							Tel: 085263979627<br>
+							Email: sylvanasella@yahoo.com<br>
+						</td>
+						<td style="width:50%;">
+							<strong>sylvana sella </strong><br>
+							jln.Bandeng Gg.belida No.4 <br>
+							Kota Pekanbaru - Marpoyan Damai 28282<br>
+							Riau, Indonesia<br>
+							Tel: 085263979627<br>
+							Email: sylvanasella@yahoo.com<br>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+	</div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
 
