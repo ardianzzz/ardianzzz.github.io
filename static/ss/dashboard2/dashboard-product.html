@@ -16,7 +16,11 @@
         <script type="text/javascript" src="js/vendor/d3.min.js"></script>
         <script type="text/javascript" src="js/vendor/c3.min.js"></script>
         <script type="text/javascript" src="js/handsontable.js"></script>
-        <script type="text/javascript" src="js/helper.js"></script>
+        <script src="js/helper.js"></script>  
+        <script type="text/javascript" src="js/x-editable.js"></script>
+
+
+
         <script type="text/javascript">
         	$(document).ready(function() {
 			    var max_fields      = 10; //maximum input boxes allowed
@@ -37,8 +41,7 @@
 			    })
 
 
-
-			    // Sortable rows
+			     // Sortable rows
 				$('.table--sorted').sortable({
 					containerSelector: 'table',
 					itemPath: '> tbody',
@@ -51,6 +54,7 @@
 					}
 				});
 
+			 
 				$('.btn-sort').click(function(){
 					return false;
 				});
@@ -93,6 +97,12 @@
 						$(this).closest('tr').remove();
 						return false;
 					}
+			    });
+
+			    $.fn.editable.defaults.mode = 'popup';     
+    
+			    //make username editable
+			    $('.editable').editable({
 			    });
 
 			});
@@ -235,29 +245,29 @@
 			<div class="row">
 				<div class="col">
 					<div class="form-group form-group--inline">
-						<label class="form-label">Code</label>
+						<label class="form-label">SKU</label>
 						<div class="form-input">
 							<input type="text" class="form-control form-control--small">
 						</div>
 					</div>
 					<div class="form-group form-group--inline">
-						<label class="form-label">Title</label>
+						<label class="form-label">Nama Produk</label>
 						<input type="text" class="form-control form-control--small">
 					</div>
 					<div class="form-group form-group--inline">
-						<label class="form-label">Category</label>
+						<label class="form-label">Kategori</label>
 						<input type="text" class="form-control form-control--small">
 					</div>
 				</div>
 				<div class="col">
 					<div class="form-group form-group--inline">
-						<label class="form-label">Price</label>
+						<label class="form-label">Harga</label>
 						<input type="text" class="form-control form-control--small" style="width:7.2rem;">
 						<span>to</span>
 						<input type="text" class="form-control form-control--small" style="width:7.2rem;">
 					</div>
 					<div class="form-group form-group--inline">
-						<label class="form-label">Stock</label>
+						<label class="form-label">Stok</label>
 						<input type="text" class="form-control form-control--small" style="width:7.2rem;">
 						<span>to</span>
 						<input type="text" class="form-control form-control--small" style="width:7.2rem;">
@@ -319,13 +329,14 @@
 								<label><input type="checkbox" id="selectAll"><span></span></label>
 							</div>
 						</th>
-						<th class="nowrap" style="width:1%;">Code</th>
-						<th><a href="#" class="table-sorter default">Product name</a></th>
-						<th><a href="#" class="table-sorter ascending">Category</a></th>
-						<th style="width:12rem;">Publish</th>
-						<th style="text-align:right;width:12rem;"><a href="#" class="table-sorter descending">Price</a></th>
-						<th style="text-align:right;width:12rem;">Stock</th>
-						<th>&nbsp;</th>
+						<th><a href="#" class="table-sorter default">Nama Produk</a></th>
+						<th><a href="#" class="table-sorter ascending">Kategori</a></th>
+						<th style="width:12rem;">Tampil</th>
+						<th style="text-align:right;width:12rem;"><a href="#" class="table-sorter descending">Harga Jual</a></th>
+						<th style="text-align:right;width:12rem;"><a href="#" class="table-sorter descending">Harga Beli</a></th>
+						<th style="text-align:right;width:10rem;"><a href="#" class="table-sorter default">Stock</a></th>
+						<th style="width:12rem;"><a href="#" class="table-sorter default">Update</a></th>
+						<th style="width:1%;">&nbsp;</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -335,131 +346,27 @@
 								<label><input type="checkbox"><span></span></label>
 							</div>
 						</td>
-						<td class="nowrap">
-							TMS-ANOT-0286ZZ-R
-						</td>
 						<td>
 							<a href="#" data-toggle="modal" data-target="#previewProductModal">Chaplin Pocket Crop Tee</a>
-						</td>
-						<td>
-							New Arrivals
-						</td>
-						<td>
-							<span class="yes">Yes</span>
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							59.000
-						</td>
-						<td style="text-align:right;">
-							24
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
-							</a>
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
-							</a>
-							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							CHA-ANCD-5447XL-R48
-						</td>
-						<td>
-							<a href="#" data-toggle="modal" data-target="#previewProductModal">Superman Crop Tee</a>
-						</td>
-						<td>
-							Jumpsuit
-						</td>
-						<td>
-							<span class="yes">Yes</span>
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							75.000
-						</td>
-						<td style="text-align:right;">
-							12
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
-							</a>
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
-							</a>
-							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							SUG-ANBO-1009MM-R52
-						</td>
-						<td>
-							<a href="#" data-toggle="modal" data-target="#previewProductModal">Cool Batman Crop Tee</a>
-						</td>
-						<td>
-							Bawahan
-						</td>
-						<td>
-							<span class="yes">Yes</span>
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							75.000
-						</td>
-						<td style="text-align:right;">
-							15
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
-							</a>
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
-							</a>
-							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							FRE-DSMX-3841MM-R85
-						</td>
-						<td>
-							<a href="#" data-toggle="modal" data-target="#previewProductModal">Cute Dora Crop Tee</a>
+							<small>TMS-ANOT-0286ZZ-R</small>
 						</td>
 						<td>
 							Atasan
 						</td>
 						<td>
-							<span class="yes">Yes</span>
+							<span class="yes editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="1" data-value="1"  data-source="{'0': 'No', '1':'Yes'}">Yes</span>
 						</td>
 						<td class="nowrap" style="text-align:right;">
-							75.000
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">95.000</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">95.000</span>
 						</td>
 						<td style="text-align:right;">
-							45
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">24</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
 						</td>
 						<td class="nowrap" style="text-align:right;">
 							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
@@ -473,67 +380,113 @@
 							</a>
 						</td>
 					</tr>
-
 					<tr>
 						<td>
 							<div class="checkbox">
 								<label><input type="checkbox"><span></span></label>
 							</div>
 						</td>
-						<td class="nowrap">
-							MNM-JSJS-0793LL-R53
-						</td>
 						<td>
-							<a href="#" data-toggle="modal" data-target="#previewProductModal">Sophia Polka Skirt</a>
-						</td>
-						<td>
-							Dress
-						</td>
-						<td>
-							<span class="no">No</span>
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							145.000
-						</td>
-						<td style="text-align:right;">
-							5
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
-							</a>
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
-							</a>
-							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
-							</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							Lvz8233
-						</td>
-						<td>
-							<a href="#">Rulina Flower Shirt</a>
+							<a href="#" data-toggle="modal" data-target="#previewProductModal">Superman Crop Tee</a>
+							<small>CHA-ANCD-5447XL-R48</small>
 						</td>
 						<td>
 							Bawahan
 						</td>
 						<td>
-							<span class="no">No</span>
+							<span class="yes editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="1" data-value="1"  data-source="{'0': 'No', '1':'Yes'}">Yes</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">75.000</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">75.000</span>
 						</td>
 						<td style="text-align:right;">
-							75.000
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">12</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
+							</a>
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+							</a>
+							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="checkbox">
+								<label><input type="checkbox"><span></span></label>
+							</div>
+						</td>
+						<td>
+							<a href="#" data-toggle="modal" data-target="#previewProductModal">Cool Batman Crop Tee</a>
+							<small>SUG-ANBO-1009MM-R52</small>
+						</td>
+						<td>
+							Jumpsuit
+						</td>
+						<td>
+							<span class="no editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="0" data-value="0"  data-source="{'0': 'No', '1':'Yes'}">No</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">75.000</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">75.000</span>
 						</td>
 						<td style="text-align:right;">
-							67
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">15</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
+							</a>
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+							</a>
+							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="checkbox">
+								<label><input type="checkbox"><span></span></label>
+							</div>
+						</td>
+						<td>
+							<a href="#" data-toggle="modal" data-target="#previewProductModal">Cute Dora Crop Tee</a>
+							<small>FRE-DSMX-3841MM-R85</small>
+						</td>
+						<td>
+							Atasan
+						</td>
+						<td>
+							<span class="no editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="0" data-value="0"  data-source="{'0': 'No', '1':'Yes'}">No</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">75.000</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">75.000</span>
+						</td>
+						<td style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">45</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
 						</td>
 						<td class="nowrap" style="text-align:right;">
 							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
@@ -554,23 +507,109 @@
 								<label><input type="checkbox"><span></span></label>
 							</div>
 						</td>
-						<td class="nowrap">
-							Yoel-1008
+						<td>
+							<a href="#" data-toggle="modal" data-target="#previewProductModal">Sophia Polka Skirt</a>
+							<small>MNM-JSJS-0793LL-R53</small>
+						</td>
+						<td>
+							Dress
+						</td>
+						<td>
+							<span class="no editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="0" data-value="0"  data-source="{'0': 'No', '1':'Yes'}">No</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">145.000</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">145.000</span>
+						</td>
+						<td style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">5</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
+							</a>
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+							</a>
+							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+							</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="checkbox">
+								<label><input type="checkbox"><span></span></label>
+							</div>
+						</td>
+						<td>
+							<a href="#">Rulina Flower Shirt</a>
+							<small>Lvz8233</small>
+						</td>
+						<td>
+							Bawahan
+						</td>
+						<td>
+							<span class="no editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="0" data-value="0"  data-source="{'0': 'No', '1':'Yes'}">No</span>
+						</td>
+						<td style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">85.000</span>
+						</td>
+						<td style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">85.000</span>
+						</td>
+						<td style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">67</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 128c-81.9 0-145.7 48.8-224 128 67.4 67.7 124 128 224 128 99.9 0 173.4-76.4 224-126.6C428.2 198.6 354.8 128 256 128zm0 219.3c-49.4 0-89.6-41-89.6-91.3 0-50.4 40.2-91.3 89.6-91.3s89.6 41 89.6 91.3c0 50.4-40.2 91.3-89.6 91.3zM256 224c0-7.9 2.9-15.1 7.6-20.7-2.5-.4-5-.6-7.6-.6-28.8 0-52.3 23.9-52.3 53.3s23.5 53.3 52.3 53.3 52.3-23.9 52.3-53.3c0-2.3-.2-4.6-.4-6.9-5.5 4.3-12.3 6.9-19.8 6.9-17.8 0-32.1-14.3-32.1-32z"></path></svg>
+							</a>
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+							</a>
+							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+							</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="checkbox">
+								<label><input type="checkbox"><span></span></label>
+							</div>
 						</td>
 						<td>
 							<a href="#">Tory Peplum Emboss Blouse</a>
+							<small>Yoel-1008</small>
 						</td>
 						<td>
 							Jumpsuit
 						</td>
 						<td>
-							<span class="no">No</span>
+							<span class="no editable" data-type="select" data-placement="right" data-title="Edit status" data-name="action" data-pk="0" data-value="0"  data-source="{'0': 'No', '1':'Yes'}">No</span>
 						</td>
 						<td class="nowrap" style="text-align:right;">
-							88.000
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">95.000</span>
+						</td>
+						<td class="nowrap" style="text-align:right;">
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">95.000</span>
 						</td>
 						<td style="text-align:right;">
-							54
+							<span class="editable" data-type="text" data-placement="right" data-title="Edit price">54</span>
+						</td>
+						<td>
+							<small>1 hour ago</small>
 						</td>
 						<td class="nowrap" style="text-align:right;">
 							<a href="#" class="table__edit" data-toggle="modal" data-target="#previewProductModal" data-tooltip="" title="" data-original-title="Preview">
@@ -973,7 +1012,7 @@
 
 
 
-<div class="modal fade" id="invoice" tabindex="-1">
+<div class="modal fade" id="invoiceModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -981,182 +1020,243 @@
         <h4 class="modal-title" id="myModalLabel">Invoice</h4>
       </div>
       <div class="modal-body">
-<div class="invoice">
-		<div class="invoice-header">
-			<div class="invoice-header__logo">
-				<img src="img/ss-logo.png" alt="">
-			</div>
-			<div class="invoice-header__id">
-				<b>Invoice</b>
-				<b>201546529</b>
-			</div>
-		</div>
+			
+			
+<table style="width:100%;max-width:720px;background:#fff;margin:0 auto;border-collapse:collapse;">
+	<tbody>
+		<tr>
+			<td style="padding:20px;border:solid 1px #e5e5e5;border-bottom-color:#d7d7d7;">
+				<table style="border-collapse:collapse;width:100%;margin:0 0 1px;border-bottom:solid 2px #e5e5e5;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:50%;padding:0 0 16px 0;font-size:20px;font-weight:700;color:#D73C3C;">
+								<img src="http://ardianzzz.com/static/ss/dashboard/img/ss-logo.png" alt="Salestock Indonesia" style="border:0 none;height:32px;line-height:100%;outline:none;text-decoration:none;display:block;vertical-align:middle">
+							</td>
+							<td style="border-collapse:collapse;width:50%;padding:0 0 16px 0;vertical-align:middle;text-align:right">
+								<b style="font-size:18px;display:block;line-height:1.125;">
+									Faktur
+								</b>
+								<b>201546529</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-		<div class="invoice-body">
-			<div class="invoice-body__info">
-				Order ID: 201546529
+				<table style="border-collapse:collapse;width:100%;margin-bottom:16px;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:50%;padding:16px 0;border-top:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5">
+								Order ID: 201546529
+							</td>
+							<td style="border-collapse:collapse;width:50%;padding:16px 0;border-top:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;text-align:right">
+								26 May 2015
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-				26 May 2015
-			</div>
-			<div class="invoice-body__recap">
-				<table class="table">
+				<table style="border-collapse:collapse;width:100%;margin:0 0 1px;border-bottom:solid 1px #e5e5e5;">
 					<thead>
 						<tr>
-							<th>
-								Product
+							<th style="padding:6px 12px 6px 0;text-align:left;border-bottom:solid 2px #e5e5e5;" colspan="2">
+								Produk
 							</th>
-							<th>
+							<th style="padding:6px 12px;text-align:left;border-bottom:solid 2px #e5e5e5;">
 								SKU
 							</th>
-							<th style="text-align:right">
-								Price
+							<th style="padding:6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Harga
 							</th>
-							<th style="text-align:right">
-								Quantity
+							<th style="padding:6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Qty
 							</th>
-							<th style="text-align:right">
-								Amount
+							<th style="padding:6px 0 6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Total
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:78px;padding:12px 0 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top">
+								<img src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" style="border:0 none;line-height:100%;outline:none;text-decoration:none;display:block;width:64px;height:64px;">
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								Aerilyn Cape Twistcone Jumpsuit <small style="display:block;font-size:12px;color:#8E8E93;margin-top:4px;">Warna: Teal - Ukuran: L</small>
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right">
+								1
+							</td>
+							<td style="border-collapse:collapse;padding:12px 0 12px 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td style="border-collapse:collapse;width:78px;padding:12px 0 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top">
+								<img src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" style="border:0 none;height:auto;line-height:100%;outline:none;text-decoration:none;display:block;width:64px;height:64px;">
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								Aerilyn Cape Twistcone Jumpsuit <small style="display:block;font-size:12px;color:#8E8E93;margin-top:4px;">Warna: Teal - Ukuran: L</small>
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right">
+								1
+							</td>
+							<td style="border-collapse:collapse;padding:12px 0 12px 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:12px 0 0 12px">
+								Total Belanja :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:12px 0 0 12px;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:0 0 0 12px">
+								Ongkos Kirim :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:0 0 0 12px;white-space:nowrap;">
+								Rp 25.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:0 0 12px 12px">
+								Diskon Ongkos Kirim :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:0 0 12px 12px;white-space:nowrap;">
+								Rp -25.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:12px 0 32px 12px;border-top:solid 1px #e5e5e5;">
+								Total Harus Dibayar :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:12px 0 32px 12px;border-top:solid 1px #e5e5e5;white-space:nowrap;">
+								<b>Rp 236.000</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;border:solid 1px #e5e5e5;margin:0 0 1px">
+					<thead>
+						<tr>
+							<th style="padding:6px 12px;text-align:left;width:50%;border-bottom:solid 1px #e5e5e5;background:#f7f7f7;">
+								Alamat Pengiriman
+							</th>
+							<th style="padding:6px 12px;text-align:left;width:50%;border-right:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;background:#f7f7f7;">
+								Alamat Pembayaran
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>
-								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
-
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Teal</small>
+							<td style="border-collapse:collapse;padding:12px 12px 32px;width:50%;border-right:solid 1px #e5e5e5">
+								<strong>sylvana sella</strong>
+								<br>
+								jln.Bandeng Gg.belida No.4
+								<br>
+								Kota Pekanbaru - Marpoyan Damai 28282
+								<br>
+								Riau, Indonesia
+								<br>
+								085263979627
+								<br>
+								sylvanasella@yahoo.com
+								<br>
 							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
+							<td style="border-collapse:collapse;padding:12px 12px 32px;width:50%">
+								<strong>sylvana sella</strong>
+								<br>
+								jln.Bandeng Gg.belida No.4
+								<br>
+								Kota Pekanbaru - Marpoyan Damai 28282
+								<br>
+								Riau, Indonesia
+								<br>
+								085263979627
+								<br>
+								sylvanasella@yahoo.com
+								<br>
 							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
-
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Teal</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
-
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Teal</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-
-						<tr>
-							<td colspan="4" style="text-align:right">Item Total</td>
-							<td style="text-align:right"><b>118.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right">Shipping and Handling</td>
-							<td style="text-align:right"><b>25.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right">Shipping Discount</td>
-							<td style="text-align:right"><b>-25.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right">Total</td>
-							<td style="text-align:right"><b>118.000</b></td>
 						</tr>
 					</tbody>
 				</table>
 
+				<table style="border-collapse:collapse;width:100%;border:solid 1px #e5e5e5;margin:0 0 1px">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-right:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5">
+								<b>Pesan:</b>
+								<br>
+								Tolong di bungkus yang rapi
+							</td>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-bottom:solid 1px #e5e5e5">
+								<b>Diskon:</b>
+								<br>
+								FREEONGKIR (IDR 0.00)
+							</td>
+						</tr>
 
-				<table style="border-collapse:collapse" border="1" width="100%">
-				<tbody>
-				<tr>
-				<td style="padding:8px 8px;text-align:left;font-size:13px">
-				<strong>Message:</strong><br>
-				Tolong di bungkus yang rapi<br>
-				<br>
-				Discount(s):<br>
-				FREEONGKIR (IDR 0.00) </td>
-				<td style="padding:8px 8px;text-align:right;font-size:13px;width:300px">
-				<table width="100%">
-				<tbody><tr>
-				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Payment Method:</td>
-				<td style="font-size:13px;text-align:right">bank-transfer</td>
-				</tr>
-				<tr>
-				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Shipping:</td>
-				<td style="font-size:13px;text-align:right">aCommerce REG</td>
-				</tr>
-				</tbody></table>
-				</td>
-				</tr>
-				</tbody>
-				</table>
-
-
-				<table class="table">
-					<tbody><tr>
-						<th>Delivery Address</th>
-						<th>Billing Address</th>
-					</tr>
-					<tr>
-						<td style="width:50%;">
-							<strong>sylvana sella </strong><br>
-							jln.Bandeng Gg.belida No.4 <br>
-							Kota Pekanbaru - Marpoyan Damai 28282<br>
-							Riau, Indonesia<br>
-							Tel: 085263979627<br>
-							Email: sylvanasella@yahoo.com<br>
-						</td>
-						<td style="width:50%;">
-							<strong>sylvana sella </strong><br>
-							jln.Bandeng Gg.belida No.4 <br>
-							Kota Pekanbaru - Marpoyan Damai 28282<br>
-							Riau, Indonesia<br>
-							Tel: 085263979627<br>
-							Email: sylvanasella@yahoo.com<br>
-						</td>
-					</tr>
+						<tr>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-right:solid 1px #e5e5e5">
+								<b>Metode Pembayaran:</b>
+								<br>
+								Bank Transfer
+							</td>
+							<td style="border-collapse:collapse;padding:12px;width:50%">
+								<b>Pengiriman:</b>
+								<br>
+								aCommerce REG
+							</td>
+						</tr>
 					</tbody>
 				</table>
-			</div>
 
+				<table style="border-collapse:collapse;width:100%;font-size:smaller;border-top:solid 1px #e5e5e5;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:16px 0 12px;width:50%;line-height:1.25;color:#8E8E93;">
+								<b>Sale Stock&trade;</b>
+								<br>
+								Jalan Ciater Raya Blok i6/21
+								<br>
+								Griya Loka, BSD City
+								<br>
+								Tangerang
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-	</div>
+      </div>
 
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Print</button>
       </div>
       
     </div>

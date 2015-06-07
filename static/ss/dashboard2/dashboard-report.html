@@ -16,7 +16,11 @@
         <script type="text/javascript" src="js/vendor/d3.min.js"></script>
         <script type="text/javascript" src="js/vendor/c3.min.js"></script>
         <script type="text/javascript" src="js/handsontable.js"></script>
-        <script type="text/javascript" src="js/helper.js"></script>
+        <script src="js/helper.js"></script>  
+        <script type="text/javascript" src="js/x-editable.js"></script>
+
+
+
         <script type="text/javascript">
         	$(document).ready(function() {
 			    var max_fields      = 10; //maximum input boxes allowed
@@ -37,8 +41,7 @@
 			    })
 
 
-
-			    // Sortable rows
+			     // Sortable rows
 				$('.table--sorted').sortable({
 					containerSelector: 'table',
 					itemPath: '> tbody',
@@ -51,6 +54,7 @@
 					}
 				});
 
+			 
 				$('.btn-sort').click(function(){
 					return false;
 				});
@@ -93,6 +97,12 @@
 						$(this).closest('tr').remove();
 						return false;
 					}
+			    });
+
+			    $.fn.editable.defaults.mode = 'popup';     
+    
+			    //make username editable
+			    $('.editable').editable({
 			    });
 
 			});
@@ -901,7 +911,7 @@
 
 
 
-<div class="modal fade" id="invoice" tabindex="-1">
+<div class="modal fade" id="invoiceModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -909,182 +919,243 @@
         <h4 class="modal-title" id="myModalLabel">Invoice</h4>
       </div>
       <div class="modal-body">
-<div class="invoice">
-		<div class="invoice-header">
-			<div class="invoice-header__logo">
-				<img src="img/ss-logo.png" alt="">
-			</div>
-			<div class="invoice-header__id">
-				<b>Invoice</b>
-				<b>201546529</b>
-			</div>
-		</div>
+			
+			
+<table style="width:100%;max-width:720px;background:#fff;margin:0 auto;border-collapse:collapse;">
+	<tbody>
+		<tr>
+			<td style="padding:20px;border:solid 1px #e5e5e5;border-bottom-color:#d7d7d7;">
+				<table style="border-collapse:collapse;width:100%;margin:0 0 1px;border-bottom:solid 2px #e5e5e5;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:50%;padding:0 0 16px 0;font-size:20px;font-weight:700;color:#D73C3C;">
+								<img src="http://ardianzzz.com/static/ss/dashboard/img/ss-logo.png" alt="Salestock Indonesia" style="border:0 none;height:32px;line-height:100%;outline:none;text-decoration:none;display:block;vertical-align:middle">
+							</td>
+							<td style="border-collapse:collapse;width:50%;padding:0 0 16px 0;vertical-align:middle;text-align:right">
+								<b style="font-size:18px;display:block;line-height:1.125;">
+									Faktur
+								</b>
+								<b>201546529</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-		<div class="invoice-body">
-			<div class="invoice-body__info">
-				Order ID: 201546529
+				<table style="border-collapse:collapse;width:100%;margin-bottom:16px;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:50%;padding:16px 0;border-top:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5">
+								Order ID: 201546529
+							</td>
+							<td style="border-collapse:collapse;width:50%;padding:16px 0;border-top:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;text-align:right">
+								26 May 2015
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-				26 May 2015
-			</div>
-			<div class="invoice-body__recap">
-				<table class="table">
+				<table style="border-collapse:collapse;width:100%;margin:0 0 1px;border-bottom:solid 1px #e5e5e5;">
 					<thead>
 						<tr>
-							<th>
-								Product
+							<th style="padding:6px 12px 6px 0;text-align:left;border-bottom:solid 2px #e5e5e5;" colspan="2">
+								Produk
 							</th>
-							<th>
+							<th style="padding:6px 12px;text-align:left;border-bottom:solid 2px #e5e5e5;">
 								SKU
 							</th>
-							<th style="text-align:right">
-								Price
+							<th style="padding:6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Harga
 							</th>
-							<th style="text-align:right">
-								Quantity
+							<th style="padding:6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Qty
 							</th>
-							<th style="text-align:right">
-								Amount
+							<th style="padding:6px 0 6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Total
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:78px;padding:12px 0 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top">
+								<img src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" style="border:0 none;line-height:100%;outline:none;text-decoration:none;display:block;width:64px;height:64px;">
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								Aerilyn Cape Twistcone Jumpsuit <small style="display:block;font-size:12px;color:#8E8E93;margin-top:4px;">Warna: Teal - Ukuran: L</small>
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right">
+								1
+							</td>
+							<td style="border-collapse:collapse;padding:12px 0 12px 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td style="border-collapse:collapse;width:78px;padding:12px 0 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top">
+								<img src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" style="border:0 none;height:auto;line-height:100%;outline:none;text-decoration:none;display:block;width:64px;height:64px;">
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								Aerilyn Cape Twistcone Jumpsuit <small style="display:block;font-size:12px;color:#8E8E93;margin-top:4px;">Warna: Teal - Ukuran: L</small>
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right">
+								1
+							</td>
+							<td style="border-collapse:collapse;padding:12px 0 12px 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:12px 0 0 12px">
+								Total Belanja :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:12px 0 0 12px;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:0 0 0 12px">
+								Ongkos Kirim :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:0 0 0 12px;white-space:nowrap;">
+								Rp 25.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:0 0 12px 12px">
+								Diskon Ongkos Kirim :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:0 0 12px 12px;white-space:nowrap;">
+								Rp -25.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:12px 0 32px 12px;border-top:solid 1px #e5e5e5;">
+								Total Harus Dibayar :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:12px 0 32px 12px;border-top:solid 1px #e5e5e5;white-space:nowrap;">
+								<b>Rp 236.000</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;border:solid 1px #e5e5e5;margin:0 0 1px">
+					<thead>
+						<tr>
+							<th style="padding:6px 12px;text-align:left;width:50%;border-bottom:solid 1px #e5e5e5;background:#f7f7f7;">
+								Alamat Pengiriman
+							</th>
+							<th style="padding:6px 12px;text-align:left;width:50%;border-right:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;background:#f7f7f7;">
+								Alamat Pembayaran
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>
-								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
-
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Teal</small>
+							<td style="border-collapse:collapse;padding:12px 12px 32px;width:50%;border-right:solid 1px #e5e5e5">
+								<strong>sylvana sella</strong>
+								<br>
+								jln.Bandeng Gg.belida No.4
+								<br>
+								Kota Pekanbaru - Marpoyan Damai 28282
+								<br>
+								Riau, Indonesia
+								<br>
+								085263979627
+								<br>
+								sylvanasella@yahoo.com
+								<br>
 							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
+							<td style="border-collapse:collapse;padding:12px 12px 32px;width:50%">
+								<strong>sylvana sella</strong>
+								<br>
+								jln.Bandeng Gg.belida No.4
+								<br>
+								Kota Pekanbaru - Marpoyan Damai 28282
+								<br>
+								Riau, Indonesia
+								<br>
+								085263979627
+								<br>
+								sylvanasella@yahoo.com
+								<br>
 							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
-
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Teal</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
-
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Teal</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-
-						<tr>
-							<td colspan="4" style="text-align:right">Item Total</td>
-							<td style="text-align:right"><b>118.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right">Shipping and Handling</td>
-							<td style="text-align:right"><b>25.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right">Shipping Discount</td>
-							<td style="text-align:right"><b>-25.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right">Total</td>
-							<td style="text-align:right"><b>118.000</b></td>
 						</tr>
 					</tbody>
 				</table>
 
+				<table style="border-collapse:collapse;width:100%;border:solid 1px #e5e5e5;margin:0 0 1px">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-right:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5">
+								<b>Pesan:</b>
+								<br>
+								Tolong di bungkus yang rapi
+							</td>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-bottom:solid 1px #e5e5e5">
+								<b>Diskon:</b>
+								<br>
+								FREEONGKIR (IDR 0.00)
+							</td>
+						</tr>
 
-				<table style="border-collapse:collapse" border="1" width="100%">
-				<tbody>
-				<tr>
-				<td style="padding:8px 8px;text-align:left;font-size:13px">
-				<strong>Message:</strong><br>
-				Tolong di bungkus yang rapi<br>
-				<br>
-				Discount(s):<br>
-				FREEONGKIR (IDR 0.00) </td>
-				<td style="padding:8px 8px;text-align:right;font-size:13px;width:300px">
-				<table width="100%">
-				<tbody><tr>
-				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Payment Method:</td>
-				<td style="font-size:13px;text-align:right">bank-transfer</td>
-				</tr>
-				<tr>
-				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Shipping:</td>
-				<td style="font-size:13px;text-align:right">aCommerce REG</td>
-				</tr>
-				</tbody></table>
-				</td>
-				</tr>
-				</tbody>
-				</table>
-
-
-				<table class="table">
-					<tbody><tr>
-						<th>Delivery Address</th>
-						<th>Billing Address</th>
-					</tr>
-					<tr>
-						<td style="width:50%;">
-							<strong>sylvana sella </strong><br>
-							jln.Bandeng Gg.belida No.4 <br>
-							Kota Pekanbaru - Marpoyan Damai 28282<br>
-							Riau, Indonesia<br>
-							Tel: 085263979627<br>
-							Email: sylvanasella@yahoo.com<br>
-						</td>
-						<td style="width:50%;">
-							<strong>sylvana sella </strong><br>
-							jln.Bandeng Gg.belida No.4 <br>
-							Kota Pekanbaru - Marpoyan Damai 28282<br>
-							Riau, Indonesia<br>
-							Tel: 085263979627<br>
-							Email: sylvanasella@yahoo.com<br>
-						</td>
-					</tr>
+						<tr>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-right:solid 1px #e5e5e5">
+								<b>Metode Pembayaran:</b>
+								<br>
+								Bank Transfer
+							</td>
+							<td style="border-collapse:collapse;padding:12px;width:50%">
+								<b>Pengiriman:</b>
+								<br>
+								aCommerce REG
+							</td>
+						</tr>
 					</tbody>
 				</table>
-			</div>
 
+				<table style="border-collapse:collapse;width:100%;font-size:smaller;border-top:solid 1px #e5e5e5;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:16px 0 12px;width:50%;line-height:1.25;color:#8E8E93;">
+								<b>Sale Stock&trade;</b>
+								<br>
+								Jalan Ciater Raya Blok i6/21
+								<br>
+								Griya Loka, BSD City
+								<br>
+								Tangerang
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-	</div>
+      </div>
 
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Print</button>
       </div>
       
     </div>
