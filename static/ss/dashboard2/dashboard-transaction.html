@@ -23,23 +23,6 @@
 
         <script type="text/javascript">
         	$(document).ready(function() {
-			    var max_fields      = 10; //maximum input boxes allowed
-			    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-			    var add_button      = $(".add_field_button"); //Add button ID
-			    
-			    var x = 1; //initlal text box count
-			    $(add_button).click(function(e){ //on add input button click
-			        e.preventDefault();
-			        if(x < max_fields){ //max input box allowed
-			            x++; //text box increment
-			            $(wrapper).append('<div><input type="text" class="form-control" name=""/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-			        }
-			    });
-			    
-			    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-			        e.preventDefault(); $(this).parent('div').remove(); x--;
-			    })
-
 
 			     // Sortable rows
 				$('.table--sorted').sortable({
@@ -222,13 +205,6 @@
 				<a href="#" class="btn btn--default btn--small btn-sort">Save</a>
 			</div>
 
-
-			
-			<div class="page-body__search">
-				<input type="text" class="form-control form-control--small">
-				<button class="btn btn--default btn--small">Search</button>
-			</div>
-
 		</div>
 
 		<div class="page-body__filter">
@@ -337,7 +313,7 @@
 							<a href="#" data-toggle="modal" data-target="#orderModal">201546529</a>
 						</td>
 						<td class="nowrap">
-							2015-05-26 13:36:58
+							6 hours ago
 						</td>
 						<td>
 							<a href="#">Sylvana Sella</a>
@@ -380,6 +356,8 @@
 						</td>
 						<td>
 							<a href="#">ria marlina</a>
+							<small><a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a></small>
+							<small>0899423432</small>
 						</td>
 						<td class="nowrap">
 							166.000
@@ -418,12 +396,17 @@
 		<div class="page-body__secondary-control">
 			<b>Page 1 of 23</b>
 			<ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<!-- <li><a href="#">1</a></li>
+				<li><a href="#">First</a></li>
+				<li><a href="#">Prev</a></li>
+				<li><a href="#">1</a></li>
 				<li><a href="#">2</a></li>
 				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li> -->
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
+				<li><span>…</span></li>
+				<li><a href="#">345</a></li>
+				<li><a href="#">346</a></li>
+				<li><a href="#">347</a></li>
+				<li><a href="#">Next</a></li>
+				<li><a href="#">Last</a></li>
 			</ul>
 		</div>
 	</div>
@@ -1049,128 +1032,193 @@
       <div class="modal-body">
 
       		<div class="modal-control">
-      			<div class="form-group form-group--inline">
-					<label class="form-label">Status:</label>
-					<div class="form-input">
-						<div class="checkbox checkbox--inline">
-							<label>
-								<input type="checkbox">
-								<span>Mark as Paid</span>
-							</label>
-						</div>
-						<div class="checkbox checkbox--inline">
-							<label>
-								<input type="checkbox">
-								<span>Mark as Shipped</span>
-							</label>
-						</div>
-					</div>
-				</div>
+      			<div class="btn-control">
+      				<button class="btn btn--default btn--small">Mark as Unpaid</button>
+      				<button class="btn btn--default btn--small">Mark as Shipped</button>
+      			</div>
 				<div class="order-date">
 					<b>Order Date:</b> 9 June 2015 01:12:09
 				</div>
 			</div>
+
+			<div class="order-status">
+
+				<div class="order-status__label">
+					Payment Status : <span class="badge badge--green">Paid</span>
+				</div>
+				<div class="order-status__label">
+					Shipment Status : <span class="badge badge--orange">Not Yet Shipped</span>
+				</div>
+			</div>
 			
       		<table class="table table--order">
-					<thead>
-						<tr>
-							<th>
-								Product
-							</th>
-							<th>
-								SKU
-							</th>
-							<th style="text-align:right">
-								Price
-							</th>
-							<th style="text-align:right">
-								Quantity
-							</th>
-							<th style="text-align:right">
-								Amount
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Warna: Teal &ndash; Ukuran L</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Warna: Teal &ndash; Ukuran L</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Aerilyn Cape Twistcone Jumpsuit 
-								<small>Warna: Teal &ndash; Ukuran L</small>
-							</td>
-							<td class="nowrap">
-								MIN-JSJS-4922TEA-R68
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-							<td style="text-align:right">
-								1
-							</td>
-							<td style="text-align:right">
-								118.000
-							</td>
-						</tr>
+				<thead>
+					<tr>
+						<th>
+							Product
+						</th>
+						<th>
+							SKU
+						</th>
+						<th style="text-align:right">
+							Price
+						</th>
+						<th style="text-align:right">
+							Quantity
+						</th>
+						<th style="text-align:right">
+							Amount
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							Aerilyn Cape Twistcone Jumpsuit 
+							<small>Warna: Teal &ndash; Ukuran L</small>
+						</td>
+						<td class="nowrap">
+							MIN-JSJS-4922TEA-R68
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+						<td style="text-align:right">
+							1
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Aerilyn Cape Twistcone Jumpsuit 
+							<small>Warna: Teal &ndash; Ukuran L</small>
+						</td>
+						<td class="nowrap">
+							MIN-JSJS-4922TEA-R68
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+						<td style="text-align:right">
+							1
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Aerilyn Cape Twistcone Jumpsuit 
+							<small>Warna: Teal &ndash; Ukuran L</small>
+						</td>
+						<td class="nowrap">
+							MIN-JSJS-4922TEA-R68
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+						<td style="text-align:right">
+							1
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+					</tr>
 
-						<tr>
-							<td colspan="4" style="text-align:right;">Item Total</td>
-							<td style="text-align:right;"><b>118.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right:border:0;">Shipping and Handling</td>
-							<td style="text-align:right;border:0;"><b>25.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right;border:0;">Shipping Discount</td>
-							<td style="text-align:right;border:0;"><b>-25.000</b></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="text-align:right;border:0;">Total</td>
-							<td style="text-align:right;border:0;"><b>118.000</b></td>
-						</tr>
-					</tbody>
-				</table>
+					<tr>
+						<td colspan="4" style="text-align:right;">Item Total</td>
+						<td style="text-align:right;"><b>118.000</b></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="text-align:right;">Shipping and Handling</td>
+						<td style="text-align:right;"><b>25.000</b></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="text-align:right;">Shipping Discount</td>
+						<td style="text-align:right;"><b>-25.000</b></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="text-align:right;">Total</td>
+						<td style="text-align:right;"><b>118.000</b></td>
+					</tr>
+				</tbody>
+			</table>
 
-      </div>
+			<table class="table table--order">
+				<thead>
+					<tr>
+						<th style="width:50%">Alamat Pengiriman</th>
+						<th style="width:50%">Alamat Pembayaran</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<b>sylvana sella</b>
+							<br>
+							jln.Bandeng Gg.belida No.4 
+							<br>
+							Kota Pekanbaru - Marpoyan Damai 28282 
+							<br>
+							Riau, Indonesia 
+							<br>
+							<a href="tel:085263979627">085263979627</a> 
+							<br>
+							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
+						</td>
+						<td>
+							<b>sylvana sella</b>
+							<br>
+							jln.Bandeng Gg.belida No.4 
+							<br>
+							Kota Pekanbaru - Marpoyan Damai 28282 
+							<br>
+							Riau, Indonesia 
+							<br>
+							<a href="tel:085263979627">085263979627</a> 
+							<br>
+							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn--default" data-dismiss="modal">Ok</button>
-      </div>
+			<table class="table table--order">
+				<tbody>
+					<tr>
+						<td style="width:50%;">
+							<b>Pesan:</b>
+							<br>
+							Tolong di bungkus yang rapi
+						</td>
+						<td style="width:50%;">
+							<b>Diskon:</b>
+							<br>
+							FREEONGKIR (IDR 0.00)
+						</td>
+					</tr>
+
+					<tr>
+						<td style="width:50%;">
+							<b>Metode Pembayaran:</b>
+							<br>
+							Bank Transfer
+						</td>
+						<td style="width:50%;">
+							<b>Pengiriman:</b>
+							<br>
+							aCommerce REG
+						</td>
+					</tr>
+				</tbody>
+			</table>
+      	</div>
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn--default" data-dismiss="modal">Ok</button>
+		</div>
       
     </div>
   </div>
