@@ -320,10 +320,8 @@
 						</th>
 						<th class="nowrap" style="width:1%;">Order ID</th>
 						<th>Order date</th>
-						<th>Customer name</th>
-						<th>Email</th>
-						<th>Amount</th>
-						<th>Pay method</th>
+						<th>Pelanggan</th>
+						<th>Jumlah</th>
 						<th>Status</th>
 						<th>&nbsp;</th>
 					</tr>
@@ -336,28 +334,35 @@
 							</div>
 						</td>
 						<td class="nowrap">
-							<a href="#">201546529</a>
+							<a href="#" data-toggle="modal" data-target="#orderModal">201546529</a>
 						</td>
 						<td class="nowrap">
 							2015-05-26 13:36:58
 						</td>
 						<td>
 							<a href="#">Sylvana Sella</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
+							<small><a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a></small>
+							<small>0899423432</small>
 						</td>
 						<td class="nowrap">
 							118.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
+							<small>Bank Transfer</small>
 						</td>
 						<td class="nowrap">
 							Pending
 						</td>
 						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#invoiceModal"  data-tooltip data-title="Invoice">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M398.6 169.2c-.9-2.2-2-4.3-3.5-6.1l-83.8-91.7c-1.9-2.1-4.2-3.6-6.7-4.9-2.9-1.5-6.1-2.1-9.5-2.1H135.2c-12.4 0-22.7 10.6-22.7 23.9v335.2c0 13.4 10.3 24.9 22.7 24.9h243.1c12.4 0 22.2-11.5 22.2-24.9V179.4c0-3.6-.5-7.1-1.9-10.2zm-238.1 9.4c0-1.5 1.8-2.1 3.4-2.1h70.8c1.6 0 2.8.6 2.8 2.1v10.8c0 1.4-1.1 3.1-2.8 3.1h-70.8c-1.6 0-3.4-1.7-3.4-3.1v-10.8zm0 128c0-1.5 1.8-2.1 3.4-2.1h122.2c1.6 0 2.4.6 2.4 2.1v10.8c0 1.4-.7 3.1-2.4 3.1H163.9c-1.6 0-3.4-1.7-3.4-3.1v-10.8zm160 74.8c0 1.4-.7 3.1-2.4 3.1H163.9c-1.6 0-3.4-1.7-3.4-3.1v-10.8c0-1.5 1.8-2.1 3.4-2.1h154.2c1.6 0 2.4.6 2.4 2.1v10.8zm32-128c0 1.4-.7 3.1-2.4 3.1H163.9c-1.6 0-3.4-1.7-3.4-3.1v-10.8c0-1.5 1.8-2.1 3.4-2.1h186.2c1.6 0 2.4.6 2.4 2.1v10.8zm-46.9-75.9c-5.6 0-11.1-5.2-11.1-11.3v-66l71.2 77.3h-60.1z"/></svg>
+							</a>
+
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip data-title="Edit">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+							</a>
+
+							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+							</a>
 						</td>
 					</tr>
 
@@ -368,7 +373,7 @@
 							</div>
 						</td>
 						<td class="nowrap">
-							<a href="#">201546528</a>
+							<a href="#" data-toggle="modal" data-target="#orderModal">201546528</a>
 						</td>
 						<td class="nowrap">
 							2015-05-26 13:36:57
@@ -376,443 +381,29 @@
 						<td>
 							<a href="#">ria marlina</a>
 						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">ria.marlina a@yahoo.com</a>
-						</td>
 						<td class="nowrap">
 							166.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
+							<small>COD</small>
 						</td>
 						<td class="nowrap">
 							Verifying 
 						</td>
 						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#invoiceModal"  data-tooltip data-title="Invoice">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M398.6 169.2c-.9-2.2-2-4.3-3.5-6.1l-83.8-91.7c-1.9-2.1-4.2-3.6-6.7-4.9-2.9-1.5-6.1-2.1-9.5-2.1H135.2c-12.4 0-22.7 10.6-22.7 23.9v335.2c0 13.4 10.3 24.9 22.7 24.9h243.1c12.4 0 22.2-11.5 22.2-24.9V179.4c0-3.6-.5-7.1-1.9-10.2zm-238.1 9.4c0-1.5 1.8-2.1 3.4-2.1h70.8c1.6 0 2.8.6 2.8 2.1v10.8c0 1.4-1.1 3.1-2.8 3.1h-70.8c-1.6 0-3.4-1.7-3.4-3.1v-10.8zm0 128c0-1.5 1.8-2.1 3.4-2.1h122.2c1.6 0 2.4.6 2.4 2.1v10.8c0 1.4-.7 3.1-2.4 3.1H163.9c-1.6 0-3.4-1.7-3.4-3.1v-10.8zm160 74.8c0 1.4-.7 3.1-2.4 3.1H163.9c-1.6 0-3.4-1.7-3.4-3.1v-10.8c0-1.5 1.8-2.1 3.4-2.1h154.2c1.6 0 2.4.6 2.4 2.1v10.8zm32-128c0 1.4-.7 3.1-2.4 3.1H163.9c-1.6 0-3.4-1.7-3.4-3.1v-10.8c0-1.5 1.8-2.1 3.4-2.1h186.2c1.6 0 2.4.6 2.4 2.1v10.8zm-46.9-75.9c-5.6 0-11.1-5.2-11.1-11.3v-66l71.2 77.3h-60.1z"/></svg>
+							</a>
+
+							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip data-title="Edit">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+							</a>
+
+							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+							</a>
 						</td>
 					</tr>
 
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">ima</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">imayunah@salestockindonesia.com</a>
-						</td>
-						<td class="nowrap">
-							166.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Processing
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">Sony Santoso</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">totasinaga83@gmail.com</a>
-						</td>
-						<td class="nowrap">
-							366.000
-						</td>
-						<td class="nowrap">
-							COD
-						</td>
-						<td class="nowrap">
-							Cancelled
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">Mariana Renata</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">metemetes@gmail.com</a>
-						</td>
-						<td class="nowrap">
-							366.000
-						</td>
-						<td class="nowrap">
-							COD
-						</td>
-						<td class="nowrap">
-							Shipped
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-
-
-
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546529</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:58
-						</td>
-						<td>
-							<a href="#">Sylvana Sella</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
-						</td>
-						<td class="nowrap">
-							118.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Pending
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:57
-						</td>
-						<td>
-							<a href="#">ria marlina</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">ria.marlina a@yahoo.com</a>
-						</td>
-						<td class="nowrap">
-							166.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Verifying 
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">ima</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">imayunah@salestockindonesia.com</a>
-						</td>
-						<td class="nowrap">
-							166.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Processing
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">Sony Santoso</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">totasinaga83@gmail.com</a>
-						</td>
-						<td class="nowrap">
-							366.000
-						</td>
-						<td class="nowrap">
-							COD
-						</td>
-						<td class="nowrap">
-							Cancelled
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">Mariana Renata</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">metemetes@gmail.com</a>
-						</td>
-						<td class="nowrap">
-							366.000
-						</td>
-						<td class="nowrap">
-							COD
-						</td>
-						<td class="nowrap">
-							Shipped
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546529</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:58
-						</td>
-						<td>
-							<a href="#">Sylvana Sella</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
-						</td>
-						<td class="nowrap">
-							118.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Pending
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:57
-						</td>
-						<td>
-							<a href="#">ria marlina</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">ria.marlina a@yahoo.com</a>
-						</td>
-						<td class="nowrap">
-							166.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Verifying 
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">ima</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">imayunah@salestockindonesia.com</a>
-						</td>
-						<td class="nowrap">
-							166.000
-						</td>
-						<td class="nowrap">
-							Bank Transfer
-						</td>
-						<td class="nowrap">
-							Processing
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">Sony Santoso</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">totasinaga83@gmail.com</a>
-						</td>
-						<td class="nowrap">
-							366.000
-						</td>
-						<td class="nowrap">
-							COD
-						</td>
-						<td class="nowrap">
-							Cancelled
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td class="nowrap">
-							<a href="#">201546528</a>
-						</td>
-						<td class="nowrap">
-							2015-05-26 13:36:56
-						</td>
-						<td>
-							<a href="#">Mariana Renata</a>
-						</td>
-						<td>
-							<a href="mailto:sylvanasella@yahoo.com">metemetes@gmail.com</a>
-						</td>
-						<td class="nowrap">
-							366.000
-						</td>
-						<td class="nowrap">
-							COD
-						</td>
-						<td class="nowrap">
-							Shipped
-						</td>
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" data-toggle="modal" data-target="#invoiceModal">Invoice</a>
-						</td>
-					</tr>
+					
 					
 					
 				</tbody>
@@ -866,7 +457,7 @@
 	    <div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Add New Category</h4>
+				<h4 class="modal-title">Add New Category</h4>
 			</div>
       		<div class="modal-body">
       			<div class="form-group">
@@ -934,7 +525,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
+        <h4 class="modal-title">Add New Product</h4>
       </div>
       <div class="modal-body">
 
@@ -1115,69 +706,67 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Product Preview</h4>
+        <h4 class="modal-title">Product Preview</h4>
       </div>
       <div class="modal-body">
-        	
+
       		<div class="product">
-                    <div class="product__figure">
-                        <div class="product__image">
-                            <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
-                        </div>
+                <div class="product__figure">
+                    <div class="product__image">
+                        <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
-                            Sophia Polka Skirt
-                        </div>
-                        <div class="product__price">
-                            <ins>69.000</ins>
-                            <del>70.000</del>
-                        </div>
-                        <div class="product__size">
-                            L
-                        </div>
+                </div>
+                <div class="product__info">
+                    <div class="product__title">
+                        Sophia Polka Skirt
                     </div>
-                    <div class="product__description">
-                        <div>
-                            <b>Warna</b> Warna Creme, Grey, Dusty Burgundy, dan Lite Grey
-                        </div>
-                        <div>
-                            <b>Ukuran</b> Satu ukuran muat sampai size L kecil
-                            <br> Lingkar pinggang 68-86cm, Panjang 97cm
-                        </div>
-                        <div>
-                            <b>Bahan</b> Bahan Linen
-                        </div>
-                        <div>
-                            <b>Informasi Lain</b> Tali pinggang hidup, Pinggang belakang karet
-                        </div>
+                    <div class="product__price">
+                        <ins>69.000</ins>
+                        <del>70.000</del>
                     </div>
-                    
-                    <div class="product__color">
-                        <div class="select-color">
-                            <div class="color">
-                                <a href="#" data-toggle="add-item">Red</a>
-                            </div>
-                            <div class="color">
-                                <a href="#" data-toggle="add-item">Green</a>
-                            </div>
-                            <div class="color">
-                                <a href="#" data-toggle="add-item">Blue</a>
-                            </div>
-                            <div class="color">
-                                <a href="#" data-toggle="add-item">Midori</a>
-                            </div>
-                            <div class="color">
-                                <a href="#" data-toggle="add-item">Alizarin</a>
-                            </div>
-                            <div class="color">
-                                <a href="#" data-toggle="add-item">Turquoise</a>
-                            </div>
+                    <div class="product__size">
+                        L
+                    </div>
+                </div>
+                <div class="product__description">
+                    <div>
+                        <b>Warna</b> Warna Creme, Grey, Dusty Burgundy, dan Lite Grey
+                    </div>
+                    <div>
+                        <b>Ukuran</b> Satu ukuran muat sampai size L kecil
+                        <br> Lingkar pinggang 68-86cm, Panjang 97cm
+                    </div>
+                    <div>
+                        <b>Bahan</b> Bahan Linen
+                    </div>
+                    <div>
+                        <b>Informasi Lain</b> Tali pinggang hidup, Pinggang belakang karet
+                    </div>
+                </div>
+                
+                <div class="product__color">
+                    <div class="select-color">
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Red</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Green</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Blue</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Midori</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Alizarin</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Turquoise</a>
                         </div>
                     </div>
                 </div>
-
-
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
@@ -1204,7 +793,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Invoice</h4>
+        <h4 class="modal-title">Invoice</h4>
       </div>
       <div class="modal-body">
 			
@@ -1444,6 +1033,143 @@
       <div class="modal-footer">
         <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn--red">Print</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="orderModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Detail Order</h4>
+      </div>
+      <div class="modal-body">
+
+      		<div class="modal-control">
+      			<div class="form-group form-group--inline">
+					<label class="form-label">Status:</label>
+					<div class="form-input">
+						<div class="checkbox checkbox--inline">
+							<label>
+								<input type="checkbox">
+								<span>Mark as Paid</span>
+							</label>
+						</div>
+						<div class="checkbox checkbox--inline">
+							<label>
+								<input type="checkbox">
+								<span>Mark as Shipped</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="order-date">
+					<b>Order Date:</b> 9 June 2015 01:12:09
+				</div>
+			</div>
+			
+      		<table class="table table--order">
+					<thead>
+						<tr>
+							<th>
+								Product
+							</th>
+							<th>
+								SKU
+							</th>
+							<th style="text-align:right">
+								Price
+							</th>
+							<th style="text-align:right">
+								Quantity
+							</th>
+							<th style="text-align:right">
+								Amount
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Warna: Teal &ndash; Ukuran L</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Warna: Teal &ndash; Ukuran L</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Warna: Teal &ndash; Ukuran L</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="4" style="text-align:right;">Item Total</td>
+							<td style="text-align:right;"><b>118.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right:border:0;">Shipping and Handling</td>
+							<td style="text-align:right;border:0;"><b>25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right;border:0;">Shipping Discount</td>
+							<td style="text-align:right;border:0;"><b>-25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right;border:0;">Total</td>
+							<td style="text-align:right;border:0;"><b>118.000</b></td>
+						</tr>
+					</tbody>
+				</table>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Ok</button>
       </div>
       
     </div>
