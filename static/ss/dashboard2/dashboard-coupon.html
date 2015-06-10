@@ -196,8 +196,8 @@
 
 		<div class="page-body__navigation">
 			<ul>
-				<li class="active"><a href="dashboard-product.html">Pengguna</span></a></li>
-				<li><a href="dashboard-product.html">Kupon</a></li>
+				<li><a href="dashboard-product.html">Pengguna</span></a></li>
+				<li class="active"><a href="dashboard-coupon.html">Kupon</a></li>
 				<li><a href="dashboard-draft.html">Halaman statis</a></li>
 				<li><a href="dashboard-search.html">Misc</a></li>
 			</ul>
@@ -210,8 +210,7 @@
 
 			
 			<div class="page-body__search">
-				<input type="text" class="form-control form-control--small">
-				<button class="btn btn--default btn--small">Search</button>
+				<button class="btn btn--red btn--small" data-toggle="modal" data-target="#addCoupon">Add Coupon</button>
 			</div>
 
 		</div>
@@ -226,16 +225,11 @@
 								<label><input type="checkbox" id="selectAll"><span></span></label>
 							</div>
 						</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Role</th>
-						<th>Last Activity</th>
-						<th>Join Date</th>
+						<th style="width:100%;">Name</th>
 						<th>&nbsp;</th>
 					</tr>
 				</thead>
 				<tbody>
-
 					<tr>
 						<td>
 							<div class="checkbox">
@@ -243,48 +237,10 @@
 							</div>
 						</td>
 						<td>
-							<a href="#">SuP3r4dM1n</a>
+							<a href="#">CouponName #1</a>
 						</td>
-						<td>
-							&ndash;
-						</td>
-						<td>
-							Root
-						</td>
-						<td>
-							6 minutes ago
-						</td>
-						<td>	
-							&ndash;
-						</td>
-						<td style="text-align:right">
-							&nbsp;
-						</td>
-					</tr>
-
-
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td>
-							<a href="#">Selena Gemez</a>
-						</td>
-						<td>
-							<a href="mailto:selena.gemez@gmx.com">selena.gemez@gmx.com</a>
-						</td>
-						<td>
-							Administrator
-						</td>
-						<td>
-							6 minutes ago
-						</td>
-						<td>	
-							26 Apr 2015 14:32
-						</td>
-						<td style="text-align:right">
+						
+						<td class="nowrap" style="text-align:right;">
 							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip data-title="Edit">
 								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
 							</a>
@@ -294,7 +250,38 @@
 							</a>
 						</td>
 					</tr>
-					
+
+					<tr>
+						<td>
+							<div class="checkbox">
+								<label><input type="checkbox"><span></span></label>
+							</div>
+						</td>
+						<td>
+							<a href="#">CouponName #2</a>
+						</td>
+						
+						<td class="nowrap" style="text-align:right;">
+							<a href="#" class="table__edit">Edit</a>
+							<a href="#" class="table__delete">Delete</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="checkbox">
+								<label><input type="checkbox"><span></span></label>
+							</div>
+						</td>
+						<td>
+							<a href="#">CouponName #3</a>
+						</td>
+						
+						<td class="nowrap" style="text-align:right;">
+							<a href="#" class="table__edit">Edit</a>
+							<a href="#" class="table__delete">Delete</a>
+						</td>
+					</tr>
 					
 				</tbody>
 
