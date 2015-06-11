@@ -464,9 +464,13 @@ body {
     }
     p {
         margin: 0 0 1.6rem;
+
+        &:last-of-type {
+            margin:0;
+        }
     }
     .form-group {
-        margin: 0;
+        margin: 1.6rem 0 0;
     }
 }
 
