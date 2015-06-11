@@ -468,6 +468,10 @@ body {
         &:last-of-type {
             margin:0;
         }
+
+        &+.social-media-container {
+            margin-top:1.2rem;
+        }
     }
     .form-group {
         margin: 1.6rem 0 0;
@@ -493,7 +497,7 @@ body {
         }
         a {
             display: block;
-            padding: .8rem 0;
+            padding: 1.2rem 0;
             text-align: center;
             line-height: 1.2;
             svg {
@@ -2106,6 +2110,8 @@ body.addcart,
         height: 10.8rem;
         position: relative;
         overflow: hidden;
+
+
         &.fade {
             -webkit-animation-duration: .4s;
             animation-duration: .4s;
@@ -2150,9 +2156,13 @@ body.addcart,
             right: 1.2rem;
             font-weight: 700;
             line-height: 1;
+            text-align: right;
             del{
-              color: #C7C7CC;
-              padding-right: .8rem;
+                color: #8E8E93;
+                display: block;
+                font-weight: 400;
+                font-size: 1.2rem;
+                padding: 0 0 .2rem;
             }
         }
         &__meta {
@@ -2189,6 +2199,33 @@ body.addcart,
             top: .4rem;
             right: .4rem;
             z-index: 12;
+        }
+
+        &__soldout {
+            position: absolute;
+            top:0;
+            right: 0;
+            bottom:0;
+            left: 0;
+            z-index: 10;
+            background: rgba(247,247,247,.8);
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+
+
+            b {
+                display: block;
+                position: absolute;
+                top: 50%;
+                padding:0 1.2rem;
+                width: 100%;
+                text-align: center;
+                color: #dc5555;
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
         }
     }
     &__subtotal {
