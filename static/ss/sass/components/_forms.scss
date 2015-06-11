@@ -76,7 +76,8 @@ legend {
 
     &.disabled,
     &:disabled {
-        opacity: .72rem;
+        opacity: .72;
+        pointer-events: none;
     }
 }
 
