@@ -218,7 +218,7 @@ body {
 .snap-drawer-left {
     left: 0;
     z-index: 1;
-    background: #2b2b2b;
+    // background: #2b2b2b;
     -webkit-font-smoothing:antialiased;
 }
 
@@ -431,6 +431,7 @@ body {
         line-height: 1.8rem;
         width: 1.8rem;
         text-align: center;
+        -webkit-font-smoothing:antialiased;
     }
 }
 
@@ -1538,6 +1539,22 @@ body.addcart,
         clear: both;
         border-top: solid .1rem #eee;
         border-bottom: solid .1rem #eee;
+
+        &__placeholder {
+            display: block;
+            min-width: 100%;
+            background: #eee;
+            line-height: 1.6rem;
+            height: 1.6rem;
+            margin: .2rem 0;
+            vertical-align: middle;
+
+            &+.product__description__placeholder {
+                max-width: 80%;
+                min-width: 80%;
+            }
+        }
+
         >div {
             margin: 0 0 1.2rem;
             &:last-of-type {
@@ -1545,6 +1562,11 @@ body.addcart,
             }
             >b {
                 display: block;
+
+                .product__description__placeholder {
+                    display: inline-block;
+                    min-width: 12rem;
+                }
             }
         }
     }
@@ -1561,7 +1583,8 @@ body.addcart,
 }
 
 .product__title__placeholder,
-.product__price__placeholder {
+.product__price__placeholder,
+.product__description__placeholder {
     -webkit-animation-duration: 1.6s;
     animation-duration: 1.6s;
     -webkit-animation-fill-mode: forwards;
@@ -1569,7 +1592,7 @@ body.addcart,
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     -webkit-animation-name: placeholder;
-    animation-name: place;
+    animation-name: placeholder;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     background: #f7f7f7;
@@ -2278,6 +2301,7 @@ body.addcart,
 
 .preloader {
     padding: 1.6rem 0;
+    text-align: center;
     .spinner {
         width: 3.2rem;
         height: 3.2rem;
@@ -2289,9 +2313,10 @@ body.addcart,
     }
     &__label {
         font-size: 1.2rem;
-        position: absolute;
-        bottom: -2rem;
         text-align: center;
+        margin: .8rem 0 0;
+        color: #8E8E93;
+
     }
     &--wrapper {
         position: fixed;
@@ -2319,7 +2344,6 @@ body.addcart,
             width: 16rem;
         }
         .preloader__label {
-            margin: .8rem 0 0;
             position: relative;
             bottom: auto;
             line-height: 1.4;
