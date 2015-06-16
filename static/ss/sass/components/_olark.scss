@@ -147,11 +147,11 @@
     background-color: rgba(255, 255, 255, .2);
 }
 
-#habla_beta_container_do_not_rely_on_div_classes_or_names #habla_middle_wrapper_div .hbl_panel {
+#habla_middle_wrapper_div .hbl_panel {
     padding: 10px 0 !important;
 }
 
-#habla_offline_message_div {
+#habla_middle_wrapper_div #habla_offline_message_div {
     padding: 10px !important;
 }
 
@@ -172,7 +172,7 @@
     display: block;
     float: right !important;
     padding: 8px 12px !important;
-    background: #007AFF;
+    background: #FF9500;
     color: #fff !important;
     margin-left: 20px !important;
     border-radius: 4px;
@@ -195,7 +195,7 @@
     display: block;
     float: left !important;
     padding: 8px 12px !important;
-    background: #D1EEFC;
+    background: #d7d7d7;
     margin-right: 20px !important;
     border-radius: 4px;
     font-size: 13px !important;
@@ -206,9 +206,9 @@
 .habla_conversation_person1 + .habla_conversation_text_span:after {
     content: "";
     border-top: solid 8px transparent;
-    border-left: solid 8px #007AFF;
+    border-left: solid 8px #FF9500;
     border-right: solid 8px transparent;
-    border-bottom: solid 8px #007AFF;
+    border-bottom: solid 8px #FF9500;
     position: absolute;
     bottom: 0;
     right: -6px;
@@ -217,9 +217,9 @@
 .habla_conversation_person2 + .habla_conversation_text_span:after {
     content: "";
     border-top: solid 8px transparent;
-    border-right: solid 8px #D1EEFC;
+    border-right: solid 8px #d7d7d7;
     border-left: solid 8px transparent;
-    border-bottom: solid 8px #D1EEFC;
+    border-bottom: solid 8px #d7d7d7;
     position: absolute;
     bottom: 0;
     left: -6px;
@@ -231,4 +231,26 @@
 
 #habla_middle_div + div {
     background: #fff;
+    padding-top:7px;
+    border-top:solid 1px #eee;
+    opacity:.64;
+}
+
+#habla_window_div input[type='submit'], #habla_window_div button {
+    margin-right:1px !important;
+    margin-top:10px !important;
+}
+
+#habla_beta_container_do_not_rely_on_div_classes_or_names .habla_button {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAAAgCAQAAABgZzQ3AAABcklEQVR4Ae3WQWrCQBTG8Se46ELX5ggewGWF3KAHcV267AFEEFe9QJe9g2jvkBMUwZW8uAiC+TqR10GeM9hCnNLy8gczJZv8OpNMyI4/cdiBLk/32Z6kjJ+YAg15w/DRRTnDlQeuzHmpmjOlSE48ZXAhxIwLRjkp6TIh/hy4ZKiWKYGCaogyWm97WwrFD783g+jjxdUH6aoVFqCzFtWqoiaqpC/iFV5sBvNTApSo3TDAKwC434EG1kcc8IgOyNVxo0N9rKmJap8Qr/OKMueNAiJQu7wx3gG8ueBGY0Wc4APADAPXDHB/TUBNBJ8HyrOoE567KuOEwDhAiv4DNG/NRZi4G514fnZ5mHKJxpegL7KEFW/bk5Ei8j2XnhfNA6ntwi8RXeglJCee+tsX7PlOqHmtARPsk3JCt3z2ty8bvQIKr1Vggn2S+FvtRrgD3azbz+C/zYA6AxrQgAY0oAHTf0umB6b/lrQZtGfQgOkzoAEN+AnC8vigP7qKlwAAAABJRU5ErkJggg==);   
+}
+
+#habla_beta_container_do_not_rely_on_div_classes_or_names .habla_button:hover {
+    background-color:rgba(0,0,0,0.4);
+}
+
+#habla_beta_container_do_not_rely_on_div_classes_or_names #habla_middle_wrapper_div .olrk_avatar {
+    margin-right:-1px !important;
+    border:0;
+    border-radius:50%;
 }
