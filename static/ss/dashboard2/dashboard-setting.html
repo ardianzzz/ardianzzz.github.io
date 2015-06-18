@@ -83,6 +83,9 @@
 					}
 			    });
 
+
+			    $('.input-number').filter_input({regex:'[0-9]'}); 
+
 			    $.fn.editable.defaults.mode = 'popup';     
     
 			    //make username editable
@@ -438,14 +441,14 @@
 				<div class="form-input">
 					<div class="radio radio--inline">
 						<label>
-							<input type="radio" name="l">
-							<span>Publish</span>
+							<input type="radio" name="l" checked>
+							<span>Unpublish</span>
 						</label>
 					</div>
 					<div class="radio radio--inline">
 						<label>
-							<input type="radio" name="l" checked>
-							<span>Unpublish</span>
+							<input type="radio" name="l">
+							<span>Publish</span>
 						</label>
 					</div>
 				</div>
@@ -518,7 +521,7 @@
 		        	<div class="form-group">
 		        		<label class="form-label">Price</label>
 		        		<div class="form-input">
-		        			<input type="text" class="form-control">
+		        			<input type="text" class="form-control input-number">
 		        		</div>
 		        	</div>
 		        </div>
@@ -526,7 +529,7 @@
 		        	<div class="form-group">
 		        		<label class="form-label">Sale Price</label>
 		        		<div class="form-input">
-		        			<input type="text" class="form-control">
+		        			<input type="text" class="form-control input-number">
 		        		</div>
 		        	</div>
 		        </div>
