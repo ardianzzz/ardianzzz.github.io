@@ -38,11 +38,11 @@
                         <span>Review</span>
                     </div>
                 </div>
-                <div class="form">
-                    <h3 class="form__title">
+                <div class="box">
+                    <h3 class="box__title">
             			Alamat Pengiriman
             		</h3>
-                    <div class="form__body">
+                    <div class="box__body">
                         <div class="form-group">
                             <label class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" placeholder="Soraya Indah">
@@ -53,7 +53,13 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Alamat</label>
-                            <textarea class="form-control" rows="3" placeholder="Jalan Ciater Raya Blok i6/21 Griya Loka, BSD City"></textarea>
+                            <textarea class="form-control address" id="address_1" rows="3" placeholder="Jalan Ciater Raya Blok i6/21 Griya Loka, BSD City"></textarea>
+
+                            <div class="charCount" id="txtLen_1">160</div>
+
+                           
+
+
                         </div>
                         <div class="form-group">
                             <label class="form-label">Provinsi</label>
@@ -112,7 +118,11 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Alamat</label>
-                                <textarea class="form-control" rows="3" placeholder="Jalan Ciater Raya Blok i6/21 Griya Loka, BSD City"></textarea>
+                                <textarea class="form-control address" id="address_2" rows="3" placeholder="Jalan Ciater Raya Blok i6/21 Griya Loka, BSD City"></textarea>
+
+                                <div class="charCount">160</div>
+
+                               
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Provinsi</label>
@@ -151,11 +161,37 @@
                         </div>
 
                     </div>
-                    <div class="form__action">
+                    <div class="box__action">
                         <a href="checkout-step-2.html" type="submit" class="btn btn--red btn--block">Selanjutnya</a>
                     </div>
                 </div>
             </div>
+
+             <script type="text/javascript">                                   
+                [].forEach.call(document.querySelectorAll('.address'), function(el) {
+
+                     function countChars() {
+
+                         var l = "160";
+                         var str = el.value;
+                         var counter = el.nextElementSibling;
+                         var len = str.length;
+
+                         counter.textContent=l-len;
+                         if(len > l) counter.style.color='#D73C3C';
+                         else
+                         counter.style.color='';
+                    }
+
+                    el.addEventListener('focus', countChars, true);
+
+                    el.addEventListener('keydown', countChars, true);
+
+                    el.addEventListener('keyup', countChars, true);
+                });
+            </script>
+
+
         </div>
     </div>
     <div class="snap-drawer snap-drawer-left">

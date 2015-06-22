@@ -42,11 +42,11 @@
                         <span>Review</span>
                     </div>
                 </div>
-                <div class="form">
-                    <h3 class="form__title">
-			Konfirmasi Data Belanja
-		</h3>
-                    <div class="form__body">
+                <div class="box">
+                    <h3 class="box__title">
+            			Konfirmasi Data Belanja
+            		</h3>
+                    <div class="box__body">
                         <div class="panel">
                             <div class="panel__header">
                                 <h4 class="panel__title">Total 4 Barang</h4>
@@ -89,6 +89,13 @@
                                                 88.000
                                             </div>
                                             <a href="#" class="checkout-item__remove"></a>
+
+                                            <div class="checkout-item__soldout">
+                                                <div>
+                                                    <b>Maaf Sis, barang habis</b>
+                                                    <span>Klik untuk menghapus barang</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="checkout-item">
                                             <div class="checkout-item__image" style="background-image:url(http://www.salestockindonesia.com/resources/content/products/150213153138_IMG_6564_full.JPG)"></div>
@@ -274,7 +281,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form__action">
+                    <div class="box__action">
                         <a href="checkout-step-4.html" type="submit" class="btn btn--red btn--block">Konfirmasi</a>
                     </div>
                 </div>
@@ -290,6 +297,13 @@
                         if (answer) {
                             closestElem.classList.add('fade');
                         }
+                    })
+                });
+
+                [].forEach.call(document.querySelectorAll('.checkout-item__soldout'), function(el) {
+                    var closestElem = getClosest(el, '.checkout-item');
+                    el.addEventListener('click', function() {
+                        closestElem.classList.add('fade');
                     })
                 });
 
