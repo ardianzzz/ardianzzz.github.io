@@ -811,6 +811,7 @@ body {
                 text-decoration: none !important;
                 -webkit-transition-duration: .2s, .2s;
                 transition-duration: .2s, .2s;
+
                 svg {
                     display: block;
                     float: left;
@@ -819,7 +820,7 @@ body {
                     height: 2.4rem;
                     fill: #8E8E93;
                 }
-                &:focus {
+                &:hover {
                     background: rgba(255, 255, 255, .06);
                     box-shadow: 0 .1rem rgba(0, 0, 0, .02) inset;
                 }
@@ -3000,7 +3001,7 @@ body.addcart,
         left: .6rem;
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAANCAMAAABb/CT9AAAAIVBMVEX19ff19ff19ff19ff29vj19ff29vj29vj39/n19ff39/krqXV2AAAACXRSTlNAYICQsMDA5O8V733/AAAAHklEQVQI12NgZGVmYOJkhWM2Lg4UzMLFjiLPwMQIABeWAOI1TcCDAAAAAElFTkSuQmCC) center repeat-x;
         background-size: auto 100%;
-        z-index: 8;
+        z-index: 99;
         border-radius: .2rem 0 0 0.2rem;
 
         &-1 {
@@ -3040,6 +3041,7 @@ body.addcart,
 }
 
 .snapjs-right {
+
     .hanger-1,.hanger-2,.hanger-3 {
         -webkit-transform-origin: top center;
         transform-origin: top center;
@@ -3078,11 +3080,12 @@ body.addcart,
     
 
     &--1 {
-          bottom: 24%;
+          bottom: 0;
     }
 
     &--2 {
         bottom: 0;
+        display: none;
     }
 
 
@@ -3090,24 +3093,26 @@ body.addcart,
         position: absolute;
         bottom: 1.2rem;
         left: 50%;
-        margin-left: -6rem;
-        width: 12rem;
-        tex-shadow:.1rem .1rem rgba(0,0,0,0.12);
+        margin-left: -9rem;
+        width: 18rem;
+        text-shadow:-.1rem -.1rem rgba(0,0,0,0.32);
+
         span {
             display: block;
-            width: 12rem;
             padding:.8rem;
             background: #4a4a4a;
-            font-size: 1.1rem;
-            color: #fff;
+            font-size: 1.4rem;
+            color: #e5e5e5;
             -webkit-font-smoothing:antialiased;
             -webkit-transform: skew(-4deg);
             -moz-transform: skew(-4deg);
             -ms-transform: skew(-4deg);
             -o-transform: skew(-4deg);
             transform: skew(-4deg);
-            box-shadow: 0 .1rem .1rem rgba(0,0,0,0.08),.1rem .2rem rgba(0,0,0,0.06);
+            box-shadow: 0 .1rem .1rem rgba(0,0,0,0.08),.1rem .2rem rgba(0,0,0,0.06),0 .1rem rgba(255,255,255,.064) inset, 0 -.1rem rgba(0,0,0,.08) inset, 0 -.2rem rgba(0,0,0,.064) inset;
             z-index: 88;
+            font-weight: 500;  
+            white-space: nowrap;
         }   
 
 
@@ -3115,7 +3120,7 @@ body.addcart,
             position: absolute;
             content:"";
             display: block;
-            width: 12rem;
+            width: 18rem;
             bottom:0;
             background: #282828;
             z-index: -1;
@@ -3137,7 +3142,7 @@ body.addcart,
             position: absolute;
             content:"";
             display: block;
-            width: 12rem;
+            width: 18rem;
             top:0;
             bottom: 1.2rem;
             background: #282828;
