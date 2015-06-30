@@ -849,7 +849,7 @@ body {
             top:50%;
             margin-top:-1rem;
             right: 2rem;
-            display: none;
+            opacity: 0;
             cursor: pointer;
 
             svg {
@@ -890,7 +890,7 @@ body {
                 outline: none;
 
                 &~.search-reset {
-                    display: block;
+                    opacity: 1;
                 }
 
                 &~svg {
@@ -1133,7 +1133,7 @@ body.addcart,
                 background:#fff;
 
                 &~.search-reset {
-                    display: block !important;
+                    opacity: 1 !important;
                 }
 
                 &~svg {
@@ -1160,8 +1160,9 @@ body.addcart,
             top:50%;
             margin-top:-1.2rem;
             right: 1.2rem;
-            display: none;
+            opacity: 0;
             cursor: pointer;
+            padding:0;
 
 
             svg {

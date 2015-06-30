@@ -17,10 +17,10 @@
     <div class="snap-content" id="snap">
         <header class="site-header" id="site-header" role="banner">
             <h1 class="site-header__logo">
-        <a href="index.html">
-            Sale Stock
-        </a>
-    </h1>
+                <a href="index.html">
+                    Sale Stock
+                </a>
+            </h1>
             <div class="drawer drawer--left">
                 <a href="#" class="hamburger" id="open-left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
@@ -45,11 +45,11 @@
             <div class="page-control">
                 <ul>
                     <li class="page-control__search">
-                        <input type="Search" value="Cute Dress" placeholder="Search&hellip;"></input>
+                        <input type="Search" id="searchInput" value="Cute Dress" placeholder="Search&hellip;"></input>
 
-                        <div class="search-reset">
+                        <a href="javascript:void(0);" class="search-reset" id="searchReset">
                             <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 33C132.3 33 32 133.3 32 257s100.3 224 224 224 224-100.3 224-224S379.7 33 256 33zm108.3 299.5c1.5 1.5 2.3 3.5 2.3 5.6 0 2.1-.8 4.2-2.3 5.6l-21.6 21.7c-1.6 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3L256 289.8l-75.4 75.7c-1.5 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6 0-2.1.8-4.2 2.3-5.6l75.7-76-75.9-75c-3.1-3.1-3.1-8.2 0-11.3l21.6-21.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l75.7 74.7 75.7-74.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l21.6 21.7c3.1 3.1 3.1 8.2 0 11.3l-75.9 75 75.6 75.9z"/></svg>
-                        </div>
+                        </a>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
                             <path d="M344.5 298c15-23.6 23.8-51.6 23.8-81.7 0-84.1-68.1-152.3-152.1-152.3C132.1 64 64 132.2 64 216.3c0 84.1 68.1 152.3 152.1 152.3 30.5 0 58.9-9 82.7-24.4l6.9-4.8L414.3 448l33.7-34.3-108.5-108.6 5-7.1zm-43.1-166.8c22.7 22.7 35.2 52.9 35.2 85s-12.5 62.3-35.2 85c-22.7 22.7-52.9 35.2-85 35.2s-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85s12.5-62.3 35.2-85c22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2z" />
@@ -100,71 +100,6 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function() {
-
-                // toggle buy button
-                [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
-                    var closestElem = getClosest(el, '.product');
-                    el.addEventListener('click', function() {
-                        closestElem.classList.toggle('open');
-                    })
-                });
-
-                // toggle add item
-                [].forEach.call(document.querySelectorAll('[data-toggle=add-item]'), function(el) {
-                    var closestElem = getClosest(el, '.product');
-                    el.addEventListener('click', function() {
-                        document.body.classList.add('addcart');
-                        setTimeout(function() {
-                            document.body.classList.remove('addcart');
-                            closestElem.classList.toggle('open');
-                        }, 2000);
-
-                    })
-                });
-
-
-                // toggle remove cart
-                [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
-                    var closestElem = getClosest(el, '.checkout-item');
-                    el.addEventListener('click', function() {
-                        var answer = confirm("Sista yakin batal beli?");
-                        if (answer) {
-                            closestElem.classList.add('fade');
-                        }
-                    })
-                });
-
-
-                // snapjs
-                var addEvent = function addEvent(element, eventName, func) {
-                    if (element.addEventListener) {
-                        return element.addEventListener(eventName, func, false);
-
-                    } else if (element.attachEvent) {
-                        return element.attachEvent("on" + eventName, func);
-                    };
-                };
-
-                addEvent(document.querySelector('#open-left'), 'click', function(e) {
-                    snapper.open('left');
-                    e.preventDefault();
-                });
-
-
-                addEvent(document.querySelector('#open-right'), 'click', function(e) {
-                    snapper.open('right');
-                    e.preventDefault();
-                });
-
-                var snapper = new Snap({
-                    element: document.getElementById('snap'),
-                    slideIntent: 20
-                });
-
-            });
-            </script>
         </div>
     </div>
     <div class="snap-drawer snap-drawer-left">
@@ -183,6 +118,52 @@
                 <div class="site-navigation__login">
                     <a href="form-login" class="btn btn--red btn--block">Masuk</a>
                 </div>
+
+                <div class="site-navigation__search">
+                    <input type="search" id="sidebar-searchInput" placeholder="Search&hellip;">
+
+                    <a href="javascript:void(0);" class="search-reset" id="sidebar-searchReset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 33C132.3 33 32 133.3 32 257s100.3 224 224 224 224-100.3 224-224S379.7 33 256 33zm108.3 299.5c1.5 1.5 2.3 3.5 2.3 5.6 0 2.1-.8 4.2-2.3 5.6l-21.6 21.7c-1.6 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3L256 289.8l-75.4 75.7c-1.5 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6 0-2.1.8-4.2 2.3-5.6l75.7-76-75.9-75c-3.1-3.1-3.1-8.2 0-11.3l21.6-21.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l75.7 74.7 75.7-74.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l21.6 21.7c3.1 3.1 3.1 8.2 0 11.3l-75.9 75 75.6 75.9z"/></svg>
+                    </a>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                        <path d="M344.5 298c15-23.6 23.8-51.6 23.8-81.7 0-84.1-68.1-152.3-152.1-152.3C132.1 64 64 132.2 64 216.3c0 84.1 68.1 152.3 152.1 152.3 30.5 0 58.9-9 82.7-24.4l6.9-4.8L414.3 448l33.7-34.3-108.5-108.6 5-7.1zm-43.1-166.8c22.7 22.7 35.2 52.9 35.2 85s-12.5 62.3-35.2 85c-22.7 22.7-52.9 35.2-85 35.2s-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85s12.5-62.3 35.2-85c22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2z" />
+                    </svg>
+
+                    <!-- <ul class="site-navigation__autocomplete">
+                        <li>
+                            <a href="#">Blue Collar</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Korean Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Color Skirt</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Sky Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Collar</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Korean Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Color Skirt</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Sky Dress</a>
+                        </li>
+                    </ul> -->
+                </div>
+
                 <div class="site-navigation__home">
                     <a href="home.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
@@ -370,6 +351,85 @@
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+
+
+                document.getElementById('sidebar-searchReset').addEventListener('click', function() {
+                    document.getElementById('sidebar-searchInput').value = '';
+                    document.getElementById('sidebar-searchInput').focus();
+                });
+
+                document.getElementById('searchReset').addEventListener('click', function() {
+                    document.getElementById('searchInput').value = '';
+                    document.getElementById('searchInput').focus();
+                });
+
+
+                // toggle buy button
+                [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
+                    var closestElem = getClosest(el, '.product');
+                    el.addEventListener('click', function() {
+                        closestElem.classList.toggle('open');
+                    })
+                });
+
+                // toggle add item
+                [].forEach.call(document.querySelectorAll('[data-toggle=add-item]'), function(el) {
+                    var closestElem = getClosest(el, '.product');
+                    el.addEventListener('click', function() {
+                        document.body.classList.add('addcart');
+                        setTimeout(function() {
+                            document.body.classList.remove('addcart');
+                            closestElem.classList.toggle('open');
+                        }, 2000);
+
+                    })
+                });
+
+
+                // toggle remove cart
+                [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
+                    var closestElem = getClosest(el, '.checkout-item');
+                    el.addEventListener('click', function() {
+                        var answer = confirm("Sista yakin batal beli?");
+                        if (answer) {
+                            closestElem.classList.add('fade');
+                        }
+                    })
+                });
+
+
+                // snapjs
+                var addEvent = function addEvent(element, eventName, func) {
+                    if (element.addEventListener) {
+                        return element.addEventListener(eventName, func, false);
+
+                    } else if (element.attachEvent) {
+                        return element.attachEvent("on" + eventName, func);
+                    };
+                };
+
+                addEvent(document.querySelector('#open-left'), 'click', function(e) {
+                    snapper.open('left');
+                    e.preventDefault();
+                });
+
+
+                addEvent(document.querySelector('#open-right'), 'click', function(e) {
+                    snapper.open('right');
+                    e.preventDefault();
+                });
+
+                var snapper = new Snap({
+                    element: document.getElementById('snap'),
+                    slideIntent: 20
+                });
+
+            });
+            </script>
 </body>
 
 </html>
