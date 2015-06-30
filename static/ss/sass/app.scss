@@ -1103,6 +1103,7 @@ body.addcart,
 
     &__search {
         float: none !important;
+        box-shadow: 0 .1rem rgba(255,255,255,.6);
 
         input[type=search] {
             -webkit-appearance:none;
@@ -1895,6 +1896,12 @@ body.addcart,
     border-radius: .3rem;
     margin: 1.6rem auto;
     max-width: 48rem;
+
+    &--text {
+        background:#fafafa;
+        box-shadow:0 .1rem .1rem rgba(0,0,0,0.04) inset;    
+    }
+
     .panel:last-of-type {
         margin-bottom: 0;
     }
@@ -1978,6 +1985,10 @@ body.addcart,
 
         p+h4 {
             margin-top:2.4rem;
+        }
+
+        p:last-of-type {
+            margin-bottom: 0;
         }
 
         ol,ul {
