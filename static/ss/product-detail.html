@@ -44,9 +44,33 @@
             <div class="container">
                 <div class="product">
                     <div class="product__figure">
-                        <div class="product__image">
-                            <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
+
+                        <!-- single image -->
+                        <!-- <div class="product__image">
+                            <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150626231340_150403124329_7176%20-%20Katun%205%20warna_zoom_zoom.jpg);padding-bottom:75%;"></div>
+                        </div> -->
+
+                        <!-- multiple image -->
+                        <div id="mySwipe" class="swipe">
+                        <div class='swipe-wrap'>
+                            <div class="swipe-wrap__content">
+                                <div class="product__image">
+                                    <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150626231340_150403124329_7176%20-%20Katun%205%20warna_zoom_zoom.jpg);padding-bottom:75%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="swipe-wrap__content">
+                                <div class="product__image">
+                                    <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150701144448_Acun%20Ulrica%20%28Ulrica%20Basic%20Casual%20Blouse%29%20copy_zoom.jpg);padding-bottom:75%"></div>
+                                </div>
+                            </div>
                         </div>
+
+                        <ul class="swipe__position" id="swipe__position">
+                            <li class="on"></li>
+                            <li></li>
+                        </ul>
+                    </div>
                     </div>
                     <div class="product__info">
                         <div class="product__title">
@@ -287,6 +311,28 @@
                             closestElem.classList.add('fade');
                         }
                     })
+                });
+
+                 var element = document.getElementById('mySwipe');
+                var bullets = document.getElementById('swipe__position').getElementsByTagName('li');
+
+
+                window.mySwipe = Swipe(element, {
+                 startSlide: 0,
+                 auto:4000,
+                 autoRestart: false,
+                 continuous: true,
+                 stopPropagation: true,
+
+                 callback: function(pos) {   
+                     var i = bullets.length;
+                     while (i--) {
+                         bullets[i].className = ' ';
+                     }
+                     var realPos = pos % (bullets.length);
+                     bullets[realPos].className = 'on';
+                 }
+
                 });
 
                 // snapjs

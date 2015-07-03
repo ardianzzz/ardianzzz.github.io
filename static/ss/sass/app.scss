@@ -268,21 +268,20 @@ body {
     z-index: 666;
     width: auto;
     height: auto;
-    overflow: auto;
+    overflow: hidden;
+    box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.24), 0 0 .2rem rgba(0, 0, 0, 0.12), 0 0 .3rem rgba(0, 0, 0, 0.06);
+    background:#f5f5f5;
     -webkit-transition-property: top, bottom;
     transition-property: top, bottom;
     -webkit-transition-duration: .2s, .2s;
     transition-duration: .2s, .2s;
     -webkit-transition-timing-function: linear, linear;
     transition-timing-function: linear, linear;
-    -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.24), 0 0 .2rem rgba(0, 0, 0, 0.12), 0 0 .3rem rgba(0, 0, 0, 0.06);
-    background:#f5f5f5;
 }
 
 .snap-drawers {
@@ -382,6 +381,10 @@ body {
     left: 0;
     z-index: 333;
     overflow: auto;
+    background: #f5f5f5;
+    padding: 0 0 1.6rem;
+
+
     -webkit-transition-property: top, bottom;
     transition-property: top, bottom;
     -webkit-transition-duration: .2s, .2s;
@@ -389,13 +392,12 @@ body {
     -webkit-transition-timing-function: linear, linear;
     transition-timing-function: linear, linear;
     -webkit-overflow-scrolling: touch;
-    background: #f5f5f5;
-    padding: 0 0 1.6rem;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+
     /*transition: all 0.16s ease-in-out;
     -webkit-transition: all 0.16s ease-in-out;
 
@@ -537,7 +539,7 @@ body {
     }
     &__notification {
         border-radius: 50%;
-        background: #dc5555;
+        background: #D73C3C;
         position: absolute;
         top: 50%;
         right: 50%;
@@ -564,6 +566,16 @@ body {
     margin: 1.2rem auto;
     overflow: hidden;
     max-width: 48rem;
+
+    .swipe {
+        width: auto;
+        margin:0rem;
+
+        .promo-banner {
+            margin:0;
+        }
+    }
+
     &-banner {
         margin: -.4rem;
         border-radius: .3rem;
@@ -695,7 +707,8 @@ body {
             box-shadow: 0 .1rem rgba(255, 255, 255, .04) inset;
             -webkit-transition-duration: .2s, .2s;
             transition-duration: .2s, .2s;
-            &:focus {
+            text-shadow:-0.1rem -0.1rem rgba(0,0,0,0.4);
+            &:hover,&:focus {
                 background: rgba(255, 255, 255, .06);
                 box-shadow: 0 .1rem rgba(0, 0, 0, .02) inset;
             }
@@ -768,6 +781,7 @@ body {
             text-overflow: ellipsis;
             padding-right: 3.2rem;
             text-decoration: none !important;
+            text-shadow:-0.1rem -0.1rem rgba(0,0,0,0.4);
         }
         svg {
             fill: #8E8E93;
@@ -796,8 +810,14 @@ body {
             padding: 0;
             list-style: none;
             overflow: hidden;
+            //display: none;
+
+            //&.open {
+            //    display: block;
+            //}
         }
         li {
+            position: relative;
             a {
                 display: block;
                 color: #fff;
@@ -805,14 +825,14 @@ body {
                 padding: 1.2rem;
                 line-height: 2.4rem;
                 white-space: nowrap;
-                border-top: solid .1rem rgba(0, 0, 0, .12);
-                box-shadow: 0 .1rem rgba(255, 255, 255, .04) inset;
+                box-shadow: 0 .1rem rgba(255, 255, 255, .04) inset, 0 -.1rem rgba(0, 0, 0, .12) inset;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 position: relative;
                 text-decoration: none !important;
                 -webkit-transition-duration: .2s, .2s;
                 transition-duration: .2s, .2s;
+                text-shadow:-.1rem -.1rem rgba(0,0,0,0.4);
 
                 svg {
                     display: block;
@@ -824,13 +844,70 @@ body {
                 }
                 &:hover {
                     background: rgba(255, 255, 255, .06);
-                    box-shadow: 0 .1rem rgba(0, 0, 0, .02) inset;
+                    box-shadow: 0 1px rgba(0,0,0,0.32);
+                    border-color:rgba(0,0,0,0);
+                }
+            }
+
+        }
+
+        >ul {
+            >li {
+                &.active {
+                    >a {
+                        background: rgba(255, 255, 255, .04);
+                        box-shadow: 0 1px rgba(0,0,0,0.24);
+                        border-color:rgba(0,0,0,0);
+                        text-shadow:.1rem .1rem rgba(0,0,0,0.4);
+
+
+                           &:after {
+                            content:"";
+                            position: absolute;
+                            top:-.1rem;
+                            left: 0;
+                            bottom:0;
+                            width: .2rem;
+                            background:#D73C3C;
+                        }
+                        
+                    }
+
+                   
+                }
+
+                >ul {
+                    >li {
+                        >a {
+                            padding-left: 2.4rem;
+                        }
+
+                        &.active {
+                            >a {
+                                background: rgba(255, 255, 255, .04);
+                                box-shadow: 0 1px rgba(0,0,0,0.24);
+                                border-color:rgba(0,0,0,0);
+                                text-shadow:.1rem .1rem rgba(0,0,0,0.4);
+
+
+                                   &:after {
+                                    content:"";
+                                    position: absolute;
+                                    top:-.1rem;
+                                    left: 0;
+                                    bottom:0;
+                                    width: .2rem;
+                                    background:#D73C3C;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
     &__footer {
-        padding: 1.2rem;
+        padding: 1.2rem 1.2rem 6.4rem;
         color: #4a4a4a;
         line-height: 1.2;
     }
@@ -1354,7 +1431,7 @@ body.addcart,
         font-weight: 700;
     }
     &__info {
-        padding: .8rem 1.2rem;
+        padding:.8rem 1.2rem 1.2rem;
         float: left;
         width: 18.4rem;
         width: -webkit-calc(100% - 11rem);
@@ -1387,7 +1464,7 @@ body.addcart,
         }
     }
     &__action {
-        padding: .8rem 1.2rem;
+        padding: .8rem 1.2rem 1.2rem;
         float: right;
         position: relative;
         z-index: 1;
@@ -2423,13 +2500,25 @@ body.addcart,
     }
     &-empty {
         padding: 1.2rem;
-  background: #2b2b2b;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 64px;
+        background: #2b2b2b;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 64px;
 
+
+      .preloader--wrapper {
+        position: absolute;
+          top: 0;
+          background: rgba(255,255,255,.24);
+      }
+
+      .preloader__loader {
+        opacity: .64;
+        width: 4.8rem !important;
+          padding: .8rem !important;
+      }
   
 
     &:before {
@@ -2924,6 +3013,7 @@ body.addcart,
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
+        
     }
 }
 
@@ -3182,4 +3272,47 @@ body.addcart,
         }
 
     }
+}
+
+
+
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  width: 100%;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  background: #f5f5f5;
+}
+.swipe-wrap__content {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+
+.swipe__position {
+list-style: none;
+margin:0;
+padding:0;
+position: absolute;
+bottom: .2rem;
+width: 100%;
+text-align: center;
+
+   li {
+        display: inline-block;
+        width: .8rem;
+        height: .8rem;
+        background:#C7C7CC;
+        border-radius: 50%;
+        margin:0;
+        &.on {
+            background: #D73C3C;
+        }
+   }
 }

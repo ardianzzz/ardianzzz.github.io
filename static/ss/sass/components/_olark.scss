@@ -5,7 +5,7 @@
 
     .hbl_pal_main_bg {
         background-color: rgba(255, 255, 255, .72) !important;
-        border-radius: 2px 2px 0 0;
+        border-radius: 4px 4px 0 0;
     }
 
     .hbl_pal_main_font_family {
@@ -243,4 +243,55 @@
     margin-right:-1px !important;
     border:0;
     border-radius:50%;
+}
+
+#hbl_body_message {
+    padding:0 10px;
+}
+
+#habla_beta_container_do_not_rely_on_div_classes_or_names #habla_topbar_div a.habla_oplink_a_normal {
+    padding:10px;
+    margin:-10px;
+}
+
+
+@media (max-width:490px){
+
+    #habla_window_div {
+        margin:0 !important;
+    }
+
+
+    #habla_beta_container_do_not_rely_on_div_classes_or_names .olrk-state-expanded #habla_sizebutton_a {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        border-radius:.2rem !important;
+        background-image:none !important;
+        background-color: #000 !important;
+        width: 3.2rem;
+        height: 3.2rem;
+        opacity: .8;
+
+        &:after {
+            content: "";
+            width: 28px;
+            height: 28px;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9IiNmZmYiPjxwYXRoIGQ9Ik00MDUgMTM2Ljc5OEwzNzUuMjAyIDEwNyAyNTYgMjI2LjIwMiAxMzYuNzk4IDEwNyAxMDcgMTM2Ljc5OCAyMjYuMjAyIDI1NiAxMDcgMzc1LjIwMiAxMzYuNzk4IDQwNSAyNTYgMjg1Ljc5OCAzNzUuMjAyIDQwNSA0MDUgMzc1LjIwMiAyODUuNzk4IDI1NnoiLz48L3N2Zz4=);
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin:-14px 0 0 -14px;
+        }
+    }
+
+    #habla_beta_container_do_not_rely_on_div_classes_or_names #habla_topbar_div {
+        border-radius: 0 4px 0 0;
+    }
+
+    #habla_middle_div+div {
+        display: none;
+    }
+
+   
 }
