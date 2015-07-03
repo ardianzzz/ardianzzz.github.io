@@ -2027,7 +2027,10 @@ body.addcart,
         margin: 0 0 1.2rem;
     }
     hr {
-        margin: 1.6rem 0;
+        margin: 2.4rem 0 1.6rem;
+        border:0;
+        border-bottom:solid .1rem #eee;
+        margin:1.6rem 0;
     }
     &__title {
         font-size: 1.6rem;
@@ -3316,3 +3319,4 @@ text-align: center;
         }
    }
 }
+
