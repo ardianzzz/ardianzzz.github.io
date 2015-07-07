@@ -2040,6 +2040,7 @@ body.addcart,
     }
     &__body {
         padding: 1.2rem;
+        word-wrap: break-word;
 
         .box__body {
             padding: 0;
@@ -2110,7 +2111,7 @@ body.addcart,
             }
 
             &__title {
-                padding:1rem 0;
+                padding:1rem 1.5rem 1rem 0;
                 margin:0;
                 border-bottom:solid .1rem #eee;
                 font-weight: 300;
