@@ -2648,9 +2648,10 @@ body.addcart,
             width: 2.4rem;
             height: 2.4rem;
             position: absolute;
-            top: .4rem;
+            top: -8rem;
             right: .4rem;
             z-index: 12;
+
         }
         &__soldout {
             position: absolute;
@@ -2734,6 +2735,12 @@ body.addcart,
                 margin: 0;
             }
         }
+    }
+}
+
+.animated {
+    .checkout-item__remove {
+        top:.4rem;
     }
 }
 

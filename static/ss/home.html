@@ -658,7 +658,14 @@
 
                 var snapper = new Snap({
                     element: document.getElementById('snap'),
-                    slideIntent: 20
+                    slideIntent: 20,
+                });
+                snapper.on('animated', function(){
+                    document.body.classList.add('animated');
+                });
+
+                snapper.on('end', function(){
+                    document.body.classList.remove('animated');
                 });
 
             });
