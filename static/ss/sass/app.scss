@@ -320,6 +320,7 @@ body {
 .snap-drawer-left {
     left: 0;
     z-index: 1;
+    background:#2b2b2b;
     -webkit-font-smoothing:antialiased;
 }
 
@@ -327,6 +328,7 @@ body {
     right: 0;
     z-index: 1;
     width: 26.7rem;
+    background:#fff;
     border-left: solid .1rem #e5e5e5;
     -webkit-font-smoothing:antialiased;
 }   
@@ -340,25 +342,7 @@ body {
 .snapjs-expand-right .snap-drawer-right {
     width: 100%;
 }
-.snapjs-left {
-     background: #2b2b2b;
-    .snap-content {
-        &:after {
-            content:"";
-            background: rgba(255,255,255,0);
-            position: absolute;
-            z-index: 9999;
-            top: 4.8rem;
-            right: 0;
-            left: 0;
-            bottom: 0;
-        }
-    }
-}
-
-.snapjs-right {
-    background:#fff;
-
+body.animated {
     .snap-content {
         &:after {
             content:"";
@@ -1388,11 +1372,23 @@ body.addcart,
             background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
         }
         img {
             display: block;
             margin: 0 auto;
             border-radius: .3rem .3rem 0 0;
+
+            position: absolute;
+            top: 50%;
+            -moz-transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            left: 50%;
         }
     }
     &__title {
@@ -2620,7 +2616,7 @@ body.addcart,
         &__meta {
             position: absolute;
             bottom: 1.4rem;
-            left: 10rem;
+            left: 10.4rem;
         }
         &__size {
             min-width: 1.6rem;
