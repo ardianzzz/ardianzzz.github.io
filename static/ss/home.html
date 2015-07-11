@@ -15,56 +15,73 @@
     <script type="text/javascript" src="js/app.js"></script>
 
 
-    <!-- begin olark code -->
-        <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
-        f[z]=function(){
-        (a.s=a.s||[]).push(arguments)};var a=f[z]._={
-        },q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
-        f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
-        0:+new Date};a.P=function(u){
-        a.p[u]=new Date-a.p[0]};function s(){
-        a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
-        hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
-        return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
-        b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
-        b.contentWindow[g].open()}catch(w){
-        c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
-        var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
-        b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
-        loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
-        /* custom configuration goes here (www.olark.com/documentation) */
-        olark.identify('7969-781-10-5580');/*]]>*/</script><noscript><a href="https://www.olark.com/site/7969-781-10-5580/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
-        <!-- end olark code -->
 </head>
 
 <body id="site">
     <div class="snap-content" id="snap">
         <header class="site-header" id="site-header" role="banner">
-            <h1 class="site-header__logo">
-        <a href="index.html">
-            Sale Stock
-        </a>
-    </h1>
-            <div class="drawer drawer--left">
-                <a href="#" class="hamburger" id="open-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-                        <path d="M96 241h320v32H96zM96 145h320v32H96zM96 337h320v32H96z" />
-                    </svg>
-                </a>
-            </div>
-            <div class="drawer drawer--right">
-                <a href="checkout.html" class="cart" id="open-right">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M0 4.03v2h3.25l3.688 9.345c.15.38.527.625.937.625h11c.406 0 .784-.253.938-.625l1.625-4 2.437-5.97c.063-.153.11-.34.094-.5-.018-.16-.096-.298-.19-.436-.185-.277-.478-.44-.81-.44H7.937c-.324 0-.625.144-.813.407-.188.264-.23.6-.125.907l2.094 6c.14.4.507.656.937.656h9l-.81 2H8.562l-3.72-9.344c-.15-.38-.527-.625-.937-.625H0zm9.344 2H21.47L19.843 10H10.75L9.344 6.03zM9.5 17c-.834 0-1.5.697-1.5 1.53 0 .835.666 1.5 1.5 1.5s1.5-.665 1.5-1.5c0-.833-.666-1.53-1.5-1.53zm8 0c-.833 0-1.5.698-1.5 1.53 0 .835.667 1.5 1.5 1.5s1.53-.665 1.53-1.5c0-.832-.697-1.53-1.53-1.53z" />
-                    </svg>
-                    <span class="site-header__notification">99</span>
-                </a>
-                <div class="cart-notification">
-                    Barang Sista berhasil masuk keranjang
+            <div class="container">
+                <h1 class="site-header__logo">
+                    <a href="index.html">
+                        Sale Stock
+                    </a>
+                </h1>
+                <div class="drawer drawer--left">
+                    <a href="#" class="hamburger" id="open-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M96 241h320v32H96zM96 145h320v32H96zM96 337h320v32H96z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="drawer drawer--right">
+                    <a href="#" class="cart" id="open-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 4.03v2h3.25l3.688 9.345c.15.38.527.625.937.625h11c.406 0 .784-.253.938-.625l1.625-4 2.437-5.97c.063-.153.11-.34.094-.5-.018-.16-.096-.298-.19-.436-.185-.277-.478-.44-.81-.44H7.937c-.324 0-.625.144-.813.407-.188.264-.23.6-.125.907l2.094 6c.14.4.507.656.937.656h9l-.81 2H8.562l-3.72-9.344c-.15-.38-.527-.625-.937-.625H0zm9.344 2H21.47L19.843 10H10.75L9.344 6.03zM9.5 17c-.834 0-1.5.697-1.5 1.53 0 .835.666 1.5 1.5 1.5s1.5-.665 1.5-1.5c0-.833-.666-1.53-1.5-1.53zm8 0c-.833 0-1.5.698-1.5 1.53 0 .835.667 1.5 1.5 1.5s1.53-.665 1.53-1.5c0-.832-.697-1.53-1.53-1.53z" />
+                        </svg>
+                        <span class="site-header__notification">99</span>
+                    </a>
+                    <div class="cart-notification">
+                        Barang Sista berhasil masuk keranjang
+                    </div>
                 </div>
             </div>
         </header>
         <div class="main" id="main" role="main">
+
+             <div class="page-control">
+                <ul>
+
+                    <li>
+                        <a href="home.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                                <path d="M256 112L96 240v208h112V320h96v128h112V240L256 112zM256 64l-96 76.8V96H96v96l-32 25.498 11.51 11.384L256 84.49l180.49 144.393L448 217.498 256 64z"></path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <select class="page-control__dropdown">
+                            <option selected>Home</option>
+                            <option>New Arrival</option>
+                            <option>Atasan</option>
+                            <option>Bawahan</option>
+                            <option>Dress</option>
+                        </select>
+                    </li>
+
+                    <li class="page-control__searchbox">
+                        <input type="search" placeholder="Search">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M344.5 298c15-23.6 23.8-51.6 23.8-81.7 0-84.1-68.1-152.3-152.1-152.3C132.1 64 64 132.2 64 216.3c0 84.1 68.1 152.3 152.1 152.3 30.5 0 58.9-9 82.7-24.4l6.9-4.8L414.3 448l33.7-34.3-108.5-108.6 5-7.1zm-43.1-166.8c22.7 22.7 35.2 52.9 35.2 85s-12.5 62.3-35.2 85c-22.7 22.7-52.9 35.2-85 35.2s-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85s12.5-62.3 35.2-85c22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2z"></path>
+                            </svg>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+
+
             <div class="container">
 
                 
@@ -1285,18 +1302,18 @@
                     element: document.getElementById('snap'),
                     slideIntent: 20,
                 });
-                snapper.on('animated', function(){
-                    document.body.classList.add('animated');
-                });
+                
 
-                snapper.on('end', function(){
-                    document.body.classList.remove('animated');
-                });
 
-                addEvent(document.querySelector('#snap'), 'click', function(e) {
-                    document.body.classList.remove('animated');
-                    e.preventDefault();
+                // grab an element
+                var myElement = document.querySelector(".site-header");
+                // construct an instance of Headroom, passing the element
+                var headroom  = new Headroom(myElement, {
+                    offset: 205,
+                    tolerance: 5,
                 });
+                // initialise
+                headroom.init(); 
 
 
             });
