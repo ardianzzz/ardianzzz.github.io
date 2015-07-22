@@ -266,8 +266,8 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
-    /*-webkit-overflow-scrolling: touch;*/
-    overflow-y:visible;
+    // -webkit-overflow-scrolling: touch;
+    // overflow-y:visible;
 }
 
 .alert {
@@ -1742,7 +1742,6 @@ body.addcart,
                 position: relative;
                 border: solid .1rem #d6d6d6;
                 text-decoration: none !important;
-                box-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.04);
                 line-height: 2.4rem;
                 position: relative;
                 &:hover, &:focus {

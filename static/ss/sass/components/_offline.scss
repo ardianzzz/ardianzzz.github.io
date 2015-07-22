@@ -1,0 +1,85 @@
+.offline-ui, .offline-ui *, .offline-ui:before, .offline-ui:after, .offline-ui *:before, .offline-ui *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.offline-ui {
+  display: none;
+  position: fixed;
+  background: white;
+  z-index: 2000;
+  display: inline-block;
+}
+
+.offline-ui .offline-ui-retry {
+  display: none;
+}
+
+.offline-ui.offline-ui-up {
+  display: block;
+}
+
+.offline-ui.offline-ui-down {
+  display: block;
+}
+
+.offline-ui {
+  opacity: .96;
+  border-radius: .3rem;
+  font-weight: 300;
+  padding: 1.2rem 1.6rem;
+  background: #2b2b2b;
+  color: #cccccc;
+  bottom:4.8rem;
+  left: 50%;
+  white-space: nowrap;
+
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX( -50%);
+  transform: translateX(-50%);
+}
+
+.offline-ui .offline-ui-content {
+  padding-left: 1.5em;
+}
+
+.offline-ui .offline-ui-content:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1em;
+  margin: auto;
+  height: 0.8em;
+  width: 0.8em;
+}
+
+.offline-ui.offline-ui-up .offline-ui-content:after {
+  background: #80d580;
+}
+
+.offline-ui.offline-ui-down .offline-ui-content:after {
+  background: #e24949;
+}
+
+.offline-ui.offline-ui-up .offline-ui-content:before {
+  content:"Asik! Terhubung koneksi internet!";
+}
+
+.offline-ui.offline-ui-down .offline-ui-content:before {
+  content: "Yah, koneksi internet sista putus.";
+}
+
+.offline-ui.offline-ui-waiting .offline-ui-content:before {
+  content: "Mencoba untuk terkoneksi internet lagi…";
+}
+
+
+

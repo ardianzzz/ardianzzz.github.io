@@ -578,7 +578,6 @@ p a:hover, p:focus {
   border-radius: .3rem;
   text-decoration: none;
   vertical-align: middle;
-  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.08);
 }
 .btn svg {
   width: 2.2rem;
@@ -620,10 +619,6 @@ p a:hover, p:focus {
   position: relative;
   outline: 0;
   text-decoration: none;
-}
-
-.btn:active {
-  box-shadow: inset 0 0.2rem 0.3rem rgba(0, 0, 0, 0.1);
 }
 
 .btn--line {
@@ -1459,8 +1454,6 @@ body {
   margin: 0;
   padding: 0;
   background: #fff;
-  /*-webkit-overflow-scrolling: touch;*/
-  overflow-y: visible;
 }
 
 .alert {
@@ -2715,7 +2708,6 @@ body.addcart .product__color:after,
   position: relative;
   border: solid .1rem #d6d6d6;
   text-decoration: none !important;
-  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.04);
   line-height: 2.4rem;
   position: relative;
 }
