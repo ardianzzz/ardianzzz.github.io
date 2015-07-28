@@ -1,0 +1,32 @@
+.container {
+  max-width: 96rem;
+}
+
+.page-control ul {
+  max-width: 93.6rem;
+}
+
+.masonry {
+  margin: 1.6rem -.8rem;
+  overflow: hidden;
+}
+.masonry .promo, .masonry .product {
+  margin: 0;
+}
+.masonry__brick {
+  margin: 0 0 1.6rem;
+  padding: 0 .8rem;
+  width: 33.33333%;
+  float: left;
+}
+
+@media (max-width: 768px) {
+  .masonry__brick {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .masonry__brick {
+    width: 100%;
+  }
+}
