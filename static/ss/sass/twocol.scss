@@ -28,3 +28,13 @@
 		float: left;
 	}
 }
+
+
+
+@media (max-width: 480px) {
+	.masonry {
+		&__brick {
+			width: 100%;
+		}
+	}
+}

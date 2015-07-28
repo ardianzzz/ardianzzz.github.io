@@ -19,3 +19,9 @@
   width: 50%;
   float: left;
 }
+
+@media (max-width: 480px) {
+  .masonry__brick {
+    width: 100%;
+  }
+}
