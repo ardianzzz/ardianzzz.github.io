@@ -2864,6 +2864,7 @@ body.addcart,
         line-height: 2.4rem;
         border-bottom: solid .1rem #eee;
         overflow: hidden;
+
         b {
             float: right;
         }
@@ -2876,6 +2877,60 @@ body.addcart,
         .form-group {
             margin: 0;
         }
+    }
+    &__discount {
+        padding: .8rem 1.2rem;
+        line-height: 2.4rem;
+        border-bottom: solid .1rem #eee;
+        overflow: hidden;
+
+        >span {
+            display: block;
+            float: left;
+            max-width: 17.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+            padding:0 2rem 0 0;
+
+            svg {
+                display: block;
+                width: 1.4rem;
+                height: 1.4rem;
+                position: absolute;
+                top:50%;
+                margin-top:-.7rem;
+                right: 0;
+                fill:#c7c7cc;
+            }
+
+
+
+
+        }
+
+        &:hover {
+            >span {
+                svg {
+                    fill:#8E8E93;
+                }
+            }
+        }
+
+        b {
+            float: right;
+        }
+        &:last-of-type {
+            border: 0;
+        }
+        &:first-of-type {
+            border-bottom: solid .1rem #eee;
+        }
+        .form-group {
+            margin: 0;
+        }
+
     }
     &__coupon {
         padding: 1.2rem;
@@ -3250,6 +3305,37 @@ body.addcart,
         border:solid 0.1rem #eca2a2;
     }
 }
+
+
+.close-drawer {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    position: absolute;
+    top:0;
+    z-index: 99;
+
+    svg {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        fill:#8E8E93;
+    }
+}
+
+.side-cart__header {
+    .close-drawer {
+        left: 0;
+    }
+}
+
+.site-navigation__profile {
+    .close-drawer {
+        right: 0;
+    }
+}
+
 
 .v-adr {
     margin:0 0 1.6rem;
