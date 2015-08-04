@@ -2002,6 +2002,25 @@ body.addcart,
         }
     }
 
+    &__zoom {
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: .3rem;
+        position: absolute;
+        bottom: .8rem;
+        right: 2rem;
+        background: rgba(0,0,0,0.4);
+        svg {
+            fill:rgba(255,255,255,.64);
+            width: 1.6rem;
+            height: 1.6rem;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin:-.8rem 0 0 -.8rem;
+        }
+    }
+
 
     &--placeholder {}
 
@@ -2957,6 +2976,10 @@ body.addcart,
                 fill:#c7c7cc;
             }
 
+            b {
+                display: inline;
+                float: none;
+            }
 
 
 
@@ -3655,7 +3678,7 @@ text-align: center;
         height: 0;
         padding-bottom: 100%;
     }
-    
+
     img {
         margin:0 auto;
         width: 48rem;

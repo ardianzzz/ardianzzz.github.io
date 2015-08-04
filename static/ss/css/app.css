@@ -3086,6 +3086,24 @@ body.addcart .product__color:after,
 .product__love.active svg path {
   fill: #D73C3C !important;
 }
+.product__zoom {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: .3rem;
+  position: absolute;
+  bottom: .8rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+.product__zoom svg {
+  fill: rgba(255, 255, 255, 0.64);
+  width: 1.6rem;
+  height: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -.8rem 0 0 -.8rem;
+}
 .product.addcart .product__color:after {
   display: block;
 }
@@ -3966,6 +3984,10 @@ body.addcart .product__color:after,
   right: 0;
   fill: #c7c7cc;
 }
+.checkout__discount > span b {
+  display: inline;
+  float: none;
+}
 .checkout__discount:hover > span svg {
   fill: #8E8E93;
 }
@@ -4583,7 +4605,7 @@ body.addcart .product__color:after,
         height: 0;
         padding-bottom: 100%;
     }
-    
+
     img {
         margin:0 auto;
         width: 48rem;
