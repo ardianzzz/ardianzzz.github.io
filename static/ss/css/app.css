@@ -3494,9 +3494,6 @@ body.addcart .product__color:after,
 .box__body p + h4 {
   margin-top: 2.4rem;
 }
-.box__body p:last-of-type {
-  margin-bottom: 0;
-}
 .box__body ol, .box__body ul {
   padding-left: 3.2rem;
 }
@@ -4808,7 +4805,7 @@ body.addcart .product__color:after,
 }
 
 .polling {
-  margin: -.8rem;
+  margin: 0 -0.8rem;
   overflow: hidden;
 }
 .polling__input {
@@ -4822,20 +4819,32 @@ body.addcart .product__color:after,
   height: 0;
   padding-bottom: 100%;
   position: relative;
-  background: #f7f7f7;
+  background-color: #f7f7f7;
   border-radius: .4rem;
   background-size: cover;
   overflow: hidden;
 }
+.polling__label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: solid 0.1rem rgba(0, 0, 0, 0.08);
+  border-radius: .4rem;
+}
 .polling__caption {
-  padding: .8rem;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.64) 100%);
+  padding: 1.6rem .8rem .8rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 100%);
   color: #fff;
   -webkit-font-smoothing: antialiased;
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
+  line-height: 1.25;
+  font-size: 1.3rem;
 }
 .polling__mark {
   width: 2.4rem;
@@ -4847,6 +4856,16 @@ body.addcart .product__color:after,
   border-radius: 50%;
   border: solid 0.1rem rgba(0, 0, 0, 0.24);
 }
+.polling__mark svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -.8rem 0 0 -.8rem;
+  opacity: 0;
+  fill: #fff;
+}
 .polling input[type=checkbox],
 .polling input[type=radio] {
   opacity: 0;
@@ -4854,7 +4873,12 @@ body.addcart .product__color:after,
 }
 .polling input[type=checkbox]:checked ~ .polling__mark,
 .polling input[type=radio]:checked ~ .polling__mark {
-  background: red;
+  background: #D73C3C;
+  border-color: rgba(255, 255, 255, 0.64);
+}
+.polling input[type=checkbox]:checked ~ .polling__mark svg,
+.polling input[type=radio]:checked ~ .polling__mark svg {
+  opacity: 1;
 }
 
 @media (max-width: 320px) {
