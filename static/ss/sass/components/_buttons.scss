@@ -55,6 +55,24 @@
         text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
     }
 
+
+
+    &--twitter {
+        background: #55acee;
+        color: #fff !important;
+        background-image: linear-gradient(to bottom, lighten(#55acee, 8%) 0%, #55acee 100%);
+        border-top-color: lighten(#55acee, 6%);
+        text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+    }
+
+    &--naver {
+        background: #21B010;
+        color: #fff !important;
+        background-image: linear-gradient(to bottom, lighten(#21B010, 8%) 0%, #21B010 100%);
+        border-top-color: lighten(#21B010, 6%);
+        text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+    }
+
     &.disabled,
     &:disabled {
         opacity: .72;
@@ -124,11 +142,18 @@
     font-size: 1.2rem;
     border-radius: .2rem;
     font-weight: 500;
+
+    svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin:0 -.4rem;
+    }
 }
 
 .btn-group {
     display: inline-block;
     vertical-align: middle;
+    white-space: nowrap;
 }
 
 .btn-group .btn {

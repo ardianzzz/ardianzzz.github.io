@@ -106,7 +106,9 @@ textarea.form-control {
     &__btn {
         display: table-cell;
         width: 1%;
+        white-space: nowrap;
     }
+
     &--error {
         .form-control {
             border-color: #D73C3C;
@@ -122,6 +124,39 @@ textarea.form-control {
     .checkbox {
         label {
             line-height: 3.2rem;
+        }
+    }
+
+    &__addon {
+        display: table;
+        width: 100%;
+
+        .form-control {
+            border-radius: .3rem 0 0 .3rem;
+
+        }
+
+        .form-addon {
+            display: table-cell;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            padding: .7rem .8rem;
+            border: solid .1rem #c7c7cc;
+            white-space: nowrap;
+            border-radius: .3rem 0 0 .3rem;
+            width: 1%;
+            vertical-align: middle;
+            background: #f7f7f7;
+            border-right:0;
+
+            &+.form-control {
+                border-radius: 0 .3rem .3rem 0;
+                display: table-cell;
+                width: 100%;
+                vertical-align: middle;
+
+            }
+
         }
     }
 }

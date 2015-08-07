@@ -608,6 +608,20 @@ p a:hover, p:focus {
   border-top-color: #e16353;
   text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
 }
+.btn--twitter {
+  background: #55acee;
+  color: #fff !important;
+  background-image: linear-gradient(to bottom, #7abef2 0%, #55acee 100%);
+  border-top-color: #71baf1;
+  text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+}
+.btn--naver {
+  background: #21B010;
+  color: #fff !important;
+  background-image: linear-gradient(to bottom, #28d513 0%, #21b010 100%);
+  border-top-color: #26cc13;
+  text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+}
 .btn.disabled, .btn:disabled {
   opacity: .72;
   cursor: not-allowed;
@@ -672,10 +686,16 @@ p a:hover, p:focus {
   border-radius: .2rem;
   font-weight: 500;
 }
+.btn--small svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 0 -.4rem;
+}
 
 .btn-group {
   display: inline-block;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .btn-group .btn {
@@ -818,6 +838,7 @@ textarea.form-control {
 .form-group__btn {
   display: table-cell;
   width: 1%;
+  white-space: nowrap;
 }
 .form-group--error .form-control {
   border-color: #D73C3C;
@@ -831,6 +852,32 @@ textarea.form-control {
 .form-group .radio label,
 .form-group .checkbox label {
   line-height: 3.2rem;
+}
+.form-group__addon {
+  display: table;
+  width: 100%;
+}
+.form-group__addon .form-control {
+  border-radius: .3rem 0 0 .3rem;
+}
+.form-group__addon .form-addon {
+  display: table-cell;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  padding: .7rem .8rem;
+  border: solid .1rem #c7c7cc;
+  white-space: nowrap;
+  border-radius: .3rem 0 0 .3rem;
+  width: 1%;
+  vertical-align: middle;
+  background: #f7f7f7;
+  border-right: 0;
+}
+.form-group__addon .form-addon + .form-control {
+  border-radius: 0 .3rem .3rem 0;
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .help-block {
