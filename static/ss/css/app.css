@@ -689,7 +689,7 @@ p a:hover, p:focus {
 .btn--small svg {
   width: 1.6rem;
   height: 1.6rem;
-  margin: 0 -.4rem;
+  margin: 0 .2rem;
 }
 
 .btn-group {
@@ -3354,7 +3354,7 @@ body.addcart .product__color:after,
 
 .profile-greeting {
   padding: .8rem 1.2rem;
-  background: #A4E786;
+  background: #ffaac3;
   color: rgba(0, 0, 0, 0.72);
   border-radius: .8rem;
   position: relative;
@@ -3362,15 +3362,15 @@ body.addcart .product__color:after,
   line-height: 1.35;
   box-shadow: 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.08) inset;
   -webkit-font-smoothing: antialiased;
-  background-image: linear-gradient(to bottom, #beeea8 0%, #a4e786 100%);
+  background-image: linear-gradient(to bottom, #ffd3e0 0%, #ffaac3 100%);
   text-shadow: 0.1rem 0.1rem rgba(255, 255, 255, 0.32);
 }
 .profile-greeting:after {
   content: "";
-  border-top: solid 1rem #A4E786;
+  border-top: solid 1rem #ffaac3;
   border-right: solid 0.8rem transparent;
   border-bottom: solid 1rem transparent;
-  border-left: solid .8rem #A4E786;
+  border-left: solid 0.8rem #ffaac3;
   position: absolute;
   bottom: -1.6rem;
   left: 6rem;
@@ -4745,10 +4745,21 @@ body.addcart .product__color:after,
   font-size: 2.4rem;
   font-family: "American Typewriter", Monaco, "Courier New", monospace;
 }
+.invitation__btns {
+  overflow: hidden;
+  margin: 0 -.8rem;
+}
 .invitation__btn {
-  padding: .8rem 0;
+  padding: .8rem;
+  width: 50%;
+  float: left;
 }
 
+@media (max-width: 320px) {
+  .invitation__btn {
+    width: 100%;
+  }
+}
 .share-list {
   padding: 2rem 0 0;
 }
@@ -4762,47 +4773,19 @@ body.addcart .product__color:after,
 }
 .share-list ul {
   list-style: none;
-  margin: 1.2rem 0 0;
+  margin: 1.2rem -.8rem 0;
   padding: 0;
-  border: solid .1rem #e5e5e5;
-  border-radius: .4rem;
   overflow: hidden;
 }
 .share-list ul li {
   width: 50%;
+  padding: .8rem;
   float: left;
 }
 .share-list ul li a {
   display: block;
-  padding: 1.2rem 1.6rem 1.2rem 4rem;
-  text-align: left;
-  border-bottom: solid .1rem #eee;
-  border-right: solid .1rem #eee;
   position: relative;
-  text-decoration: none !important;
-  color: #4a4a4a;
-}
-.share-list ul li a:hover, .share-list ul li a:focus {
-  background: #f7f7f7;
-}
-.share-list ul li a:hover svg, .share-list ul li a:focus svg {
-  fill: #4a4a4a;
-}
-.share-list ul li a svg {
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  top: 50%;
-  left: 1.2rem;
-  margin-top: -1rem;
-  fill: #8E8E93;
-}
-.share-list ul li:last-of-type a, .share-list ul li:nth-last-child(2) a {
-  border-bottom: 0;
-}
-.share-list ul li:nth-child(2n) a {
-  border-right: 0;
+  text-align: left;
 }
 
 .polling {

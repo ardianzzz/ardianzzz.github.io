@@ -2243,7 +2243,7 @@ border-bottom:solid .1rem #eee;
 
 .profile-greeting {
     padding: .8rem 1.2rem;
-    background: #A4E786;
+    background: darken(#FFD3E0, 8%);
     color: rgba(0,0,0,0.72);
     border-radius: .8rem;
     position: relative;
@@ -2251,16 +2251,16 @@ border-bottom:solid .1rem #eee;
     line-height: 1.35;
     box-shadow: 0 -.1rem .1rem rgba(0,0,0,0.08) inset;
     -webkit-font-smoothing:antialiased;
-    background-image: linear-gradient(to bottom, lighten(#A4E786, 8%) 0%, #A4E786 100%);
+    background-image: linear-gradient(to bottom, #FFD3E0 0%, darken(#FFD3E0, 8%) 100%);
     text-shadow:.1rem .1rem rgba(255,255,255,.32);
 
 
     &:after {
         content:"";
-        border-top: solid 1rem #A4E786;
+        border-top: solid 1rem darken(#FFD3E0, 8%);
         border-right: solid .8rem rgba(0,0,0,0);
         border-bottom: solid 1rem rgba(0,0,0,0);
-        border-left: solid .8rem #A4E786;
+        border-left: solid .8rem darken(#FFD3E0, 8%);
         position: absolute;
         bottom: -1.6rem;
         left: 6rem;
@@ -3788,8 +3788,23 @@ text-align: center;
         }
     }
 
+    &__btns {
+        overflow: hidden;
+        margin:0 -.8rem;
+    }
+
     &__btn {
-        padding:.8rem 0;
+        padding:.8rem;
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width: 320px) {
+    .invitation {
+        &__btn {
+            width: 100%;
+        }
     }
 }
 
@@ -3805,58 +3820,19 @@ text-align: center;
     }
     ul {
         list-style: none;
-        margin:1.2rem 0 0;
+        margin:1.2rem -.8rem 0;
         padding:0;
-        border:solid .1rem #e5e5e5;
-        border-radius: .4rem;
         overflow: hidden;
 
         li {
             width: 50%;
+            padding:.8rem;
             float: left;
 
             a {
                 display: block;
-                padding: 1.2rem 1.6rem 1.2rem 4rem;
-                text-align: left;
-                border-bottom:solid .1rem #eee;
-                border-right:solid .1rem #eee;
                 position: relative;
-                text-decoration: none !important;
-                color: #4a4a4a;
-
-                &:hover,&:focus {
-                    background:#f7f7f7;
-
-                    svg {
-                        fill:#4a4a4a;
-                    }
-                }
-
-                svg {
-                    display: block;
-                    width: 2rem;
-                    height: 2rem;
-                    position: absolute;
-                    top:50%;
-                    left: 1.2rem;
-                    margin-top: -1rem;
-                    fill:#8E8E93;
-                }
-
-            }
-
-            &:last-of-type,
-            &:nth-last-child(2) {
-                a {
-                    border-bottom:0;
-                }
-            }
-
-            &:nth-child(2n) {
-                a {
-                    border-right:0;
-                }
+               text-align: left;
             }
         }
     }
