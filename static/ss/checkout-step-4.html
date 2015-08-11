@@ -82,69 +82,83 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Bukti Pembayaran</label>
-                            <span class="help-block">Berupa foto/hasil scan dari bukti pembayaran yang sah, misalnya struk ATM</span>
-                            <div class="uploader">
-                                <div class="drop">
-                                    <div id="image-preview">
-                                        <canvas id="xx" style="width:100%;height:100%;"></canvas>
+
+                        <hr>
+
+                         <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" onclick="document.querySelector('.upload-image').style.display=(this.checked)?'block':'none';" > <span>Saya sudah transfer sis</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-image" style="display:none">
+
+                            <div class="form-group">
+                                <label class="form-label">Bukti Pembayaran</label>
+                                <span class="help-block">Berupa foto/hasil scan dari bukti pembayaran yang sah, misalnya struk ATM</span>
+                                <div class="uploader">
+                                    <div class="drop">
+                                        <div id="image-preview">
+                                            <canvas id="xx" style="width:100%;height:100%;"></canvas>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <label class="uploader__label btn btn--default btn--small">
-                                        Browse image
-                                        <input type="file" id="file" name="file">
-                                    </label>
-                                </div>
+                                    <div>
+                                        <label class="uploader__label btn btn--default btn--small">
+                                            Browse image
+                                            <input type="file" id="file" name="file">
+                                        </label>
+                                    </div>
 
 
 
-                                <script>
-                                    var input = document.getElementById("file");
-                                    input.addEventListener("change", function(event) {
-                                        // get the image file to compress
-                                        var file = event.target.files[0];
-                                        // compress
-                                        compress(file, 90/100, 600);
-                                    }, false);
+                                    <script>
+                                        var input = document.getElementById("file");
+                                        input.addEventListener("change", function(event) {
+                                            // get the image file to compress
+                                            var file = event.target.files[0];
+                                            // compress
+                                            compress(file, 90/100, 600);
+                                        }, false);
 
-                                    function compress(file, quality, maxwidth)
-                                    {
-                                        var reader = new FileReader();
-                                                    
-                                        reader.onloadend = function()
+                                        function compress(file, quality, maxwidth)
                                         {
-                                            var img, cvs;
-                                            
-                                            img = new Image();
-                                            img.src = reader.result;
-                                        
-                                            img.onload = function()
+                                            var reader = new FileReader();
+                                                        
+                                            reader.onloadend = function()
                                             {
-                                                // resize image while keeping aspect ratio
-                                                if (maxwidth && img.width > maxwidth)
+                                                var img, cvs;
+                                                
+                                                img = new Image();
+                                                img.src = reader.result;
+                                            
+                                                img.onload = function()
                                                 {
-                                                    ratio = img.width/maxwidth;
-                                                    img.width = img.width/ratio;
-                                                    img.height = img.height/ratio;
+                                                    // resize image while keeping aspect ratio
+                                                    if (maxwidth && img.width > maxwidth)
+                                                    {
+                                                        ratio = img.width/maxwidth;
+                                                        img.width = img.width/ratio;
+                                                        img.height = img.height/ratio;
+                                                    }
+                                                    
+                                                    // compress
+                                                    cvs = document.getElementById("xx");
+                                                    cvs.width = img.width;
+                                                    cvs.height = img.height;
+                                                    cvs.getContext("2d").fillRect(0, 0, img.width, img.height);
+                                                    cvs.getContext("2d").drawImage(img, 0, 0, img.width, img.height);
+                                                    
+                                                    // append the compressed image
+                                                    output = cvs.toDataURL("image/jpeg", quality);
+                                                    console.log(output);
                                                 }
-                                                
-                                                // compress
-                                                cvs = document.getElementById("xx");
-                                                cvs.width = img.width;
-                                                cvs.height = img.height;
-                                                cvs.getContext("2d").fillRect(0, 0, img.width, img.height);
-                                                cvs.getContext("2d").drawImage(img, 0, 0, img.width, img.height);
-                                                
-                                                // append the compressed image
-                                                output = cvs.toDataURL("image/jpeg", quality);
-                                                console.log(output);
                                             }
+                                            reader.readAsDataURL(file);
                                         }
-                                        reader.readAsDataURL(file);
-                                    }
-                                </script>
+                                    </script>
+                                </div>
                             </div>
                         </div>
                     </div>
