@@ -40,19 +40,17 @@
                         </p>
                         <ol>
                             <li><b>BCA 4970861071</b>
-                                <br>a.n. Ariza Novianti, 
+                                <br>a.n. Ariza Novianti,
                                 <br>BCA KCU Bumi Serpong Damai</li>
                             <li><b>Mandiri 9000024303613</b>
-                                <br>a.n. Ariza Novianti, 
-                                <br>
-                                Mandiri KCP Pasar Modern BSD</li>
+                                <br>a.n. Ariza Novianti,
+                                <br> Mandiri KCP Pasar Modern BSD</li>
                         </ol>
-
-                         <div class="alert alert--red">
+                        <div class="alert alert--red">
                             Maaf, beberapa barang tidak dicantumkan karena stok sudah habis. Untuk melihat detail, sista bisa melihat nota belanja <a href="#" target="_Blank">di sini</a>
                         </div>
-
                         <hr>
+                        
                         <div class="form-group">
                             <label class="form-label">ID Pesanan</label>
                             <input type="text" class="form-control" value="TRX324234#000">
@@ -85,16 +83,15 @@
 
                         <hr>
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" onclick="document.querySelector('.upload-image').style.display=(this.checked)?'block':'none';" > <span>Saya sudah transfer sis</span>
+                                    <input type="checkbox" onclick="document.querySelector('.upload-image').style.display=(this.checked)?'block':'none';"> <span>Saya sudah transfer sis</span>
                                 </label>
                             </div>
                         </div>
 
                         <div class="upload-image" style="display:none">
-
                             <div class="form-group">
                                 <label class="form-label">Bukti Pembayaran</label>
                                 <span class="help-block">Berupa foto/hasil scan dari bukti pembayaran yang sah, misalnya struk ATM</span>
@@ -110,64 +107,60 @@
                                             <input type="file" id="file" name="file">
                                         </label>
                                     </div>
-
-
-
                                     <script>
-                                        var input = document.getElementById("file");
-                                        input.addEventListener("change", function(event) {
-                                            // get the image file to compress
-                                            var file = event.target.files[0];
-                                            // compress
-                                            compress(file, 90/100, 600);
-                                        }, false);
+                                    var input = document.getElementById("file");
+                                    input.addEventListener("change", function(event) {
+                                        // get the image file to compress
+                                        var file = event.target.files[0];
+                                        // compress
+                                        compress(file, 90 / 100, 600);
+                                    }, false);
 
-                                        function compress(file, quality, maxwidth)
-                                        {
-                                            var reader = new FileReader();
-                                                        
-                                            reader.onloadend = function()
-                                            {
-                                                var img, cvs;
-                                                
-                                                img = new Image();
-                                                img.src = reader.result;
-                                            
-                                                img.onload = function()
-                                                {
-                                                    // resize image while keeping aspect ratio
-                                                    if (maxwidth && img.width > maxwidth)
-                                                    {
-                                                        ratio = img.width/maxwidth;
-                                                        img.width = img.width/ratio;
-                                                        img.height = img.height/ratio;
-                                                    }
-                                                    
-                                                    // compress
-                                                    cvs = document.getElementById("xx");
-                                                    cvs.width = img.width;
-                                                    cvs.height = img.height;
-                                                    cvs.getContext("2d").fillRect(0, 0, img.width, img.height);
-                                                    cvs.getContext("2d").drawImage(img, 0, 0, img.width, img.height);
-                                                    
-                                                    // append the compressed image
-                                                    output = cvs.toDataURL("image/jpeg", quality);
-                                                    console.log(output);
+                                    function compress(file, quality, maxwidth) {
+                                        var reader = new FileReader();
+
+                                        reader.onloadend = function() {
+                                            var img, cvs;
+
+                                            img = new Image();
+                                            img.src = reader.result;
+
+                                            img.onload = function() {
+                                                // resize image while keeping aspect ratio
+                                                if (maxwidth && img.width > maxwidth) {
+                                                    ratio = img.width / maxwidth;
+                                                    img.width = img.width / ratio;
+                                                    img.height = img.height / ratio;
                                                 }
+
+                                                // compress
+                                                cvs = document.getElementById("xx");
+                                                cvs.width = img.width;
+                                                cvs.height = img.height;
+                                                cvs.getContext("2d").fillRect(0, 0, img.width, img.height);
+                                                cvs.getContext("2d").drawImage(img, 0, 0, img.width, img.height);
+
+                                                // append the compressed image
+                                                output = cvs.toDataURL("image/jpeg", quality);
+                                                console.log(output);
                                             }
-                                            reader.readAsDataURL(file);
                                         }
+                                        reader.readAsDataURL(file);
+                                    }
                                     </script>
                                 </div>
                             </div>
+
+                            
                         </div>
                     </div>
+
                     <div class="box__action">
-                        <a href="checkout-success.html" type="submit" class="btn btn--red btn--block">Konfirmasi</a>
+                        <a href="checkout-success.html" type="submit" class="btn btn--red btn--block disabled">Konfirmasi</a>
                     </div>
-                    <div class="no-login">
+                    <!-- <div class="no-login">
                         <a href="checkout-step-1.html"><b>Kembali ke Beranda</b></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -179,8 +172,8 @@
             </div>
             <div class="site-navigation__name">
                 <span>
-				Halo, Sis Maria Hayes
-			</span>
+                Halo, Sis Maria Hayes
+            </span>
             </div>
         </div>
         <div class="site-navigation__scroll">
@@ -200,78 +193,78 @@
                 <ul>
                     <li>
                         <a href="#">
-						Sale
-					</a>
+                        Sale
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						New Arrivals
-					</a>
+                        New Arrivals
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Jumpsuit
-					</a>
+                        Jumpsuit
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Dress
-					</a>
+                        Dress
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Atasan
-					</a>
+                        Atasan
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Bawahan
-					</a>
+                        Bawahan
+                    </a>
                     </li>
                 </ul>
                 <h4>Bantuan</h4>
                 <ul>
                     <li>
                         <a href="#">
-						 Cara Pemesanan
-					</a>
+                         Cara Pemesanan
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Pengiriman Barang
-					</a>
+                        Pengiriman Barang
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Reseller
-					</a>
+                        Reseller
+                    </a>
                     </li>
                 </ul>
                 <h4>Tentang kami</h4>
                 <ul>
                     <li>
                         <a href="#">
-						Tentang Sale Stock
-					</a>
+                        Tentang Sale Stock
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Karir
-					</a>
+                        Karir
+                    </a>
                     </li>
                     <li>
                         <a href="#">
-						Legal
-					</a>
+                        Legal
+                    </a>
                     </li>
                 </ul>
             </div>
             <div class="site-navigation__footer">
                 <small>
-				Copyright &copy; 2015 Sale Stock
-				<br>
-				All Rights Reserved
-			</small>
+                Copyright &copy; 2015 Sale Stock
+                <br>
+                All Rights Reserved
+            </small>
             </div>
         </div>
     </div>
@@ -288,8 +281,8 @@
                     </div>
                     <div class="checkout-item__meta">
                         <span class="checkout-item__size">
-						L
-					</span>
+                        L
+                    </span>
                         <span class="checkout-item__color">Black</span>
                     </div>
                     <div class="checkout-item__price">
@@ -304,8 +297,8 @@
                     </div>
                     <div class="checkout-item__meta">
                         <span class="checkout-item__size">
-						L
-					</span>
+                        L
+                    </span>
                         <span class="checkout-item__color">Tosca</span>
                     </div>
                     <div class="checkout-item__price">
@@ -320,8 +313,8 @@
                     </div>
                     <div class="checkout-item__meta">
                         <span class="checkout-item__size">
-						L
-					</span>
+                        L
+                    </span>
                         <span class="checkout-item__color">White</span>
                     </div>
                     <div class="checkout-item__price">
@@ -336,8 +329,8 @@
                     </div>
                     <div class="checkout-item__meta">
                         <span class="checkout-item__size">
-						L
-					</span>
+                        L
+                    </span>
                         <span class="checkout-item__color">Peach</span>
                     </div>
                     <div class="checkout-item__price">
