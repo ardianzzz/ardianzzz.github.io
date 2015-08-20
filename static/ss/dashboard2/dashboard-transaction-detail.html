@@ -40,6 +40,15 @@
 					}
 				});
 
+
+				$('.item-sorter ol').sortable({
+					onDrop: function ($item, container, _super, event) {
+					  $item.removeClass('dragged').removeAttr("style");
+					  $('body').removeClass('dragging');
+					  $('.btn-sort').addClass('show');
+					}
+				});
+
 			 
 				$('.btn-sort').click(function(){
 					return false;
@@ -1557,6 +1566,55 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
 				<button type="button" class="btn btn--red">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="mediaModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Media Title</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-media">
+					<img src="http://www.salestockindonesia.com/assets/images/img-banner-promo-lunch-8b8f346b.jpg" alt="">
+				</div>
+
+
+				<div class="form-group">
+	        		<label class="form-label">URL</label>
+	        		<div class="form-input">
+	        			<input type="text" class="form-control" value="http://example.com/img.jpg" disabled>
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Title</label>
+	        		<div class="form-input">
+	        			<input type="tel" class="form-control" value="Promo Juli">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Alt</label>
+	        		<div class="form-input">
+	        			<input type="email" class="form-control">
+	        		</div>
+	        	</div>
+
+	        	
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Batal</button>
+				<button type="button" class="btn btn--default" data-dismiss="modal">Hapus Media</button>
+				<button type="button" class="btn btn--red">Simpan Perubahan</button>
 			</div>
 		</div>
 	</div>

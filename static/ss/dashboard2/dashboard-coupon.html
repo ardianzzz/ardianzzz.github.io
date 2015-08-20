@@ -40,6 +40,15 @@
 					}
 				});
 
+
+				$('.item-sorter ol').sortable({
+					onDrop: function ($item, container, _super, event) {
+					  $item.removeClass('dragged').removeAttr("style");
+					  $('body').removeClass('dragging');
+					  $('.btn-sort').addClass('show');
+					}
+				});
+
 			 
 				$('.btn-sort').click(function(){
 					return false;
@@ -229,79 +238,158 @@
 			</div>
 		</div>
 
-		<div class="page-body__table">
 
-			<table class="table">
-				<thead>
-					<tr>
-						<th style="width:1%;">
-							<div class="checkbox">
-								<label><input type="checkbox" id="selectAll"><span></span></label>
-							</div>
-						</th>
-						<th style="width:100%;">Name</th>
-						<th>&nbsp;</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td>
-							<a href="#">CouponName #1</a>
-						</td>
-						
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip data-title="Edit">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
-							</a>
+		<div class="row">
+			<div class="col col--8">
+				<div class="page-body__table">
 
-							<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
-								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
-							</a>
-						</td>
-					</tr>
+					<table class="table">	
+						<thead>
+							<tr>
+								<th style="width:1%;">
+									<div class="checkbox">
+										<label><input type="checkbox" id="selectAll"><span></span></label>
+									</div>
+								</th>
+								<th style="width:100%;">Name</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label><input type="checkbox"><span></span></label>
+									</div>
+								</td>
+								<td>
+									<a href="#">CouponName #1</a>
+								</td>
+								
+								<td class="nowrap" style="text-align:right;">
+									<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip data-title="Edit">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+									</a>
 
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td>
-							<a href="#">CouponName #2</a>
-						</td>
-						
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit">Edit</a>
-							<a href="#" class="table__delete">Delete</a>
-						</td>
-					</tr>
+									<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+									</a>
+								</td>
+							</tr>
 
-					<tr>
-						<td>
-							<div class="checkbox">
-								<label><input type="checkbox"><span></span></label>
-							</div>
-						</td>
-						<td>
-							<a href="#">CouponName #3</a>
-						</td>
-						
-						<td class="nowrap" style="text-align:right;">
-							<a href="#" class="table__edit">Edit</a>
-							<a href="#" class="table__delete">Delete</a>
-						</td>
-					</tr>
-					
-				</tbody>
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label><input type="checkbox"><span></span></label>
+									</div>
+								</td>
+								<td>
+									<a href="#">CouponName #2</a>
+								</td>
+								
+								<td class="nowrap" style="text-align:right;">
+									<a href="#" class="table__edit">Edit</a>
+									<a href="#" class="table__delete">Delete</a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label><input type="checkbox"><span></span></label>
+									</div>
+								</td>
+								<td>
+									<a href="#">CouponName #3</a>
+								</td>
+								
+								<td class="nowrap" style="text-align:right;">
+									<a href="#" class="table__edit">Edit</a>
+									<a href="#" class="table__delete">Delete</a>
+								</td>
+							</tr>
+							
+						</tbody>
 
 
 
-			</table>
+					</table>
+				</div>
+			</div>
+			<div class="col col--4">
+				<div class="item-sorter">
+					<h3 class="item-sorter__title">Sorting</h3>
+					<div class="item-sorter__body">
+						<ol>
+							<li>
+								<a href="#">CouponName #1</a>
+
+								<div class="item-sorter__edit">
+									<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+									</a>
+
+									<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+									</a>
+								</div>
+							</li>
+							<li>
+								<a href="#">CouponName #2</a>
+								<div class="item-sorter__edit">
+									<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+									</a>
+
+									<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+									</a>
+								</div>
+							</li>
+							<li>
+								<a href="#">CouponName #3</a>
+								<div class="item-sorter__edit">
+									<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+									</a>
+
+									<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+									</a>
+								</div>
+							</li>
+							<li>
+								<a href="#">CouponName #4</a>
+								<div class="item-sorter__edit">
+									<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+									</a>
+
+									<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+									</a>
+								</div>
+							</li>
+							<li>
+								<a href="#">CouponName #5</a>
+								<div class="item-sorter__edit">
+									<a href="#" class="table__edit" data-toggle="modal" data-target="#addProductModal" data-tooltip="" data-title="Edit" data-original-title="" title="">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M64 368v80h80l235.727-235.73-80-79.997L64 368zm377.602-217.602c8.53-8.53 8.53-21.334 0-29.865l-50.135-50.135c-8.53-8.53-21.334-8.53-29.865 0l-39.468 39.47 80 79.997 39.468-39.467z"></path></svg>
+									</a>
+
+									<a href="#" class="table__delete" data-tooltip="" title="" data-original-title="Delete">
+										<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M128 405.43c0 23.416 19.198 42.57 42.667 42.57h170.667C364.802 448 384 428.846 384 405.43V160H128v245.43zM416 96h-80l-26.785-32h-106.43L176 96H96v32h320V96z"></path></svg>
+									</a>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<div class="item-sorter__action">
+						<button class="btn btn--default btn--small">Reset</button>
+						<button class="btn btn--red btn--small">Simpan</button>
+					</div>
+				</div>
+			</div>
 		</div>
 
 
@@ -1469,6 +1557,55 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
 				<button type="button" class="btn btn--red">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="mediaModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Media Title</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-media">
+					<img src="http://www.salestockindonesia.com/assets/images/img-banner-promo-lunch-8b8f346b.jpg" alt="">
+				</div>
+
+
+				<div class="form-group">
+	        		<label class="form-label">URL</label>
+	        		<div class="form-input">
+	        			<input type="text" class="form-control" value="http://example.com/img.jpg" disabled>
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Title</label>
+	        		<div class="form-input">
+	        			<input type="tel" class="form-control" value="Promo Juli">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Alt</label>
+	        		<div class="form-input">
+	        			<input type="email" class="form-control">
+	        		</div>
+	        	</div>
+
+	        	
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Batal</button>
+				<button type="button" class="btn btn--default" data-dismiss="modal">Hapus Media</button>
+				<button type="button" class="btn btn--red">Simpan Perubahan</button>
 			</div>
 		</div>
 	</div>
