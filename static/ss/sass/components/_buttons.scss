@@ -73,6 +73,14 @@
         text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
     }
 
+    &--whatsapp {
+        background: #4dc247;
+        color: #fff !important;
+        background-image: linear-gradient(to bottom, lighten(#4dc247, 8%) 0%, #4dc247 100%);
+        border-top-color: lighten(#4dc247, 6%);
+        text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+    }
+
     &.disabled,
     &:disabled {
         opacity: .72;

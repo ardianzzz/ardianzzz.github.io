@@ -622,6 +622,13 @@ p a:hover, p:focus {
   border-top-color: #26cc13;
   text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
 }
+.btn--whatsapp {
+  background: #4dc247;
+  color: #fff !important;
+  background-image: linear-gradient(to bottom, #6bcc66 0%, #4dc247 100%);
+  border-top-color: #63ca5e;
+  text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+}
 .btn.disabled, .btn:disabled {
   opacity: .72;
   cursor: not-allowed;
@@ -3379,7 +3386,7 @@ body.addcart .product__color:after,
   -ms-transform: skew(-14deg);
   -o-transform: skew(-14deg);
   transform: skew(-14deg);
-  z-index: 88;
+  z-index: 10;
 }
 .profile-greeting .profile__avatar {
   position: absolute;
@@ -3401,6 +3408,56 @@ body.addcart .product__color:after,
   font-style: italic;
 }
 
+.site-hello {
+  margin: 0 0 1.6rem;
+  border-bottom: solid .1rem #eee;
+  position: relative;
+  min-height: 10rem;
+  text-align: right;
+  overflow: hidden;
+}
+.site-hello__text {
+  position: absolute;
+  z-index: 19;
+  right: 2rem;
+  top: .8rem;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -.08rem;
+  line-height: 1.35;
+}
+.site-hello__img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 10rem;
+  width: auto;
+}
+
+.box .site-hello {
+  min-height: 11.2rem;
+  margin: 0;
+}
+.box .site-hello__text {
+  top: 2rem;
+}
+.box .site-hello__img {
+  left: 1.2rem;
+}
+
+@media (max-width: 479px) {
+  .site-hello__text {
+    font-size: 1.6rem;
+    top: 0;
+  }
+  .site-hello__img {
+    height: 8rem;
+  }
+
+  .box .site-hello__text {
+    top: 1.2rem;
+  }
+}
 .box {
   background: #fff;
   border: solid .1rem #e5e5e5;

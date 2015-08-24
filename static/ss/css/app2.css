@@ -622,6 +622,13 @@ p a:hover, p:focus {
   border-top-color: #26cc13;
   text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
 }
+.btn--whatsapp {
+  background: #4dc247;
+  color: #fff !important;
+  background-image: linear-gradient(to bottom, #6bcc66 0%, #4dc247 100%);
+  border-top-color: #63ca5e;
+  text-shadow: -0.1rem -0.1rem rgba(0, 0, 0, 0.08);
+}
 .btn.disabled, .btn:disabled {
   opacity: .72;
   cursor: not-allowed;
