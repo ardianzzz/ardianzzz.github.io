@@ -1909,6 +1909,13 @@ body {
   border: solid 0.1rem #eca2a2;
   border-radius: .2rem;
   padding: 1.2rem;
+  overflow: hidden;
+}
+.promo__content small {
+  display: block;
+  font-size: inherit;
+  margin: .4rem 0 0;
+  font-style: italic;
 }
 .promo h3 {
   margin: 0 0 .8rem;

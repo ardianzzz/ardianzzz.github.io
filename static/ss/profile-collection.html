@@ -53,7 +53,8 @@
                         <div class="form-group">
                             <label class="form-label">Pesan selamat datang:</label>
                             <div class="form-input">
-                                <textarea class="form-control" rows="3">Haloh selamat datang sistah, bla-bla-bla was-wes-wos</textarea>
+                                <textarea class="form-control message" rows="3">Haloh selamat datang sistah, bla-bla-bla was-wes-wos</textarea>
+                                <div class="charCount">88</div>
                             </div>
                         </div>
                         
@@ -245,6 +246,26 @@
                             closestElem.classList.add('fade');
                         }
                     })
+                });
+
+                [].forEach.call(document.querySelectorAll('.message'), function(el) {
+
+                     function countChars() {
+
+                         var l = "140";
+                         var str = el.value;
+                         var counter = el.nextElementSibling;
+                         var len = str.length;
+
+                         counter.textContent=l-len;
+                         if(len > l) counter.style.color='#D73C3C';
+                         else
+                         counter.style.color='';
+                    }
+
+                    el.addEventListener('focus', countChars, true);
+                    el.addEventListener('keydown', countChars, true);
+                    el.addEventListener('keyup', countChars, true);
                 });
 
 

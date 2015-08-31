@@ -581,6 +581,14 @@ body {
         border: solid .1rem lighten(#D73C3C, 24%);
         border-radius: .2rem;
         padding: 1.2rem;
+        overflow: hidden;
+
+        small {
+            display: block;
+            font-size: inherit;
+            margin: .4rem 0 0;
+            font-style: italic;
+        }
     }
     h3 {
         margin: 0 0 .8rem;
