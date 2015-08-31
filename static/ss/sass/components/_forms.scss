@@ -32,6 +32,43 @@ legend {
 
 .form-input {
     position: relative;
+
+    &__editable {
+
+
+
+        
+
+        .icon {
+            display: inline-block;
+            vertical-align: middle;
+            padding:.4rem;
+            border-radius: .2rem;
+        }
+
+        svg {
+            display: block;
+            width: 1.4rem;
+            height: 1.4rem;
+            fill:#c7c7cc;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+
+            .icon {
+                background:#f7f7f7;
+            }
+
+            svg {
+                fill:#007AFF;
+            }
+        }
+    }
+
+
+
     &--loading {
         &:before {
             content:"";
