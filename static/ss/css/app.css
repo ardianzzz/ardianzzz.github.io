@@ -1819,10 +1819,13 @@ body {
   line-height: 2.4rem;
   white-space: nowrap;
   overflow: hidden;
-  text-indent: 100%;
-  background-image: url(../img/logo.svg);
   background-position: center;
   background-repeat: no-repeat;
+}
+.site-header__logo a img, .site-header__logo span img {
+  display: block;
+  max-height: 4.8rem;
+  margin: 0 auto;
 }
 .site-header .drawer {
   position: relative;
