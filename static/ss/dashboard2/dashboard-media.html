@@ -197,13 +197,13 @@
 					<span>Customers</span>
 				</a>
 			</li>
-			<li class="active" style="width:16.66666%">
+			<li style="width:16.66666%">
 				<a href="dashboard-report.html">
 					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M176 96h64v320h-64zM80 320h64v96H80zM272 256h64v160h-64zM368 192h64v224h-64z"/></svg>
 					<span>Report</span>
 				</a>
 			</li>
-			<li style="width:16.66666%">
+			<li class="active" style="width:16.66666%">
 				<a href="dashboard-setting.html">
 					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M411.1 256c0-23.9 14.8-42.8 36.9-55.8-4-13.3-9.3-26.2-15.8-38.2-24.9 6.5-45-3.2-62-20.2-16.9-16.9-22.1-37.1-15.6-62-12-6.5-24.8-11.8-38.2-15.8-13 22.2-36.4 36.9-60.4 36.9-23.9 0-47.4-14.7-60.4-36.9-13.4 4-26.2 9.3-38.2 15.8 6.5 24.9 1.3 45-15.6 62-16.9 16.9-37.1 26.7-61.9 20.2-6.6 12-11.9 24.8-15.9 38.2 22.2 13 37 31.9 37 55.8s-14.8 47.4-37 60.4c4 13.4 9.3 26.2 15.8 38.2 24.9-6.5 45-1.3 61.9 15.6 17 16.9 22.1 37.1 15.6 62 12.1 6.5 24.8 11.8 38.2 15.8 13-22.2 36.5-36.9 60.4-36.9s47.4 14.7 60.4 36.9c13.4-4 26.2-9.3 38.2-15.8-6.5-24.9-1.3-45 15.6-62 16.9-16.9 37.1-26.7 62-20.2 6.5-12.1 11.8-24.9 15.8-38.2-22.1-13-36.8-31.9-36.8-55.8zM256 354.3c-54.2 0-98.3-44-98.3-98.3s44-98.3 98.3-98.3 98.3 44 98.3 98.3-44 98.3-98.3 98.3z"></path></svg>
 					<span>Setting</span>
@@ -213,353 +213,70 @@
 	</div>
 
 
-	
 	<div class="page-body">
+
+		<div class="page-header">
+            <h1 class="page-header__title">Setelan</h1>
+            <div class="page-header__control">
+                <!-- <a href="#" class="btn btn--red">New Customer</a> -->
+            </div>
+        </div>
 
 		<div class="page-body__navigation">
 			<ul>
-				<li class="active" style="width:25%"><a href="dashboard-product.html">Sales</a></li>
-				<li style="width:25%"><a href="dashboard-draft.html">Conversion</a></li>
-				<li style="width:25%"><a href="dashboard-product-end.html">Payment</a></li>
-				<li style="width:25%"><a href="dashboard-search.html">Search</a></li>
+				<li><a href="dashboard-setting.html">Pengguna</span></a></li>
+				<li><a href="dashboard-coupon.html">Kupon</a></li>
+				<li><a href="#">Halaman statis</a></li>
+				<li class="active"><a href="#">Media Library</a></li>
+				<li><a href="#">Misc</a></li>
 			</ul>
 		</div>
 
 		<div class="page-body__control">
-			<b>Page 1 of 23</b>
-			<ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<!-- <li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li> -->
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
-			</ul>
+			<div class="control-btn">
+				<button class="btn btn--red btn--small">Tambah Pengguna</button>
+				<a href="#" class="btn btn--default btn--small btn-check" style="color:#D73C3C;">Delete</a>
+			</div>
+
+			
+			<div class="page-body__search">
+				<input type="text" class="form-control form-control--small">
+				<button class="btn btn--default btn--small">Search</button>
+			</div>
+
 		</div>
 
-		<div class="chart">
-			<div id="chart_1" style="height:24rem;"></div>
-            <script>
-                $(document).ready(function(){
+		<div class="page-body__content">
 
-	                  var chart12 = c3.generate({
-	                    bindto: '#chart_1',
-			            legend: {
-			            	show: false,
-			            },
+			<div class="media-grid">
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://www.salestockindonesia.com/assets/images/img-banner-promo-lunch-8b8f346b.jpg)"></a>
+				</div>
 
-			            // Hourly
-	                    // data: {
-		                   //  x:'x',
-		                   //  xFormat: '%Y-%m-%d %H:%M:%S',
-	                    //   columns: [
-	                    //   	["x", "2013-03-12 22:00:00","2013-03-12 23:00:00","2013-03-13 00:00:00","2013-03-13 01:00:00", "2013-03-13 02:00:00","2013-03-13 03:00:00","2013-03-13 04:00:00","2013-03-13 05:00:00"],
-	                    //   	["Transaction", 121,92,81,55,121,92,81,55]
-	                    //   ],
-	                    //   type:'area'
-	                    // },
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/afb59f853f02a2977a8a47f16d82afe8_600.jpg)"></a>
+				</div>
 
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/b21f13bf1df770c1f072e9907156bf66_600.jpg)"></a>
+				</div>
 
-	                    //daily
-	                    data: {
-		                    x:'x',
-		                    xFormat: '%Y-%m-%d',
-	                      columns: [
-	                      	["x", "2013-03-12","2013-03-13","2013-03-14","2013-03-15", "2013-03-16","2013-03-17","2013-03-18","2013-03-19"],
-	                      	["Transaction", 121,92,81,55,121,92,81,55]
-	                      ],
-	                      type:'area'
-	                    },
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/43c6de0164830d09647b932d467532ed_600.jpg)"></a>
+				</div>
 
-	                    color: {
-						  pattern: ['#1485e0', '#ffe8a0']
-						},
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/8b4ee8803e9273e772309218297e2d3d_600.jpg)"></a>
+				</div>
+			</div>
 
-	                    transition: {
-					        duration: 0
-					    },
-	                    grid: {
-                            x: {
-                                //show: true,
-                                //ticks:3,
-                                //type:'tick',
-
-                            },
-
-                            y: {
-                                show: true,
-                                ticks:3,
-                                //type:'tick',
-
-                            },
-                           
-
-                        },
-                        axis: {
-                            x: {
-                                type: 'timeseries',
-                                localtime: true,
-                                
-                            },
-
-                           	y: {
-
-                           		show:false,
-							    tick: {
-							      count: 3
-							    },
-							    inner: true
-
-						  }
-                        },
-
-                        //point: { show: false }
-						
-	                  });
-              
-                });
-            </script>
-	    </div>
-
-	    <table class="table">
-			<thead>
-				<tr>
-					<th>Date</th>
-					<th>Sales</th>
-					<th>Revenue</th>
-					<th style="width:32rem">&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						13 Mar 2015
-					</td>
-					<td>
-						121
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-					<td rowspan="13" style="border-left:solid .1rem #eee;border-bottom:0;">
-						
-						<div class="pie-chart">
-							<h4>Payment</h4>
-							<div id="chart_4" style="height:16rem;"></div>
-							<script>
-						      var chart4 = c3.generate({
-	                    		bindto: '#chart_4',
-	                    		legend: { 
-	                    			position: 'right',
-	                 
-	                    		},
-						        data: {
-						          columns: [
-						          	["BCA", 941],
-						          	["BNI", 935],
-									["Mandiri", 381],
-									["Others", 363]
-						          ],
-						          type : 'pie',
-						        },
-						        transition: {
-							        duration: 0
-							    },
-						        axis: {
-						          x: {
-						            label: 'Sepal.Width'
-						          },
-						          y: {
-						            label: 'Petal.Width'
-						          }
-						        }
-						      });
-						    </script>
-						</div>
-
-						<div class="pie-chart">
-							<h4>Buyer</h4>
-							<div id="chart_5" style="height:16rem;"></div>
-							<script>
-						      var chart4 = c3.generate({
-	                    		bindto: '#chart_5',
-	                    		legend: { 
-	                    			position: 'right',
-	                 
-	                    		},
-						        data: {
-						          columns: [
-						          	["Member", 356],
-						          	["Guest", 435],
-						          ],
-						          type : 'pie',
-						        },
-						        transition: {
-							        duration: 0
-							    },
-						        axis: {
-						          x: {
-						            label: 'Sepal.Width'
-						          },
-						          y: {
-						            label: 'Petal.Width'
-						          }
-						        }
-						      });
-						    </script>
-						</div>
-
-					</td>
-				</tr>
-				<tr>
-					<td>
-						14 Mar 2015
-					</td>
-					<td>
-						92
-					</td>
-					<td>
-						Rp 10,500,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						15 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						16 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						17 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						18 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						19 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						20 Mar 2015
-					</td>
-					<td>
-						92
-					</td>
-					<td>
-						Rp 10,500,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						21 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						22 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						23 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						24 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						25 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
-		<div class="page-body__secondary-control">
-			<ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<!-- <li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li> -->
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
-			</ul>
 		</div>
+
+
+
+
+
 	</div>
-
 
 </div>
 

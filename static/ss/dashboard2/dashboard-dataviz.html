@@ -216,348 +216,53 @@
 	
 	<div class="page-body">
 
-		<div class="page-body__navigation">
-			<ul>
-				<li class="active" style="width:25%"><a href="dashboard-product.html">Sales</a></li>
-				<li style="width:25%"><a href="dashboard-draft.html">Conversion</a></li>
-				<li style="width:25%"><a href="dashboard-product-end.html">Payment</a></li>
-				<li style="width:25%"><a href="dashboard-search.html">Search</a></li>
-			</ul>
+		<div class="container">
+			<div class="row">
+				<div class="col col--6">
+					<div class="chart">
+						<div id="chart_1"></div>
+					</div>
+				</div>
+				<div class="col col--6">
+					<div class="chart">
+						<div id="chart_2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col--6">
+					<div class="chart">
+						<div id="chart_3"></div>
+					</div>	
+				</div>
+				<div class="col col--6">
+					<div class="chart">
+						<div id="chart_4"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col--6">
+					<div class="chart">
+						<div id="chart_5"></div>
+					</div>
+				</div>
+				<div class="col col--6">
+
+				</div>
+			</div>
 		</div>
 
-		<div class="page-body__control">
-			<b>Page 1 of 23</b>
-			<ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<!-- <li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li> -->
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
-			</ul>
-		</div>
-
-		<div class="chart">
-			<div id="chart_1" style="height:24rem;"></div>
-            <script>
-                $(document).ready(function(){
-
-	                  var chart12 = c3.generate({
-	                    bindto: '#chart_1',
-			            legend: {
-			            	show: false,
-			            },
-
-			            // Hourly
-	                    // data: {
-		                   //  x:'x',
-		                   //  xFormat: '%Y-%m-%d %H:%M:%S',
-	                    //   columns: [
-	                    //   	["x", "2013-03-12 22:00:00","2013-03-12 23:00:00","2013-03-13 00:00:00","2013-03-13 01:00:00", "2013-03-13 02:00:00","2013-03-13 03:00:00","2013-03-13 04:00:00","2013-03-13 05:00:00"],
-	                    //   	["Transaction", 121,92,81,55,121,92,81,55]
-	                    //   ],
-	                    //   type:'area'
-	                    // },
-
-
-	                    //daily
-	                    data: {
-		                    x:'x',
-		                    xFormat: '%Y-%m-%d',
-	                      columns: [
-	                      	["x", "2013-03-12","2013-03-13","2013-03-14","2013-03-15", "2013-03-16","2013-03-17","2013-03-18","2013-03-19"],
-	                      	["Transaction", 121,92,81,55,121,92,81,55]
-	                      ],
-	                      type:'area'
-	                    },
-
-	                    color: {
-						  pattern: ['#1485e0', '#ffe8a0']
-						},
-
-	                    transition: {
-					        duration: 0
-					    },
-	                    grid: {
-                            x: {
-                                //show: true,
-                                //ticks:3,
-                                //type:'tick',
-
-                            },
-
-                            y: {
-                                show: true,
-                                ticks:3,
-                                //type:'tick',
-
-                            },
-                           
-
-                        },
-                        axis: {
-                            x: {
-                                type: 'timeseries',
-                                localtime: true,
-                                
-                            },
-
-                           	y: {
-
-                           		show:false,
-							    tick: {
-							      count: 3
-							    },
-							    inner: true
-
-						  }
-                        },
-
-                        //point: { show: false }
-						
-	                  });
-              
-                });
-            </script>
-	    </div>
-
-	    <table class="table">
-			<thead>
-				<tr>
-					<th>Date</th>
-					<th>Sales</th>
-					<th>Revenue</th>
-					<th style="width:32rem">&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						13 Mar 2015
-					</td>
-					<td>
-						121
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-					<td rowspan="13" style="border-left:solid .1rem #eee;border-bottom:0;">
-						
-						<div class="pie-chart">
-							<h4>Payment</h4>
-							<div id="chart_4" style="height:16rem;"></div>
-							<script>
-						      var chart4 = c3.generate({
-	                    		bindto: '#chart_4',
-	                    		legend: { 
-	                    			position: 'right',
-	                 
-	                    		},
-						        data: {
-						          columns: [
-						          	["BCA", 941],
-						          	["BNI", 935],
-									["Mandiri", 381],
-									["Others", 363]
-						          ],
-						          type : 'pie',
-						        },
-						        transition: {
-							        duration: 0
-							    },
-						        axis: {
-						          x: {
-						            label: 'Sepal.Width'
-						          },
-						          y: {
-						            label: 'Petal.Width'
-						          }
-						        }
-						      });
-						    </script>
-						</div>
-
-						<div class="pie-chart">
-							<h4>Buyer</h4>
-							<div id="chart_5" style="height:16rem;"></div>
-							<script>
-						      var chart4 = c3.generate({
-	                    		bindto: '#chart_5',
-	                    		legend: { 
-	                    			position: 'right',
-	                 
-	                    		},
-						        data: {
-						          columns: [
-						          	["Member", 356],
-						          	["Guest", 435],
-						          ],
-						          type : 'pie',
-						        },
-						        transition: {
-							        duration: 0
-							    },
-						        axis: {
-						          x: {
-						            label: 'Sepal.Width'
-						          },
-						          y: {
-						            label: 'Petal.Width'
-						          }
-						        }
-						      });
-						    </script>
-						</div>
-
-					</td>
-				</tr>
-				<tr>
-					<td>
-						14 Mar 2015
-					</td>
-					<td>
-						92
-					</td>
-					<td>
-						Rp 10,500,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						15 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						16 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						17 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						18 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						19 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						20 Mar 2015
-					</td>
-					<td>
-						92
-					</td>
-					<td>
-						Rp 10,500,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						21 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						22 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						23 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						24 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						25 Mar 2015
-					</td>
-					<td>
-						81
-					</td>
-					<td>
-						Rp 15,000,000
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
-		<div class="page-body__secondary-control">
-			<ul class="pagination">
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
-				<!-- <li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li> -->
-				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
-			</ul>
-		</div>
+		<script type="text/javascript" src="http://data-staging.sistemsista.com:8087/js/lib/pym.min.js"></script>
+		<script type="text/javascript">
+			var chart_1 = new pym.Parent('chart_1', 'http://data-staging.sistemsista.com:8087/graph/new_member.html', {});
+			var chart_2 = new pym.Parent('chart_2', 'http://data-staging.sistemsista.com:8087/graph/first_sales.html', {});
+			var chart_3 = new pym.Parent('chart_3', 'http://data-staging.sistemsista.com:8087/graph/loyal_customer.html', {});
+			var chart_4 = new pym.Parent('chart_4', 'http://data-staging.sistemsista.com:8087/graph/repeat_customer.html', {});
+			var chart_5 = new pym.Parent('chart_5', 'http://data-staging.sistemsista.com:8087/graph/total_purchase.html', {});
+		</script>
 	</div>
 
 
