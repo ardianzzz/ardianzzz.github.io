@@ -20,6 +20,14 @@
   float: left;
 }
 
+.product {
+  max-width: 100%;
+}
+
+.product-separator {
+  max-width: 100%;
+}
+
 @media (max-width: 480px) {
   .masonry__brick {
     width: 100%;
