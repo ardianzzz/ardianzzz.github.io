@@ -135,7 +135,7 @@
                     </div>
                 </div>
 
-                
+
                 <h2 class="product-separator">Produk Menarik Lainnya</h2>
                 <div class="masonry">
                     <div class="masonry__brick">
@@ -1028,6 +1028,10 @@
             </div>
             <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
+
+                 var msnry = new Masonry('.masonry', {
+                    itemSelector: '.masonry__brick',
+                });
 
                 // toggle buy button
                 [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
