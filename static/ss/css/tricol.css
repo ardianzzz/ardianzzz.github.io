@@ -20,6 +20,25 @@
   float: left;
 }
 
+.product-separator {
+  max-width: 100%;
+}
+
+.product-detail .product {
+  max-width: 100%;
+}
+.product-detail .product__figure {
+  margin: -.1rem;
+  padding: 1.2rem;
+}
+.product-detail .product__info {
+  padding-top: 1.2rem;
+}
+.product-detail .product__title {
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem;
+}
+
 @media (max-width: 768px) {
   .masonry__brick {
     width: 50%;
