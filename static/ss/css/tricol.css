@@ -34,6 +34,9 @@
 .product-detail .product__info {
   padding-top: 1.2rem;
 }
+.product-detail .product__price {
+  font-size: 1.6rem;
+}
 .product-detail .product__title {
   font-size: 1.8rem;
   margin: 0 0 0.8rem;
