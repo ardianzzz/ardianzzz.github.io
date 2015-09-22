@@ -2675,13 +2675,16 @@ body.addcart .product__color:after,
     opacity: 1;
   }
 }
-.container > div .product .product__info {
-  width: 18.4rem;
-  width: -webkit-calc(100% - 11rem);
-  width: -moz-calc(100% - 11rem);
-  width: calc(100% - 11rem);
-}
-
+/*.container > div {  
+    .product { 
+        .product__info {
+            width: 18.4rem;
+            width: -webkit-calc(100% - 8.8rem);
+            width: -moz-calc(100% - 8.8rem);
+            width: calc(100% - 8.8rem);
+        }
+    }
+}*/
 .product {
   margin: 1.2rem auto;
   overflow: hidden;
@@ -2783,35 +2786,51 @@ body.addcart .product__color:after,
   vertical-align: middle;
 }
 .product__size {
+  overflow: hidden;
+}
+.product__size > span {
   float: left;
   vertical-align: middle;
   margin: .1rem .4rem .1rem 0;
+  padding: 0 .4rem 0 0;
   line-height: 1.6rem;
-  height: 1.8rem;
   min-width: 1.8rem;
   text-align: center;
-  border: solid .1rem #e5e5e5;
-  background: #f7f7f7;
-  border-radius: .2rem;
   font-size: 12px;
   color: #8E8E93;
   position: relative;
   font-family: Arial, Sans-serif;
-  font-weight: 700;
-  padding: 0 .3rem;
+  position: relative;
+}
+.product__size > span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: .1rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #eeeeee 32%, #eeeeee 68%, #ffffff 100%);
+}
+.product__size > span:first-of-type:after {
+  display: none;
+}
+.product__size > span:last-of-type:after {
+  display: none;
 }
 .product__info {
   padding: .8rem 1.2rem 1.2rem;
-  float: left;
+  /*float: left;
   width: 18.4rem;
   width: -webkit-calc(100% - 11rem);
   width: -moz-calc(100% - 11rem);
-  width: calc(100% - 11rem);
+  width: calc(100% - 11rem);*/
 }
 .product__price {
   line-height: 2rem;
-  margin: 0 1.2rem 0 0;
-  float: left;
+  padding: 0 1.2rem 0 0;
+  display: table-cell;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 .product__price__placeholder {
   line-height: 1.6rem;
@@ -2824,7 +2843,7 @@ body.addcart .product__color:after,
 }
 .product__price del {
   color: #c7c7cc;
-  padding-left: .8rem;
+  padding-left: .4rem;
 }
 .product__price ins,
 .product__price span {
@@ -2834,17 +2853,20 @@ body.addcart .product__color:after,
   letter-spacing: -.05rem;
 }
 .product__action {
-  padding: 1.2rem;
-  float: right;
+  padding: .8rem 1.2rem;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  display: table;
+  width: 100%;
+  border-top: solid .1rem #eee;
 }
 .product__action__placeholder {
   background: #f7f7f7;
   color: #8E8E93;
 }
 .product__action .btn {
-  min-width: 8rem;
+  min-width: 6.4rem;
 }
 .product__action .btn .buy {
   display: block;
@@ -2854,6 +2876,15 @@ body.addcart .product__color:after,
 }
 .product__action .btn--link {
   color: #8E8E93;
+}
+.product__fav {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+.product__buy {
+  display: table-cell;
+  vertical-align: middle;
 }
 .product__color {
   overflow: hidden;
@@ -2885,7 +2916,7 @@ body.addcart .product__color:after,
 }
 .product__color .color a {
   display: block;
-  padding: .4rem 1.6rem;
+  padding: .3rem 1.6rem;
   background: #f7f7f7;
   border-radius: .3rem;
   position: relative;
@@ -3133,23 +3164,20 @@ body.addcart .product__color:after,
 }
 .product__love {
   display: block;
-  width: 4.8rem;
-  height: 4.8rem;
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
+  position: relative;
+  margin-left: -.6rem;
+  line-height: 3.2rem;
+  color: #8E8E93;
+  text-decoration: none !important;
+  font-weight: 700;
 }
 .product__love span {
   display: block;
-  position: absolute;
   width: 3.2rem;
   height: 3.2rem;
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 50%;
-  border: solid 0.1rem rgba(0, 0, 0, 0.12);
-  top: 50%;
-  left: 50%;
-  margin: -1.6rem 0 0 -1.6rem;
+  float: left;
+  margin: 0;
+  position: relative;
 }
 .product__love svg {
   display: block;
@@ -3158,10 +3186,9 @@ body.addcart .product__color:after,
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -.8rem 0 0 -.9rem;
+  margin: -.9rem 0 0 -.9rem;
 }
 .product__love.active span {
-  background: #fff;
   -webkit-animation-duration: .2s;
   animation-duration: .2s;
   -webkit-animation-fill-mode: both;

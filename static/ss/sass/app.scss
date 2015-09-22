@@ -1471,16 +1471,16 @@ body.addcart,
     }
 }
 
-.container > div {  
+/*.container > div {  
     .product { 
         .product__info {
             width: 18.4rem;
-            width: -webkit-calc(100% - 11rem);
-            width: -moz-calc(100% - 11rem);
-            width: calc(100% - 11rem);
+            width: -webkit-calc(100% - 8.8rem);
+            width: -moz-calc(100% - 8.8rem);
+            width: calc(100% - 8.8rem);
         }
     }
-}
+}*/
 
 .product {
     margin: 1.2rem auto;
@@ -1590,35 +1590,59 @@ body.addcart,
         }
     }
     &__size {
-        float: left;
-        vertical-align: middle;
-        margin: .1rem .4rem .1rem 0;
-        line-height: 1.6rem;
-        height: 1.8rem;
-        min-width: 1.8rem;
-        text-align: center;
-        border: solid .1rem #e5e5e5;
-        background: #f7f7f7;
-        border-radius: .2rem;
-        font-size: 12px;
-        color: #8E8E93;
-        position: relative;
-        font-family: Arial, Sans-serif;
-        font-weight: 700;
-        padding: 0 .3rem;
+        overflow: hidden;
+        >span {
+            float: left;
+            vertical-align: middle;
+            margin: .1rem .4rem .1rem 0;
+            padding:0 .4rem 0 0;
+            line-height: 1.6rem;
+            min-width: 1.8rem;
+            text-align: center;
+            font-size: 12px;
+            color: #8E8E93;
+            position: relative;
+            font-family: Arial, Sans-serif;
+            position: relative;
+
+            &:after {
+                content:"";
+                position: absolute;
+                top:0;
+                bottom: 0;
+                right: 0;
+                width: .1rem;
+                background: linear-gradient(to bottom, #ffffff 0%,#eeeeee 32%,#eeeeee 68%,#ffffff 100%);
+            }
+
+            &:first-of-type {
+                &:after {
+                    display:none;
+                }
+            }
+
+            &:last-of-type {
+                &:after {
+                    display:none;
+                }
+            }
+        }
     }
     &__info {
         padding:.8rem 1.2rem 1.2rem;
-        float: left;
+        /*float: left;
         width: 18.4rem;
         width: -webkit-calc(100% - 11rem);
         width: -moz-calc(100% - 11rem);
-        width: calc(100% - 11rem);
+        width: calc(100% - 11rem);*/
     }
     &__price {
         line-height: 2rem;
-        margin:0 1.2rem 0 0;
-        float: left;
+        padding:0 1.2rem 0 0;
+        display: table-cell;
+        vertical-align: middle;
+
+        white-space: nowrap;
         &__placeholder {
             line-height: 1.6rem;
             height: 1.6rem;
@@ -1630,7 +1654,7 @@ body.addcart,
         }
         del {
             color: #c7c7cc;
-            padding-left: .8rem;
+            padding-left: .4rem;
         }
         ins,
         span {
@@ -1641,16 +1665,21 @@ body.addcart,
         }
     }
     &__action {
-        padding:1.2rem;
-        float: right;
+        padding:.8rem 1.2rem;
         position: relative;
         z-index: 1;
+        overflow: hidden;
+        display: table;
+        width: 100%;
+        border-top:solid .1rem #eee;
+
+
         &__placeholder {
             background: #f7f7f7;
             color: #8E8E93;
         }
         .btn {
-            min-width: 8rem;
+            min-width: 6.4rem;
             .buy {
                 display: block;
             }
@@ -1662,6 +1691,21 @@ body.addcart,
             }
         }
     }
+
+    &__fav {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+
+    &__buy {
+        display: table-cell;
+        vertical-align: middle;
+
+    }
+
+
     &__color {
         overflow: hidden;
         border-top: solid .1rem #eee;
@@ -1690,7 +1734,7 @@ body.addcart,
             padding: .4rem .2rem;
             a {
                 display: block;
-                padding: .4rem 1.6rem;
+                padding: .3rem 1.6rem;
                 background: #f7f7f7;
                 border-radius: .3rem;
                 position: relative;
@@ -1965,24 +2009,21 @@ body.addcart,
 
     &__love {
         display: block;
-        width: 4.8rem;
-        height: 4.8rem;
-        position: absolute;
-        top: 1.2rem;
-        right:1.2rem;
+        position: relative;
+        margin-left: -.6rem;
+        line-height: 3.2rem;
+        color: #8E8E93;
+        text-decoration: none !important;
+        font-weight: 700;
 
 
         span {
             display: block;
-            position: absolute;
             width: 3.2rem;
             height: 3.2rem;
-            background: rgba(255,255,255,.88);
-            border-radius: 50%;
-            border:solid .1rem rgba(0,0,0,0.12);
-            top:50%;
-            left: 50%;
-            margin:-1.6rem 0 0 -1.6rem;
+            float: left;
+            margin:0;
+            position: relative;
         }
 
         svg {
@@ -1992,13 +2033,12 @@ body.addcart,
             position: absolute;
             top:50%;
             left: 50%;
-            margin:-.8rem 0 0 -.9rem;
+            margin:-.9rem 0 0 -.9rem;
         }
     
         &.active {
 
             span {  
-                background: #fff;
                 -webkit-animation-duration: .2s;
         animation-duration: .2s;
         -webkit-animation-fill-mode: both;
