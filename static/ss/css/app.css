@@ -468,10 +468,11 @@ p a:hover, p:focus {
  * Clearfix helper
  * Used to contain floats: h5bp.com/q
  */
-.clearfix:before, .row:before, .container:before, .alert:before, .page-control ul:before, .product:before, .step:before,
+.clearfix:before, .row:before, .container:before, .form-group:before, .alert:before, .page-control ul:before, .product:before, .step:before,
 .clearfix:after,
 .row:after,
 .container:after,
+.form-group:after,
 .alert:after,
 .page-control ul:after,
 .product:after,
@@ -480,7 +481,7 @@ p a:hover, p:focus {
   display: table;
 }
 
-.clearfix:after, .row:after, .container:after, .alert:after, .page-control ul:after, .product:after, .step:after {
+.clearfix:after, .row:after, .container:after, .form-group:after, .alert:after, .page-control ul:after, .product:after, .step:after {
   clear: both;
 }
 
@@ -912,8 +913,8 @@ textarea.form-control {
   display: block;
   font-size: 1.2rem;
   color: #8E8E93;
-  line-height: 1.25;
-  margin: .6rem 0 0;
+  line-height: 2.2rem;
+  margin: .2rem 0 0;
 }
 
 .form-tip {
@@ -2856,7 +2857,6 @@ body.addcart .product__color:after,
   padding: .8rem 1.2rem;
   position: relative;
   z-index: 1;
-  overflow: hidden;
   display: table;
   width: 100%;
   border-top: solid .1rem #eee;
@@ -3170,6 +3170,7 @@ body.addcart .product__color:after,
   color: #8E8E93;
   text-decoration: none !important;
   font-weight: 700;
+  float: left;
 }
 .product__love span {
   display: block;
@@ -3807,6 +3808,7 @@ body.addcart .product__color:after,
 .charCount {
   text-align: right;
   margin: .2rem 0 0;
+  float: right;
 }
 
 .forgot-pass {

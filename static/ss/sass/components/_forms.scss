@@ -131,6 +131,7 @@ textarea.form-control {
 
 .form-group {
     margin: 0 0 1.6rem;
+    @extend .clearfix;
     &--flex {
         display: table;
         width: 100%;
@@ -202,8 +203,8 @@ textarea.form-control {
     display: block;
     font-size: 1.2rem;
     color: #8E8E93;
-    line-height: 1.25;
-    margin: .6rem 0 0;
+    line-height: 2.2rem;
+    margin: .2rem 0 0;
 }
 
 .form-tip {
