@@ -3165,12 +3165,12 @@ body.addcart .product__color:after,
 .product__love {
   display: block;
   position: relative;
-  margin-left: -.4rem;
+  margin-left: -.6rem;
   line-height: 3.2rem;
   color: #8E8E93;
   text-decoration: none !important;
-  font-weight: 700;
   float: left;
+  font-size: 1.3rem;
 }
 .product__love span {
   display: block;
@@ -3182,12 +3182,12 @@ body.addcart .product__color:after,
 }
 .product__love svg {
   display: block;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -1.2rem 0 0 -1.2rem;
+  margin: -.9rem 0 0 -.9rem;
 }
 .product__love.active span {
   -webkit-animation-duration: .2s;
