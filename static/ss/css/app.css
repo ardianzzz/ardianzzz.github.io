@@ -3165,7 +3165,7 @@ body.addcart .product__color:after,
 .product__love {
   display: block;
   position: relative;
-  margin-left: -.2rem;
+  margin-left: -.4rem;
   line-height: 3.2rem;
   color: #8E8E93;
   text-decoration: none !important;
