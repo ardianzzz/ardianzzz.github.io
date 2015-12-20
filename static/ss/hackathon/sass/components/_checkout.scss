@@ -1,0 +1,116 @@
+.checkout {
+    margin: 1.2rem auto; background: #fff; border: solid .1rem #e5e5e5;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.05);
+    border-radius: .3rem;
+    max-width: 76.8rem;
+
+    &__action {
+        padding: .8rem 1.2rem 1.2rem;
+    }
+    &__tip {
+        font-size: 1.2rem;
+        color: #8E8E93;
+        display: block;
+        margin: .8rem 0 0;
+        line-height: 1.25;
+    }
+    &-list {
+        &__title {
+            padding: 1.2rem 1.2rem .8rem;
+            border-bottom: solid .1rem #eee;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+    }
+    &-empty {
+        padding: 1.2rem;
+        background: #2b2b2b;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 64px;
+
+
+      .preloader--wrapper {
+        position: absolute;
+          top: 0;
+          background: rgba(255,255,255,.24);
+      }
+
+      .preloader__loader {
+        opacity: .64;
+        width: 4.8rem !important;
+          padding: .8rem !important;
+      }
+  
+
+    &:before {
+        content:"";
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        width: 1.6rem;
+        background: #282828;
+    }
+
+    &:after {
+        content:"";
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        width: 1.6rem;
+        background: #282828;
+    }
+
+
+        .alert {
+            margin:1.2rem 0;
+            display: none;
+        }
+    }
+    &-empty__title {
+        a {
+            &.btn {
+                margin-top:3rem;
+            }
+        }
+    }
+    &-item {
+        
+
+        &.fade {
+            -webkit-animation-duration: .4s;
+            animation-duration: .4s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: fadeOut;
+            animation-name: fadeOut;
+        }
+        
+        &__remove {
+            
+
+        }
+        
+    }
+
+
+   
+    &__call-action {
+        margin: 1.6rem 0 0;
+        padding: 1.6rem 1.2rem;
+        border-top: solid .1rem #eee;
+        .btn {
+            margin: 0 0 .8rem;
+            font-weight: 400;
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}

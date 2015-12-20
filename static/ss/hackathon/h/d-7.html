@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sale Stock Indonesia</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi, minimal-ui" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/css/app.css">
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/headroom.js"></script>
+    <script type="text/javascript" src="../js/lory.js"></script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        var header = document.querySelector("#site-header");
+        var scrolTop = document.querySelector("#scrollTop");
+        // construct an instance of Headroom, passing the element
+        var headroom = new Headroom(header, {
+            offset: 80,
+        });
+
+        // initialise
+        headroom.init({});
+
+
+
+
+    });
+    </script>
+</head>
+
+<body class="body">
+    <header id="site-header" role="banner" style="background: #fff; position: fixed; top: 0; width: 100%; z-index: 999;">
+        <div style="height: 4.4rem; background: #fff; -webkit-box-shadow: 0 .1rem #e5e5e5; box-shadow: 0 .1rem #e5e5e5;">
+            <!-- primary header -->
+            <div style="max-width: 48rem; margin: 0 auto; position: fixed; right:0; left:0; height: 4.4rem; z-index: 9999; background: #fff;">
+                <!-- logo -->
+                <div style="width: 16rem; position: absolute; top: 0; left: 50%; margin: 0 0 0 -8rem; font-size: 1.6rem; z-index: 9999; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                    <span style="display: block; padding: 1.2rem 0; line-height: 2rem; font-weight:700; white-space: nowrap; overflow: hidden; background-position: center; background-repeat: no-repeat; text-decoration: none !important; color: #2b2b2b;">
+                    Dropshipper
+                    </span>
+                </div>
+                <!-- nav left -->
+                <div style="position:absolute;top:0;left:0;">
+                    <a href="d-5.html" style="display: block; float: left; padding: 1rem;">
+                        <svg width="40" height="40" viewBox="0 0 512 512" style="display: block; width: 2.4rem; height: 2.4rem; fill: #2b2b2b;">
+                            <path d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.7H427v-42.75z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <!-- nav right -->
+                <div style="position:absolute;top:0;right:0;">
+                    <a href="/pages/search.html" style="display: block; float: left; padding: 1rem;">
+                        <svg width="512" height="512" viewBox="0 0 512 512" style="display: block; width: 2.4rem; height: 2.4rem; fill: #2b2b2b;">
+                            <path d="M344.5 298c15-23.6 23.8-51.6 23.8-81.7 0-84.1-68.1-152.3-152.1-152.3C132.1 64 64 132.2 64 216.3c0 84.1 68.1 152.3 152.1 152.3 30.5 0 58.9-9 82.7-24.4l6.9-4.8L414.3 448l33.7-34.3-108.5-108.6 5-7.1zm-43.1-166.8c22.7 22.7 35.2 52.9 35.2 85s-12.5 62.3-35.2 85c-22.7 22.7-52.9 35.2-85 35.2s-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85s12.5-62.3 35.2-85c22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2z"></path>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0);" data-toggle="right-menu" style="display: block; float: left; padding: 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" style="display: block; width: 2.4rem; height: 2.4rem; fill: #2b2b2b;">
+                            <path d="M344 64H168c-4.4 0-8 3.6-8 8v56h192V72c0-4.4-3.6-8-8-8zM160 448l96-96 96 96V144H160"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="side-cart">
+        <div style="line-height: 4.4rem; text-align: right; background: #f7f7f7; font-weight: 700; position: relative; box-shadow: 0 .1rem rgba(0, 0, 0, 0.1), 0 .1rem .1rem rgba(0, 0, 0, 0.1); z-index: 13; text-align: center;">
+            <a href="javascript:void(0);" style="display: block; width: 4.4rem; height: 4.4rem; padding: 1rem; position: absolute; top: 0; z-index: 99;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" style="display:block; width:2.4rem; height:2.4rem; fill:#8e8e93;">
+                    <path d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.7H427v-42.75z"></path>
+                </svg>
+            </a>
+            Stock Dropship
+        </div>
+        <div style="position: absolute; top: 4.4rem; bottom: 0; right: 0; left: 0; overflow: auto; -webkit-overflow-scrolling: touch;">
+            <!-- CHECKOUT -->
+            <div>
+                <div style="border-bottom: solid .1rem #eee; padding: 1.2rem 3.2rem 1.2rem 8.8rem; min-height: 9.2rem; position: relative; overflow: hidden;">
+                    <a href="#" style="color:#2b2b2b">
+                        <div style="width: 6.4rem; height: 6.4rem; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; position: absolute; top: 1.4rem; left: 1.2rem; background-color: #f5f5f5; box-shadow: .1rem .1rem rgba(0, 0, 0, 0.04); border:solid .1rem rgba(0,0,0,0.12); background-image:url(http://i.ss-cdn.net/product_images/cd810c6567430d545ba9fa846d293617_600.jpg)">
+                        </div>
+                        <div style="line-height: 1.25; margin: 0 0 .4rem; display: inline-block;">
+                            Sophia Polka Skirt
+                        </div>
+                    </a>
+                    <div style="position: absolute; bottom: 1rem; left: 8.8rem;">
+                        <span style="min-width: 1.4rem; padding:0 .4rem; background: #2b2b2b; line-height: 1.4rem; text-align: center; display: block; float: left; margin: -.7rem .8rem 0 0; border-radius: .2rem; font-size: .9rem; color: #fff; position: relative; position: absolute; top:50%; right: 100%; white-space: nowrap; box-shadow: 0 .1rem .1rem rgba(0,0,0,0.04); text-transform: uppercase; font-weight: 500; -webkit-font-smoothing:antialiased;">
+                    XL
+                </span>
+                        <span style="line-height: 1.4rem; float: left; color: #8E8E93; text-transform: uppercase; font-size: .9rem; font-weight: 700;">Black</span>
+                    </div>
+                    <div style="float: right; position: absolute; bottom: 1.2rem; right: 1.2rem; font-weight: 700; line-height: 1; text-align: right;">
+                        69.000
+                    </div>
+                </div>
+                <div style="border-bottom: solid .1rem #eee; padding: 1.2rem 3.2rem 1.2rem 8.8rem; min-height: 9.2rem; position: relative; overflow: hidden;">
+                    <a href="#" style="color:#2b2b2b">
+                        <div style="width: 6.4rem; height: 6.4rem; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; position: absolute; top: 1.4rem; left: 1.2rem; background-color: #f5f5f5; box-shadow: .1rem .1rem rgba(0, 0, 0, 0.04); border:solid .1rem rgba(0,0,0,0.12); background-image:url(http://i.ss-cdn.net/product_images/5753d2536183cc73e7a8e26ccea1e0ae_600.jpg)"></div>
+                        <div style="line-height: 1.25; margin: 0 0 .4rem; display: inline-block;">
+                            Amaya Fleur Wedges Top
+                        </div>
+                    </a>
+                    <div style="position: absolute; bottom: 1rem; left: 8.8rem;">
+                        <span style="min-width: 1.4rem; padding:0 .4rem; background: #2b2b2b; line-height: 1.4rem; text-align: center; display: block; float: left; margin: -.7rem .8rem 0 0; border-radius: .2rem; font-size: .9rem; color: #fff; position: relative; position: absolute; top:50%; right: 100%; white-space: nowrap; box-shadow: 0 .1rem .1rem rgba(0,0,0,0.04); text-transform: uppercase; font-weight: 500; -webkit-font-smoothing:antialiased;">
+                    Size 41
+                </span>
+                        <span style="line-height: 1.4rem; float: left; color: #8E8E93; text-transform: uppercase; font-size: .9rem; font-weight: 700;">Tosca</span>
+                    </div>
+                    <div style="float: right; position: absolute; bottom: 1.2rem; right: 1.2rem; font-weight: 700; line-height: 1; text-align: right;">
+                        <del style="color: #8E8E93; display: block; font-weight: 400; font-size: 1.1rem; padding: 0 0 .2rem; text-decoration: none;">95.000</del>
+                        88.000
+                    </div>
+                    <a href="javascript:void(0);" style="width: 3.2rem; height: 3.2rem; position: absolute; top: 0; right: 0; z-index: 12; padding:.6rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" style="display:block; width:2rem; height:2rem; fill:#c7c7cc;">
+                            <path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256" />
+                        </svg>
+                    </a>
+                </div>
+                <div style="border-bottom: solid .1rem #eee; padding: 1.2rem 3.2rem 1.2rem 8.8rem; min-height: 9.2rem; position: relative; overflow: hidden;">
+                    <a href="#" style="color:#2b2b2b">
+                        <div style="width: 6.4rem; height: 6.4rem; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; position: absolute; top: 1.4rem; left: 1.2rem; background-color: #f5f5f5; box-shadow: .1rem .1rem rgba(0, 0, 0, 0.04); border:solid .1rem rgba(0,0,0,0.12); background-image:url(http://i.ss-cdn.net/product_images/833a4c23c312e7bd3a7c1a5d0dc492ee_600.jpg)"></div>
+                        <div style="line-height: 1.25; margin: 0 0 .4rem; display: inline-block;">
+                            Keyna Plain Skirt
+                        </div>
+                    </a>
+                    <div style="position: absolute; bottom: 1rem; left: 8.8rem;">
+                        <span style="min-width: 1.4rem; padding:0 .4rem; background: #2b2b2b; line-height: 1.4rem; text-align: center; display: block; float: left; margin: -.7rem .8rem 0 0; border-radius: .2rem; font-size: .9rem; color: #fff; position: relative; position: absolute; top:50%; right: 100%; white-space: nowrap; box-shadow: 0 .1rem .1rem rgba(0,0,0,0.04); text-transform: uppercase; font-weight: 500; -webkit-font-smoothing:antialiased;">
+                    L
+                </span>
+                        <span style="line-height: 1.4rem; float: left; color: #8E8E93; text-transform: uppercase; font-size: .9rem; font-weight: 700;">White</span>
+                    </div>
+                    <div style="float: right; position: absolute; bottom: 1.2rem; right: 1.2rem; font-weight: 700; line-height: 1; text-align: right;">
+                        85.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+                <div style="border-bottom: solid .1rem #eee; padding: 1.2rem 3.2rem 1.2rem 8.8rem; min-height: 9.2rem; position: relative; overflow: hidden;">
+                    <a href="#" style="color:#2b2b2b">
+                        <div style="width: 6.4rem; height: 6.4rem; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; position: absolute; top: 1.4rem; left: 1.2rem; background-color: #f5f5f5; box-shadow: .1rem .1rem rgba(0, 0, 0, 0.04); border:solid .1rem rgba(0,0,0,0.12); background-image:url(http://i.ss-cdn.net/product_images/a9416d8a4aa6cd5aec50d075678b2ea4_600.jpg)"></div>
+                        <div style="line-height: 1.25; margin: 0 0 .4rem; display: inline-block;">
+                            Vivia Brukat Combi Twistcone Blouse
+                        </div>
+                    </a>
+                    <div style="position: absolute; bottom: 1rem; left: 8.8rem;">
+                        <span style="min-width: 1.4rem; padding:0 .4rem; background: #2b2b2b; line-height: 1.4rem; text-align: center; display: block; float: left; margin: -.7rem .8rem 0 0; border-radius: .2rem; font-size: .9rem; color: #fff; position: relative; position: absolute; top:50%; right: 100%; white-space: nowrap; box-shadow: 0 .1rem .1rem rgba(0,0,0,0.04); text-transform: uppercase; font-weight: 500; -webkit-font-smoothing:antialiased;">
+                    L
+                </span>
+                        <span style="line-height: 1.4rem; float: left; color: #8E8E93; text-transform: uppercase; font-size: .9rem; font-weight: 700;">Peach</span>
+                    </div>
+                    <div style="float: right; position: absolute; bottom: 1.2rem; right: 1.2rem; font-weight: 700; line-height: 1; text-align: right;">
+                        85.000
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="main" id="main" role="main" style="padding:4.4rem 0 0;">
+
+        <div class="searchbox">
+            <div class="searchbox__input">
+                <form>
+                    <input type="search" class="form-control" placeholder="Masukkan kata kunci…">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                            <path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="searchbox__container">
+                <div class="searchbox__bar">
+                    <div class="searchbox__control">
+                        <a href="javascript:void(0);" data-modal="#modal__category">Semua kategori <span class="caret"></span></a>
+                    </div>
+                    <div class="searchbox__control">
+                        <a href="javascript:void(0);" data-modal="#modal__filter">Filter <span class="caret"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div style="padding:1.2rem;">
+                    Sista bisa menambahkan 6 item
+                </div>
+            </div>
+
+
+           
+
+
+            <div class="card">
+                <div class="product" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+                    <div class="product__figure">
+                        <div class="product__image" style="padding-bottom:84%;">
+                            <img src="https://salestock-public-prod.global.ssl.fastly.net/product_images/c713ed4837311f4ab088596c314ebacf_600.jpg" alt="" itemprop="image">
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title" itemprop="name">
+                            <a href="product-detail.html" itemprop="url">Akeyla Plain Penguin Blouse</a>
+                        </div>
+                        <div class="product__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <ins itemprop="price">125.000</ins>
+                            <del>130.000</del>
+                        </div>
+                        <div class="product__size">
+                            <span>M</span>
+                            <span>L</span>
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <div class="product__btn">
+                            <a href="#product_3" data-toggle="buy" data-scroll>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path d="M344 64H168c-4.4 0-8 3.6-8 8v56h192V72c0-4.4-3.6-8-8-8zM160 448l96-96 96 96V144H160"/></svg>
+                                Masukin Stock
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__color" id="product_3">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#DD0907"></span> Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#006412;"></span> Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#0000D3"></span> Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#F20884"></span> Fuchsia</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#FF6403"></span> Orange</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#02ABEA"></span> Tosca</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#ffffff;border:solid .1rem #d6d6d6"></span> White</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="product" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+                    <div class="product__figure">
+                        <div class="product__image" style="padding-bottom:84%;">
+                            <img src="https://salestock-public-prod.global.ssl.fastly.net/product_images/9b36bf7470a410b737f7da3595fb78be_600.jpg" alt="" itemprop="image">
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title" itemprop="name">
+                            <a href="product-detail.html" itemprop="url">Khalisah Flowery Flare Mini Dress</a>
+                        </div>
+                        <div class="product__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <ins itemprop="price">119.000</ins>
+                        </div>
+                        <div class="product__size">
+                            <span>M</span>
+                            <span>L</span>
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <div class="product__btn">
+                            <a href="#product_4" data-toggle="buy" data-scroll>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path d="M344 64H168c-4.4 0-8 3.6-8 8v56h192V72c0-4.4-3.6-8-8-8zM160 448l96-96 96 96V144H160"/></svg>
+                                Masukin Stock
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__color" id="product_4">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#DD0907"></span> Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#006412;"></span> Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#0000D3"></span> Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#F20884"></span> Fuchsia</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#FF6403"></span> Orange</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#02ABEA"></span> Tosca</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#ffffff;border:solid .1rem #d6d6d6"></span> White</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="product" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+                    <div class="product__figure">
+                        <div class="product__image" style="padding-bottom:84%;">
+                            <img src="https://salestock-public-prod.global.ssl.fastly.net/product_images/272803ec8851ad257c549a3d56345e74_600.jpg" alt="" itemprop="image">
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title" itemprop="name">
+                            <a href="product-detail.html" itemprop="url">Plastef Abstract Flare Mini Dress</a>
+                        </div>
+                        <div class="product__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <ins itemprop="price">109.000</ins>
+                        </div>
+                        <div class="product__size">
+                            <span>M</span>
+                            <span>L</span>
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <div class="product__btn">
+                            <a href="#product_4" data-toggle="buy" data-scroll>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path d="M344 64H168c-4.4 0-8 3.6-8 8v56h192V72c0-4.4-3.6-8-8-8zM160 448l96-96 96 96V144H160"/></svg>
+                                Masukin Stock
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__color" id="product_4">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#DD0907"></span> Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#006412;"></span> Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#0000D3"></span> Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#F20884"></span> Fuchsia</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#FF6403"></span> Orange</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#02ABEA"></span> Tosca</a>
+                            </div>
+                            <div class="color">
+                                <a href="d-8.html" data-toggle="add-item"><span style="background-color:#ffffff;border:solid .1rem #d6d6d6"></span> White</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-toggle="sidebar-close"></div>
+    <script type="text/javascript">
+     // toggle buy button
+    [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
+        var closestElem = getClosest(el, '.product');
+        var closestElemChild = closestElem.querySelector('.product__color');
+        el.addEventListener('click', function() {
+            closestElem.classList.toggle('open');
+        })
+    });
+
+
+
+
+    var sidebarOverlay = document.querySelector('.sidebar-overlay');
+    var sidecart = document.querySelector('.side-cart');
+   
+    [].forEach.call(document.querySelectorAll('[data-toggle=right-menu]'), function(el) {
+        el.addEventListener('click', function() {
+            sidebarOverlay.classList.toggle('active');
+            sidecart.classList.toggle('active');
+        })
+    });
+    [].forEach.call(document.querySelectorAll('[data-toggle=sidebar-close]'), function(el) {
+        el.addEventListener('click', function() {
+            sidebarOverlay.classList.remove('active');
+            sidecart.classList.remove('active');
+        })
+    });
+    smoothScroll.init({
+        offset: 142,
+        updateURL: false,
+    });
+    </script>
+</body>
+
+</html>

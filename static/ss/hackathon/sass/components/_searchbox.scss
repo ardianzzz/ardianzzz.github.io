@@ -1,0 +1,173 @@
+
+
+
+@keyframes blink-empty {
+  50% {background:#007AFF;}
+}
+@-webkit-keyframes blink-empty {
+  50% {background:#007AFF;}
+}
+
+.searchbox {
+	background:#f9f9f9;
+	border-bottom:solid .1rem #d6d6d6;
+
+	input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-appearance:none;
+
+	font-weight: 400;
+	font-size: 1.8rem;
+	border:0;
+	padding: 1.2rem 4.4rem 1.2rem 1.2rem;
+
+		&::-webkit-input-placeholder {
+			font-style:italic;
+			padding-left: .3rem;
+	    }
+
+	    &:-moz-placeholder {
+			font-style:italic;
+			padding-left: .3rem;
+	    }
+
+	    &::-moz-placeholder {   
+			font-style:italic;
+			padding-left: .3rem;
+	    }
+
+	    &:-ms-input-placeholder {  
+			font-style:italic;
+			padding-left: .3rem;
+	    }
+
+	}
+
+
+	&__container {
+		max-width: 48rem;
+		margin:0 auto;
+	}
+
+
+
+
+	&__input {
+		max-width: 48rem;
+		position: relative;
+		margin: 0 auto;
+
+
+		button {
+			-webkit-appearance:none;
+			border:0;
+			font-size: 1rem;
+			position: absolute;
+			top:50%;
+			margin-top: -1.2rem;
+			right: 1.2rem;
+			border-radius: 50%;
+			background:rgba(0,0,0,0.24);
+			width: 2.4rem;
+			height: 2.4rem;
+			opacity: 0;
+
+			svg {
+				width: 1.6rem;
+				height: 1.6rem;
+				display: block;
+				fill:#fff;
+				position: absolute;
+				top:50%;
+				left: 50%;
+				margin:-.8rem 0 0 -.8rem;
+			}
+		}
+
+		input[type=search]:focus {
+			&~button {
+				opacity: 1;
+			}
+		}
+	}
+
+
+	&__bar {
+		display: table;
+		width: 100%;
+		border-top: solid .1rem #e5e5e5;
+
+
+
+	}
+
+	&__control {
+		white-space: nowrap;
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+
+		a {
+			display: block;
+			padding:1rem 1.2rem;
+			line-height: 2.4rem;
+			border-left: solid .1rem #e5e5e5;
+			text-decoration: none !important;
+			color: $text-color;
+
+			svg {
+				display: block;
+				width: 2.4rem;
+				height: 2.4rem;
+				fill:$text-color-gray;
+			}
+
+			.badge {
+				margin:-.1rem .3rem -.1rem -.3rem;
+			}
+		}
+
+		&:first-of-type {
+			a {
+				border:0;
+			}
+		}
+	}
+
+}
+
+
+
+@media (min-width:481px) {
+	.searchbox {
+		background:rgba(0,0,0,0);
+		border-color:rgba(0,0,0,0);
+		padding:1.2rem 0 0;
+
+		&__bar {
+			border:solid .1rem #d6d6d6;
+			border-radius: .3rem;
+			margin:1.2rem 0 0;
+		    background-image: linear-gradient(to bottom, lighten(#e5e5e5, 8%) 0%, #e5e5e5 100%);
+		    box-shadow: 0 .1rem .1rem rgba(255,255,255,.4);
+		}
+
+		&__control {
+			a {
+				border-color:#d6d6d6;
+			}
+		}
+
+
+	}
+
+	.searchbox input[type="search"] {
+		border:solid .1rem #e5e5e5;
+		border-top-color:#d9d9d9;
+		border-radius: .3rem;
+	}
+}
