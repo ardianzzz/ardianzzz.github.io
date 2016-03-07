@@ -1,0 +1,13 @@
+# Site settings
+title: Vanilla
+#baseurl: ""
+#url: "http://yourdomain.com"
+
+# Build settings
+#markdown: kramdown
+#permalink: pretty
+
+
+sass:
+    sass_dir: _sass
+    style: :compressed
