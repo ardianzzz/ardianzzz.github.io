@@ -1,8 +1,112 @@
----
-layout: dashboard
----
+<!doctype html>
+<html class="no-js" lang="EN">
 
-<div class="sidebar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ZohoNesia – CRM &amp; Inventory Management made simple</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=1024px, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/floatThead.js"></script>
+    <script src="js/chosen.js"></script>
+    <script>
+    $(document).ready(function() {
+
+
+        var $table = $('.table-floated');
+        $table.floatThead({
+            scrollContainer: function($table){
+                return $table.closest('.page-body-table');
+            }
+        });
+       
+
+        $('.table-check-all').click(function(e) {
+            $('.table-check').prop('checked', this.checked);
+        });
+
+        $(".chosen-select").chosen({
+            width: '100%',
+            disable_search_threshold: 10
+        });
+
+        $('.table input[type=checkbox]').click(function() {
+            if ($(this).is(':checked')) {
+                $(this).closest('tr').addClass('checked');
+            } else {
+                $(this).closest('tr').removeClass('checked');
+            }
+        });
+
+        $('td[data-href]').addClass('clickable').click( function() {
+            window.location = $(this).attr('data-href');
+        });
+
+
+
+    });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="site-logo">
+            <a href="/">
+                <img src="https://www.giveffect.com/home/images/assets/logo-sunflower-scfp-giveffect-nonprofit.png" alt="Sunflower Co.">
+            </a>
+        </div>
+
+        <div style="float: right;">
+            <div class="site-search">
+                <div style="display:table">
+                    <div style="display:table-cell;vertical-align: middle;padding:0 5px 0 0">
+                        <input type="search" class="form-control" placeholder="Search contacts&hellip;">
+                    </div>
+                </div>
+            </div>
+            <ul class="site-user">
+                <li>
+                    <a href="#" style="color:#f1c40f;line-height: 14px;padding:11px 15px;font-size: 11px;font-family: Arial, Sans-serif;">
+                        Trial expires in 8 days
+                        <br>
+                        <b>Upgrade now!</b>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="site-user__avatar">
+                            <img src="http://ogpdn1wn2d93vut8u40tokx1dl7.wpengine.netdna-cdn.com/wp-content/uploads/2015/05/Rosie-Scammell_avatar_1431030034-96x96.jpg" alt="">
+                        </div>
+                        Sahito <span class="caret"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M411.1 256c0-23.9 14.8-42.8 36.9-55.8-4-13.3-9.3-26.2-15.8-38.2-24.9 6.5-45-3.2-62-20.2-16.9-16.9-22.1-37.1-15.6-62-12-6.5-24.8-11.8-38.2-15.8-13 22.2-36.4 36.9-60.4 36.9-23.9 0-47.4-14.7-60.4-36.9-13.4 4-26.2 9.3-38.2 15.8 6.5 24.9 1.3 45-15.6 62-16.9 16.9-37.1 26.7-61.9 20.2-6.6 12-11.9 24.8-15.9 38.2 22.2 13 37 31.9 37 55.8s-14.8 47.4-37 60.4c4 13.4 9.3 26.2 15.8 38.2 24.9-6.5 45-1.3 61.9 15.6 17 16.9 22.1 37.1 15.6 62 12.1 6.5 24.8 11.8 38.2 15.8 13-22.2 36.5-36.9 60.4-36.9s47.4 14.7 60.4 36.9c13.4-4 26.2-9.3 38.2-15.8-6.5-24.9-1.3-45 15.6-62 16.9-16.9 37.1-26.7 62-20.2 6.5-12.1 11.8-24.9 15.8-38.2-22.1-13-36.8-31.9-36.8-55.8zM256 354.3c-54.2 0-98.3-44-98.3-98.3s44-98.3 98.3-98.3 98.3 44 98.3 98.3-44 98.3-98.3 98.3z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M345.1 77.1C317.6 56.2 286.6 49 247.3 49c-29.8 0-55.3 6.1-75.5 19.7C142 89 128 123.1 128 177h76.8c0-14.4-1.4-29.9 7-43.2 8.4-13.3 20.1-23.5 40.2-23.5 20.4 0 30.9 5.9 40.8 18.1 8.4 10.4 11.6 22.8 11.6 36 0 11.4-5.8 21.9-12.7 31.4-3.8 5.6-8.8 10.6-15.1 15.4 0 0-41.5 24.7-56.1 48.1-10.9 17.4-14.8 39.2-15.7 65.3-.1 1.9.6 5.8 7.2 5.8h61.8c5.8 0 7-4.4 7.1-6.2.4-9.5 1.6-24.1 3.3-29.6 3.3-10.4 9.7-19.5 19.7-27.3l20.7-14.3c18.7-14.6 33.6-26.5 40.2-35.9 11.3-15.4 19.2-34.4 19.2-56.9 0-36.7-13.5-63.8-38.9-83.1zM242 370.2c-25.9-.8-47.3 17.2-48.2 45.3-.8 28.2 19.5 46.7 45.5 47.5 27 .8 47.9-16.6 48.7-44.7.8-28.1-19-47.3-46-48.1z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main" id="main" role="main">
+        <div class="sidebar">
     <div class="sidebar-scroll">
         <ul class="sidebar-menu">
             <li>
@@ -531,3 +635,8 @@ layout: dashboard
 </div>
 
 
+
+    </div>
+</body>
+
+</html>
