@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=1024px, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-2.1.0.min.js"></script>
@@ -47,6 +47,8 @@
         $('td[data-href]').addClass('clickable').click( function() {
             window.location = $(this).attr('data-href');
         });
+
+         $('[data-toggle="tooltip"]').tooltip();
 
 
 

@@ -228,18 +228,24 @@
     <div class="page-header">
         <div class="page-title dropdown">
             <a href="#" data-toggle="dropdown">
-                All Contacts
+                All Sales Order
                 <span class="chevron">
                     <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 298.3l174.2-167.2c4.3-4.2 11.4-4.1 15.8.2l30.6 29.9c4.4 4.3 4.5 11.3.2 15.5L264.1 380.9c-2.2 2.2-5.2 3.2-8.1 3-3 .1-5.9-.9-8.1-3L35.2 176.7c-4.3-4.2-4.2-11.2.2-15.5L66 131.3c4.4-4.3 11.5-4.4 15.8-.2L256 298.3z"/></svg>
                 </span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="#">All Contacts</a></li>
-                <li><a href="#">Customers</a></li>
-                <li><a href="#">Vendors</a></li>
-                <li><a href="#">Vendors &mdash; Reorder items</a></li>
-                <li><a href="#">Active</a></li>
-                <li><a href="#">Inactive</a></li>
+                <li><a href="#">All</a></li>
+                <li><a href="#">Draft</a></li>
+                <li><a href="#">Confirmed</a></li>
+                <li><a href="#">For Packaging</a></li>
+                <li><a href="#">To be Shipped</a></li>
+                <li><a href="#">Shipped</a></li>
+                <li><a href="#">For Invoicing</a></li>
+                <li><a href="#">Drop Shipped</a></li>
+                <li><a href="#">Fulfilled</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Void</a></li>
             </ul>
         </div>
         <div class="pull-left btn-check" style="display: none;">
@@ -262,17 +268,18 @@
             
             <div class="page-control">
                 
-                <a href="contact-new.html" class="btn btn-primary">New</a>
+                <a href="#" class="btn btn-primary">New</a>
 
                 <div class="dropdown">
                     <a href="#" class="btn btn-default btn-icon" data-toggle="dropdown">
                         <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M96 241h320v32H96zM96 145h320v32H96zM96 337h320v32H96z"/></svg>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Import Sales Order</a></li>
-                        <li><a href="#">Export Sales Order</a></li>
+                        <li><a href="#">Import customer</a></li>
+                        <li><a href="#">Import vendors</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Sales Order Preferences</a></li>
+                        <li><a href="#">Export customer</a></li>
+                        <li><a href="#">Export vendors</a></li>
                         <li class="divider"></li>
                         <li><a href="#">Refresh list</a></li>
                     </ul>
@@ -280,12 +287,14 @@
             </div>
         </div>
     </div>
-    
+
+
     <div class="page-body">
 
         <div class="page-body-table">
 
             <table class="table table-striped table-hover table-hover table-floated">
+
                 <thead>
                     <tr>
                         <th style="width:1%">
@@ -294,22 +303,32 @@
                             </div>
                         </th>
                         <th>
-                            <div><a href="#" class="table-sorter">Name</a></div>
+                            <div><a href="#" class="table-sorter">Date</a></div>
+                        </th>
+
+                        <th>
+                            <div><a href="#" class="table-sorter">Sales Order</a></div>
                         </th>
                         <th>
-                            <div><a href="#" class="table-sorter ascending">Company</a></div>
+                            <div><a href="#" class="table-sorter">Reference</a></div>
                         </th>
                         <th>
-                            <div>Email</div>
+                            <div><a href="#" class="table-sorter">Customer Name</a></div>
                         </th>
                         <th>
-                            <div>Work phone</div>
+                            <div>Status</div>
                         </th>
                         <th>
-                            <div><a href="#" class="table-sorter descending">Rechievables</a></div>
+                            <div>Invoice</div>
                         </th>
                         <th>
-                            <div><a href="#" class="table-sorter descending">Payables</a></div>
+                            <div>Packed</div>
+                        </th>
+                        <th>
+                            <div>Shipped</div>
+                        </th>
+                        <th>
+                            <div><a href="#" class="table-sorter">Amount</a></div>
                         </th>
                     </tr>
                 </thead>
@@ -318,288 +337,299 @@
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">1.Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Completed">
+                                    <div class="tb-circle-full">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Half way">
+                                    <div class="tb-circle-half">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Uncommenced">
+                                    <div class="tb-circle-none">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Completed">
+                                    <div class="tb-circle-full">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Half way">
+                                    <div class="tb-circle-half">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Uncommenced">
+                                    <div class="tb-circle-none">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Completed">
+                                    <div class="tb-circle-full">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Half way">
+                                    <div class="tb-circle-half">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html" style="text-align: center;">
+                            <div class="tb-circle">
+                                <div class="tb-circle-bg" data-toggle="tooltip" title="Uncommenced">
+                                    <div class="tb-circle-none">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
                     <tr>
                         <td style="width:1%">
                             <input type="checkbox" class="table-check">
                         </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
+                        <td data-href="sales-order-detail.html">20 Feb 2016</td>
+                        <td data-href="sales-order-detail.html">SO-00004</td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">Shinta Maharkesti</td>
+                        <td data-href="sales-order-detail.html"><span class="label label-info">Confirmed</span></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html"></td>
+                        <td data-href="sales-order-detail.html">IDR6,000.00</td>
                     </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Rudi Sumitro</a></td>
-                        <td data-href="contact-details.html">pasarhewan.com</td>
-                        <td data-href="contact-details.html">rudi@pasarhewan.com</td>
-                        <td data-href="contact-details.html">+62892344432</td>
-                        <td data-href="contact-details.html">IDR 30,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
-                    <tr>
-                        <td style="width:1%">
-                            <input type="checkbox" class="table-check">
-                        </td>
-                        <td data-href="contact-details.html"><a href="#">Agung Hercules</a></td>
-                        <td data-href="contact-details.html">tgbm</td>
-                        <td data-href="contact-details.html">rudi@gmx.com</td>
-                        <td data-href="contact-details.html">+628811321333</td>
-                        <td data-href="contact-details.html">IDR 40,000,000.00</td>
-                        <td data-href="contact-details.html">IDR 0.00</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -623,8 +653,8 @@
             </div>
         </div>
     </div>
-</div>
 
+</div>
 
     </div>
 </body>
