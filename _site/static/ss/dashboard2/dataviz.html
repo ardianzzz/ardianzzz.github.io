@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SS Dashboard</title>
+  <link href="http://data-staging.sistemsista.com:8087/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://data-staging.sistemsista.com:8087/css/ui.dynatree.css" rel="stylesheet">
+  <link href="http://data-staging.sistemsista.com:8087/css/jquery.contextMenu.css" rel="stylesheet">
+  <link href="http://data-staging.sistemsista.com:8087/css/jquery-ui.min.css" rel="stylesheet">
+  <link href="http://data-staging.sistemsista.com:8087/css/defaultTheme.css" rel="stylesheet">
+  <link href="http://data-staging.sistemsista.com:8087/css/jquery-linedtextarea.css" rel="stylesheet">
+  <link href="http://data-staging.sistemsista.com:8087/css/dashboard.css" rel="stylesheet">
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/jquery.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/jquery-ui.min.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/bootstrap.min.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/jquery.dynatree.min.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/jquery.contextMenu-custom.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/jquery.fixedheadertable.min.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/d3.min.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/yanagishima.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/jquery-linedtextarea.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/js/highcharts.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/js/highcharts-3d.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/js/modules/exporting.js"></script>
+  <script src="http://data-staging.sistemsista.com:8087/js/lib/json2.js"></script>  
+  <script>
+  var show_dashboard = (function () {
+  $("#query-submit").attr("disabled", "disabled");
+  $("#query-explain").attr("disabled", "disabled");
+  $("#query-explain-distributed").attr("disabled", "disabled");
+  $("#query-clear").attr("disabled", "disabled");
+  $("#query-format").attr("disabled", "disabled");
+  $("#tsv-download").attr("disabled", "disabled");
+  $("#query-results").fixedHeaderTable("destroy");
+  $("#query-results").empty();
+  $("#error-msg").hide();
+  $("#warn-msg").hide();
+  var time_select = $("#time_select").val();  
+  
+  if(time_select == 'monthly'){
+  $("#datepick").hide();
+  var query = "select date_format(date_registered + interval '7' hour,'%b-%Y') periode, count(*) member, date_format(date_registered + interval '7' hour,'%m-%Y') periode2 " +
+			  "from membership.membership.member where date_format(date_registered + interval '7' hour,'%Y') = date_format(current_date,'%Y') " +
+			  "group by date_format(date_registered + interval '7' hour,'%b-%Y'), date_format(date_registered + interval '7' hour,'%m-%Y') " +
+              "order by date_format(date_registered + interval '7' hour,'%m-%Y')";
+	} else if(time_select == 'weekly'){
+	$("#datepick").hide();
+	var query = "select date_format(date_registered + interval '7' hour,'%v') periode, count(*) member " +
+			  "from membership.membership.member where date_format(date_registered + interval '7' hour,'%Y') = date_format(current_date,'%Y') " +
+			  "group by date_format(date_registered + interval '7' hour,'%v') " +
+              "order by date_format(date_registered + interval '7' hour,'%v')";
+    } else if(time_select == 'daily'){
+	$("#datepick").hide();
+	var query = "select date_format(date_registered + interval '7' hour,'%d') periode, count(*) member " +
+			  "from membership.membership.member where date_format(date_registered + interval '7' hour,'%Y%m') = date_format(current_date,'%Y%m') " +
+			  "group by date_format(date_registered + interval '7' hour,'%d') " +
+              "order by date_format(date_registered + interval '7' hour,'%d')";		  
+	} else if(time_select == 'range'){
+	$("#datepick").show();
+	var date_from = $("#datepicker").val();
+	var date_to = $("#datepicker2").val();
+	var query = "select date_format(date_registered + interval '7' hour,'%d') periode, count(*) member, date_format(date_registered + interval '7' hour,'%m%d') periode2 " +
+			  "from membership.membership.member where date_registered >= date_parse('"+date_from+" 00:00:00','%m/%d/%Y %H:%i:%s') and date_registered <= date_parse('"+date_to+" 23:59:59','%m/%d/%Y %H:%i:%s') "+
+			  "group by date_format(date_registered + interval '7' hour,'%d'), date_format(date_registered + interval '7' hour,'%m%d') " +
+              "order by date_format(date_registered + interval '7' hour,'%m%d')";	
+	}
+	console.log(query);		  
+  var requestURL = "/presto";
+  var requestData = {
+    "query": query
+  };
+  var successHandler = function(data) {	          
+      push_query(query);
+      $("#query-histories").empty();
+      update_query_histories_area();
+      $("#query-results").empty();
+	  
+      var headers = data.headers;
+      var rows = data.results;
+      create_table("#query-results", headers, rows);      
+      push_result(headers, rows); 	  	  
+	  var query_result_string = window.sessionStorage.query_result;  
+	  var rows = JSON.parse(query_result_string);    
+	  months = Array();
+	  member = Array(); 
+  for (var i = 0; i < rows.length; ++i) {
+    var columns = rows[i];	
+	if (typeof columns[0] == "object") {		          
+		months.push(JSON.stringify(columns[0]));
+        member.push(parseFloat(JSON.stringify(columns[1])));  
+      } else {		          
+		months.push(columns[0]);
+        member.push(parseFloat(columns[1]));  
+      }	  
+  }    	  	
+    chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container',
+            type: 'line'
+        },		
+        title: {
+            text: 'Member Registered'
+        },
+        xAxis: {
+            categories: months
+        },
+        series: [{
+                name: 'Member',
+                data: member
+            }]
+    });	
+  };
+  $.post(requestURL, requestData, successHandler, "json");  
+});
+$(function() {
+   $("#datepick").hide();   
+    $( "#datepicker" ).datepicker();
+	$( "#datepicker2" ).datepicker();
+  });
+  </script>
+</head>
+
+<body>
+        <div class="main">
+          <h1 class="page-header">New Member</h1>                   
+          <div class="table-responsive">
+		  <select name='mode' id='time_select' onchange='show_dashboard()'>
+		  <option value='#'>Choose Time</option>
+		  <option value='daily'>Daily</option>
+		  <option value='weekly'>Weekly</option>
+		  <option value='monthly'>Monthly</option>
+		  <option value='range'>Date Range</option>
+		  </select>
+		  <div id="datepick"><input type="text" id="datepicker" onchange="show_dashboard()"> to <input type="text" id="datepicker2" onchange="show_dashboard()"></div></div>
+            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+          </div>        
+
+  <script src="data-staging.sistemsista.com:8087/js/lib/pym.min.js"></script>  
+  <script type="text/javascript">
+var pymChild = new pym.Child();  
+  </script>
+
+</body>
+
+</html>

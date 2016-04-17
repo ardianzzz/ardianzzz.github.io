@@ -1,0 +1,583 @@
+<!doctype html>
+<html class="no-js" lang="EN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ZohoNesia – CRM &amp; Inventory Management made simple</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=1024px, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/floatThead.js"></script>
+    <script src="js/chosen.js"></script>
+    <script>
+    $(document).ready(function() {
+
+
+        var $table = $('.table-floated');
+        $table.floatThead({
+            scrollContainer: function($table){
+                return $table.closest('.page-body-table');
+            }
+        });
+       
+
+        $('.table-check-all').click(function(e) {
+            $('.table-check').prop('checked', this.checked);
+        });
+
+        $(".chosen-select").chosen({
+            width: '100%',
+            disable_search_threshold: 10
+        });
+
+        $('.table input[type=checkbox]').click(function() {
+            if ($(this).is(':checked')) {
+                $(this).closest('tr').addClass('checked');
+            } else {
+                $(this).closest('tr').removeClass('checked');
+            }
+        });
+
+        $('td[data-href]').addClass('clickable').click( function() {
+            window.location = $(this).attr('data-href');
+        });
+
+         $('[data-toggle="tooltip"]').tooltip();
+
+
+
+    });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="site-logo">
+            <a href="/">
+                <img src="https://www.giveffect.com/home/images/assets/logo-sunflower-scfp-giveffect-nonprofit.png" alt="Sunflower Co.">
+            </a>
+        </div>
+
+        <div style="float: right;">
+            <div class="site-search">
+                <div style="display:table">
+                    <div style="display:table-cell;vertical-align: middle;padding:0 5px 0 0">
+                        <input type="search" class="form-control" placeholder="Search contacts&hellip;">
+                    </div>
+                </div>
+            </div>
+            <ul class="site-user">
+                <li>
+                    <a href="#" style="color:#f1c40f;line-height: 14px;padding:11px 15px;font-size: 11px;font-family: Arial, Sans-serif;">
+                        Trial expires in 8 days
+                        <br>
+                        <b>Upgrade now!</b>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="site-user__avatar">
+                            <img src="http://ogpdn1wn2d93vut8u40tokx1dl7.wpengine.netdna-cdn.com/wp-content/uploads/2015/05/Rosie-Scammell_avatar_1431030034-96x96.jpg" alt="">
+                        </div>
+                        Sahito <span class="caret"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M411.1 256c0-23.9 14.8-42.8 36.9-55.8-4-13.3-9.3-26.2-15.8-38.2-24.9 6.5-45-3.2-62-20.2-16.9-16.9-22.1-37.1-15.6-62-12-6.5-24.8-11.8-38.2-15.8-13 22.2-36.4 36.9-60.4 36.9-23.9 0-47.4-14.7-60.4-36.9-13.4 4-26.2 9.3-38.2 15.8 6.5 24.9 1.3 45-15.6 62-16.9 16.9-37.1 26.7-61.9 20.2-6.6 12-11.9 24.8-15.9 38.2 22.2 13 37 31.9 37 55.8s-14.8 47.4-37 60.4c4 13.4 9.3 26.2 15.8 38.2 24.9-6.5 45-1.3 61.9 15.6 17 16.9 22.1 37.1 15.6 62 12.1 6.5 24.8 11.8 38.2 15.8 13-22.2 36.5-36.9 60.4-36.9s47.4 14.7 60.4 36.9c13.4-4 26.2-9.3 38.2-15.8-6.5-24.9-1.3-45 15.6-62 16.9-16.9 37.1-26.7 62-20.2 6.5-12.1 11.8-24.9 15.8-38.2-22.1-13-36.8-31.9-36.8-55.8zM256 354.3c-54.2 0-98.3-44-98.3-98.3s44-98.3 98.3-98.3 98.3 44 98.3 98.3-44 98.3-98.3 98.3z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M345.1 77.1C317.6 56.2 286.6 49 247.3 49c-29.8 0-55.3 6.1-75.5 19.7C142 89 128 123.1 128 177h76.8c0-14.4-1.4-29.9 7-43.2 8.4-13.3 20.1-23.5 40.2-23.5 20.4 0 30.9 5.9 40.8 18.1 8.4 10.4 11.6 22.8 11.6 36 0 11.4-5.8 21.9-12.7 31.4-3.8 5.6-8.8 10.6-15.1 15.4 0 0-41.5 24.7-56.1 48.1-10.9 17.4-14.8 39.2-15.7 65.3-.1 1.9.6 5.8 7.2 5.8h61.8c5.8 0 7-4.4 7.1-6.2.4-9.5 1.6-24.1 3.3-29.6 3.3-10.4 9.7-19.5 19.7-27.3l20.7-14.3c18.7-14.6 33.6-26.5 40.2-35.9 11.3-15.4 19.2-34.4 19.2-56.9 0-36.7-13.5-63.8-38.9-83.1zM242 370.2c-25.9-.8-47.3 17.2-48.2 45.3-.8 28.2 19.5 46.7 45.5 47.5 27 .8 47.9-16.6 48.7-44.7.8-28.1-19-47.3-46-48.1z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main" id="main" role="main">
+        <div class="sidebar">
+    <div class="sidebar-scroll">
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M9.984 20.016h-4.97V12h-3L12 3l9.983 9h-3v8.016h-4.97v-6h-4.03v6z" />
+                    </svg>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M15.984 12.984q1.313 0 2.86.375t2.858 1.217 1.313 1.922v2.483h-6V16.5q0-2.063-1.97-3.47.33-.046.94-.046zm-7.968 0q1.313 0 2.86.375t2.835 1.217T15 16.5v2.484H.984V16.5q0-1.078 1.313-1.922t2.86-1.22 2.858-.374zm0-1.968q-1.22 0-2.11-.89t-.89-2.11.89-2.11 2.11-.89 2.086.89.867 2.11-.87 2.11-2.085.89zm7.968 0q-1.22 0-2.11-.89t-.89-2.11.89-2.11 2.11-.89 2.11.89.89 2.11-.89 2.11-2.11.89z" />
+                    </svg>
+                    Contacts
+                </a>
+                <a href="#" class="shortcut">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 17.016q.797 0 1.406-.61t.61-1.405-.61-1.404-1.406-.61-1.406.61T9.984 15t.61 1.407 1.406.61zM9 9h6l-3-4.406zm8.203 0h4.78q.423 0 .728.28t.307.704q-.47 1.875-1.406 5.273t-1.17 4.29Q20.016 21 18.516 21H5.487q-1.5 0-1.924-1.455l-2.53-9.28q-.048-.095-.048-.282 0-.422.305-.703T2.017 9h4.78l4.36-6.563q.28-.422.844-.422t.846.422z" />
+                    </svg>
+                    Item group
+                </a>
+                <a href="#" class="shortcut">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 17.016q.797 0 1.406-.61t.61-1.405-.61-1.404-1.406-.61-1.406.61T9.984 15t.61 1.407 1.406.61zM9 9h6l-3-4.406zm8.203 0h4.78q.423 0 .728.28t.307.704q-.47 1.875-1.406 5.273t-1.17 4.29Q20.016 21 18.516 21H5.487q-1.5 0-1.924-1.455l-2.53-9.28q-.048-.095-.048-.282 0-.422.305-.703T2.017 9h4.78l4.36-6.563q.28-.422.844-.422t.846.422z" />
+                    </svg>
+                    Items
+                </a>
+                <a href="#" class="shortcut">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">
+                    Pricelist
+                </a>
+                <a href="#" class="shortcut">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="menu-label">
+
+                Quotation
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M17.016 18q.797 0 1.383.61t.584 1.405-.586 1.383-1.384.586-1.406-.586-.61-1.383.61-1.406 1.406-.61zM.984 2.016h3.28l.94 1.97h14.812q.422 0 .703.304t.28.727q0 .234-.14.47l-3.565 6.468q-.563 1.03-1.734 1.03H8.11l-.892 1.642-.047.14q0 .235.236.235h11.578v2.016h-12q-.797 0-1.383-.61t-.585-1.405q0-.47.234-.938l1.36-2.484L3 3.99H.98v-1.97zm6 15.984q.797 0 1.406.61T9 20.014t-.61 1.383-1.406.586-1.383-.586-.584-1.383.586-1.406T6.985 18z" />
+                    </svg>
+                    Sales Orders
+                </a>
+                <a href="#" class="shortcut">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M17.016 18q.797 0 1.383.61t.584 1.405-.586 1.383-1.384.586-1.406-.586-.61-1.383.61-1.406 1.406-.61zM.984 2.016h3.28l.94 1.97h14.812q.422 0 .703.304t.28.727q0 .234-.14.47l-3.565 6.468q-.563 1.03-1.734 1.03H8.11l-.892 1.642-.047.14q0 .235.236.235h11.578v2.016h-12q-.797 0-1.383-.61t-.585-1.405q0-.47.234-.938l1.36-2.484L3 3.99H.98v-1.97zm6 15.984q.797 0 1.406.61T9 20.014t-.61 1.383-1.406.586-1.383-.586-.584-1.383.586-1.406T6.985 18z" />
+                    </svg>
+                    Invoices
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M17.016 18q.797 0 1.383.61t.584 1.405-.586 1.383-1.384.586-1.406-.586-.61-1.383.61-1.406 1.406-.61zM.984 2.016h3.28l.94 1.97h14.812q.422 0 .703.304t.28.727q0 .234-.14.47l-3.565 6.468q-.563 1.03-1.734 1.03H8.11l-.892 1.642-.047.14q0 .235.236.235h11.578v2.016h-12q-.797 0-1.383-.61t-.585-1.405q0-.47.234-.938l1.36-2.484L3 3.99H.98v-1.97zm6 15.984q.797 0 1.406.61T9 20.014t-.61 1.383-1.406.586-1.383-.586-.584-1.383.586-1.406T6.985 18z" />
+                    </svg>
+                    Credit Notes
+                </a>
+                <a href="#" class="shortcut">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M18.984 12.984h-6v6h-1.97v-6h-6v-1.97h6v-6h1.97v6h6v1.97z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="menu-label">RFQ's</a>
+            </li>
+            <li>
+                <a href="#" class="menu-label">Purchase Orders</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="mainbar">
+    <div class="page-header">
+        <div class="page-title dropdown">
+            <span>
+                New Contact
+            </span>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="page-body-content">
+            <div class="page-content">
+                <form>
+                    <div class="form-container">
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Full Name</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <div style="display: table;">
+                                        <div style="display: table-cell;vertical-align: middle; padding-right: 10px; min-width:80px;">
+                                            <select class="form-control chosen-select">
+                                                <option>Mr.</option>
+                                                <option>Mrs.</option>
+                                                <option>Ms.</option>
+                                            </select>
+                                        </div>
+                                        <div style="display: table-cell;vertical-align: middle; padding-right: 10px;">
+                                            <input type="text" class="form-control" style="max-width:160px;" placeholder="First name">
+                                        </div>
+                                        <div style="display: table-cell;vertical-align: middle; padding-right: 10px;">
+                                            <input type="text" class="form-control" style="max-width:160px;" placeholder="Last name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Company Name</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <input type="text" class="form-control" style="max-width:320px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Contact Display Name</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <input type="text" class="form-control" style="max-width:320px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Contact Email</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <input type="email" class="form-control" style="max-width:320px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Contact Phone</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <input type="tel" class="form-control" style="max-width:320px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Website</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <input type="url" class="form-control" style="max-width:320px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-table">
+                            <div class="form-table__row">
+                                <div class="form-table__label">
+                                    <label>Contact Type</label>
+                                </div>
+                                <div class="form-table__input">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Customer
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Dropshipper/Reseller
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Vendor
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="tab-form">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#payment-details" aria-controls="home" role="tab" data-toggle="tab">Payment Details</a>
+                        </li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Address</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Custom Fields</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Notes</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="payment-details">
+                            <div class="row">
+                                <div class="col" style="width:50%;max-width:520px;">
+                                    <div class="form-container">
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Full Name</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <select class="form-control chosen-select" style="max-width:320px;">
+                                                        <option>USD&ndash;United States Dollar</option>
+                                                        <option>IDR&ndash;Indonesian Rupiah</option>
+                                                        <option>ZWD&ndash;Zimbabwean Rupiah</option>
+                                                        <option value="0" onclick="jsFunction()">+ More currencies</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Payment Terms</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <select class="form-control chosen-select" style="max-width:320px;">
+                                                        <option>Net 15</option>
+                                                        <option>Net 30</option>
+                                                        <option>Net 45</option>
+                                                        <option>Net 60</option>
+                                                        <option>Due on Receipt</option>
+                                                        <option value="0" onclick="jsFunction()">+ More currencies</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="row">
+                                <div class="col" style="width:50%;max-width:545px;padding-right: 40px;">
+                                    <div class="form-container">
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label" style="vertical-align: top;">
+                                                    <label>Street Address</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <textarea class="form-control" rows=3></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>City</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>State</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Country</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <select class="form-control chosen-select">
+                                                        <option>Indonesia</option>
+                                                        <option>China</option>
+                                                        <option>Singapore</option>
+                                                        <option>United States of America</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Zip Code</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="number" class="form-control" style="max-width:120px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Fax</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="text" class="form-control" style="max-width: 200px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Phone</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="tel" class="form-control" style="max-width: 200px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="width:50%;max-width: 520px;">
+                                    <div class="form-container">
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label" style="vertical-align: top;">
+                                                    <label>Street Address</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <textarea class="form-control" rows=3></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>City</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>State</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Country</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <select class="form-control chosen-select">
+                                                        <option>Indonesia</option>
+                                                        <option>China</option>
+                                                        <option>Singapore</option>
+                                                        <option>United States of America</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Zip Code</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="number" class="form-control" style="max-width:120px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Fax</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="text" class="form-control" style="max-width: 200px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label">
+                                                    <label>Phone</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <input type="tel" class="form-control" style="max-width: 200px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                        <div role="tabpanel" class="tab-pane" id="settings">
+                            <div class="row">
+                                <div class="col" style="width:50%;max-width:680px;">
+                                    <div class="form-container">
+                                        <div class="form-table">
+                                            <div class="form-table__row">
+                                                <div class="form-table__label" style="vertical-align: top;">
+                                                    <label>Notes <br>(for internal use)</label>
+                                                </div>
+                                                <div class="form-table__input">
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-body-footer">
+            <button type="submit" class="btn btn-primary">Save New Contact</button>
+            <a href="#" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html>
+
+	
+    <head>
+        <meta charset="utf-8">
+        <title>Sale Stock Indonesia</title>
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+
+        <link rel="stylesheet" href="css/dashboard.css">
+        <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="js/vendor/d3.min.js"></script>
+        <script type="text/javascript" src="js/vendor/c3.min.js"></script>
+        <script type="text/javascript" src="js/parser-simple.js"></script>
+        <script type="text/javascript" src="js/editor-toolbar.js"></script>
+        <script type="text/javascript" src="js/handsontable.js"></script>
+        <script type="text/javascript" src="js/dropzone.js"></script>
+        <script src="js/helper.js"></script>  
+        <script type="text/javascript" src="js/x-editable.js"></script>
+
+
+
+        <script type="text/javascript">
+        	$(document).ready(function() {
+
+			     // Sortable rows
+				$('.table--sorted').sortable({
+					containerSelector: 'table',
+					itemPath: '> tbody',
+					itemSelector: 'tr',
+					placeholder: '<tr class="placeholder"/>',
+					onDrop: function ($item, container, _super, event) {
+					  $item.removeClass('dragged').removeAttr("style");
+					  $('body').removeClass('dragging');
+					  $('.btn-sort').addClass('show');
+					}
+				});
+
+
+				$('.item-sorter ol').sortable({
+					onDrop: function ($item, container, _super, event) {
+					  $item.removeClass('dragged').removeAttr("style");
+					  $('body').removeClass('dragging');
+					  $('.btn-sort').addClass('show');
+					}
+				});
+
+			 
+				$('.btn-sort').click(function(){
+					return false;
+				});
+
+
+				$('[data-filter]').click(function () {
+					$('.page-body__filter').toggleClass('open');
+					$(this).toggleClass('active');
+					return false;
+				});
+
+
+				$('[data-tooltip]').tooltip({
+			    	container:'body'
+			    });
+
+			    $('#selectAll').click(function (e) {
+				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+				});
+
+
+				$('table input[type=checkbox]').click(function() {
+					if($(this).is(':checked')) {
+						$('.btn-check').addClass('show');
+					}
+					else {
+						$('.btn-check').removeClass('show');
+					}
+				});
+
+			 
+			    $('.table__edit').click(function(){
+					$('[data-tooltip]').tooltip('hide');
+			 	});
+
+			    $('.table__delete').click(function(){
+					$('[data-tooltip]').tooltip('hide');
+					var answer = confirm('Hapus Konten?');
+					if (answer) {
+						$(this).closest('tr').remove();
+						return false;
+					}
+			    });
+
+
+			    $('.input-number').filter_input({regex:'[0-9]'}); 
+
+			    $.fn.editable.defaults.mode = 'popup';     
+    
+			    //make username editable
+			    $('.editable').editable({
+			    });
+
+			    var myDropzone = new Dropzone("#uploader", { 
+					url: "/img",
+					addRemoveLinks: "dictRemoveFile"
+				});
+				Dropzone.options.myAwesomeDropzone = false;
+				// This is useful when you want to create the
+				// Dropzone programmatically later
+
+				// Disable auto discover for all elements:
+				Dropzone.autoDiscover = false;
+
+
+			});
+
+        </script>
+    </head>
+
+    <body>
+
+    	<header class="site-header" id="site-header" role="banner">
+    		<div class="container">
+			    <div class="site-header__logo">
+			    	<a href="/">
+			        	<svg xmlns="http://www.w3.org/2000/svg" width="138.182" height="24" viewBox="0 0 138.182 24"><g fill="#d73c3c"><path d="M21.598 13.27h3.953l-1.975-4.484zm43.907-2.606c-.027-.044-.05-.096-.08-.134C63.03 7.425 57.717 0 56.025 0H2.453C1.097 0 0 1.097 0 2.453v19.095C0 22.9 1.097 24 2.45 24h53.576c1.765 0 7.005-7.425 9.4-10.53.03-.04.05-.088.08-.135.265-.377.422-.836.422-1.335 0-.5-.158-.958-.422-1.335zm-52.943 6.084c-.712.59-1.66.888-2.817.888-1.624 0-3.094-.544-4.368-1.618l-.165-.138 1.154-1.385.165.135c1.045.86 2.14 1.294 3.263 1.294.588 0 1.06-.13 1.407-.382.35-.254.52-.585.52-1.01 0-.424-.16-.747-.49-.98-.33-.24-.882-.446-1.69-.64-.8-.193-1.414-.372-1.82-.53-.414-.16-.787-.374-1.11-.635-.646-.49-.96-1.222-.96-2.238 0-1.017.358-1.777 1.097-2.328.727-.542 1.64-.816 2.716-.816.692 0 1.388.116 2.07.34.61.204 1.152.487 1.613.838l.166.126-.98 1.38-.177-.134c-.3-.225-.682-.42-1.135-.575-1.118-.376-2.298-.36-2.94.05-.348.22-.516.543-.516.987 0 .445.167.777.514 1.013.342.232 1.077.485 2.188.754 1.11.27 1.96.65 2.522 1.14.57.492.848 1.197.848 2.154 0 .96-.35 1.717-1.073 2.313zm14.826.693l-1.09-2.474h-5.447l-1.088 2.475H17.8l4.79-10.88h1.966l4.793 10.88h-1.962zm13.115 0H33.7V6.56h1.836v9.138h4.967v1.744zM52.497 8.29H46.69v2.88h5.807v1.635H46.69v2.908l5.807-.02v1.73l-7.643.023V6.56h7.643v1.727zm24.68 2.855c-1.11-.27-1.845-.52-2.187-.755-.346-.234-.514-.567-.514-1.01 0-.445.168-.77.513-.988.644-.41 1.825-.425 2.94-.048.454.153.836.345 1.137.575l.178.135.98-1.383-.168-.127c-.465-.353-1.007-.634-1.612-.835-.68-.225-1.377-.345-2.07-.345-1.073 0-1.988.278-2.715.82-.74.55-1.098 1.312-1.098 2.326 0 1.017.315 1.748.96 2.237.324.26.697.476 1.11.637.406.158 1.02.333 1.822.528.806.192 1.358.402 1.688.635.33.24.49.56.49.985 0 .423-.17.755-.52 1.01-.348.253-.82.38-1.408.38-1.12 0-2.218-.435-3.26-1.292l-.168-.137-1.152 1.386.164.138c1.275 1.072 2.743 1.617 4.368 1.617 1.155 0 2.103-.297 2.817-.887.723-.596 1.075-1.35 1.075-2.31s-.278-1.665-.848-2.154c-.565-.488-1.414-.87-2.524-1.14zm7.706-2.903h3.298v9.2h1.84v-9.2h3.3V6.56h-8.437zm18.897-1.867c-1.61 0-2.982.54-4.08 1.61-1.093 1.067-1.648 2.42-1.648 4.017 0 1.595.555 2.945 1.65 4.014 1.093 1.07 2.467 1.613 4.078 1.613 1.61 0 2.984-.543 4.08-1.613 1.094-1.07 1.65-2.42 1.65-4.015 0-1.598-.556-2.95-1.65-4.018-1.096-1.07-2.47-1.61-4.08-1.61zm2.733 8.42c-.738.764-1.658 1.153-2.732 1.153-1.074 0-1.994-.39-2.732-1.152-.737-.763-1.112-1.703-1.112-2.793s.375-2.03 1.112-2.797c.74-.762 1.658-1.152 2.733-1.152 1.076 0 1.996.39 2.733 1.154.74.767 1.113 1.707 1.113 2.798 0 1.09-.372 2.03-1.112 2.793zm13.535-6.62c.62 0 1.168.098 1.626.293.412.175.855.477 1.315.896l.158.143 1.168-1.275-.142-.147c-1.103-1.14-2.478-1.72-4.086-1.72-1.68 0-3.09.547-4.19 1.62-1.1 1.073-1.657 2.436-1.657 4.047 0 1.61.547 2.964 1.628 4.018 1.077 1.052 2.454 1.586 4.093 1.586 1.568 0 2.932-.592 4.052-1.76l.145-.15-1.185-1.214-.15.137c-.444.394-.875.69-1.28.877-.454.213-1.002.32-1.636.32-1.01 0-1.9-.373-2.638-1.112-.738-.738-1.112-1.67-1.112-2.77s.378-2.02 1.12-2.725c.745-.707 1.678-1.065 2.772-1.065zm13.698 3.15l4.374-4.763h-2.337l-4.98 5.307V6.56h-1.837v10.88h1.838V14.39l1.587-1.71 3.612 4.763h2.18z"></path></g></svg>
+			        </a>
+			    </div>
+			  
+
+
+			        <ul class="site-header__user">
+			            <li>
+			            	<a href="#">
+			            		<div class="site-header__avatar">
+			            			<img src="img/cewe.png" alt="">
+			            		</div>
+
+			            		<span>
+			            			Mbak Yeyen
+			            		</span>
+			            	</a>
+			            </li>
+			            <li>
+
+			            	<a href="#">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M24 20v-4H14v-4h10V8l6 6zm-2-2v8H12v6L0 26V0h22v10h-2V2H4l8 4v18h8v-6z"/></svg>
+			            	</a>
+			            </li>
+			        </ul>
+			    </div>
+			</div>
+		</header>
+
+		<!-- <div class="site-search">
+		    <div class="container">
+		        <div class="form-group form-group--flex">
+		            <div class="form-group__input">
+		                <input type="text" class="form-control" placeholder="Cari produk&hellip;">
+		            </div>
+		            <div class="form-group__btn">
+		                <button type="submit" class="btn btn--blue">Go</button>
+		            </div>
+		        </div>
+		    </div>
+		</div> -->
+
+
+    <div class="main" id="main" role="main">
+      <div class="container">
+	<div class="page-navigation">	
+		<ul>
+			<li style="width:16.66666%">
+				<a href="dashboard-category.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M96 241h320v32H96zM96 145h320v32H96zM96 337h320v32H96z"/></svg>
+					<span>Categories</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-product.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M480 96L320 48c-13.988 27.227-30.77 40.223-63.77 40.223C223.724 87.676 205.723 75 192 48L32 96l32 88 64-8-16 288h288l-16-288 64 8 32-88z"></path></svg>
+					<span>Products</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-transaction.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 160h-64v-4.5C384 87 329 32 260.5 32h-8C184 32 128 87 128 155.5v4.5H64L32 480h448l-32-320zm-288-4.5c0-50.7 41.8-91.5 92.5-91.5h8c50.7 0 91.5 40.8 91.5 91.5v4.5H160v-4.5zM67.8 448l24.9-256H128v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9 256H67.8z"></path></svg>
+					<span>Orders</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-customer.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M425.3 324.8c-41.4-15.7-38.9-9.4-38.9-38.5 0-18.8 9.3-11.9 15.2-47.7 2.3-14.1 4.2-4.7 9.1-27.3 2.6-11.8-1.8-12.7-1.2-18.3.5-5.6 1-10.7 2-22.2 1.2-14.4-11.6-52-57.4-52s-58.6 37.6-57.4 52c.9 11.6 1.5 16.6 2 22.2.5 5.6-3.8 6.5-1.2 18.3 4.9 22.6 6.8 13.1 9.1 27.3 5.9 35.8 15.1 29 15.1 47.7 0 13.4 3.1 19-14.9 27.5 5.4 1.9 11.7 4.2 19.3 7.1 54.4 20.7 53.1 40.8 54.5 50.3 1 6.5 1.5 58.3 1.7 76.8H480s0-80.5-1.5-89.9c-1.1-7.4-11-17.2-53.2-33.3zM357 448s0-14.1-.2-30.4c-.2-18.6-.7-40-1.7-46.4-1.5-9.5-14.3-22.2-68.6-42.9-7.5-2.8-13.8-5.1-19.3-7.1-33.3-11.8-30.9-15.7-30.9-48 0-24.3 12-8.5 19.6-54.6 3-18.2 5.4-6.1 11.7-35.2 3.4-15.2-2.3-16.4-1.6-23.7.7-7.3 1.4-13.8 2.6-28.7 1.6-18.5-14.9-67.1-74.1-67.1-59.2 0-75.6 48.5-74.1 67.1 1.2 14.9 1.9 21.4 2.7 28.7.7 7.3-5 8.4-1.6 23.7 6.4 29.1 8.8 17 11.8 35.2 7.6 46.1 19.5 30.3 19.5 54.6 0 37.6 3.3 34.8-50.2 55.1C48.3 349 35.5 361.7 34 371.2c-2 12.1-2 76.8-2 76.8h325z"></path></svg>
+					<span>Customers</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-report.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M176 96h64v320h-64zM80 320h64v96H80zM272 256h64v160h-64zM368 192h64v224h-64z"/></svg>
+					<span>Report</span>
+				</a>
+			</li>
+			<li class="active" style="width:16.66666%">
+				<a href="dashboard-setting.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M411.1 256c0-23.9 14.8-42.8 36.9-55.8-4-13.3-9.3-26.2-15.8-38.2-24.9 6.5-45-3.2-62-20.2-16.9-16.9-22.1-37.1-15.6-62-12-6.5-24.8-11.8-38.2-15.8-13 22.2-36.4 36.9-60.4 36.9-23.9 0-47.4-14.7-60.4-36.9-13.4 4-26.2 9.3-38.2 15.8 6.5 24.9 1.3 45-15.6 62-16.9 16.9-37.1 26.7-61.9 20.2-6.6 12-11.9 24.8-15.9 38.2 22.2 13 37 31.9 37 55.8s-14.8 47.4-37 60.4c4 13.4 9.3 26.2 15.8 38.2 24.9-6.5 45-1.3 61.9 15.6 17 16.9 22.1 37.1 15.6 62 12.1 6.5 24.8 11.8 38.2 15.8 13-22.2 36.5-36.9 60.4-36.9s47.4 14.7 60.4 36.9c13.4-4 26.2-9.3 38.2-15.8-6.5-24.9-1.3-45 15.6-62 16.9-16.9 37.1-26.7 62-20.2 6.5-12.1 11.8-24.9 15.8-38.2-22.1-13-36.8-31.9-36.8-55.8zM256 354.3c-54.2 0-98.3-44-98.3-98.3s44-98.3 98.3-98.3 98.3 44 98.3 98.3-44 98.3-98.3 98.3z"></path></svg>
+					<span>Setting</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="page-body">
+
+		<div class="page-header">
+            <h1 class="page-header__title">Setelan</h1>
+            <div class="page-header__control">
+                <!-- <a href="#" class="btn btn--red">New Customer</a> -->
+            </div>
+        </div>
+
+		<div class="page-body__navigation">
+			<ul>
+				<li><a href="dashboard-setting.html">Pengguna</span></a></li>
+				<li><a href="dashboard-coupon.html">Kupon</a></li>
+				<li><a href="#">Halaman statis</a></li>
+				<li class="active"><a href="#">Media Library</a></li>
+				<li><a href="#">Misc</a></li>
+			</ul>
+		</div>
+
+		<div class="page-body__control">
+			<div class="control-btn">
+				<button class="btn btn--red btn--small">Tambah Pengguna</button>
+				<a href="#" class="btn btn--default btn--small btn-check" style="color:#D73C3C;">Delete</a>
+			</div>
+
+			
+			<div class="page-body__search">
+				<input type="text" class="form-control form-control--small">
+				<button class="btn btn--default btn--small">Search</button>
+			</div>
+
+		</div>
+
+		<div class="page-body__content">
+
+			<div class="media-grid">
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://www.salestockindonesia.com/assets/images/img-banner-promo-lunch-8b8f346b.jpg)"></a>
+				</div>
+
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/afb59f853f02a2977a8a47f16d82afe8_600.jpg)"></a>
+				</div>
+
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/b21f13bf1df770c1f072e9907156bf66_600.jpg)"></a>
+				</div>
+
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/43c6de0164830d09647b932d467532ed_600.jpg)"></a>
+				</div>
+
+				<div class="media-grid__thumbs">
+					<a href="#" data-toggle="modal" data-target="#mediaModal" class="media-grid__image" style="background-image:url(http://i.ss-cdn.net/product_images/8b4ee8803e9273e772309218297e2d3d_600.jpg)"></a>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+
+	</div>
+
+</div>
+
+    </div>
+
+    <footer class="site-footer" id="site-footer">
+		<div class="container">
+			<div class="site-footer__copy">
+				<small>&copy; 2015 Sale Stock Indonesia</small>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- MODALBOX -->
+	<div class="modal fade" id="categoryModal" tabindex="-1" data-backdrop="static">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add New Category</h4>
+			</div>
+      		<div class="modal-body">
+      			<div class="form-group">
+					<label class="form-label">Title</label>
+					<input type="text" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Parent Category</label>
+					<select class="form-control">
+						<option>-- Please Select --</option>
+						<option>Blouse</option>
+						<option>Jumpsuit</option>
+						<option>Dress</option>
+						<option>Atasan</option>
+						<option>Bawahan</option>
+						<option>Tas</option>
+					</select>
+				</div>
+
+				<h4 class="modal-subheader">SEO</h4>
+				<div class="form-group">
+					<label class="form-label">Page Title</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Description</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Keywords</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Publish</label>
+					<div class="form-input">
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>Yes</span>
+							</label>
+						</div>
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn--red">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal" id="addProductModal" tabindex="-1" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add New Product</h4>
+      </div>
+      <div class="modal-body">
+
+      		<div class="form-group">
+				<div class="form-input">
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l" checked>
+							<span>Unpublish</span>
+						</label>
+					</div>
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l">
+							<span>Publish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+
+        	<div class="form-group form-group--error">
+        		<label class="form-label">Code</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        			<span class="help-block">Error message</span>
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+        		<label class="form-label">Title</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+        		<label class="form-label">Created at</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+
+
+        	<div class="form-image">
+        		<div class="dropzone" id="uploader"></div>
+        	</div>
+
+        	<!-- <fieldset>
+        		<legend>Specification</legend>
+
+        		<div class="form-group">
+	        		<label class="form-label">Warna</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Ukuran</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Bahan</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Informasi Lain</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+        	</fieldset> -->
+
+        	
+        	<div class="form-group">
+				<label class="form-label">Product Description</label>
+				<div class="text-editor">
+					<div class="text-editor__header" id="toolbar" style="display: none;">
+						<ul class="text-editor__toolbar" >
+							<li>
+							    <a data-wysihtml5-command="bold" title="CTRL+B">
+							    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path d="M22.12 15.145C23.294 13.753 24 11.957 24 10c0-4.41-3.59-8-8-8H6v28h12c4.41 0 8-3.59 8-8 0-2.905-1.556-5.453-3.88-6.855zM12 6h3.172c1.75 0 3.172 1.794 3.172 4s-1.423 4-3.172 4H12V6zm4.97 20H12v-8h4.97c1.826 0 3.312 1.794 3.312 4s-1.486 4-3.313 4z"/></svg>
+							    </a>
+							</li>
+							<li>
+							    <a data-wysihtml5-command="italic" title="CTRL+I">
+							    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path d="M28 2v2h-4L14 28h4v2H4v-2h4L18 4h-4V2z"/></svg>
+							    </a>
+							</li>
+							<li>
+							    <a data-wysihtml5-command="createLink">
+							    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path d="M29.794 2.333l-.126-.126c-2.942-2.942-7.756-2.942-10.698 0l-6.816 6.817c-2.942 2.942-2.942 7.756 0 10.697l.126.127c.245.245.505.466.773.67l2.495-2.494c-.29-.172-.566-.377-.816-.627l-.126-.126c-1.597-1.597-1.597-4.196 0-5.793l6.816-6.816c1.597-1.596 4.196-1.596 5.793 0l.126.127c1.598 1.597 1.598 4.197 0 5.793l-3.083 3.084c.535 1.322.79 2.73.767 4.137l4.77-4.768c2.94-2.942 2.94-7.756 0-10.697zm-10.074 9.82c-.245-.244-.505-.465-.773-.67l-2.495 2.496c.29.17.566.376.816.626l.126.126c1.597 1.597 1.597 4.196 0 5.793l-6.817 6.817c-1.597 1.597-4.196 1.597-5.793 0l-.126-.126c-1.597-1.598-1.597-4.196 0-5.793l3.084-3.084c-.535-1.323-.79-2.732-.767-4.138l-4.77 4.77c-2.94 2.94-2.94 7.755 0 10.697l.127.125c2.942 2.942 7.756 2.942 10.698 0l6.816-6.816c2.942-2.943 2.942-7.757 0-10.7l-.126-.125z"/></svg>
+							    </a>
+
+							     <div data-wysihtml5-dialog="createLink" class="editor-popup" style="display: none;">
+								  		<table>
+								  			<td>
+												Link:
+								  			</td>
+								  			<td>
+												<input class="form-control form-control--small" data-wysihtml5-dialog-field="href" value="http://">
+								  			</td>
+
+								  			<td style="white-space:nowrap">
+								  				<a data-wysihtml5-dialog-action="save" class="btn btn--red btn--small">
+								  					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 71.9c-17.3-13.4-41.5-9.3-54.1 9.1L214 344.2l-99.1-107.3c-14.6-16.6-39.1-17.4-54.7-1.8-15.6 15.5-16.4 41.6-1.7 58.1 0 0 120.4 133.6 137.7 147 17.3 13.4 41.5 9.3 54.1-9.1l206.3-301.7c12.6-18.5 8.7-44.2-8.6-57.5z"></path></svg>
+								  				</a>
+								  				<a data-wysihtml5-dialog-action="cancel" class="btn btn--default btn--small">
+								  					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M437.5 386.6L306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"></path></svg>
+								  				</a>
+								  			</td>
+								  		</table>
+								</div>
+							</li>
+							<li>
+							    <a data-wysihtml5-command="insertUnorderedList">
+							    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path d="M0 0h8v8H0zm12 2h20v4H12zM0 12h8v8H0zm12 2h20v4H12zM0 24h8v8H0zm12 2h20v4H12z"/></svg>
+							    </a>
+							</li>
+							<li>
+							    <a data-wysihtml5-command="insertOrderedList">
+							    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path d="M12 26h20v4H12zm0-12h20v4H12zm0-12h20v4H12zM6 0v8H4V2H2V0zM4 16.438V18h4v2H2V15.44l4-1.875V12H2v-2h6v4.563zM8 22v10H2v-2h4v-2H2v-2h4v-2H2v-2z"/></svg>
+							    </a>
+							</li>
+						</ul>
+					</div>
+					<textarea class="form-control" id="editor" placeholder="Enter text ..." rows="8"></textarea>
+				
+
+				</div>
+			</div>
+
+
+
+        	<div class="form-group">
+        		<label class="form-label">Variants</label>
+        		<div id="table"></div>
+        	</div>
+
+
+        	<div class="row">
+        		<div class="col col--6">
+		        	<div class="form-group">
+		        		<label class="form-label">Price</label>
+		        		<div class="form-input">
+		        			<input type="text" class="form-control input-number">
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="col col--6">
+		        	<div class="form-group">
+		        		<label class="form-label">Sale Price</label>
+		        		<div class="form-input">
+		        			<input type="text" class="form-control input-number">
+		        		</div>
+		        	</div>
+		        </div>
+		    </div>
+
+
+        	<div class="form-group">
+        		<label class="form-label">Weight</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+				<label class="form-label">Options</label>
+				<div class="form-input">
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Featured</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>New</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Publish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn--red">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$('#addProductModal').on('shown.bs.modal', function (e) {
+
+		 var editor = new wysihtml5.Editor('editor', {
+    toolbar: 'toolbar',
+    parserRules:  wysihtml5ParserRules
+  });
+
+		$("#table").handsontable({
+		  colHeaders: ['Size', 'Color', 'Product Code', 'Stock', 'Price'],
+		    rowHeaders: true,
+		    stretchH: 'all',
+		    columnSorting: true,
+		    contextMenu: true,
+		  columns: [
+		    {
+		      data: 'Size',
+		    },
+		    {
+		      data: 'Color',
+		    },
+		    {
+		      data: 'Product Code'
+		    },
+		    {
+		      data: 'Stock',
+		      type: 'numeric'
+		    },
+		    {
+		      data: 'Price',
+		      type: 'numeric'
+		    }
+		  ],
+		});
+	});
+</script>
+
+
+<div class="modal fade" id="previewProductModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Product Preview</h4>
+      </div>
+      <div class="modal-body">
+
+      		<div class="product">
+                <div class="product__figure">
+                    <div class="product__image">
+                        <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
+                    </div>
+                </div>
+                <div class="product__info">
+                    <div class="product__title">
+                        Sophia Polka Skirt
+                    </div>
+                    <div class="product__price">
+                        <ins>69.000</ins>
+                        <del>70.000</del>
+                    </div>
+                    <div class="product__size">
+                        L
+                    </div>
+                </div>
+                <div class="product__description">
+                    <div>
+                        <b>Warna</b> Warna Creme, Grey, Dusty Burgundy, dan Lite Grey
+                    </div>
+                    <div>
+                        <b>Ukuran</b> Satu ukuran muat sampai size L kecil
+                        <br> Lingkar pinggang 68-86cm, Panjang 97cm
+                    </div>
+                    <div>
+                        <b>Bahan</b> Bahan Linen
+                    </div>
+                    <div>
+                        <b>Informasi Lain</b> Tali pinggang hidup, Pinggang belakang karet
+                    </div>
+                </div>
+                
+                <div class="product__color">
+                    <div class="select-color">
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Red</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Green</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Blue</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Midori</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Alizarin</a>
+                        </div>
+                        <div class="color">
+                            <a href="#" data-toggle="add-item">Turquoise</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="sample-preloader" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Invoice</h4>
+      </div>
+      <div class="modal-body">
+			
+      		<div class="preloader">
+      			<div class="spinner"></div>
+      		</div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Print</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="invoiceModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Invoice</h4>
+      </div>
+      <div class="modal-body">
+			
+			
+<table style="width:100%;max-width:720px;background:#fff;margin:0 auto;border-collapse:collapse;">
+	<tbody>
+		<tr>
+			<td style="padding:20px;border:solid 1px #e5e5e5;border-bottom-color:#d7d7d7;">
+				<table style="border-collapse:collapse;width:100%;margin:0 0 1px;border-bottom:solid 2px #e5e5e5;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:50%;padding:0 0 16px 0;font-size:20px;font-weight:700;color:#D73C3C;">
+								<img src="http://ardianzzz.com/static/ss/dashboard/img/ss-logo.png" alt="Salestock Indonesia" style="border:0 none;height:32px;line-height:100%;outline:none;text-decoration:none;display:block;vertical-align:middle">
+							</td>
+							<td style="border-collapse:collapse;width:50%;padding:0 0 16px 0;vertical-align:middle;text-align:right">
+								<b style="font-size:18px;display:block;line-height:1.125;">
+									Faktur
+								</b>
+								<b>201546529</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;margin-bottom:16px;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:50%;padding:16px 0;border-top:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5">
+								Order ID: 201546529
+							</td>
+							<td style="border-collapse:collapse;width:50%;padding:16px 0;border-top:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;text-align:right">
+								26 May 2015
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;margin:0 0 1px;border-bottom:solid 1px #e5e5e5;">
+					<thead>
+						<tr>
+							<th style="padding:6px 12px 6px 0;text-align:left;border-bottom:solid 2px #e5e5e5;" colspan="2">
+								Produk
+							</th>
+							<th style="padding:6px 12px;text-align:left;border-bottom:solid 2px #e5e5e5;">
+								SKU
+							</th>
+							<th style="padding:6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Harga
+							</th>
+							<th style="padding:6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Qty
+							</th>
+							<th style="padding:6px 0 6px 12px;text-align:right;border-bottom:solid 2px #e5e5e5;">
+								Total
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;width:78px;padding:12px 0 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top">
+								<img src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" style="border:0 none;line-height:100%;outline:none;text-decoration:none;display:block;width:64px;height:64px;">
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								Aerilyn Cape Twistcone Jumpsuit <small style="display:block;font-size:12px;color:#8E8E93;margin-top:4px;">Warna: Teal - Ukuran: L</small>
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right">
+								1
+							</td>
+							<td style="border-collapse:collapse;padding:12px 0 12px 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td style="border-collapse:collapse;width:78px;padding:12px 0 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top">
+								<img src="http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg" style="border:0 none;height:auto;line-height:100%;outline:none;text-decoration:none;display:block;width:64px;height:64px;">
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								Aerilyn Cape Twistcone Jumpsuit <small style="display:block;font-size:12px;color:#8E8E93;margin-top:4px;">Warna: Teal - Ukuran: L</small>
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+							<td style="border-collapse:collapse;padding:12px;border-bottom:solid 1px #e5e5e5;border-right:solid 1px #e5e5e5;vertical-align:top;text-align:right">
+								1
+							</td>
+							<td style="border-collapse:collapse;padding:12px 0 12px 12px;border-bottom:solid 1px #e5e5e5;vertical-align:top;text-align:right;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:12px 0 0 12px">
+								Total Belanja :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:12px 0 0 12px;white-space:nowrap;">
+								Rp 118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:0 0 0 12px">
+								Ongkos Kirim :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:0 0 0 12px;white-space:nowrap;">
+								Rp 25.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:0 0 12px 12px">
+								Diskon Ongkos Kirim :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:0 0 12px 12px;white-space:nowrap;">
+								Rp -25.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="5" style="border-collapse:collapse;text-align:right;padding:12px 0 32px 12px;border-top:solid 1px #e5e5e5;">
+								Total Harus Dibayar :
+							</td>
+							<td style="border-collapse:collapse;text-align:right;padding:12px 0 32px 12px;border-top:solid 1px #e5e5e5;white-space:nowrap;">
+								<b>Rp 236.000</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;border:solid 1px #e5e5e5;margin:0 0 1px">
+					<thead>
+						<tr>
+							<th style="padding:6px 12px;text-align:left;width:50%;border-bottom:solid 1px #e5e5e5;background:#f7f7f7;">
+								Alamat Pengiriman
+							</th>
+							<th style="padding:6px 12px;text-align:left;width:50%;border-right:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5;background:#f7f7f7;">
+								Alamat Pembayaran
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:12px 12px 32px;width:50%;border-right:solid 1px #e5e5e5">
+								<strong>sylvana sella</strong>
+								<br>
+								jln.Bandeng Gg.belida No.4
+								<br>
+								Kota Pekanbaru - Marpoyan Damai 28282
+								<br>
+								Riau, Indonesia
+								<br>
+								085263979627
+								<br>
+								sylvanasella@yahoo.com
+								<br>
+							</td>
+							<td style="border-collapse:collapse;padding:12px 12px 32px;width:50%">
+								<strong>sylvana sella</strong>
+								<br>
+								jln.Bandeng Gg.belida No.4
+								<br>
+								Kota Pekanbaru - Marpoyan Damai 28282
+								<br>
+								Riau, Indonesia
+								<br>
+								085263979627
+								<br>
+								sylvanasella@yahoo.com
+								<br>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;border:solid 1px #e5e5e5;margin:0 0 1px">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-right:solid 1px #e5e5e5;border-bottom:solid 1px #e5e5e5">
+								<b>Pesan:</b>
+								<br>
+								Tolong di bungkus yang rapi
+							</td>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-bottom:solid 1px #e5e5e5">
+								<b>Diskon:</b>
+								<br>
+								FREEONGKIR (IDR 0.00)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="border-collapse:collapse;padding:12px;width:50%;border-right:solid 1px #e5e5e5">
+								<b>Metode Pembayaran:</b>
+								<br>
+								Bank Transfer
+							</td>
+							<td style="border-collapse:collapse;padding:12px;width:50%">
+								<b>Pengiriman:</b>
+								<br>
+								aCommerce REG
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table style="border-collapse:collapse;width:100%;font-size:smaller;border-top:solid 1px #e5e5e5;">
+					<tbody>
+						<tr>
+							<td style="border-collapse:collapse;padding:16px 0 12px;width:50%;line-height:1.25;color:#8E8E93;">
+								<b>Sale Stock&trade;</b>
+								<br>
+								Jalan Ciater Raya Blok i6/21
+								<br>
+								Griya Loka, BSD City
+								<br>
+								Tangerang
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Print</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="orderModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Detail Order</h4>
+      </div>
+      <div class="modal-body">
+
+      		<div class="modal-control">
+      			<div class="btn-control">
+      				<button class="btn btn--default btn--small">Mark as Unpaid</button>
+      				<button class="btn btn--default btn--small">Mark as Shipped</button>
+      			</div>
+				<div class="order-date">
+					<b>Order Date:</b> 9 June 2015 01:12:09
+				</div>
+			</div>
+
+			<div class="order-status">
+
+				<div class="order-status__label">
+					Payment Status : <span class="badge badge--green">Paid</span>
+				</div>
+				<div class="order-status__label">
+					Shipment Status : <span class="badge badge--orange">Not Yet Shipped</span>
+				</div>
+
+
+				<div class="order-status__label">
+					Cancel status : <span class="badge badge--red">Batal</span>
+				</div>
+			</div>
+			
+      		<table class="table table--order">
+				<thead>
+					<tr>
+						<th>
+							Product
+						</th>
+						<th>
+							SKU
+						</th>
+						<th style="text-align:right">
+							Price
+						</th>
+						<th style="text-align:right">
+							Quantity
+						</th>
+						<th style="text-align:right">
+							Amount
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							Aerilyn Cape Twistcone Jumpsuit 
+							<small>Warna: Teal &ndash; Ukuran L</small>
+						</td>
+						<td class="nowrap">
+							MIN-JSJS-4922TEA-R68
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+						<td style="text-align:right">
+							1
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Aerilyn Cape Twistcone Jumpsuit 
+							<small>Warna: Teal &ndash; Ukuran L</small>
+						</td>
+						<td class="nowrap">
+							MIN-JSJS-4922TEA-R68
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+						<td style="text-align:right">
+							1
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Aerilyn Cape Twistcone Jumpsuit 
+							<small>Warna: Teal &ndash; Ukuran L</small>
+						</td>
+						<td class="nowrap">
+							MIN-JSJS-4922TEA-R68
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+						<td style="text-align:right">
+							1
+						</td>
+						<td style="text-align:right">
+							118.000
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="4" style="text-align:right;">Item Total</td>
+						<td style="text-align:right;"><b>118.000</b></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="text-align:right;">Shipping and Handling</td>
+						<td style="text-align:right;"><b>25.000</b></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="text-align:right;">Shipping Discount</td>
+						<td style="text-align:right;"><b>-25.000</b></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="text-align:right;">Total</td>
+						<td style="text-align:right;"><b>118.000</b></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table table--order">
+				<thead>
+					<tr>
+						<th style="width:50%">Alamat Pengiriman</th>
+						<th style="width:50%">Alamat Pembayaran</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<b>sylvana sella</b>
+							<br>
+							jln.Bandeng Gg.belida No.4 
+							<br>
+							Kota Pekanbaru - Marpoyan Damai 28282 
+							<br>
+							Riau, Indonesia 
+							<br>
+							<a href="tel:085263979627">085263979627</a> 
+							<br>
+							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
+						</td>
+						<td>
+							<b>sylvana sella</b>
+							<br>
+							jln.Bandeng Gg.belida No.4 
+							<br>
+							Kota Pekanbaru - Marpoyan Damai 28282 
+							<br>
+							Riau, Indonesia 
+							<br>
+							<a href="tel:085263979627">085263979627</a> 
+							<br>
+							<a href="mailto:sylvanasella@yahoo.com">sylvanasella@yahoo.com</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table table--order">
+				<tbody>
+					<tr>
+						<td style="width:50%;">
+							<b>Pesan:</b>
+							<br>
+							Tolong di bungkus yang rapi
+						</td>
+						<td style="width:50%;">
+							<b>Diskon:</b>
+							<br>
+							FREEONGKIR (IDR 0.00)
+						</td>
+					</tr>
+
+					<tr>
+						<td style="width:50%;">
+							<b>Metode Pembayaran:</b>
+							<br>
+							Bank Transfer
+						</td>
+						<td style="width:50%;">
+							<b>Pengiriman:</b>
+							<br>
+							aCommerce REG
+						</td>
+					</tr>
+				</tbody>
+			</table>
+      	</div>
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn--default" data-dismiss="modal">Ok</button>
+		</div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="customerModal" tabindex="-1" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Customer Profile</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div class="avatar">
+						<img src="img/cewe.png" alt="">
+					</div>
+				</div>
+				<div class="form-group">
+	        		<label class="form-label">Nama Lengkap</label>
+	        		<div class="form-input">
+	        			<input type="text" class="form-control">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Nomor Telepon</label>
+	        		<div class="form-input">
+	        			<input type="tel" class="form-control">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Email</label>
+	        		<div class="form-input">
+	        			<input type="email" class="form-control">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Tanggal Lahir</label>
+	        		<div class="form-input">
+	        			<select class="form-control" style="width:auto;">
+	        				<option>1999</option>
+	        				<option>1998</option>
+	        				<option>1997</option>
+	        			</select>
+	        			<select class="form-control" style="width:auto;">
+	        				<option>Januari</option>
+	        				<option>Februari</option>
+	        				<option>Maret</option>
+	        			</select>
+	        			<select class="form-control" style="width:auto;">
+	        				<option>01</option>
+	        				<option>02</option>
+	        				<option>03</option>
+	        			</select>
+	        		</div>
+	        	</div>
+
+	        	<fieldset>
+	        		<legend>Detail Alamat</legend>
+	        		<div class="form-group">
+		        		<label class="form-label">Alamat</label>
+		        		<div class="form-input">
+		        			<textarea class="form-control"></textarea>
+		        		</div>
+		        	</div>
+
+		        	<div class="form-group">
+                        <label class="form-label">Provinsi</label>
+                        <div class="form-input">
+                            <select class="form-control">
+                                <option>DKI Jakarta</option>
+                                <option>Jawa Barat</option>
+                                <option>Jawa Tengah</option>
+                                <option>Jawa Timur</option>
+                                <option>DI Yogyakarta</option>
+                                <option>Aceh</option>
+                                <option>Sumatera</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Kabupaten</label>
+                        <div class="form-input">
+                            <select class="form-control">
+                                <option>Pilih Kabupaten</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Kecamatan</label>
+                        <div class="form-input">
+                            <select class="form-control">
+                                <option>Pilih Kecamatan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Kelurahan</label>
+                        <div class="form-input">
+                            <select class="form-control">
+                                <option>Pilih Kelurahan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Kode Pos</label>
+                        <input type="number" class="form-control" placeholder="15311">
+                    </div>
+
+	        	</fieldset>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Batal</button>
+				<button type="button" class="btn btn--red">Simpan Perubahan</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="addCoupon" tabindex="-1" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add New Coupon</h4>
+			</div>
+			<div class="modal-body">
+
+				<fieldset>
+					<legend>Detail Kupon</legend>
+					<div class="form-group">
+						<div class="form-input">
+							<div class="radio radio--inline">
+								<label>
+									<input type="radio" name="l">
+									<span>Publish</span>
+								</label>
+							</div>
+							<div class="radio radio--inline">
+								<label>
+									<input type="radio" name="l" checked>
+									<span>Unpublish</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Tipe Kupon</label>
+						<div class="form-input">
+							<select class="form-control" disabled>
+								<option>Cart</option>
+								<option>Option2</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Kode Kupon</label>
+						<div class="form-input">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="form-label">Judul</label>
+						<div class="form-input">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="l">
+								<span>Berlaku Otomatis</span>
+							</label>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Kupon Diskon</legend>
+					<div class="form-group">
+						<label class="form-label">Tipe Diskon</label>
+						<div class="form-input">
+							<select class="form-control" disabled>
+								<option>Persentase</option>
+								<option>Absolut</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Nilai Diskon (%)</label>
+						<div class="form-input">
+							<input type="text" class="form-control" value="0">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Nilai Diskon Untuk Pengiriman(%)</label>
+						<div class="form-input">
+							<input type="text" class="form-control" value="0">
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Kondisi</legend>
+
+					<div class="form-group">
+						<label class="form-label">Tanggal Mulai</label>
+						<div class="form-input">
+							<input type="datetime-local" class="form-control" placeholder="mm/dd/yyy, --:-- -- ">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Nilai Diskon Untuk Pengiriman(%)</label>
+						<div class="form-input">
+							<input type="datetime-local" class="form-control" placeholder="mm/dd/yyy, --:-- -- ">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="l">
+								<span>Berlaku Hanya Untuk Member</span>
+							</label>
+						</div>
+					</div>
+				</fieldset>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn--red">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="mediaModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Media Title</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-media">
+					<img src="http://www.salestockindonesia.com/assets/images/img-banner-promo-lunch-8b8f346b.jpg" alt="">
+				</div>
+
+
+				<div class="form-group">
+	        		<label class="form-label">URL</label>
+	        		<div class="form-input">
+	        			<input type="text" class="form-control" value="http://example.com/img.jpg" disabled>
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Title</label>
+	        		<div class="form-input">
+	        			<input type="tel" class="form-control" value="Promo Juli">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group">
+	        		<label class="form-label">Alt</label>
+	        		<div class="form-input">
+	        			<input type="email" class="form-control">
+	        		</div>
+	        	</div>
+
+	        	
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Batal</button>
+				<button type="button" class="btn btn--default" data-dismiss="modal">Hapus Media</button>
+				<button type="button" class="btn btn--red">Simpan Perubahan</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+    </body>
+</html>
+
+

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html>
+
+	
+    <head>
+        <meta charset="utf-8">
+        <title>Sale Stock Indonesia</title>
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+
+        <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+        <!--
+        <link rel="canonical" href="http://www.example.com/" >
+        -->
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <!--
+        <meta name="mobile-web-app-capable" content="yes">
+        -->
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <!--
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        -->
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/dashboard.css">
+        <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="js/dropzone.js"></script>
+        <script type="text/javascript" src="js/handsontable.js"></script>
+        <script type="text/javascript" src="js/helper.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function() {
+			    
+			    $('[data-tooltip]').tooltip({
+			    	container:'body'
+			    });
+
+			    $('#selectAll').click(function (e) {
+				    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+				});
+
+			 
+
+			    $('.table__delete').click(function(){
+					var answer = confirm('Hapus Konten?');
+					if (answer) {
+						$(this).closest('tr').remove();
+					}
+			    });
+
+
+				var myDropzone = new Dropzone("#uploader", { 
+					url: "/img",
+					addRemoveLinks: "dictRemoveFile"
+				});
+				Dropzone.options.myAwesomeDropzone = false;
+				// This is useful when you want to create the
+				// Dropzone programmatically later
+
+				// Disable auto discover for all elements:
+				Dropzone.autoDiscover = false;
+			});
+        </script>
+    </head>
+
+    <body>
+
+    	<header class="site-header" id="site-header" role="banner">
+    		<div class="container">
+			    <div class="site-header__logo">
+			        <a href="/">
+			        	<svg xmlns="http://www.w3.org/2000/svg" width="138.182" height="24" viewBox="0 0 138.182 24"><g fill="#d73c3c"><path d="M21.598 13.27h3.953l-1.975-4.484zm43.907-2.606c-.027-.044-.05-.096-.08-.134C63.03 7.425 57.717 0 56.025 0H2.453C1.097 0 0 1.097 0 2.453v19.095C0 22.9 1.097 24 2.45 24h53.576c1.765 0 7.005-7.425 9.4-10.53.03-.04.05-.088.08-.135.265-.377.422-.836.422-1.335 0-.5-.158-.958-.422-1.335zm-52.943 6.084c-.712.59-1.66.888-2.817.888-1.624 0-3.094-.544-4.368-1.618l-.165-.138 1.154-1.385.165.135c1.045.86 2.14 1.294 3.263 1.294.588 0 1.06-.13 1.407-.382.35-.254.52-.585.52-1.01 0-.424-.16-.747-.49-.98-.33-.24-.882-.446-1.69-.64-.8-.193-1.414-.372-1.82-.53-.414-.16-.787-.374-1.11-.635-.646-.49-.96-1.222-.96-2.238 0-1.017.358-1.777 1.097-2.328.727-.542 1.64-.816 2.716-.816.692 0 1.388.116 2.07.34.61.204 1.152.487 1.613.838l.166.126-.98 1.38-.177-.134c-.3-.225-.682-.42-1.135-.575-1.118-.376-2.298-.36-2.94.05-.348.22-.516.543-.516.987 0 .445.167.777.514 1.013.342.232 1.077.485 2.188.754 1.11.27 1.96.65 2.522 1.14.57.492.848 1.197.848 2.154 0 .96-.35 1.717-1.073 2.313zm14.826.693l-1.09-2.474h-5.447l-1.088 2.475H17.8l4.79-10.88h1.966l4.793 10.88h-1.962zm13.115 0H33.7V6.56h1.836v9.138h4.967v1.744zM52.497 8.29H46.69v2.88h5.807v1.635H46.69v2.908l5.807-.02v1.73l-7.643.023V6.56h7.643v1.727zm24.68 2.855c-1.11-.27-1.845-.52-2.187-.755-.346-.234-.514-.567-.514-1.01 0-.445.168-.77.513-.988.644-.41 1.825-.425 2.94-.048.454.153.836.345 1.137.575l.178.135.98-1.383-.168-.127c-.465-.353-1.007-.634-1.612-.835-.68-.225-1.377-.345-2.07-.345-1.073 0-1.988.278-2.715.82-.74.55-1.098 1.312-1.098 2.326 0 1.017.315 1.748.96 2.237.324.26.697.476 1.11.637.406.158 1.02.333 1.822.528.806.192 1.358.402 1.688.635.33.24.49.56.49.985 0 .423-.17.755-.52 1.01-.348.253-.82.38-1.408.38-1.12 0-2.218-.435-3.26-1.292l-.168-.137-1.152 1.386.164.138c1.275 1.072 2.743 1.617 4.368 1.617 1.155 0 2.103-.297 2.817-.887.723-.596 1.075-1.35 1.075-2.31s-.278-1.665-.848-2.154c-.565-.488-1.414-.87-2.524-1.14zm7.706-2.903h3.298v9.2h1.84v-9.2h3.3V6.56h-8.437zm18.897-1.867c-1.61 0-2.982.54-4.08 1.61-1.093 1.067-1.648 2.42-1.648 4.017 0 1.595.555 2.945 1.65 4.014 1.093 1.07 2.467 1.613 4.078 1.613 1.61 0 2.984-.543 4.08-1.613 1.094-1.07 1.65-2.42 1.65-4.015 0-1.598-.556-2.95-1.65-4.018-1.096-1.07-2.47-1.61-4.08-1.61zm2.733 8.42c-.738.764-1.658 1.153-2.732 1.153-1.074 0-1.994-.39-2.732-1.152-.737-.763-1.112-1.703-1.112-2.793s.375-2.03 1.112-2.797c.74-.762 1.658-1.152 2.733-1.152 1.076 0 1.996.39 2.733 1.154.74.767 1.113 1.707 1.113 2.798 0 1.09-.372 2.03-1.112 2.793zm13.535-6.62c.62 0 1.168.098 1.626.293.412.175.855.477 1.315.896l.158.143 1.168-1.275-.142-.147c-1.103-1.14-2.478-1.72-4.086-1.72-1.68 0-3.09.547-4.19 1.62-1.1 1.073-1.657 2.436-1.657 4.047 0 1.61.547 2.964 1.628 4.018 1.077 1.052 2.454 1.586 4.093 1.586 1.568 0 2.932-.592 4.052-1.76l.145-.15-1.185-1.214-.15.137c-.444.394-.875.69-1.28.877-.454.213-1.002.32-1.636.32-1.01 0-1.9-.373-2.638-1.112-.738-.738-1.112-1.67-1.112-2.77s.378-2.02 1.12-2.725c.745-.707 1.678-1.065 2.772-1.065zm13.698 3.15l4.374-4.763h-2.337l-4.98 5.307V6.56h-1.837v10.88h1.838V14.39l1.587-1.71 3.612 4.763h2.18z"></path></g></svg>
+			        </a>
+			    </div>
+			    <div class="site-header__navigation">
+			  		<ul>
+			            <li class="active">
+			            	<a href="dashboard-category.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M417.4 224H94.6C77.7 224 64 238.3 64 256s13.7 32 30.6 32h322.8c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32zM417.4 96H94.6C77.7 96 64 110.3 64 128s13.7 32 30.6 32h322.8c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32zM417.4 352H94.6C77.7 352 64 366.3 64 384s13.7 32 30.6 32h322.8c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32z"/></svg> 
+
+				            	Categories
+				            </a>
+				        </li>
+			            <li><a href="dashboard-product.html">
+			            	<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M480 96L320 48c-13.988 27.227-30.77 40.223-63.77 40.223C223.724 87.676 205.723 75 192 48L32 96l32 88 64-8-16 288h288l-16-288 64 8 32-88z"/></svg>
+
+			            	Product
+			            </a></li>
+			            <li>
+			            	<a href="dashboard-customer.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M425.3 324.8c-41.4-15.7-38.9-9.4-38.9-38.5 0-18.8 9.3-11.9 15.2-47.7 2.3-14.1 4.2-4.7 9.1-27.3 2.6-11.8-1.8-12.7-1.2-18.3.5-5.6 1-10.7 2-22.2 1.2-14.4-11.6-52-57.4-52s-58.6 37.6-57.4 52c.9 11.6 1.5 16.6 2 22.2.5 5.6-3.8 6.5-1.2 18.3 4.9 22.6 6.8 13.1 9.1 27.3 5.9 35.8 15.1 29 15.1 47.7 0 13.4 3.1 19-14.9 27.5 5.4 1.9 11.7 4.2 19.3 7.1 54.4 20.7 53.1 40.8 54.5 50.3 1 6.5 1.5 58.3 1.7 76.8H480s0-80.5-1.5-89.9c-1.1-7.4-11-17.2-53.2-33.3zM357 448s0-14.1-.2-30.4c-.2-18.6-.7-40-1.7-46.4-1.5-9.5-14.3-22.2-68.6-42.9-7.5-2.8-13.8-5.1-19.3-7.1-33.3-11.8-30.9-15.7-30.9-48 0-24.3 12-8.5 19.6-54.6 3-18.2 5.4-6.1 11.7-35.2 3.4-15.2-2.3-16.4-1.6-23.7.7-7.3 1.4-13.8 2.6-28.7 1.6-18.5-14.9-67.1-74.1-67.1-59.2 0-75.6 48.5-74.1 67.1 1.2 14.9 1.9 21.4 2.7 28.7.7 7.3-5 8.4-1.6 23.7 6.4 29.1 8.8 17 11.8 35.2 7.6 46.1 19.5 30.3 19.5 54.6 0 37.6 3.3 34.8-50.2 55.1C48.3 349 35.5 361.7 34 371.2c-2 12.1-2 76.8-2 76.8h325z"/></svg>
+			            		Customers
+			            	</a>
+			            </li>
+			            <li>
+			            	<a href="dashboard-order.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 160h-64v-4.5C384 87 329 32 260.5 32h-8C184 32 128 87 128 155.5v4.5H64L32 480h448l-32-320zm-288-4.5c0-50.7 41.8-91.5 92.5-91.5h8c50.7 0 91.5 40.8 91.5 91.5v4.5H160v-4.5zM67.8 448l24.9-256H128v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6 5.5-16 15.9-16 27.7 0 17.7 14.3 32 32 32s32-14.3 32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9 256H67.8z"/></svg> 
+			            		Orders
+			            	</a>
+			            </li>
+			            <li>
+			            	<a href="dashboard-setting.html">
+			            		<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M411.1 256c0-23.9 14.8-42.8 36.9-55.8-4-13.3-9.3-26.2-15.8-38.2-24.9 6.5-45-3.2-62-20.2-16.9-16.9-22.1-37.1-15.6-62-12-6.5-24.8-11.8-38.2-15.8-13 22.2-36.4 36.9-60.4 36.9-23.9 0-47.4-14.7-60.4-36.9-13.4 4-26.2 9.3-38.2 15.8 6.5 24.9 1.3 45-15.6 62-16.9 16.9-37.1 26.7-61.9 20.2-6.6 12-11.9 24.8-15.9 38.2 22.2 13 37 31.9 37 55.8s-14.8 47.4-37 60.4c4 13.4 9.3 26.2 15.8 38.2 24.9-6.5 45-1.3 61.9 15.6 17 16.9 22.1 37.1 15.6 62 12.1 6.5 24.8 11.8 38.2 15.8 13-22.2 36.5-36.9 60.4-36.9s47.4 14.7 60.4 36.9c13.4-4 26.2-9.3 38.2-15.8-6.5-24.9-1.3-45 15.6-62 16.9-16.9 37.1-26.7 62-20.2 6.5-12.1 11.8-24.9 15.8-38.2-22.1-13-36.8-31.9-36.8-55.8zM256 354.3c-54.2 0-98.3-44-98.3-98.3s44-98.3 98.3-98.3 98.3 44 98.3 98.3-44 98.3-98.3 98.3z"/></svg> 
+			            		Setting
+			            	</a>
+			            </li>
+			        </ul>
+			  	</div>
+
+			    <!-- <div class="site-header__navigation">
+			        <ul>
+			            <li>
+			            	<a href="#">
+			            		<div class="site-header__avatar">
+			            			<img src="http://media.tumblr.com/tumblr_m1yxby2v7s1rn1ymq.jpg" alt="">
+			            		</div>
+
+			            		<span>
+			            			Mbak Yeyen
+			            		</span>
+			            	</a>
+			            </li>
+			        </ul>
+			    </div> -->
+			</div>
+		</header>
+
+		<!-- <div class="site-search">
+		    <div class="container">
+		        <div class="form-group form-group--flex">
+		            <div class="form-group__input">
+		                <input type="text" class="form-control" placeholder="Cari produk&hellip;">
+		            </div>
+		            <div class="form-group__btn">
+		                <button type="submit" class="btn btn--blue">Go</button>
+		            </div>
+		        </div>
+		    </div>
+		</div> -->
+
+
+    <div class="main" id="main" role="main">
+    	<!-- <div class="sidebar">
+
+			<div class="site-navigation__scroll">
+				<div class="site-navigation__menu">
+
+					<h4>Categories</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Sale
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								New Arrivals
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Jumpsuit
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Dress
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Atasan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Bawahan
+							</a>
+						</li>
+					</ul>
+
+					<h4>Bantuan</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								 Cara Pemesanan
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Pengiriman Barang
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Reseller
+							</a>
+						</li>
+					</ul>
+
+					<h4>Tentang kami</h4>
+
+					<ul>
+						<li>
+							<a href="#">
+								Tentang Sale Stock
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Karir
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Legal
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="site-navigation__footer">
+					<small>
+						Copyright &copy; 2015 Sale Stock
+						<br>
+						All Rights Reserved
+					</small>
+				</div>
+			</div>
+
+    	</div> -->
+
+    	<div class="mainbar">
+	    	<div class="container">
+	<div class="page-navigation">	
+		<ul>
+			<li style="width:16.66666%">
+				<a href="dashboard-add-product.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm0 398.7c-105.1 0-190.7-85.5-190.7-190.7S150.9 65.3 256 65.3 446.7 150.9 446.7 256 361.1 446.7 256 446.7zM264.1 128h-16.8v119.9H128v16.8h119.3V384h16.8V264.7H384v-16.8H264.1z"/></svg>
+					<span>Add product</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-product.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 64V32H288L32 320l160 160 23.47-23.904L240 480l240-272V64h-32zM192 457.37L54.39 320 294.62 48H432v137.377l-216.555 247.99-11.34 11.363L192 457.37zm272-255.993L240 457.37l-13.182-12.65L448 192V80h16v121.377zM352 160c17.645 0 32-14.355 32-32s-14.355-32-32-32-32 14.355-32 32 14.355 32 32 32zm0-48c8.836 0 16 7.163 16 16s-7.164 16-16 16-16-7.163-16-16 7.164-16 16-16z"/></svg>
+					<span>Products</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-transaction.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 400c-13.248 0-24 10.752-24 24s10.752 24 24 24 24-10.752 24-24-10.752-24-24-24zm0 32c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM384.5 400c-13.248 0-24 10.752-24 24s10.752 24 24 24 24-10.752 24-24-10.752-24-24-24zm0 32c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM448 128L123.177 95.646c-1.628-6.972-4.37-14.66-11.838-20.667C102.024 67.49 86.98 64 64 64v16c18.614 0 31.167 2.507 37.312 7.448 4.458 3.585 5.644 8.423 7.165 15.99l-.024.003 42.052 233.64c2.413 14.42 7.194 25.208 13.29 32.985C171.044 379.312 180.534 384 192 384h240v-16H192c-4.727 0-19.136.123-25.75-33.755l-5.428-30.16L432 256l16-128zm-29.41 114.348l-260.6 45.99-31.733-176.3 303.87 30.608-11.537 99.702z"/></svg>
+
+					<span>Transaction</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-member.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 112zM349.2 334.8c-13.5-4.7-28.1-5-41.6-9.7-4.1-1.4-12.2-3.1-13.9-7.8-1.6-4.6-1.6-10-1.9-14.8-.2-3.8-.3-7.6-.3-11.4 0-2.5 6.4-7.8 7.8-10.1 5.4-9 5.9-21.1 6.9-31.3 8.7 2.4 9.8-13.7 11.3-18.6 1.1-3.4 7.8-26.8-2.6-23.6 2.5-4.4 3.5-9.8 4.2-14.7 2-12.8 2.8-26.8-1.1-39.3-8.1-26-33-40.6-59.3-41.4-26.7-.9-53.5 11.9-63.5 37.8-4.8 12.6-4.4 26.3-2.8 39.5.7 6 1.7 12.7 4.7 18.1-9.7-2.9-4.5 17.7-3.4 21.3 1.6 5.1 3 23.4 12.1 20.9.8 8.1 1.7 16.4 3.9 24.3 1.5 5.3 4.6 9.8 8.2 13.9 1.8 2 2.7 2.2 2.6 4.8-.1 7.8.1 16.2-1.9 23.8-2 7.6-18.7 10.8-25.4 12.2-18 3.7-34.6 5.4-49.6 16.6-17.5 12.9-26.6 33-26.6 54.7h278c0-29.5-17.8-55.5-45.8-65.2-11.2-3.9 11.3 3.9 0 0zm-202.1 28.8c5.6-5.9 12.7-11.1 20.4-14 10.5-4 22.4-3.8 33.3-6.6 9-2.3 20.2-5.9 27.2-12.4 6.4-6 7.1-15.2 7.7-23.5.5-7 .4-13.9.4-20.9 0-4.9-5.7-7.7-8.5-11.6-4.5-6.1-4.7-15.2-5.6-22.5-.4-3.2-.5-7.3-3.2-9.5-3-2.4-5.2-3.7-6.7-7.5-2-5.2-2.7-10.8-4.3-16.2-1-3.5 2.5-6.8 3.9-9.7 2.6-5.3-1.9-13.5-2.8-19-2.8-16.4-2.7-34.3 9.1-47.3 23.7-26.2 78-17.9 85.8 18.9 2.4 11.5.9 24.9-2.3 36.1-1.4 4.8-3 8.3-.2 13 4.2 6.8 2.4 11.2.4 18.8-1.6 6.3-3.6 9.1-8.4 13-4 3.2-3.4 11.2-4.1 15.8-.8 5.6-1.3 11.5-4.7 16.2-1.3 1.8-8.4 7.4-8.4 9.3 0 11-.5 22.2 1.4 33.1 2.6 15.5 15.6 19.2 28.6 24.5 13.2 5.1 28.5 3.2 41.3 9.5 13.2 6.5 25.9 18.4 29.7 33.1H135c1.9-8.3 6.5-14.6 12.1-20.6 9.2-9.7-5.9 6.3 0 0zM144.1 322c7-3.5 14.6-4.3 22.3-5.1 2.8-.3 4.1-2.2 2-4.9-4-5.1-17.8-6.1-23.6-8.4-3.6-1.4-4.6-2.7-4.9-6.7-.1-1.8-1.1-9.8.3-11.1 1-1 7.3-.6 8.7-.8 5.7-.7 11.5-1.9 16.9-4 2.3-.9 4.5-2 6.5-3.4 2.4-1.8-1.8-6.2-2.9-8.6-3.4-7.5-4.9-15.7-5.4-23.9-1-16.1 1.5-32.3-1.5-48.3C158 172.3 139.1 160 115 160c-14.9 0-29.6 5.1-37.9 18.1-9.2 14.3-8.7 32.1-8.2 48.4.3 9.3.7 18.7-.6 28-.6 4-1.5 7.9-2.9 11.7-1.1 2.9-6.7 10.1-4.5 11.6 8.3 5.9 22.3 7.9 32.3 7.1.3 4.9 1.2 11.2-.6 15.8-2.8 7.2-23.7 9.1-30 11.2C45 317.8 32 332.5 32 352h79.5c1.3 0 6.3-9.3 7.7-10.8 7-7.8 15.6-14.5 24.9-19.2 9-4.5-14.6 7.4 0 0zm-41.3 14H53.9c7.1-11.8 24.9-11 36.6-15.2 10.8-3.9 17.7-10.5 18.8-22 .1-1.3.2-29.2-.9-29.2-8.7-.3-17.8-.1-26.5-1.4 6.9-22.3.3-45.3 4-67.8 2.7-16.3 13.1-25.3 29.7-25.3 15.9 0 27.7 7.4 31.1 23.4 4.8 23.2-2 46.9 5.4 69.9-5.5 1.4-11.3 1.6-17 1.8-2.8.1-5.7.2-8.5.3-1.8.1-1.2 3.2-1.3 4.7-1 10.9-5 28.1 3.7 36.9-9.6 6-20 14.3-26.2 23.9zM399.8 352H480c0-19.5-13.1-34.3-30.7-40.1-8.1-2.6-23.7-3.4-29.5-10.4-2.9-3.5-1.3-12.4-1-16.6 4.4.4 9.2-.3 13.7-.9 4.1-.6 8.1-1.4 12-2.8 1.8-.7 3.6-1.4 5.3-2.4 3.9-2.3 2.1-2.7.1-6.1-10.9-18.3-6-41.5-6.5-61.6-.4-16.7-4.8-35-20-44.4-13.7-8.5-34-8.8-48.7-2.8-42.4 17-17.4 73.2-31.9 105.4-2.5 5.4-6.1 7.3.2 10.5 3.5 1.8 7.3 3 11.1 3.9 5.8 1.4 11.8 2.2 17.8 2.4 1 0 .3 12.6 0 13.9-1.1 4.9-11.8 6.3-15.8 7.4-4.1 1.1-10.9 1.4-12.9 5.7-3 6.4 9.9 4.8 13.1 5.4 10.3 1.9 19.4 7.6 27.4 14.1 5.9 4.8 13.9 11.6 16.1 19.4zm-.4-27.1c-5.1-4.7-10.4-9.3-16.3-13 8.8-8.8 4.7-25.9 3.7-36.9-.6-6.3-2-4.7-8.3-4.9-6-.2-12.8.1-18.5-1.8 7.2-22.3 1.3-45.2 5-67.9 2.8-17.1 14.5-25.5 31.5-25.5 15.4 0 26 7.7 29.2 23 4.9 23.1-2.6 47 4.5 70-8.5 1.3-17.3 1-25.9 1.3-2.1.1-1.9 25.1-1.7 27.3.7 11.7 6.1 18.8 17.2 23.3 12.1 4.9 31 3.6 38.4 15.9h-44.7c-7.1.1-8.9-6.1-14.1-10.8-5-4.6 4 3.6 0 0z"/></svg>
+					<span>Member</span>
+				</a>
+			</li>
+			<li class="active" style="width:16.66666%">
+				<a href="dashboard-report.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 288c-15.268 0-28.03 10.695-31.223 25h-59.004l-30.18-90.896c-1.106-3.33-4.247-5.543-7.76-5.478-3.508.072-6.56 2.422-7.524 5.795l-54.243 189.32-58.175-349.055c-.624-3.74-3.787-6.528-7.576-6.68-3.81-.138-7.16 2.383-8.078 6.062L121.748 313H32v16h96c3.674 0 6.875-2.502 7.763-6.066l54.685-219.59 57.66 345.972c.616 3.688 3.704 6.46 7.438 6.672.153.01.307.013.46.013 3.548 0 6.698-2.35 7.686-5.796l56.872-198.496 23.845 71.813c1.086 3.272 4.145 5.48 7.592 5.48h65.292c3.89 13.29 16.16 23 30.708 23 17.674 0 32-14.327 32-32S465.674 288 448 288z"/></svg>
+					<span>Report</span>
+				</a>
+			</li>
+			<li style="width:16.66666%">
+				<a href="dashboard-setting.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256.9 159.9c-25.7 0-49.8 10-67.9 28.1s-28.1 42.2-28.1 67.9c0 25.7 10 49.7 28.1 67.9 18.1 18.1 42.3 28.1 67.9 28.1 25.7 0 49.8-10 67.9-28.1 18.1-18.102 28.1-42.2 28.1-67.9 0-25.7-10-49.7-28.1-67.9-18.1-18.1-42.2-28.1-67.9-28.1zm0 176c-44.3 0-80-35.9-80-80s35.7-80 80-80 80 35.9 80 80-35.7 80-80 80zM201.787 82.828c4.458 6.628 10.12 12.406 16.775 17.07C229.574 107.61 242.52 111.69 256 111.69c13.48 0 26.428-4.078 37.44-11.793 6.653-4.663 12.315-10.44 16.772-17.068 10.326 3.227 20.334 7.377 29.927 12.41-1.533 7.84-1.615 15.93-.204 23.933 2.333 13.235 8.604 25.27 18.133 34.798 12.334 12.337 28.736 19.13 46.184 19.13 4.242 0 8.424-.4 12.52-1.195 5.032 9.6 9.18 19.613 12.405 29.947-6.623 4.46-12.397 10.12-17.055 16.776-7.705 11.008-11.777 23.946-11.776 37.418 0 13.467 4.068 26.4 11.767 37.406 4.653 6.65 10.42 12.312 17.036 16.77-3.232 10.34-7.387 20.355-12.428 29.958-4.08-.79-8.246-1.187-12.472-1.187-17.448 0-33.85 6.795-46.183 19.13-9.515 9.515-15.78 21.528-18.123 34.74-1.415 7.99-1.343 16.066.176 23.896-9.607 5.04-19.627 9.19-29.967 12.42-4.46-6.61-10.12-12.374-16.77-17.022-11-7.69-23.93-11.754-37.387-11.754-13.458 0-26.386 4.064-37.386 11.755-6.65 4.647-12.31 10.41-16.77 17.02-10.34-3.228-20.36-7.38-29.967-12.42 1.52-7.83 1.59-15.906.176-23.895-2.342-13.214-8.608-25.228-18.123-34.74-12.335-12.337-28.737-19.13-46.185-19.13-4.226 0-8.39.395-12.47 1.186-5.04-9.6-9.196-19.617-12.43-29.957 6.616-4.46 12.384-10.12 17.037-16.77 7.7-11.005 11.77-23.94 11.77-37.41 0-13.47-4.073-26.41-11.778-37.417-4.658-6.654-10.432-12.316-17.054-16.776 3.225-10.333 7.372-20.346 12.405-29.946 4.096.796 8.277 1.196 12.52 1.196 17.447 0 33.85-6.794 46.186-19.13 9.53-9.53 15.8-21.563 18.134-34.8 1.41-8.002 1.33-16.092-.203-23.93 9.595-5.033 19.6-9.183 29.927-12.412M302.074 64C294.97 82.53 277.027 95.69 256 95.69c-21.025 0-38.97-13.16-46.073-31.69-20.466 4.895-39.692 12.973-57.128 23.688 8.067 18.122 4.68 40.104-10.183 54.97-9.63 9.63-22.25 14.443-34.87 14.443-6.854 0-13.706-1.418-20.083-4.254-10.706 17.438-18.777 36.67-23.664 57.138 18.51 7.112 31.652 25.05 31.652 46.062 0 21.008-13.133 38.936-31.63 46.054 4.897 20.466 12.976 39.692 23.692 57.128 6.36-2.82 13.197-4.232 20.03-4.232 12.622 0 25.24 4.812 34.872 14.443 14.84 14.84 18.238 36.78 10.215 54.888 17.44 10.71 36.665 18.783 57.132 23.673 7.127-18.478 25.046-31.595 46.037-31.595 20.99 0 38.91 13.115 46.036 31.596 20.468-4.89 39.693-12.963 57.132-23.674-8.023-18.106-4.626-40.046 10.216-54.887 9.63-9.633 22.248-14.445 34.868-14.445 6.836 0 13.67 1.41 20.033 4.233C435 341.792 443.08 322.566 447.977 302.1c-18.498-7.118-31.63-25.048-31.63-46.054 0-21.013 13.143-38.948 31.65-46.062-4.886-20.466-12.956-39.7-23.663-57.14-6.375 2.837-13.23 4.255-20.082 4.255-12.62 0-25.238-4.812-34.87-14.443-14.864-14.863-18.25-36.846-10.18-54.97C341.767 76.973 322.54 68.895 302.073 64z"/></svg>
+					<span>Setting</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+
+	
+	<div class="page-body">
+
+		<div class="page-body__navigation">
+			<ul>
+				<li class="active" style="width:25%"><a href="dashboard-product.html">Sales</a></li>
+				<li style="width:25%"><a href="dashboard-draft.html">Conversion</a></li>
+				<li style="width:25%"><a href="dashboard-product-end.html">Payment</a></li>
+				<li style="width:25%"><a href="dashboard-search.html">Search</a></li>
+			</ul>
+		</div>
+
+		<div class="page-body__control">
+			<b>Page 1 of 23</b>
+			<ul class="pagination">
+				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
+				<!-- <li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li> -->
+				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
+			</ul>
+		</div>
+
+		<div class="chart">
+			<div id="chart_1" style="height:24rem;"></div>
+            <script>
+                $(document).ready(function(){
+
+	                  var chart12 = c3.generate({
+	                    bindto: '#chart_1',
+			            legend: {
+			            	show: false,
+			            },
+
+			            // Hourly
+	                    // data: {
+		                   //  x:'x',
+		                   //  xFormat: '%Y-%m-%d %H:%M:%S',
+	                    //   columns: [
+	                    //   	["x", "2013-03-12 22:00:00","2013-03-12 23:00:00","2013-03-13 00:00:00","2013-03-13 01:00:00", "2013-03-13 02:00:00","2013-03-13 03:00:00","2013-03-13 04:00:00","2013-03-13 05:00:00"],
+	                    //   	["Transaction", 121,92,81,55,121,92,81,55]
+	                    //   ],
+	                    //   type:'area'
+	                    // },
+
+
+	                    //daily
+	                    data: {
+		                    x:'x',
+		                    xFormat: '%Y-%m-%d',
+	                      columns: [
+	                      	["x", "2013-03-12","2013-03-13","2013-03-14","2013-03-15", "2013-03-16","2013-03-17","2013-03-18","2013-03-19"],
+	                      	["Transaction", 121,92,81,55,121,92,81,55]
+	                      ],
+	                      type:'area'
+	                    },
+
+	                    color: {
+						  pattern: ['#1485e0', '#ffe8a0']
+						},
+
+	                    transition: {
+					        duration: 0
+					    },
+	                    grid: {
+                            x: {
+                                //show: true,
+                                //ticks:3,
+                                //type:'tick',
+
+                            },
+
+                            y: {
+                                show: true,
+                                ticks:3,
+                                //type:'tick',
+
+                            },
+                           
+
+                        },
+                        axis: {
+                            x: {
+                                type: 'timeseries',
+                                localtime: true,
+                                
+                            },
+
+                           	y: {
+
+                           		show:false,
+							    tick: {
+							      count: 3
+							    },
+							    inner: true
+
+						  }
+                        },
+
+                        //point: { show: false }
+						
+	                  });
+              
+                });
+            </script>
+	    </div>
+
+	    <table class="table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Sales</th>
+					<th>Revenue</th>
+					<th style="width:32rem">&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						13 Mar 2015
+					</td>
+					<td>
+						121
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+					<td rowspan="13" style="border-left:solid .1rem #eee;border-bottom:0;">
+						
+						<div class="pie-chart">
+							<h4>Payment</h4>
+							<div id="chart_4" style="height:16rem;"></div>
+							<script>
+						      var chart4 = c3.generate({
+	                    		bindto: '#chart_4',
+	                    		legend: { 
+	                    			position: 'right',
+	                 
+	                    		},
+						        data: {
+						          columns: [
+						          	["BCA", 941],
+						          	["BNI", 935],
+									["Mandiri", 381],
+									["Others", 363]
+						          ],
+						          type : 'pie',
+						        },
+						        transition: {
+							        duration: 0
+							    },
+						        axis: {
+						          x: {
+						            label: 'Sepal.Width'
+						          },
+						          y: {
+						            label: 'Petal.Width'
+						          }
+						        }
+						      });
+						    </script>
+						</div>
+
+						<div class="pie-chart">
+							<h4>Buyer</h4>
+							<div id="chart_5" style="height:16rem;"></div>
+							<script>
+						      var chart4 = c3.generate({
+	                    		bindto: '#chart_5',
+	                    		legend: { 
+	                    			position: 'right',
+	                 
+	                    		},
+						        data: {
+						          columns: [
+						          	["Member", 356],
+						          	["Guest", 435],
+						          ],
+						          type : 'pie',
+						        },
+						        transition: {
+							        duration: 0
+							    },
+						        axis: {
+						          x: {
+						            label: 'Sepal.Width'
+						          },
+						          y: {
+						            label: 'Petal.Width'
+						          }
+						        }
+						      });
+						    </script>
+						</div>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+						14 Mar 2015
+					</td>
+					<td>
+						92
+					</td>
+					<td>
+						Rp 10,500,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						15 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						16 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						17 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						18 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						19 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						20 Mar 2015
+					</td>
+					<td>
+						92
+					</td>
+					<td>
+						Rp 10,500,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						21 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						22 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						23 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						24 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+				<tr>
+					<td>
+						25 Mar 2015
+					</td>
+					<td>
+						81
+					</td>
+					<td>
+						Rp 15,000,000
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<div class="page-body__secondary-control">
+			<ul class="pagination">
+				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256z"/></svg></a></li>
+				<!-- <li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li> -->
+				<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M160 128.4L192.3 96 352 256 192.3 416 160 383.6 287.3 256z"/></svg></a></li>
+			</ul>
+		</div>
+	</div>
+
+
+</div>
+
+    	</div>
+    </div>
+
+    <footer class="site-footer" id="site-footer">
+		<div class="container">
+			<div class="site-footer__copy">
+				<small>&copy; 2015 Sale Stock Indonesia</small>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Modal -->
+
+
+
+
+<div class="modal fade" id="categoryModal" tabindex="-1" data-backdrop="static">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Add New Category</h4>
+			</div>
+      		<div class="modal-body">
+      			<div class="form-group">
+					<label class="form-label">Title</label>
+					<input type="text" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Parent Category</label>
+					<select class="form-control">
+						<option>-- Please Select --</option>
+						<option>Blouse</option>
+						<option>Jumpsuit</option>
+						<option>Dress</option>
+						<option>Atasan</option>
+						<option>Bawahan</option>
+						<option>Tas</option>
+					</select>
+				</div>
+
+				<h4 class="modal-subheader">SEO</h4>
+				<div class="form-group">
+					<label class="form-label">Page Title</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Description</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="form-label">Meta Keywords</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Publish</label>
+					<div class="form-input">
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>Yes</span>
+							</label>
+						</div>
+						<div class="radio radio--inline">
+							<label>
+								<input type="radio" name="n">
+								<span>No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn--red">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="addProductModal" tabindex="-1" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
+      </div>
+      <div class="modal-body">
+
+      		<div class="form-group">
+				<div class="form-input">
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l">
+							<span>Publish</span>
+						</label>
+					</div>
+					<div class="radio radio--inline">
+						<label>
+							<input type="radio" name="l" checked>
+							<span>Unpublish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+
+        	<div class="form-group">
+        		<label class="form-label">Code</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+        		<label class="form-label">Title</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+
+
+        	<div class="form-image">
+        		<div class="dropzone" id="uploader"></div>
+        	</div>
+
+        	<fieldset>
+        		<legend>Specification</legend>
+
+        		<div class="form-group">
+	        		<label class="form-label">Warna</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Ukuran</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Bahan</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+
+
+        		<div class="form-group">
+	        		<label class="form-label">Informasi Lain</label>
+	        		<div class="form-input">
+	        			<textarea class="form-control" rows="2"></textarea>
+	        		</div>
+	        	</div>
+        	</fieldset>
+
+        	<div class="form-group">
+        		<label class="form-label">Variants</label>
+        		<div id="table"></div>
+        	</div>
+
+
+        	<div class="row">
+        		<div class="col col--6">
+		        	<div class="form-group">
+		        		<label class="form-label">Price</label>
+		        		<div class="form-input">
+		        			<input type="text" class="form-control">
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="col col--6">
+		        	<div class="form-group">
+		        		<label class="form-label">Sale Price</label>
+		        		<div class="form-input">
+		        			<input type="text" class="form-control">
+		        		</div>
+		        	</div>
+		        </div>
+		    </div>
+
+
+        	<div class="form-group">
+        		<label class="form-label">Weight</label>
+        		<div class="form-input">
+        			<input type="text" class="form-control">
+        		</div>
+        	</div>
+
+        	<div class="form-group">
+				<label class="form-label">Options</label>
+				<div class="form-input">
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Featured</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>New</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="radio" name="k">
+							<span>Publish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn--red">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$('#addProductModal').on('shown.bs.modal', function (e) {
+		$("#table").handsontable({
+			  colHeaders: ['Size', 'Color', 'Product Code', 'Stock', 'Price'],
+			    rowHeaders: true,
+			    stretchH: 'all',
+			    columnSorting: true,
+			    contextMenu: true,
+			  columns: [
+			    {
+			      data: 'Size',
+			    },
+			    {
+			      data: 'Color',
+			    },
+			    {
+			      data: 'Product Code'
+			    },
+			    {
+			      data: 'Stock',
+			      type: 'numeric'
+			    },
+			    {
+			      data: 'Price',
+			      type: 'numeric'
+
+			    }
+			  ],
+			});
+	});
+</script>
+
+
+<div class="modal fade" id="previewProductModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Product Preview</h4>
+      </div>
+      <div class="modal-body">
+        	
+      		<div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <div style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg);padding-bottom:86%;"></div>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Sophia Polka Skirt
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__description">
+                        <div>
+                            <b>Warna</b> Warna Creme, Grey, Dusty Burgundy, dan Lite Grey
+                        </div>
+                        <div>
+                            <b>Ukuran</b> Satu ukuran muat sampai size L kecil
+                            <br> Lingkar pinggang 68-86cm, Panjang 97cm
+                        </div>
+                        <div>
+                            <b>Bahan</b> Bahan Linen
+                        </div>
+                        <div>
+                            <b>Informasi Lain</b> Tali pinggang hidup, Pinggang belakang karet
+                        </div>
+                    </div>
+                    
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn--red">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="invoice" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Invoice</h4>
+      </div>
+      <div class="modal-body">
+<div class="invoice">
+		<div class="invoice-header">
+			<div class="invoice-header__logo">
+				<img src="img/ss-logo.png" alt="">
+			</div>
+			<div class="invoice-header__id">
+				<b>Invoice</b>
+				<b>201546529</b>
+			</div>
+		</div>
+
+		<div class="invoice-body">
+			<div class="invoice-body__info">
+				Order ID: 201546529
+
+				26 May 2015
+			</div>
+			<div class="invoice-body__recap">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								Product
+							</th>
+							<th>
+								SKU
+							</th>
+							<th style="text-align:right">
+								Price
+							</th>
+							<th style="text-align:right">
+								Quantity
+							</th>
+							<th style="text-align:right">
+								Amount
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="table__figure" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150517132522_94922.jpg)"></div>
+
+								Aerilyn Cape Twistcone Jumpsuit 
+								<small>Teal</small>
+							</td>
+							<td class="nowrap">
+								MIN-JSJS-4922TEA-R68
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+							<td style="text-align:right">
+								1
+							</td>
+							<td style="text-align:right">
+								118.000
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="4" style="text-align:right">Item Total</td>
+							<td style="text-align:right"><b>118.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Shipping and Handling</td>
+							<td style="text-align:right"><b>25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Shipping Discount</td>
+							<td style="text-align:right"><b>-25.000</b></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align:right">Total</td>
+							<td style="text-align:right"><b>118.000</b></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<table style="border-collapse:collapse" border="1" width="100%">
+				<tbody>
+				<tr>
+				<td style="padding:8px 8px;text-align:left;font-size:13px">
+				<strong>Message:</strong><br>
+				Tolong di bungkus yang rapi<br>
+				<br>
+				Discount(s):<br>
+				FREEONGKIR (IDR 0.00) </td>
+				<td style="padding:8px 8px;text-align:right;font-size:13px;width:300px">
+				<table width="100%">
+				<tbody><tr>
+				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Payment Method:</td>
+				<td style="font-size:13px;text-align:right">bank-transfer</td>
+				</tr>
+				<tr>
+				<td style="width:150px;text-align:right;font-size:13px;font-weight:bold">Shipping:</td>
+				<td style="font-size:13px;text-align:right">aCommerce REG</td>
+				</tr>
+				</tbody></table>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+
+
+				<table class="table">
+					<tbody><tr>
+						<th>Delivery Address</th>
+						<th>Billing Address</th>
+					</tr>
+					<tr>
+						<td style="width:50%;">
+							<strong>sylvana sella </strong><br>
+							jln.Bandeng Gg.belida No.4 <br>
+							Kota Pekanbaru - Marpoyan Damai 28282<br>
+							Riau, Indonesia<br>
+							Tel: 085263979627<br>
+							Email: sylvanasella@yahoo.com<br>
+						</td>
+						<td style="width:50%;">
+							<strong>sylvana sella </strong><br>
+							jln.Bandeng Gg.belida No.4 <br>
+							Kota Pekanbaru - Marpoyan Damai 28282<br>
+							Riau, Indonesia<br>
+							Tel: 085263979627<br>
+							Email: sylvanasella@yahoo.com<br>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+	</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn--red">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    </body>
+</html>
+
+

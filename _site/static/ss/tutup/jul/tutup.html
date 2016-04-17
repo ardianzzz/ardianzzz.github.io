@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sale Stock Indonesia</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    *,
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-size: 62.5%;
+        height: 100%;
+    }
+    
+    body {
+        font-size: 1.6em;
+        font-family: Raleway, "Helvetica Neue", Helvetica, Arial, Sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        background: #000;
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        height: 100%;
+        font-weight: 700;
+        >div {
+            font-size: 1.4rem;
+        }
+    }
+    
+    .txt-1 {
+        text-transform: uppercase;
+        font-size: 1.4em;
+        line-height: 1;
+        margin: 0 0 .6rem;
+        font-weight: 700;
+        letter-spacing: -.08rem;
+    }
+    
+    .txt-2 {
+        text-transform: uppercase;
+        font-size: 4.2rem;
+        letter-spacing: -.08rem;
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 3.2rem;
+    }
+    
+    .txt-2 span {
+        font-family: sans-serif;
+        text-transform: none;
+        font-weight: normal;
+        font-size: 4.2rem;
+    }
+    
+    .txt-3 {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        line-height: 1;
+        margin: 0 0 2.4rem;
+        letter-spacing: -.04rem;
+        font-weight: 700;
+    }
+    
+    .txt-4 {
+        font-size: 1.2em;
+        line-height: 1.4;
+        margin: 0 0 2.4rem;
+        letter-spacing: -.04rem;
+    }
+    
+    #timer {
+        border: solid .2rem #fff;
+        margin: 0 auto;
+        display: inline-block;
+    }
+    
+    #timer:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    #timer span {
+        display: block;
+        float: left;
+        font-size: 4rem;
+        width: 12rem;
+        padding: 1rem 0;
+        line-height: 1;
+        position: relative;
+        font-weight: 700;
+    }
+    
+    #timer i {
+        display: block;
+        float: left;
+        line-height: 1;
+        font-size: 4rem;
+        padding: 1rem 0;
+        font-style: normal;
+        font-weight: 700;
+    }
+    
+    #timer sub {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        margin-top: 1.6rem;
+        font-size: 1.4rem;
+    }
+    
+    .box {
+        text-align: center;
+        position: relative;
+        padding-right: 40%;
+        min-height: 100%;
+    }
+    
+    .top {
+        margin: 0 auto;
+        clear: both;
+        overflow: hidden;
+    }
+    
+    .top-content {
+        max-width: 48rem;
+        width: 48rem;
+        float: right;
+        padding: 4rem 1.6rem;
+    }
+    
+    .bottom {
+        margin: 0 auto;
+        clear: both;
+        overflow: hidden;
+    }
+    
+    .bottom-content {
+        float: right;
+        max-width: 48rem;
+        width: 48rem;
+        margin: 0 auto;
+        padding: 4rem 1.6rem;
+    }
+    
+    .bgwrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 60%;
+        height: 100%;
+        background-image: url(bg.jpg);
+        background-size: auto 100%;
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-color: #3e1e9d;
+    }
+    
+    .logo {
+        margin: 0 0 4.8rem;
+    }
+    
+    .logo img {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: 640px) {
+        .box {
+            padding: 0;
+        }
+        .bgwrap {
+            position: static;
+            width: 100%;
+            height: 0;
+            padding-bottom: 130%;
+        }
+        .txt-2 {
+            font-size: 3.4rem;
+        }
+        .txt-3 {}
+        .top-content {
+            float: none;
+            width: auto;
+            padding-top: 2.4rem;
+            padding-bottom: 5rem;
+            margin: 0 auto;
+        }
+        .logo {
+            margin-bottom: 2.4rem;
+        }
+        .bottom-content {
+            float: none;
+            width: auto;
+            padding: 2rem 1.6rem;
+        }
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        #timer span {
+            font-size: 3.4rem;
+            padding-right: .8rem;
+            padding-left: .8rem;
+            padding-bottom: 1.4rem;
+            width: 8rem;
+        }
+        #timer i {
+            font-size: 3.4rem;
+            padding-bottom: 1.4rem;
+        }
+    }
+    </style>
+    <script type="text/javascript">
+    (function(global) {
+        "use strict";
+
+        // Vanilla JS alternative to $.extend
+        global.extend = function(obj, extObj) {
+            obj = obj || {};
+            if (arguments.length > 2) {
+                for (var a = 1; a < arguments.length; a++) {
+                    global.extend(obj, arguments[a]);
+                }
+            } else {
+                for (var i in extObj) {
+                    obj[i] = extObj[i];
+                }
+            }
+            return obj;
+        };
+
+        // Countdown constructor
+        var Countdown = function(conf) {
+            this.conf = global.extend({
+                // Dates
+                dateStart: new Date(),
+                dateEnd: new Date(new Date().getTime() + (24 * 60 * 60 * 1000)),
+
+                // Default elements
+                selector: "#timer",
+
+                // Messages
+                msgBefore: "Be ready!",
+                msgAfter: "It's over, sorry folks!",
+                msgPattern: "<span>{hours} <sub>jam</sub></span> <i>:</i> <span>{minutes} <sub>menit</sub></span> <i>:</i> <span>{seconds} <sub>detik</sub></span>",
+
+                // Callbacks
+                onStart: null,
+                onEnd: null
+            }, conf);
+
+            // Private variables
+            this.selector = document.querySelectorAll(this.conf.selector);
+            this.interval = 1000;
+            this.now = new Date();
+            this.patterns = [{
+                pattern: "{years}",
+                secs: 31536000
+            }, {
+                pattern: "{months}",
+                secs: 2628000
+            }, {
+                pattern: "{weeks}",
+                secs: 604800
+            }, {
+                pattern: "{days}",
+                secs: 86400
+            }, {
+                pattern: "{hours}",
+                secs: 3600
+            }, {
+                pattern: "{minutes}",
+                secs: 60
+            }, {
+                pattern: "{seconds}",
+                secs: 1
+            }];
+
+            // Doing all the things!
+            this.init();
+        };
+
+        // Initializing the instance
+        Countdown.prototype.init = function() {
+            this.defineInterval();
+            if (this.now < this.conf.dateEnd && this.now >= this.conf.dateStart) {
+                this.run();
+                this.callback("start");
+            } else {
+                this.outOfInterval();
+            }
+        };
+
+        // Running the countdown
+        Countdown.prototype.run = function() {
+            var now = this.now.valueOf() / 1000,
+                tar = this.conf.dateEnd.valueOf() / 1000,
+                sec = Math.abs(tar - now);
+
+            // Vanilla JS alternative to $.proxy
+            var that = this;
+            var timer = global.setInterval(function() {
+                sec--;
+
+                if (sec > 0) {
+                    that.display(sec);
+                } else {
+                    clearInterval(timer);
+                    that.outOfInterval();
+                    that.callback("end");
+                }
+            }, this.interval);
+
+            this.display(sec);
+        };
+
+        // Displaying the countdown
+        Countdown.prototype.display = function(sec) {
+            var output = this.conf.msgPattern;
+
+            for (var b = 0; b < this.patterns.length; b++) {
+                var currentPattern = this.patterns[b];
+
+                if (this.conf.msgPattern.indexOf(currentPattern.pattern) !== -1) {
+                    var number = Math.floor(sec / currentPattern.secs);
+                    sec -= number * currentPattern.secs;
+                    output = output.replace(currentPattern.pattern, number);
+                }
+            }
+
+            for (var c = 0; c < this.selector.length; c++) {
+                this.selector[c].innerHTML = output;
+            }
+        };
+
+        // Defining the interval to be used for refresh
+        Countdown.prototype.defineInterval = function() {
+            for (var e = this.patterns.length; e > 0; e--) {
+                var currentPattern = this.patterns[e - 1];
+
+                if (this.conf.msgPattern.indexOf(currentPattern.pattern) !== -1) {
+                    this.interval = currentPattern.secs * 1000;
+                    return;
+                }
+            }
+        };
+
+        // Canceling the countdown in case it's over
+        Countdown.prototype.outOfInterval = function() {
+            var message = this.now < this.conf.dateStart ? this.conf.msgBefore : this.conf.msgAfter;
+            for (var d = 0; d < this.selector.length; d++) {
+                this.selector[d].innerHTML = message;
+            }
+        };
+
+        // Dealing with events and callbacks
+        Countdown.prototype.callback = function(event) {
+            event = event.capitalize();
+
+            // onStart callback
+            if (typeof this.conf["on" + event] === "function") {
+                this.conf["on" + event]();
+            }
+
+            // Triggering a jQuery event if jQuery is loaded
+            if (typeof global.jQuery !== "undefined") {
+                global.jQuery(this.conf.selector).trigger("countdown" + event);
+            }
+        };
+
+        // Adding a capitalize method to String
+        String.prototype.capitalize = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        };
+
+        global.Countdown = Countdown;
+    }(window));
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            <div class="top-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Sale Stock Indonesia">
+                </div>
+                <div class="txt-1">
+                    Sabar ya Sis,
+                </div>
+                <div class="txt-2">
+                    Soraya
+                    <br> Masih Dandan <span>😘</span>
+                </div>
+                <div class="txt-3">
+                    Nantikan Tampilan Baru Soraya
+                </div>
+                <div id="timer"></div>
+            </div>
+        </div>
+        <div class="bgwrap"></div>
+        <div class="bottom">
+            <div class="bottom-content">
+                <div class="txt-4">
+                    Kalau perlu bantuan,
+                    <br> Soraya tetap siap sedia di:
+                    <br> SMS/WA 0859-66-456-777
+                    <br> LINE ID @salestock
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        var tomorrow = new Countdown({
+            dateEnd: new Date('Jul 13, 2015 23:00:00'),
+        });
+        </script>
+    </div>
+</body>
+
+</html>

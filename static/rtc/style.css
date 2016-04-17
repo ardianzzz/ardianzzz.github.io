@@ -1,0 +1,272 @@
+*,*:before,*:after {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  overflow-y:scroll;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4em;
+  font-family: "Helvetica Neue", Arial, Sans-serif;
+  color: #444;
+  line-height: 1.5;
+
+  >div {
+    font-size: 1.4rem; 
+  }
+}
+
+
+
+
+
+.clearfix:before, 
+.clearfix:after {
+  content: "";
+  display: table; 
+}
+
+.clearfix:after{
+  clear: both; 
+}
+
+
+/**
+ * Grid helper
+ */
+.row {
+  margin: 0 -.8rem; }
+
+.col {
+  float: left;
+  padding: 0 .8rem; }
+
+.grid-2a {
+  width: 20%; }
+
+.grid-12 {
+  width: 100%; }
+
+.grid-11 {
+  width: 91.66666666666666%; }
+
+.grid-10 {
+  width: 83.33333333333334%; }
+
+.grid-9 {
+  width: 75%; }
+
+.grid-8 {
+  width: 66.66666666666666%; }
+
+.grid-7 {
+  width: 58.333333333333336%; }
+
+.grid-6 {
+  width: 50%; }
+
+.grid-5 {
+  width: 41.66666666666667%; }
+
+.grid-4 {
+  width: 33.33333333333333%; }
+
+.grid-3 {
+  width: 25%; }
+
+.grid-2 {
+  width: 16.666666666666664%; }
+
+.grid-1 {
+  width: 8.333333333333332%; }
+
+
+
+@media (max-width: 480px) {
+  .grid-6 {
+    width: 100%;
+  }
+}
+
+.pull-left {
+  float: left !important; }
+
+.pull-right {
+  float: right !important; }
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding:0 .8rem;
+  max-width: 98rem; }
+
+
+
+
+.video-content {
+  width: 100%;
+  max-width: 64rem;
+  margin:0 auto;
+  position: relative;
+}
+
+
+.video-wrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  overflow: hidden;
+  position: relative;
+  margin:0 0 3.2rem;
+  border-radius: .4rem;
+
+
+
+}
+
+.my-video {
+      width:12rem;
+      height: 9rem;
+      position: absolute;
+      bottom:1.6rem;
+      right: 1.6rem;
+  }
+
+
+.video-wrapper:after {
+    content: "";
+width: 60rem;
+height: 40rem;
+background: rgba(255,255,255,.03);
+position: absolute;
+top: -30rem;
+left: -12rem;
+z-index: 99;
+-webkit-transform: rotate(-20deg);
+  }
+
+
+.videochat {
+  background: #1b1b1b;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  border-radius: .4rem;
+
+
+}
+
+#video-container {
+  padding: 1.6rem 0 0;
+  border-bottom:solid .3rem #e7e7e7;
+}
+
+.status {
+  padding: 1.6rem;
+  text-align: center;
+  /*max-width: 48rem;*/
+  margin:0 auto;
+}
+
+
+.header {
+  padding: 1.6rem 0;
+  text-align: center;
+  font-size: 3.2rem;
+  line-height: 1.125;
+  font-family: "Times New Roman", serif;
+  letter-spacing: -.2rem;
+  font-weight: 700;
+}
+
+#step1-error, #step2, #step3 {
+  display: none;
+}
+
+
+.form-control {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance:none;
+  font:inherit;
+  padding: .8rem 1.6rem;
+  border:solid .1rem #c7c7cc;
+  width: 16rem;
+}
+
+.text-label {
+  color:#8E8E93;
+  padding: .8rem 1.6rem;
+  font-size: 1.9rem;
+  line-height: 2.1rem;
+}
+
+b {
+    font-weight: 700;
+    color:#444;
+  }
+
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  border:solid .1rem #007AFF;
+  background:#007AFF;
+  color: #fff;
+  padding: .8rem 2.4rem;
+  border-radius: .4rem;
+  text-decoration: none !important;
+  font-weight: 700;
+}

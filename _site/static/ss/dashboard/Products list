@@ -1,0 +1,34 @@
+Products list
+- contain filters and search
+- can be sorted
+- contain published status
+- contain date added
+- contain harga beli
+- fitur export
+
+Add product
+- product weights, otomatis sesuai kategori
+- boost points (untuk sort order)
+- tidak perlu ada new products
+- tidak perlu featured
+- tidak perlu backorder dkk
+- tidak perlu ada options
+- ada tabel variants seperti di sirclo (warna saja)
+- ada published / not published
+
+
+Member
+- ada filter, search, sort
+- tidak perlu ada tombol profile
+- perlu tanggal ulang tahun?
+- fitur export
+
+Report / Dashboard : 
+- harus dimeetingkan dulu dengan semua dept
+- daily sales
+- performa per kategori dan subcat (ala daily report)
+- performa per channel
+- screenshot terlampir
+
+Orders : 
+persis seperti di sirclo

@@ -1,0 +1,54 @@
+.container {
+  max-width: 96rem;
+}
+
+.page-control ul {
+  max-width: 93.6rem;
+}
+
+.masonry {
+  margin: 1.6rem -.8rem;
+  overflow: hidden;
+}
+.masonry .promo, .masonry .product {
+  margin: 0;
+}
+.masonry__brick {
+  margin: 0 0 1.6rem;
+  padding: 0 .8rem;
+  width: 33.33333%;
+  float: left;
+}
+
+.product-separator {
+  max-width: 100%;
+}
+
+.product-detail .product {
+  max-width: 100%;
+}
+.product-detail .product__figure {
+  margin: -.1rem;
+  padding: 1.2rem;
+}
+.product-detail .product__info {
+  padding-top: 1.2rem;
+}
+.product-detail .product__price {
+  font-size: 1.6rem;
+}
+.product-detail .product__title {
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .masonry__brick {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .masonry__brick {
+    width: 100%;
+  }
+}

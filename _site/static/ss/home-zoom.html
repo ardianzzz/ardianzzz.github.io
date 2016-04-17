@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sale Stock Indonesia</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/app.css">
+
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/hammer.js"></script>
+
+
+</head>
+
+<body id="site">
+    <div class="snap-content" id="snap">
+        <header class="site-header" id="site-header" role="banner">
+            <div class="container">
+                <h1 class="site-header__logo">
+                    <a href="index.html">
+                        Sale Stock
+                    </a>
+                </h1>
+                <div class="drawer drawer--left">
+                    <a href="#" class="hamburger" id="open-left">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                            <path d="M96 241h320v32H96zM96 145h320v32H96zM96 337h320v32H96z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="drawer drawer--right">
+                    <a href="#" class="cart" id="open-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 4.03v2h3.25l3.688 9.345c.15.38.527.625.937.625h11c.406 0 .784-.253.938-.625l1.625-4 2.437-5.97c.063-.153.11-.34.094-.5-.018-.16-.096-.298-.19-.436-.185-.277-.478-.44-.81-.44H7.937c-.324 0-.625.144-.813.407-.188.264-.23.6-.125.907l2.094 6c.14.4.507.656.937.656h9l-.81 2H8.562l-3.72-9.344c-.15-.38-.527-.625-.937-.625H0zm9.344 2H21.47L19.843 10H10.75L9.344 6.03zM9.5 17c-.834 0-1.5.697-1.5 1.53 0 .835.666 1.5 1.5 1.5s1.5-.665 1.5-1.5c0-.833-.666-1.53-1.5-1.53zm8 0c-.833 0-1.5.698-1.5 1.53 0 .835.667 1.5 1.5 1.5s1.53-.665 1.53-1.5c0-.832-.697-1.53-1.53-1.53z" />
+                        </svg>
+                        <span class="site-header__notification">99</span>
+                    </a>
+                    <div class="cart-notification">
+                        Barang Sista berhasil masuk keranjang
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main" id="main" role="main">
+
+             <div class="page-control">
+                <ul>
+
+                    <li>
+                        <a href="home.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                                <path d="M256 112L96 240v208h112V320h96v128h112V240L256 112zM256 64l-96 76.8V96H96v96l-32 25.498 11.51 11.384L256 84.49l180.49 144.393L448 217.498 256 64z"></path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <select class="page-control__dropdown">
+                            <option selected>Home</option>
+                            <option>New Arrival</option>
+                            <option>Atasan</option>
+                            <option>Bawahan</option>
+                            <option>Dress</option>
+                        </select>
+                    </li>
+
+                    <li class="page-control__searchbox active">
+                        <input type="search" placeholder="Search">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M344.5 298c15-23.6 23.8-51.6 23.8-81.7 0-84.1-68.1-152.3-152.1-152.3C132.1 64 64 132.2 64 216.3c0 84.1 68.1 152.3 152.1 152.3 30.5 0 58.9-9 82.7-24.4l6.9-4.8L414.3 448l33.7-34.3-108.5-108.6 5-7.1zm-43.1-166.8c22.7 22.7 35.2 52.9 35.2 85s-12.5 62.3-35.2 85c-22.7 22.7-52.9 35.2-85 35.2s-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85s12.5-62.3 35.2-85c22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2z"></path>
+                            </svg>
+                        </button>
+                        <div class="search-reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 33C132.3 33 32 133.3 32 257s100.3 224 224 224 224-100.3 224-224S379.7 33 256 33zm108.3 299.5c1.5 1.5 2.3 3.5 2.3 5.6 0 2.1-.8 4.2-2.3 5.6l-21.6 21.7c-1.6 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3L256 289.8l-75.4 75.7c-1.5 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6 0-2.1.8-4.2 2.3-5.6l75.7-76-75.9-75c-3.1-3.1-3.1-8.2 0-11.3l21.6-21.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l75.7 74.7 75.7-74.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l21.6 21.7c3.1 3.1 3.1 8.2 0 11.3l-75.9 75 75.6 75.9z"></path></svg>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="container">
+
+                <div class="promo">
+                    <!-- <div id="mySwipe" class="swipe">
+                        <div class='swipe-wrap'>
+                            <div class="swipe-wrap__content">
+                                <div class="promo-banner">
+                                    <div style="background-image:url(img/banner-1.jpg);padding-bottom:83.5%"></div>
+                                </div>
+                            </div>
+
+                            <div class="swipe-wrap__content">
+                                <div class="promo-banner">
+                                    <div style="background-image:url(img/banner-2.jpg);padding-bottom:83.5%"></div>
+                                </div>
+                            </div>
+
+                            <div class="swipe-wrap__content">
+                                <div class="promo-banner">
+                                    <div style="background-image:url(img/banner-3.jpg);padding-bottom:83.5%"></div>
+                                </div>
+                            </div>
+
+                            <div class="swipe-wrap__content">
+                                <div class="promo-banner">
+                                    <div style="background-image:url(img/banner-4.jpg);padding-bottom:83.5%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="swipe__position" id="swipe__position">
+                            <li class="on"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div> -->
+
+                    <div class="promo-banner">
+                        <div style="background-image:url(img/promo/Greeting-Info.jpg);padding-bottom:83.5%"></div>
+                    </div>
+                </div>
+
+
+
+                
+                
+                
+                <!-- <div class="promo">
+                    <div class="promo__content">
+                        <h3>Berlangganan melalui email</h3>
+                        <p>Dapatkan informasi terbaru, diskon &amp; promo, langsung di email Anda!</p>
+                        <div class="form-group form-group--flex">
+                            <div class="form-group__input">
+                                <input type="email" class="form-control" placeholder="Email anda">
+                            </div>
+                            <div class="form-group__btn">
+                                <button class="btn btn--red">Kirim</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:86%;">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/a51f195abacd211510d0b62816616fa4_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <a href="#" class="product__love">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M18 6.354C18 3.396 15.62 1 12.682 1 11.252 1 9.957 1.57 9 2.497 8.046 1.57 6.748 1 5.318 1 2.38 1 0 3.396 0 6.354c0 .344.054.755.037.614C.61 12.256 8.73 17.032 9 17c.32-.04 8.39-4.744 8.963-10.032-.016.14.037-.27.037-.614" fill="#a8aaad"/><path d="M17.15 6.914c-.478 4.407-6.63 8.302-8.15 9.227-1.52-.924-7.672-4.82-8.15-9.232 0 0-.032-.238-.032-.52 0-2.496 2.02-4.53 4.5-4.53 1.165 0 2.27.45 3.115 1.266l.567.55.567-.552c.843-.815 1.95-1.264 3.115-1.264 2.48 0 4.5 2.032 4.5 4.53 0 .287-.032.527-.032.527" fill="#e7e7e7"/></svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Sophia Polka Skirt</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            M
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                        <div class="product__size">
+                            XL
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:100%">
+                                    <img src="https://salestock-public-staging.global.ssl.fastly.net/product_images/150701112316_As-Fashion-603.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+
+                        <a href="#" class="product__love active">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M18 6.354C18 3.396 15.62 1 12.682 1 11.252 1 9.957 1.57 9 2.497 8.046 1.57 6.748 1 5.318 1 2.38 1 0 3.396 0 6.354c0 .344.054.755.037.614C.61 12.256 8.73 17.032 9 17c.32-.04 8.39-4.744 8.963-10.032-.016.14.037-.27.037-.614" fill="#a8aaad"/><path d="M17.15 6.914c-.478 4.407-6.63 8.302-8.15 9.227-1.52-.924-7.672-4.82-8.15-9.232 0 0-.032-.238-.032-.52 0-2.496 2.02-4.53 4.5-4.53 1.165 0 2.27.45 3.115 1.266l.567.55.567-.552c.843-.815 1.95-1.264 3.115-1.264 2.48 0 4.5 2.032 4.5 4.53 0 .287-.032.527-.032.527" fill="#e7e7e7"/></svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Meong Strip Blouse</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>65,000</ins>
+                            <del>75,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="promo">
+                    <div class="promo-banner">
+                        <div style="background-image:url(img/promo/Gratis-ongkir.jpg);padding-bottom:83.5%"></div>
+                    </div>
+                </div>
+
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:100%">
+                                    <img src="https://salestock-public-staging.global.ssl.fastly.net/product_images/150629230352_Photo%206-22-15,%204%2021%2031%20PM.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+                <!-- <div class="promo">
+                    <div class="promo__content">
+                        <h3>Terhubung dengan Social Media</h3>
+                        <p>Dapatkan informasi terbaru, diskon &amp; promo, langsung di Timeline Anda!</p>
+                        <div class="social-media-container">
+                            <div class="social-media">
+                                <div class="social-media__list">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                            <path d="M26.667 0H5.334C2.4 0 0 2.4 0 5.334v21.332C0 29.602 2.4 32 5.334 32h21.333C29.6 32 32 29.602 32 26.666V5.334C32 2.4 29.6 0 26.667 0zm.54 16H22v14h-6V16h-2.89v-4.58H16V8.445C16 4.403 17.744 2 22.496 2h5.476v4.955H23.5c-1.33-.002-1.493.692-1.493 1.985L22 11.42h6L27.206 16z" / fill="#3b5998">
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-media__list">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                            <path d="M32 6.076c-1.177.522-2.443.875-3.77 1.034 1.354-.813 2.395-2.1 2.886-3.632-1.27.752-2.674 1.3-4.17 1.593C25.75 3.796 24.044 3 22.157 3c-3.627 0-6.566 2.94-6.566 6.565 0 .515.058 1.016.17 1.496-5.456-.275-10.294-2.89-13.532-6.86-.565.97-.89 2.096-.89 3.3 0 2.278 1.16 4.287 2.922 5.465-1.076-.034-2.088-.33-2.974-.82v.082c0 3.18 2.262 5.834 5.265 6.437-.55.15-1.13.23-1.73.23-.422 0-.833-.04-1.234-.118.835 2.608 3.26 4.506 6.133 4.56-2.248 1.76-5.08 2.81-8.155 2.81-.53 0-1.052-.032-1.566-.093 2.904 1.863 6.355 2.95 10.063 2.95 12.076 0 18.68-10.004 18.68-18.68 0-.285-.007-.568-.02-.85C30.006 8.55 31.12 7.394 32 6.077z" fill="#55acee" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-media__list">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                            <path d="M26.688 0H5.313C2.39 0 0 2.39 0 5.313v21.375C0 29.61 2.39 32 5.313 32h21.375C29.61 32 32 29.61 32 26.69V5.313C32 2.39 29.61 0 26.69 0zM10.244 14h11.513c.218.627.337 1.3.337 2 0 3.36-2.734 6.094-6.094 6.094S9.906 19.36 9.906 16c0-.7.12-1.373.338-2zM28 14.002V26c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V14h3.128c-.145.644-.222 1.313-.222 2 0 5.014 4.08 9.094 9.094 9.094s9.094-4.08 9.094-9.094c0-.687-.077-1.356-.222-2l3.128.002zM28 7c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v2z" fill="#3f729b" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-media__list">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                            <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm1.55 21.38c-1.453-.114-2.063-.834-3.202-1.526-.627 3.287-1.393 6.438-3.66 8.084-.7-4.968 1.027-8.7 1.83-12.66-1.37-2.303.164-6.94 3.05-5.796 3.55 1.405-3.075 8.563 1.373 9.457 4.645.932 6.54-8.06 3.662-10.983-4.16-4.222-12.112-.096-11.135 5.95.238 1.477 1.765 1.925.61 3.965-2.663-.59-3.458-2.69-3.356-5.49.166-4.585 4.12-7.794 8.085-8.237 5.015-.56 9.722 1.84 10.372 6.56.732 5.324-2.264 11.09-7.627 10.676z" fill="#cc2127" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:98%;">
+                                    <img src="https://salestock-public-staging.global.ssl.fastly.net/product_images/d67afacab9282a535b0928cece77c5c9_500.jpg" alt=""> 
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Sophia Polka Skirt</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:98%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/d67afacab9282a535b0928cece77c5c9_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Meong Strip Blouse</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>65,000</ins>
+                            <del>75,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:98%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/0380954bb7604003ae261077d0302f8d_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:80%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/935bf957fcdc70c9eb2e2f2ae87d117b_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+                
+
+
+
+                <div class="promo">
+                    <div class="promo-banner">
+                        <div style="background-image:url(img/promo/Harga-jujur_1.jpg);padding-bottom:83.5%"></div>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:80%;">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/37083681767cbd3b4608c527d5839a5d_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Sophia Polka Skirt</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:75%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/fbb081819d1ab757b1e39ab7c11510be_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Meong Strip Blouse</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>65,000</ins>
+                            <del>75,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:75%;">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/7154dadd25b0cadee8edf785c5341221_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:133%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/359beb566326576b668f403ac68ae4ea_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+
+                <div class="promo">
+                    <div class="promo-banner">
+                        <div style="background-image:url(img/promo/OOTD_1.jpg);padding-bottom:83.5%"></div>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:75%;">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/adbd35bd94d7316c1726cef49a457343_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Sophia Polka Skirt</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:75%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/912ed840aa20c91d320fae8c94d3269e_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Meong Strip Blouse</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>65,000</ins>
+                            <del>75,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:75%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/33f4ec24f408e901ef5de217ec751921_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:75%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/fa0e9435b27db92303a6725d9160ce86_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/150702131244_mint-50586.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+
+
+                <div class="promo">
+                    <div class="promo-banner">
+                        <div style="background-image:url(img/promo/Sisternet.jpg);padding-bottom:83.5%"></div>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:80%;">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/59a2c5cfac43480ba8d4975bd03c1765_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Sophia Polka Skirt</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>69.000</ins>
+                            <del>70.000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/150702125720_Felicia.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <a href="product-detail.html">Meong Strip Blouse</a>
+                        </div>
+                        <div class="product__price">
+                            <ins>65,000</ins>
+                            <del>75,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <a href="javascript:void(0);" data-toggle="buy" class="btn btn--red">
+                            <span class="buy">Beli</span>
+                            <span class="cancel">Batal</span>
+                        </a>
+                    </div>
+                    <div class="product__color">
+                        <div class="select-color">
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Red</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Green</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Blue</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Midori</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Alizarin</a>
+                            </div>
+                            <div class="color">
+                                <a href="#" data-toggle="add-item">Turquoise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:77%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/c03d690fd20a0a98f6e760ff50ad70e5_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="padding-bottom:100%">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/f224168a8eef2b3cd912f91f64d43461_500.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product__figure">
+                        <div class="product__image">
+                            <a href="product-detail.html">
+                                <div style="">
+                                    <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/150701173040_mis-cha-cha-465.jpg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            Oxford Collar Dress
+                        </div>
+                        <div class="product__price">
+                            <ins>69,000</ins>
+                            <del>70,000</del>
+                        </div>
+                        <div class="product__size">
+                            L
+                        </div>
+                    </div>
+                    <div class="product__action">
+                        <span href="#" class="btn btn--link">Habis</span>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="preloader">
+                    <div class="preloader__loader">
+                        <div class="spinner">
+                        </div>
+                        <span class="preloader__label">Sedang memuat&hellip;</span>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+
+
+                 // love button
+                [].forEach.call(document.querySelectorAll('.product__love'), function(el) {
+                    el.addEventListener('click', function() {
+                        el.classList.toggle('active');
+                    })
+                });                
+
+                 // toggle accordion button
+                [].forEach.call(document.querySelectorAll('.site-navigation__menu h4'), function(el) {
+                    el.addEventListener('click', function() {
+                        el.classList.toggle('open');
+                        el.nextElementSibling.classList.toggle('open');
+                    })
+                });
+
+                // toggle buy button
+                [].forEach.call(document.querySelectorAll('[data-toggle=buy]'), function(el) {
+                    var closestElem = getClosest(el, '.product');
+                    el.addEventListener('click', function() {
+                        closestElem.classList.toggle('open');
+                    })
+                });
+
+                // toggle add item
+                [].forEach.call(document.querySelectorAll('[data-toggle=add-item]'), function(el) {
+                    var closestElem = getClosest(el, '.product');
+                    el.addEventListener('click', function() {
+                        document.body.classList.add('addcart');
+                        setTimeout(function() {
+                            document.body.classList.remove('addcart');
+                            // closestElem.classList.toggle('open');
+                        }, 2000);
+
+                    })
+                });
+
+
+                // toggle remove cart
+                [].forEach.call(document.querySelectorAll('.checkout-item__remove'), function(el) {
+                    var closestElem = getClosest(el, '.checkout-item');
+                    el.addEventListener('click', function() {
+                        var answer = confirm("Sista yakin batal beli?");
+                        if (answer) {
+                            closestElem.classList.add('fade');
+                        }
+                    })
+                });
+
+
+
+
+                // var element = document.getElementById('mySwipe');
+                // var bullets = document.getElementById('swipe__position').getElementsByTagName('li');
+
+
+                // window.mySwipe = Swipe(element, {
+                //  startSlide: 0,
+                //  auto:4000,
+                //  autoRestart: false,
+                //  continuous: true,
+                //  stopPropagation: true,
+
+                //  callback: function(pos) {   
+                //      var i = bullets.length;
+                //      while (i--) {
+                //          bullets[i].className = ' ';
+                //      }
+                //      var realPos = pos % (bullets.length);
+                //      bullets[realPos].className = 'on';
+                //  }
+
+                // });
+
+
+               // snapjs
+                var addEvent = function addEvent(element, eventName, func) {
+                    if (element.addEventListener) {
+                        return element.addEventListener(eventName, func, false);
+
+                    } else if (element.attachEvent) {
+                        return element.attachEvent("on" + eventName, func);
+                    };
+                };
+
+                addEvent(document.querySelector('#open-left'), 'click', function(e) {
+                    snapper.open('left');
+                    e.preventDefault();
+                });
+
+
+                addEvent(document.querySelector('#open-right'), 'click', function(e) {
+                    snapper.open('right');
+                    e.preventDefault();
+                });
+
+
+                var snapper = new Snap({
+                    element: document.getElementById('snap'),
+                    slideIntent: 20,
+                });
+                
+
+
+                
+
+
+
+
+
+            });
+            </script>
+        </div>
+    </div>
+    <div class="snap-drawer snap-drawer-left">
+        <div class="site-navigation__profile">
+            <div class="site-navigation__avatar">
+                <img src="img/cewe.png" alt="">
+            </div>
+            <div class="site-navigation__name">
+                <a href="profile.html">
+                    Halo, Sista Maria Hayes
+                </a>
+            </div>
+            
+            <a href="#" class="close-drawer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M85 234.625h259.704L225.002 114.923 256 85l171 171-171 171-29.922-29.924 118.626-119.7H85v-42.75z"></path></svg>
+            </a>
+
+        </div>
+        <div class="site-navigation__scroll">
+            <div class="site-navigation__menu">
+                <div class="site-navigation__login">
+                    <div class="row">
+                        <div class="col col--6">
+                            <a href="form-login" class="btn btn--default btn--block">Masuk</a>
+                        </div>
+                        <div class="col col--6">
+                            <a href="form-login" class="btn btn--red btn--block">Daftar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-navigation__search">
+                    <input type="search" placeholder="Search&hellip;">
+
+                    <div class="search-reset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M256 33C132.3 33 32 133.3 32 257s100.3 224 224 224 224-100.3 224-224S379.7 33 256 33zm108.3 299.5c1.5 1.5 2.3 3.5 2.3 5.6 0 2.1-.8 4.2-2.3 5.6l-21.6 21.7c-1.6 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3L256 289.8l-75.4 75.7c-1.5 1.6-3.6 2.3-5.6 2.3-2 0-4.1-.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6 0-2.1.8-4.2 2.3-5.6l75.7-76-75.9-75c-3.1-3.1-3.1-8.2 0-11.3l21.6-21.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l75.7 74.7 75.7-74.7c1.5-1.5 3.5-2.3 5.6-2.3 2.1 0 4.1.8 5.6 2.3l21.6 21.7c3.1 3.1 3.1 8.2 0 11.3l-75.9 75 75.6 75.9z"/></svg>
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                        <path d="M344.5 298c15-23.6 23.8-51.6 23.8-81.7 0-84.1-68.1-152.3-152.1-152.3C132.1 64 64 132.2 64 216.3c0 84.1 68.1 152.3 152.1 152.3 30.5 0 58.9-9 82.7-24.4l6.9-4.8L414.3 448l33.7-34.3-108.5-108.6 5-7.1zm-43.1-166.8c22.7 22.7 35.2 52.9 35.2 85s-12.5 62.3-35.2 85c-22.7 22.7-52.9 35.2-85 35.2s-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85s12.5-62.3 35.2-85c22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2z" />
+                    </svg>
+
+                    <!-- <ul class="site-navigation__autocomplete">
+                        <li>
+                            <a href="#">Blue Collar</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Korean Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Color Skirt</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Sky Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Collar</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Korean Dress</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Color Skirt</a>
+                        </li>
+                        <li>
+                            <a href="#">Blue Sky Dress</a>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class="site-navigation__home">
+                    <a href="home.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M256 112L96 240v208h112V320h96v128h112V240L256 112zM256 64l-96 76.8V96H96v96l-32 25.498 11.51 11.384L256 84.49l180.49 144.393L448 217.498 256 64z" />
+                        </svg>
+                        Kembali ke Beranda
+                    </a>
+                </div>
+                <h4>Categories</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                        Sale
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        New Arrivals
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Jumpsuit
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Dress
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            Atasan
+                        </a>
+
+                        <ul>
+                            <li class="active">
+                                <a href="#">Blouse</a>
+                            </li>
+                            <li>
+                                <a href="#">Baju</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Bawahan
+                    </a>
+                    </li>
+                </ul>
+
+                <h4>Promo</h4>
+                <ul>
+                    <li><a href="#">Ngabuburit Irit</a></li>
+                    <li><a href="#">THR Rp 1 JUTA</a></li>
+                    <li><a href="#">Sisternet</a>
+                </ul>
+
+                <h4>Belanja</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                         Cara Pemesanan
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Rekening Pembayaran
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Reseller
+                    </a>
+                    </li>
+                </ul>
+                <h4>Tentang kami</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                        Tentang Sale Stock
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            FAQ - Tanya Jawab
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Cash on Delivery (Bayar di Tempat)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Reseller dan Dropshiper
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Cek Pengiriman
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Konfirmasi Pembayaran
+                        </a>
+                    </li>
+                </ul>
+                <h4>Informasi</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Testimoni
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Karir
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Kontak &amp; Alamat Kami
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Tentang Kami
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#">
+                            Persyaratan &amp; Ketentuan
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#">
+                            Kebijakan Privasi
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="site-navigation__footer">
+                <small>
+                Copyright &copy; 2015 Sale Stock
+                <br>
+                All Rights Reserved
+            </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="snap-drawer snap-drawer-right">
+        <div class="side-cart__header">
+            <a href="#" class="close-drawer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                    <path d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.7H427v-42.75z"></path>
+                </svg>
+            </a>
+
+            Keranjang Belanja
+        </div>
+        <div class="side-cart__scroll">
+            <div class="checkout-list">
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url()"></div>
+                    <div class="checkout-item__title">
+                        Sophia Polka Skirt
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">Black</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        69.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+
+                    <!-- <div class="checkout-item__soldout">
+                        <div>
+                            <b>Maaf Sis, barang habis</b>
+                            <span>Klik untuk menghapus item</span>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url()"></div>
+                    <div class="checkout-item__title">
+                        Amaya Fleur Wedges Top
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">Tosca</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        <del>95.000</del>
+                        88.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url()"></div>
+                    <div class="checkout-item__title">
+                        Keyna Plain Skirt
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">White</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        85.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                    
+                    <!-- <div class="checkout-item__soldout">
+                        <div>
+                            <b>Maaf Sis, barang habis</b>
+                            <span>Klik untuk menghapus item</span>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url()"></div>
+                    <div class="checkout-item__title">
+                        Vivia Brukat Combi Twistcone Blouse
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">Peach</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        85.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+            </div>
+            <div class="checkout__subtotal">
+                <span>Subtotal</span> <b>354.000</b>
+            </div>
+            <div class="checkout__subtotal">
+                <span>Ongkos kirim</span> <b style="color:#2ecc71;">Gratis</b>
+            </div>
+            <div class="checkout__discount">
+                <span>
+                    Diskon sskaryawan23423423423423
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 512 512"><path d="M163 439.573l-90.57-90.57L322.78 98.657l90.568 90.57zM471.723 88.393L423.608 40.28c-11.723-11.725-31.558-10.897-44.304 1.85L334.102 87.33l90.57 90.568 45.2-45.202c12.744-12.746 13.573-32.582 1.85-44.305zM64.02 363.252L32 480l116.737-32.02z"/></svg>
+                </span> 
+                <b>0</b>
+            </div>
+            <div class="checkout__discount">
+                <span>
+                    Poin
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 512 512"><path d="M163 439.573l-90.57-90.57L322.78 98.657l90.568 90.57zM471.723 88.393L423.608 40.28c-11.723-11.725-31.558-10.897-44.304 1.85L334.102 87.33l90.57 90.568 45.2-45.202c12.744-12.746 13.573-32.582 1.85-44.305zM64.02 363.252L32 480l116.737-32.02z"/></svg>
+                </span> 
+                <b>0</b>
+            </div>
+            <div class="checkout__coupon">
+                <div class="form-group form-group--inline">
+                    <div class="form-group__input">
+                        <input type="text" class="form-control form-control--small" placeholder="Masukkan kode kupon">
+                    </div>
+                    <div class="form-group__btn">
+                        <button class="btn btn--default btn--small">Gunakan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout__coupon">
+                <div class="form-group form-group--inline">
+                    <div class="form-group__input">
+                        <input type="number" class="form-control form-control--small" placeholder="Masukkan loyalty point">
+                    </div>
+                    <div class="form-group__btn">
+                        <button class="btn btn--default btn--small">Gunakan</button>
+                    </div>
+                </div>
+                <span class="help-block">Sista punya <b>4</b> loyalty point</span>
+            </div>
+        </div>
+        <div class="side-cart__result">
+            
+            <div class="checkout__total">
+                Total belanja <b>354.000</b>
+            </div>
+            <div class="checkout__action">
+                <a href="form-login.html" class="btn btn--red btn--block">Proses Sekarang <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M85 234.625h259.704L225.002 114.923 256 85l171 171-171 171-29.922-29.924 118.626-119.7H85v-42.75z"/></svg></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-zoom">
+        <div class="modal-zoom__wrapper" id="pinchzoom">
+            <img src="http://salestock-public-staging.global.ssl.fastly.net/product_images/150702131244_mint-50586.jpg" alt="" id="rect">
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var pinchzoom = document.querySelector('#pinchzoom');
+
+        hammerIt(document.querySelector("#rect"));
+
+
+        function hammerIt(elm) {
+            hammertime = new Hammer(elm, {
+
+            });
+
+            hammertime.get('pinch').set({
+                enable: true
+            });
+
+            var posX = 0,
+                posY = 0,
+                scale = 1,
+                last_scale = 1,
+                last_posX = 0,
+                last_posY = 0,
+                max_pos_x = 0,
+                max_pos_y = 0,
+                transform = "",
+                el = elm;
+
+            hammertime.on('doubletap pan pinch panend pinchend', function(ev) {
+                if (ev.type == "doubletap") {
+                    transform =
+                        "translate3d(0, 0, 0) " +
+                        "scale3d(2, 2, 1) ";
+                    scale = 2;
+                    last_scale = 2;
+                    try {
+                        if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
+                            transform =
+                                "translate3d(0, 0, 0) " +
+                                "scale3d(1, 1, 1) ";
+                            scale = 1;
+                            last_scale = 1;
+                        }
+                    } catch (err) {}
+                    el.style.webkitTransform = transform;
+                    transform = "";
+                }
+
+                //pan    
+                if (scale != 1) {
+                    posX = last_posX + ev.deltaX;
+                    posY = last_posY + ev.deltaY;
+                    max_pos_x = Math.ceil((scale - 1) * el.clientWidth / 2);
+                    max_pos_y = Math.ceil((scale - 1) * el.clientHeight / 2);
+                    if (posX > max_pos_x) {
+                        posX = max_pos_x;
+                    }
+                    if (posX < -max_pos_x) {
+                        posX = -max_pos_x;
+                    }
+                    if (posY > max_pos_y) {
+                        posY = max_pos_y;
+                    }
+                    if (posY < -max_pos_y) {
+                        posY = -max_pos_y;
+                    }
+
+
+
+                }
+
+
+                //pinch
+                if (ev.type == "pinch") {
+                    scale = Math.max(.999, Math.min(last_scale * (ev.scale), 4));
+                }
+                if(ev.type == "pinchend"){last_scale = scale;}
+
+                //panend
+                if(ev.type == "panend"){
+                last_posX = posX < max_pos_x ? posX : max_pos_x;
+                last_posY = posY < max_pos_y ? posY : max_pos_y;
+                }
+
+                if (scale != 1) {
+                    transform =
+                        "translate3d(" + posX + "px," + posY + "px, 0) " +
+                        "scale3d(" + scale + ", " + scale + ", 1)" ;
+                }
+
+                if (transform) {
+                    el.style.webkitTransform = transform;
+                }
+            });
+        }
+
+     
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sale Stock Indonesia</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body id="site">
+    <div class="snap-content" id="snap">
+        <header class="site-header" id="site-header" role="banner">
+            <h1 class="site-header__logo">
+        <span>
+            Sale Stock
+        </span>
+    </h1>
+        </header>
+        <div class="main" id="main" role="main">
+            <div class="container">
+                <div class="box">
+                    <div class="box__body">
+                        <p>
+                            Terima kasih sis Maria. Order sista sudah masuk dalam sistem.
+                            <br> Berikut adalah nomor transaksi COD sista: <b>2015324234</b>
+                            <br> Mohon disimpan ya sista.
+                        </p>
+                        <p>
+                            Nota belanja sudah Soraya SMS dan Email ke HP sista.
+                            <br> Setelah sis melakukan pembayaran, segera lakukan konfirmasi pembayaran dengan mengisi form di bawah, paling lambat 24 jam setelah pemesanan.
+                        </p>
+                        <p>
+                            Pembayaran dapat dilakukan dengan transfer bank ke rekening berikut :
+                        </p>
+                        <ol>
+                            <li><b>BCA 4970861071</b>
+                                <br>a.n. Ariza Novianti,
+                                <br>BCA KCU Bumi Serpong Damai</li>
+                            <li><b>Mandiri 9000024303613</b>
+                                <br>a.n. Ariza Novianti,
+                                <br> Mandiri KCP Pasar Modern BSD</li>
+                        </ol>
+                        <div class="alert alert--red">
+                            Maaf, beberapa barang tidak dicantumkan karena stok sudah habis. Untuk melihat detail, sista bisa melihat nota belanja <a href="#" target="_Blank">di sini</a>
+                        </div>
+                        <hr>
+                        
+                        <div class="form-group">
+                            <label class="form-label">ID Pesanan</label>
+                            <input type="text" class="form-control" value="TRX324234#000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Transfer</label>
+                            <input type="date" class="form-control" value="2015-05-08">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" value="Maria Hayes">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Jumlah Transfer</label>
+                            <input type="text" class="form-control" value="345.000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Rekening Tujuan</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="n" checked> <span>BCA</span>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="n"> <span>Mandiri</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" onclick="document.querySelector('.upload-image').style.display=(this.checked)?'block':'none';"> <span>Saya sudah transfer sis</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-image" style="display:none">
+                            <div class="form-group">
+                                <label class="form-label">Bukti Pembayaran</label>
+                                <span class="help-block">Berupa foto/hasil scan dari bukti pembayaran yang sah, misalnya struk ATM</span>
+                                <div class="uploader">
+                                    <div class="drop">
+                                        <div id="image-preview">
+                                            <canvas id="xx" style="width:100%;height:100%;"></canvas>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="uploader__label btn btn--default btn--small">
+                                            Browse image
+                                            <input type="file" id="file" name="file">
+                                        </label>
+                                    </div>
+                                    <script>
+                                    var input = document.getElementById("file");
+                                    input.addEventListener("change", function(event) {
+                                        // get the image file to compress
+                                        var file = event.target.files[0];
+                                        // compress
+                                        compress(file, 90 / 100, 600);
+                                    }, false);
+
+                                    function compress(file, quality, maxwidth) {
+                                        var reader = new FileReader();
+
+                                        reader.onloadend = function() {
+                                            var img, cvs;
+
+                                            img = new Image();
+                                            img.src = reader.result;
+
+                                            img.onload = function() {
+                                                // resize image while keeping aspect ratio
+                                                if (maxwidth && img.width > maxwidth) {
+                                                    ratio = img.width / maxwidth;
+                                                    img.width = img.width / ratio;
+                                                    img.height = img.height / ratio;
+                                                }
+
+                                                // compress
+                                                cvs = document.getElementById("xx");
+                                                cvs.width = img.width;
+                                                cvs.height = img.height;
+                                                cvs.getContext("2d").fillRect(0, 0, img.width, img.height);
+                                                cvs.getContext("2d").drawImage(img, 0, 0, img.width, img.height);
+
+                                                // append the compressed image
+                                                output = cvs.toDataURL("image/jpeg", quality);
+                                                console.log(output);
+                                            }
+                                        }
+                                        reader.readAsDataURL(file);
+                                    }
+                                    </script>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="box__action">
+                        <a href="checkout-success.html" type="submit" class="btn btn--red btn--block disabled">Konfirmasi</a>
+                    </div>
+                    <!-- <div class="no-login">
+                        <a href="checkout-step-1.html"><b>Kembali ke Beranda</b></a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="snap-drawer snap-drawer-left">
+        <div class="site-navigation__profile">
+            <div class="site-navigation__avatar">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/mariedehayes/128.jpg" alt="">
+            </div>
+            <div class="site-navigation__name">
+                <span>
+                Halo, Sis Maria Hayes
+            </span>
+            </div>
+        </div>
+        <div class="site-navigation__scroll">
+            <div class="site-navigation__menu">
+                <div class="site-navigation__login">
+                    <a href="form-login" class="btn btn--red btn--block">Masuk</a>
+                </div>
+                <div class="site-navigation__home">
+                    <a href="home.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                            <path d="M256 112L96 240v208h112V320h96v128h112V240L256 112zM256 64l-96 76.8V96H96v96l-32 25.498 11.51 11.384L256 84.49l180.49 144.393L448 217.498 256 64z" />
+                        </svg>
+                        Kembali ke Beranda
+                    </a>
+                </div>
+                <h4>Categories</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                        Sale
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        New Arrivals
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Jumpsuit
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Dress
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Atasan
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Bawahan
+                    </a>
+                    </li>
+                </ul>
+                <h4>Bantuan</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                         Cara Pemesanan
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Pengiriman Barang
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Reseller
+                    </a>
+                    </li>
+                </ul>
+                <h4>Tentang kami</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                        Tentang Sale Stock
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Karir
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Legal
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="site-navigation__footer">
+                <small>
+                Copyright &copy; 2015 Sale Stock
+                <br>
+                All Rights Reserved
+            </small>
+            </div>
+        </div>
+    </div>
+    <div class="snap-drawer snap-drawer-right">
+        <div class="side-cart__header">
+            Keranjang Belanja
+        </div>
+        <div class="side-cart__scroll">
+            <div class="checkout-list">
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/sale-stock/products/141105135955_3136_zoom.jpg)"></div>
+                    <div class="checkout-item__title">
+                        Sophia Polka Skirt
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">Black</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        69.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150424191509_IMG_8712_full.JPG)"></div>
+                    <div class="checkout-item__title">
+                        Amaya Fleur Wedges Top
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">Tosca</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        88.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url(http://www.salestockindonesia.com/resources/content/products/150213153138_IMG_6564_full.JPG)"></div>
+                    <div class="checkout-item__title">
+                        Keyna Plain Skirt
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">White</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        85.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+                <div class="checkout-item">
+                    <div class="checkout-item__image" style="background-image:url(http://10efc.http.sng01.cdn.softlayer.net/shops/sale-stock/products/150424161103_IMG_2722_full.JPG)"></div>
+                    <div class="checkout-item__title">
+                        Vivia Brukat Combi Twistcone Blouse
+                    </div>
+                    <div class="checkout-item__meta">
+                        <span class="checkout-item__size">
+                        L
+                    </span>
+                        <span class="checkout-item__color">Peach</span>
+                    </div>
+                    <div class="checkout-item__price">
+                        85.000
+                    </div>
+                    <a href="#" class="checkout-item__remove"></a>
+                </div>
+            </div>
+            <div class="checkout__subtotal">
+                Subtotal <b>354.000</b>
+            </div>
+            <div class="checkout__subtotal">
+                Ongkos kirim <b style="color:#2ecc71;">Gratis</b>
+            </div>
+            <div class="checkout__subtotal">
+                Diskon <b>0</b>
+            </div>
+            <div class="checkout__coupon">
+                <div class="form-group form-group--inline">
+                    <div class="form-group__input">
+                        <input type="text" class="form-control form-control--small" placeholder="Masukkan kode kupon">
+                    </div>
+                    <div class="form-group__btn">
+                        <button class="btn btn--default btn--small">Gunakan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-cart__result">
+            <div class="checkout__total">
+                Total belanja <b>354.000</b>
+            </div>
+            <div class="checkout__action">
+                <a href="form-login.html" class="btn btn--red btn--block">Selesai Belanja</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
