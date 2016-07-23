@@ -5,65 +5,103 @@
     <meta charset="utf-8">
     <title>Hello</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Lora:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/flexslider.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            slideshow: false,
+        });
+    });
+    </script>
 </head>
 
 <body>
-
-<header>
-<div class="container">
-
-	<a href="/" class="logo">
-	<img src="img/logo.png">
-	</a>
-
-
-</div>
-
-	<nav>
-		<div>
-			<a href="#">Home</a>
-			<a href="#">Service</a>
-			<a href="#">Promotion</a>
-			<a href="#">About Us</a>
-		</div>
-	</nav>
-</header>
-
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <div class="site-logo">
+                        <a href="/" class="logo">
+                            <img src="img/logo.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="eight columns">
+                    <nav>
+                        <div>
+                             
+                            <a href="/">Home</a>   
+                            <a href="/pricelist.html">Pricelist</a>   
+                            <a href="/about.html" class="active">About</a>  
+                        </div>
+                    </nav>
+                </div>
+    </header>
     <div class="section values">
     <div class="container">
+        <article>
+            <h3>About Us</h3>
+            <p>A&amp;B Professional Dry Clean &amp; Laundry was started in 2014 and realized in May 2016 by entrepreneurs that wanted Singapore to enjoy the speed and service others enjoy worldwide.</p>
+            <p>
+                Combining the older generation “Silver Hair” knowledge and skill with young dynamism. Old hand made techniques with new automation and a real online/offline experience. We have created a “no nonsense” dry clean and laundry service for professionals and the public alike. We’ll take care of your personal items so welcome to our service! Let us begin!
+            </p>
+            <p>
+                We offer Singapore’s first Same Day door to door delivery service! So contact us and let’s fix it!
+            </p>
+            <p>
+                If same day isn’t your thing we support the independent laundry community so please see our list of partners that share our belief in giving real service and satisfaction. List of partners and their contact details. Maybe a where are you map and let people see who is the closest.
+            </p>
 
-    <article>
-        
-        <p>A&amp;B Professional Dry Clean &amp; Laundry was started in 2014 and realized in May 2016 by entrepreneurs that wanted Singapore to enjoy the speed and service others enjoy worldwide.</p>
-        <p>
-            Combining the older generation “Silver Hair” knowledge and skill with young dynamism. Old hand made techniques with new automation and a real online/offline experience. We have created a “no nonsense” dry clean and laundry service for professionals and the public alike. We’ll take care of your personal items so welcome to our service! Let us begin!
-        </p>
-        <p>
-            We offer Singapore’s first Same Day door to door delivery service! So contact us and let’s fix it!
-        </p>
 
-        <p>
-            If same day isn’t your thing we support the independent laundry community so please see our list of partners that share our belief in giving real service and satisfaction. List of partners and their contact details. Maybe a where are you map and let people see who is the closest.
-        </p>
-    </article>
+
+            <h3>Introducing “Same Day” service on Orchard Road outside the Hotels!</h3>
+            <p>
+                Aunty's Laundry on Orchard Road has teamed up with A&amp;B to offer customers <b>“Same Day”</b> service! Now customers do not need to panic when faced with a tight deadline to clean their important garments.
+            </p>
+            <p>
+                Aunty’ Laundry started back in 2000 when Mr. Koh took over the shop in the International Building on Orchard Road. He has created one of Orchard Road’s most famous laundries. Mr. Koh’s principle is to offer a range of fast and reliable services to his customers. Aunty’s Laundry can offer Same Day service for dry cleaning or laundry. They can even do a wash load for you in their shop! If alterations is what you need, they can also help you with that. A truly one-of-a-kind versatile laundry shop in the heart of Orchard.
+            </p>
+            <p>
+                For more information call <a href="tel:6238 7579">6238 7579</a> or visit them at the International Building, 360 Orchard Road #01-15 Singapore 238869.
+            </p>
+            <p>
+                Look on Google Maps: <a href="https://goo.gl/maps/jwyZyaVXaZ62" target="_Blank">https://goo.gl/maps/jwyZyaVXaZ62</a>
+            </p>
+            <p>
+                See comments on Yelp: <a href="https://www.yelp.com.sg/biz/auntys-laundry-singapore" target="_Blank">https://www.yelp.com.sg/biz/auntys-laundry-singapore</a>
+            </p>
+        </article>
     </div>
 </div>
 
-
-
-
-
-
-
-
-    <footer>
-    <div class="container">
-
-
+    <div class="section cta">
+        <div class="container">
+            <div class="cta-label">
+                Call or WhatsApp Customer Service
+            </div>
+            <a class="button button-primary button-hero " href="tel:+65 83397085">+65 83397085</a>
+            <div class="hl ">
+                <div>Minimum pickup &amp; delivery order is $50.00</div>
+                <div>Pickup before 12:00PM delivery back before 09:00PM</div>
+                <div><a href="#">Terms &amp; Condition</a> apply</div>
+            </div>
+        </div>
     </div>
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="img/logo-b.png" alt="">
+            </div>
+            <div>A&amp;B (S.E.A) PTE LTD</div>
+            <div>8 Kaki Bukit Avenue 4</div>
+            <div>#03&ndash;07/08 Premier @ Kaki Bukit</div>
+            <div>Singapore 415875</div>
+        </div>
     </footer>
 </body>
+
 </html>

@@ -5,55 +5,108 @@
     <meta charset="utf-8">
     <title>Hello</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Lora:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/flexslider.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            slideshow: false,
+        });
+    });
+    </script>
 </head>
 
 <body>
-
-<header>
-<div class="container">
-
-	<a href="/" class="logo">
-	<img src="img/logo.png">
-	</a>
-
-
-</div>
-
-	<nav>
-		<div>
-			<a href="#">Home</a>
-			<a href="#">Service</a>
-			<a href="#">Promotion</a>
-			<a href="#">About Us</a>
-		</div>
-	</nav>
-</header>
-
-    <div class="section hero" ">
-    <!-- <img src="http://www.cocoawaterworks.com/wp-content/themes/cocoa/images/water-bg.png "> -->
-    <div class="container ">
-      <div class="row ">
-        <div class="one-half column ">
-            <div class="hero-cta">
-                  <h2 class="hero-heading ">Laundry made easy with same day delivery</h2>
-
-                  <div>
-                      <a class="button button-primary button-hero " href="sms:+65 8402 4580 ">+65 8402 4580</a>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <div class="site-logo">
+                        <a href="/" class="logo">
+                            <img src="img/logo.png">
+                        </a>
                     </div>
-                  <span class="hl ">Call, SMS or WhatsApp</span>
                 </div>
-        </div>
-        <div class="one-half column phones ">
-          <img class="phone " src="http://www.east2eden.co.uk/uploads/images/products/home/bathroom/laundry/1847-2.jpg ">
-          <!-- <img class="phone " src="images/iphone.png "> -->
-        </div>
-      </div>
+                <div class="eight columns">
+                    <nav>
+                        <div>
+                             
+                            <a href="/" class="active">Home</a>   
+                            <a href="/pricelist.html">Pricelist</a>   
+                            <a href="/about.html">About</a>  
+                        </div>
+                    </nav>
+                </div>
+    </header>
+    <div class="hero">
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <div class="hero-img" style="background-image:url(http://previews.123rf.com/images/stockbroker/stockbroker0903/stockbroker090300733/4446146-Man-Doing-Laundry--Stock-Photo-housework.jpg);">
+                    <div class="hero-content">
+                        <div class="hero-cta ">
+                            <div class="container">
+                                <h2 class="hero-heading ">Express delivery only 1 Singapore</h2>
+                                <!-- <div>
+                                    <a class="button button-primary button-hero " href="tel:+65 83397085">+65 83397085</a>
+                                </div>
+                                <span class="hl ">Call, SMS or WhatsApp</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="hero-img" style="background-image:url(http://comps.canstockphoto.com/can-stock-photo_csp0705839.jpg);">
+                    <div class="hero-content">
+                        <div class="hero-cta ">
+                            <div class="container">
+                                <h2 class="hero-heading ">Specialized in Curtain Cleaning</h2>
+                                <!-- <div>
+                                    <a class="button button-primary button-hero " href="tel:+65 83397085">+65 83397085</a>
+                                </div>
+                                <span class="hl ">Call, SMS or WhatsApp</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="hero-img" style="background-image:url(http://cache2.asset-cache.net/gc/521643950-designer-shops-orchard-road-singapore-gettyimages.jpg?v=1&c=IWSAsset&k=2&d=ywj0GeJ7AY%2BAHOCYqXkqUYYSnpzShMy5PNubzhhDljlLZAOPIyeEHXC0QuqvKOnW);">
+                    <div class="hero-content">
+                        <div class="hero-cta ">
+                            <div class="container">
+                                <h2 class="hero-heading">Success Story</h2>
+                                <p>Introducing “Same Day” service on Orchard Road outside the Hotels!</p>
+                                <!-- <div>
+                                    <a class="button button-primary button-hero " href="tel:+65 83397085">+65 83397085</a>
+                                </div>
+                                <span class="hl ">Call, SMS or WhatsApp</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
-<div class="section values">
+<div class="section cta">
+    <div class="container">
+        <div class="cta-label">
+            Call or WhatsApp Customer Service
+        </div>
+        <a class="button button-primary button-hero " href="tel:+65 83397085">+65 83397085</a>
+        <!-- <div class="hl ">
+            <div>Minimum pickup &amp; delivery order is $50.00</div>
+            <div>Pickup before 12:00PM delivery back before 09:00PM</div>
+            <div><a href="#">Terms &amp; Condition</a> apply</div>
+        </div> -->
+    </div>
+</div>
+<div class="section values ">
     <div class="container ">
         <div class="row ">
             <div class="one-third column ">
@@ -66,8 +119,7 @@
                 <div class="card ">
                     <h3>Fresh</h3>
                     <p>
-                        Automated, online/offline, socially conscious in the "take care of people” way, 
-                    </p>
+                        Automated, online/offline, socially conscious in the "take care of people” way, </p>
                 </div>
             </div>
             <div class="one-third column">
@@ -82,94 +134,93 @@
     </div>
 </div>
 <div class="section voice">
-
     <h2 class="heading">Testimonials</h2>
-
-        <div class="container">
-            <div style="padding:0 1.6rem;"
-            <div class="row row-tb">
-                <div class="one-third column">
-                    <div class="testimonials">
-                        <div class="ava">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg" alt="">
+    <div class="container">
+        <div style="padding:0 1.6rem;" <div class="row row-tb">
+            <div class="one-third column">
+                <div class="testimonials">
+                    <div class="ava">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg" alt="">
+                    </div>
+                    <blockquote>
+                        <p>
+                            Its pretti incredible what jazz can do, yeah
+                        </p>
+                        <div>
+                            Alexa Andrejewski
                         </div>
-                        <blockquote>
-                            <p>
-                                Its pretti incredible what jazz can do, yeah
-                            </p>
-                            <div>
-                                Alexa Andrejewski
-                            </div>
-                            <small>
+                        <small>
                         Founder, CEO
                         </small>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <div class="one-third column">
-                    <div class="testimonials">
-                        <div class="ava">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/9lessons/128.jpg" alt="">
-                        </div>
-                        <blockquote>
-                            <p>
-                            This is so simple, so easy to use. And pretty much dummy-proof
-                            </p>
-                            <div>
-                                Srinivas Tamada
-                            </div>
-                            <small>
-                            Bussinessman
-                        </small>
-                        </blockquote>
-                    </div>
-                </div>
-
-
-                <div class="one-third column">
-                    <div class="testimonials">
-                        <div class="ava">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="">
-                        </div>
-                        <blockquote>
-                            <p>
-                                This changed my life
-                            </p>
-                            <div>
-                                Jhonny 
-                            </div>
-                            <small>
-                            Programmer
-                               </small>
-                        </blockquote>
-                    </div>
+                    </blockquote>
                 </div>
             </div>
-
-
+            <div class="one-third column">
+                <div class="testimonials">
+                    <div class="ava">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/9lessons/128.jpg" alt="">
+                    </div>
+                    <blockquote>
+                        <p>
+                            This is so simple, so easy to use. And pretty much dummy-proof
+                        </p>
+                        <div>
+                            Srinivas Tamada
+                        </div>
+                        <small>
+                            Bussinessman
+                        </small>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="one-third column">
+                <div class="testimonials">
+                    <div class="ava">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="">
+                    </div>
+                    <blockquote>
+                        <p>
+                            This changed my life
+                        </p>
+                        <div>
+                            Jhonny
+                        </div>
+                        <small>
+                            Programmer
+                               </small>
+                    </blockquote>
+                </div>
+            </div>
         </div>
-
-</div>
-
-
-<div class="section cta">
-    <div class="container">
-        <div class="cta-label">
-            Contact Us
-        </div>
-        <a class="button button-primary button-hero " href="sms:+65 8402 4580 ">+65 8402 4580</a>
-        <span class="hl ">Call, SMS or WhatsApp</span>
     </div>
 </div>
 
 
 
+    <div class="section cta">
+        <div class="container">
+            <div class="cta-label">
+                Call or WhatsApp Customer Service
+            </div>
+            <a class="button button-primary button-hero " href="tel:+65 83397085">+65 83397085</a>
+            <div class="hl ">
+                <div>Minimum pickup &amp; delivery order is $50.00</div>
+                <div>Pickup before 12:00PM delivery back before 09:00PM</div>
+                <div><a href="#">Terms &amp; Condition</a> apply</div>
+            </div>
+        </div>
+    </div>
     <footer>
-    <div class="container">
-
-
-    </div>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="img/logo-b.png" alt="">
+            </div>
+            <div>A&amp;B (S.E.A) PTE LTD</div>
+            <div>8 Kaki Bukit Avenue 4</div>
+            <div>#03&ndash;07/08 Premier @ Kaki Bukit</div>
+            <div>Singapore 415875</div>
+        </div>
     </footer>
 </body>
+
 </html>
