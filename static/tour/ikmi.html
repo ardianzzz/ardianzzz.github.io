@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IKMI Lampung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/ikmi.css">
+</head>
+
+<body>
+
+    <body>
+        <form id="foo" class="flex-y">
+            <header>
+                <h1>IKMI Lampung</h1>
+            </header>
+
+            <div class="acc">
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Bangunan Utama</a>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Kondisi Mercu Bendung</label>
+                            <div class="likert">
+                                <label>
+                                    <input type="radio" name="Kondisi Mercu Bendung" value="1"> <span>Baik</span></label>
+                                <label>
+                                    <input type="radio" name="Kondisi Mercu Bendung" value="2"> <span>Sedang</span></label>
+                                <label>
+                                    <input type="radio" name="Kondisi Mercu Bendung" value="3"> <span>Buruk</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Mercu Bendung</label>
+                            <div class="likert">
+                                <label>
+                                    <input type="radio" name="Fungsi Mercu Bendung" value="1"> <span>Baik</span></label>
+                                <label>
+                                    <input type="radio" name="Fungsi Mercu Bendung" value="2"> <span>Sedang</span></label>
+                                <label>
+                                    <input type="radio" name="Fungsi Mercu Bendung" value="3"> <span>Buruk</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kondisi Pintu Intake</label>
+                            <div class="likert">
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Intake" value="1"> <span>Baik</span></label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Intake" value="2"> <span>Sedang</span></label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Intake" value="3"> <span>Buruk</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Pintu Intake</label>
+                            <div class="likert">
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Intake" value="1"> <span>Baik</span></label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Intake" value="2"> <span>Sedang</span></label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Intake" value="3"> <span>Buruk</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kondisi Pintu Pembilas</label>
+                            <div class="likert">
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Pembilas" value="1"> <span>Baik</span></label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Pembilas" value="2"> <span>Sedang</span></label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Pembilas" value="3"> <span>Buruk</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Pintu Pembilas</label>
+                            <div class="likert">
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Pembilas" value="1"> <span>Baik</span></label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Pembilas" value="2"> <span>Sedang</span></label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Pembilas" value="3"> <span>Buruk</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Saluran Jaringan Utama</a>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Panjang Saluran Induk</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Saluran Induk">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Induk</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Rusak Saluran Induk">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Saluran Sekunder</label>
+                            <div>
+                                <input type="text" class="form-control" name="Nama Saluran Sekunder">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Saluran Sekunder</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Saluran Sekunder">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Sekunder</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Rusak Saluran Sekunder">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Bangunan Jaringan Utama</a>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Nama Bangunan</label>
+                            <div>
+                                <input type="text" class="form-control" name="Nama Bangunan">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kondisi Bangunan Utama</label>
+                            <div>
+                                <input type="text" class="form-control" name="Kondisi Bangunan Utama">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Bangunan Utama</label>
+                            <div>
+                                <input type="text" class="form-control" name="Fungsi Bangunan Utama">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Drainase</a>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Panjang Saluran Drainase</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Saluran Drainase">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Drainase</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Rusak Saluran Drainase">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Tersier</a>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Nama Saluran Tersier</label>
+                            <div>
+                                <input type="text" class="form-control" name="Nama Saluran Tersier">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Saluran Tersier</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Saluran Tersier">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Tersier</label>
+                            <div>
+                                <input type="number" class="form-control" name="Panjang Rusak Saluran Tersier">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Jumlah Boks Bagi</label>
+                            <div>
+                                <input type="number" class="form-control" name="Jumlah Boks Bagi">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+
+                <div class="form-action">
+            <p id="result" style="position:absolute;"></p>
+
+                    <input type="submit" class="btn" value="Input Data" />
+                </div>
+        </form>
+        <script data-cfasync="false" type="text/javascript">
+        jQuery(document).ready(function($) {
+
+
+
+            $('.acc__header').click(function() {
+                $('body').addClass('active');
+                $('.acc__list').removeClass('active');
+                $(this).parent().addClass('active');
+                return false;
+            });
+
+
+
+
+            navigator.geolocation.getCurrentPosition(show_map);
+
+            function show_map(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+
+
+                $('#latitude').val(latitude);
+                $('#longitude').val(longitude);
+            }
+
+
+
+
+
+            // variable to hold request
+            var request;
+            // bind to the submit event of our form
+            $("#foo").submit(function(event) {
+                // abort any pending request
+                if (request) {
+                    request.abort();
+                }
+                // setup some local variables
+                var $form = $(this);
+                // let's select and cache all the fields
+                var $inputs = $form.find("input, select, button, textarea");
+                // serialize the data in the form
+                var serializedData = $form.serialize();
+                // let's disable the inputs for the duration of the ajax request
+                // Note: we disable elements AFTER the form data has been serialized.
+                // Disabled form elements will not be serialized.
+                $inputs.prop("disabled", true);
+                $('#result').text('Sending data...');
+                // fire off the request to /form.php
+                request = $.ajax({
+                    // url: "https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec", // works
+                    url: "https://script.google.com/macros/s/AKfycbyiCtpf5ZYYzHTzlVCYU68frF3eYoIMANwIbvD6EOw2ljNGAFI/exec", // clone
+                    type: "post",
+                    data: serializedData
+                });
+                // callback handler that will be called on success
+                request.done(function(response, textStatus, jqXHR) {
+                    // log a message to the console
+                    console.log(response, textStatus, jqXHR);
+                    $('#result').html('<a href="https://docs.google.com/spreadsheets/d/10tt64TiALYhPMqR2fh9JzkuhxW7oC0rXXPb_pmJ7HAY/edit?usp=sharing" target="_blank">Success - see Google Sheet</a>');
+                    console.log("Hooray, it worked!");
+                });
+                // callback handler that will be called on failure
+                request.fail(function(jqXHR, textStatus, errorThrown) {
+                    // log the error to the console
+                    console.error(
+                        "The following error occured: " +
+                        textStatus, errorThrown
+                    );
+                });
+                // callback handler that will be called regardless
+                // if the request failed or succeeded
+                request.always(function() {
+                    // reenable the inputs
+                    $inputs.prop("disabled", false);
+                });
+                // prevent default posting of form
+                event.preventDefault();
+            });
+        });
+        </script>
+    </body>
+
+</html>

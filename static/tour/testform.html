@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+    <script src="js/jquery.js"></script>
+    <title>Untitled Document</title>
+</head>
+
+<body>
+    <form id="foo">
+        
+        
+
+
+        <p>
+            <label for="hello">full name:</label>
+            <input id="hello" name="hello" type="text" value="" />
+        </p>
+        <p>
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" value="" />
+        </p>
+
+        <p>
+            <label for="fullname">full name:</label>
+            <input id="fullname" name="firstName" type="text" value="" />
+        </p>
+
+        <p>
+            <div><label><input type="radio" name="likert" value="1" required></label></div>
+            <div><label><input type="radio" name="likert" value="2" required></label></div>
+            <div><label><input type="radio" name="likert" value="3" required></label></div>
+            <div><label><input type="radio" name="likert" value="4" required></label></div>
+            <div><label><input type="radio" name="likert" value="5" required></label></div>
+
+        </p>
+        <p>
+            <label for="comment">Comment:</label>
+            <br/>
+            <textarea id="comment" name="comment" cols="40"></textarea>
+        </p>
+
+        <p>
+            <label for="hello">Latitude:</label>
+            <input id="latitude" name="latitude" type="text" value="" />
+        </p>
+
+         <p>
+            <label for="hello">Longitude:</label>
+            <input id="longitude" name="longitude" type="text" value="" />
+        </p>
+
+
+         <p>
+            <label for="hello">asu</label>
+            <input id="asu" name="asu" type="text" value="" />
+        </p>
+
+
+        <p id="result"></p>
+        <input type="submit" value="Send" />
+    </form>
+    <script data-cfasync="false" type="text/javascript">
+    jQuery(document).ready(function($) {
+
+    
+
+
+    navigator.geolocation.getCurrentPosition(show_map);
+
+    function show_map(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+
+
+      $('#latitude').val(latitude);
+      $('#longitude').val(longitude);
+    }
+
+
+    
+
+
+        // variable to hold request
+        var request;
+        // bind to the submit event of our form
+        $("#foo").submit(function(event) {
+            // abort any pending request
+            if (request) {
+                request.abort();
+            }
+            // setup some local variables
+            var $form = $(this);
+            // let's select and cache all the fields
+            var $inputs = $form.find("input, select, button, textarea");
+            // serialize the data in the form
+            var serializedData = $form.serialize();
+            // let's disable the inputs for the duration of the ajax request
+            // Note: we disable elements AFTER the form data has been serialized.
+            // Disabled form elements will not be serialized.
+            $inputs.prop("disabled", true);
+            $('#result').text('Sending data...');
+            // fire off the request to /form.php
+            request = $.ajax({
+                // url: "https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec", // works
+                url: "https://script.google.com/macros/s/AKfycbwtLluh0vyC4XdFUhIC8Rq4K3rSC0pCVwna8gpzh9OjatOzpC0z/exec", // clone
+                type: "post",
+                data: serializedData
+            });
+            // callback handler that will be called on success
+            request.done(function(response, textStatus, jqXHR) {
+                // log a message to the console
+                console.log(response, textStatus, jqXHR);
+                $('#result').html('<a href="https://docs.google.com/spreadsheets/d/10tt64TiALYhPMqR2fh9JzkuhxW7oC0rXXPb_pmJ7HAY/edit?usp=sharing" target="_blank">Success - see Google Sheet</a>');
+                console.log("Hooray, it worked!");
+            });
+            // callback handler that will be called on failure
+            request.fail(function(jqXHR, textStatus, errorThrown) {
+                // log the error to the console
+                console.error(
+                    "The following error occured: " +
+                    textStatus, errorThrown
+                );
+            });
+            // callback handler that will be called regardless
+            // if the request failed or succeeded
+            request.always(function() {
+                // reenable the inputs
+                $inputs.prop("disabled", false);
+            });
+            // prevent default posting of form
+            event.preventDefault();
+        });
+    });
+    </script>
+</body>
+
+</html>
