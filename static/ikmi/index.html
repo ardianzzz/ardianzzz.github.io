@@ -4,7 +4,49 @@
 <head>
     <meta charset="utf-8">
     <title>IKMI Lampung</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    
+
+    <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+        <!--
+        <link rel="canonical" href="http://www.example.com/" >
+        -->
+
+        <!-- Add to homescreen for Chrome on Android -->
+        
+        <meta name="mobile-web-app-capable" content="yes">
+        
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        
+      <!--   <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content=""> -->
+        
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/ikmi.css">
 </head>
@@ -12,225 +54,325 @@
 <body>
 
     <body>
-    <div class="flex-y">
-        <header>
-            <h1>IKMI Lampung</h1>
-        </header>
-        <main>
-            <div class="container">
-                <form id="foo">
-                    <div class="acc">
-                        <div class="acc__list">
-                            <div class="acc__header">
-                                <a href="javascript:void(0);">Bangunan Utama</a>
+        <form id="foo">
+            <header>
+                <h1>IKMI App</h1>
+                <div id="result"></div>
+            </header>
+            <div class="acc">
+                <div class="acc__info">
+                    <div class="form-group">
+                        <div>
+                            <div class="sufix">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                    <path d="M331.08 338.205c-22.156 12.594-47.777 19.783-75.084 19.783-27.302 0-52.92-7.182-75.073-19.77C122.153 356.15 77.263 396 64 448h384c-13.255-52-58.146-91.87-116.92-109.795zM255.996 64c-72.87 0-131.945 59.127-131.945 132.013 0 72.887 59.075 131.972 131.946 131.972S387.94 268.9 387.94 196.013C387.94 123.127 328.868 64 255.997 64zm0 230.986c-41.958 0-77.813-25.986-92.21-62.986h184.42c-14.397 37-50.253 62.986-92.21 62.986z" />
+                                </svg>
                             </div>
-                            <div class="acc__body">
-                                <div class="form-group">
-                                    <label>Kondisi Mercu Bendung</label>
-                                    <div class="likert">
-                                        <label>
-                                            <input type="radio" name="Kondisi Mercu Bendung" value="1"> <span>Baik</span></label>
-                                        <label>
-                                            <input type="radio" name="Kondisi Mercu Bendung" value="2"> <span>Sedang</span></label>
-                                        <label>
-                                            <input type="radio" name="Kondisi Mercu Bendung" value="3"> <span>Buruk</span></label>
-                                    </div>
+                            <input type="text" class="form-control input-form" name="Nama" placeholder="Nama" id="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <div class="sufix">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                    <path d="M256 231.358c-13.442 0-24.643 11.2-24.643 24.642s11.2 24.643 24.643 24.643 24.643-11.2 24.643-24.643-11.2-24.642-24.643-24.642zM256 32C132.8 32 32 132.8 32 256s100.8 224 224 224 224-100.8 224-224S379.2 32 256 32zm49.284 273.284L121.6 390.4l85.116-183.68L390.4 121.6l-85.116 183.684z" />
+                                </svg>
+                            </div>
+                            <input type="text" class="form-control input-form" name="Proyek" placeholder="Proyek" id="project" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header" id="form-1">
+                        <a href="#form-1">Bangunan Utama</a>
+                        <div class="acc__ic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Kondisi Mercu Bendung</label>
+                            <div class="likert">
+                                <input type="radio" name="Kondisi Mercu Bendung" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Kondisi Mercu Bendung" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Mercu Bendung" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Mercu Bendung" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Mercu Bendung</label>
+                            <div class="likert">
+                                <input type="radio" name="Fungsi Mercu Bendung" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Fungsi Mercu Bendung" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Mercu Bendung" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Mercu Bendung" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kondisi Pintu Intake</label>
+                            <div class="likert">
+                                <input type="radio" name="Kondisi Pintu Intake" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Intake" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Intake" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Intake" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Pintu Intake</label>
+                            <div class="likert">
+                                <input type="radio" name="Fungsi Pintu Intake" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Intake" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Intake" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Intake" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kondisi Pintu Pembilas</label>
+                            <div class="likert">
+                                <input type="radio" name="Kondisi Pintu Pembilas" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Pembilas" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Pembilas" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Pintu Pembilas" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Pintu Pembilas</label>
+                            <div class="likert">
+                                <input type="radio" name="Fungsi Pintu Pembilas" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Pembilas" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Pembilas" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Pintu Pembilas" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header" id="form-2">
+                        <a href="#form-2">Saluran Jaringan Utama</a>
+                        <div class="acc__ic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Panjang Saluran Induk</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Saluran Induk">
+                                <div class="afix">
+                                    Meter
                                 </div>
-                                <div class="form-group">
-                                    <label>Fungsi Mercu Bendung</label>
-                                    <div class="likert">
-                                        <label>
-                                            <input type="radio" name="Fungsi Mercu Bendung" value="1"> <span>Baik</span></label>
-                                        <label>
-                                            <input type="radio" name="Fungsi Mercu Bendung" value="2"> <span>Sedang</span></label>
-                                        <label>
-                                            <input type="radio" name="Fungsi Mercu Bendung" value="3"> <span>Buruk</span></label>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Induk</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Rusak Saluran Induk">
+                                <div class="afix">
+                                    Meter
                                 </div>
-                                <div class="form-group">
-                                    <label>Kondisi Pintu Intake</label>
-                                    <div class="likert">
-                                        <label>
-                                            <input type="radio" name="Kondisi Pintu Intake" value="1"> <span>Baik</span></label>
-                                        <label>
-                                            <input type="radio" name="Kondisi Pintu Intake" value="2"> <span>Sedang</span></label>
-                                        <label>
-                                            <input type="radio" name="Kondisi Pintu Intake" value="3"> <span>Buruk</span></label>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Saluran Sekunder</label>
+                            <div>
+                                <input type="text" class="form-control input-form" name="Nama Saluran Sekunder">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Saluran Sekunder</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Saluran Sekunder">
+                                <div class="afix">
+                                    Meter
                                 </div>
-                                <div class="form-group">
-                                    <label>Fungsi Pintu Intake</label>
-                                    <div class="likert">
-                                        <label>
-                                            <input type="radio" name="Fungsi Pintu Intake" value="1"> <span>Baik</span></label>
-                                        <label>
-                                            <input type="radio" name="Fungsi Pintu Intake" value="2"> <span>Sedang</span></label>
-                                        <label>
-                                            <input type="radio" name="Fungsi Pintu Intake" value="3"> <span>Buruk</span></label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Kondisi Pintu Pembilas</label>
-                                    <div class="likert">
-                                        <label>
-                                            <input type="radio" name="Kondisi Pintu Pembilas" value="1"> <span>Baik</span></label>
-                                        <label>
-                                            <input type="radio" name="Kondisi Pintu Pembilas" value="2"> <span>Sedang</span></label>
-                                        <label>
-                                            <input type="radio" name="Kondisi Pintu Pembilas" value="3"> <span>Buruk</span></label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Fungsi Pintu Pembilas</label>
-                                    <div class="likert">
-                                        <label>
-                                            <input type="radio" name="Fungsi Pintu Pembilas" value="1"> <span>Baik</span></label>
-                                        <label>
-                                            <input type="radio" name="Fungsi Pintu Pembilas" value="2"> <span>Sedang</span></label>
-                                        <label>
-                                            <input type="radio" name="Fungsi Pintu Pembilas" value="3"> <span>Buruk</span></label>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Sekunder</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Rusak Saluran Sekunder">
+                                <div class="afix">
+                                    Meter
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="acc__list">
-                        <div class="acc__header">
-                            <a href="javascript:void(0);">Saluran Jaringan Utama</a>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Bangunan Jaringan Utama</a>
+                        <div class="acc__ic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
+                            </svg>
                         </div>
-                        <div class="acc__body">
-                            <div class="form-group">
-                                <label>Panjang Saluran Induk</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Saluran Induk">
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Nama Bangunan</label>
+                            <div>
+                                <input type="text" class="form-control input-form" name="Nama Bangunan">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kondisi Bangunan Utama</label>
+                            <div class="likert">
+                                <input type="radio" name="Kondisi Bangunan Utama" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Kondisi Bangunan Utama" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Bangunan Utama" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Kondisi Bangunan Utama" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fungsi Bangunan Utama</label>
+                            <div class="likert">
+                                <input type="radio" name="Fungsi Bangunan Utama" class="radio-default" value="" checked hidden>
+                                <label>
+                                    <input type="radio" name="Fungsi Bangunan Utama" value="1" class="input-form"> <span>Baik</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Bangunan Utama" value="2" class="input-form"> <span>Sedang</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="Fungsi Bangunan Utama" value="3" class="input-form"> <span>Buruk</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Drainase</a>
+                        <div class="acc__ic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Panjang Saluran Drainase</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Saluran Drainase">
+                                <div class="afix">
+                                    Meter
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Panjang Rusak Saluran Induk</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Rusak Saluran Induk">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Nama Saluran Sekunder</label>
-                                <div>
-                                    <input type="text" class="form-control" name="Nama Saluran Sekunder">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Panjang Saluran Sekunder</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Saluran Sekunder">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Panjang Rusak Saluran Sekunder</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Rusak Saluran Sekunder">
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Drainase</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Rusak Saluran Drainase">
+                                <div class="afix">
+                                    Meter
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <div class="acc__list">
-                        <div class="acc__header">
-                            <a href="javascript:void(0);">Bangunan Jaringan Utama</a>
+                </div>
+                <div class="acc__list">
+                    <div class="acc__header">
+                        <a href="javascript:void(0);">Tersier</a>
+                        <div class="acc__ic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
+                            </svg>
                         </div>
-                        <div class="acc__body">
-                            <div class="form-group">
-                                <label>Nama Bangunan</label>
-                                <div>
-                                    <input type="text" class="form-control" name="Nama Bangunan">
+                    </div>
+                    <div class="acc__body">
+                        <div class="form-group">
+                            <label>Nama Saluran Tersier</label>
+                            <div>
+                                <input type="text" class="form-control input-form" name="Nama Saluran Tersier">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Saluran Tersier</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Saluran Tersier">
+                                <div class="afix">
+                                    Meter
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Kondisi Bangunan Utama</label>
-                                <div>
-                                    <input type="text" class="form-control" name="Kondisi Bangunan Utama">
+                        </div>
+                        <div class="form-group">
+                            <label>Panjang Rusak Saluran Tersier</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Panjang Rusak Saluran Tersier">
+                                <div class="afix">
+                                    Meter
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Fungsi Bangunan Utama</label>
-                                <div>
-                                    <input type="text" class="form-control" name="Fungsi Bangunan Utama">
+                        </div>
+                        <div class="form-group">
+                            <label>Jumlah Boks Bagi</label>
+                            <div>
+                                <input type="number" class="form-control input-form" name="Jumlah Boks Bagi">
+                                <div class="afix">
+                                    Buah
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                     <div class="acc__list">
-                        <div class="acc__header">
-                            <a href="javascript:void(0);">Drainase</a>
-                        </div>
-                        <div class="acc__body">
-                            <div class="form-group">
-                                <label>Panjang Saluran Drainase</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Saluran Drainase">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Panjang Rusak Saluran Drainase</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Rusak Saluran Drainase">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="acc__list">
-                        <div class="acc__header">
-                            <a href="javascript:void(0);">Tersier</a>
-                        </div>
-                        <div class="acc__body">
-                            <div class="form-group">
-                                <label>Nama Saluran Tersier</label>
-                                <div>
-                                    <input type="text" class="form-control" name="Nama Saluran Tersier">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Panjang Saluran Tersier</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Saluran Tersier">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Panjang Rusak Saluran Tersier</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Panjang Rusak Saluran Tersier">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Jumlah Boks Bagi</label>
-                                <div>
-                                    <input type="number" class="form-control" name="Jumlah Boks Bagi">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p id="result"></p>
-
-                    <div class="form-action">
-                        <input type="submit" class="btn" value="Send" />
-                    </div>
-                </form>
+                </div>
             </div>
-        </main>
-
-
-        </div>
+            <div class="form-action">
+                <input type="submit" class="btn" value="Input Data" />
+            </div>
+        </form>
         <script data-cfasync="false" type="text/javascript">
         jQuery(document).ready(function($) {
 
 
-
-            $('.acc__header').click(function() {
-                $('.acc__list').removeClass('active');
-                $(this).parent().addClass('active');
-                return false;
+            if (window.navigator.standalone) jQuery.ajaxSetup({
+                isLocal: true
             });
-
-
 
 
             navigator.geolocation.getCurrentPosition(show_map);
@@ -245,60 +387,118 @@
                 $('#longitude').val(longitude);
             }
 
+            // Check for LocalStorage support.
+            if (localStorage) {
+
+                $('.acc__header').click(function() {
+                    $('body').addClass('active');
+                    $('.acc__list').removeClass('active');
+
+                    var tp = $(this).parent();
+                    tp.addClass('active');
+
+
+
+                    $('html, body').animate({
+                        scrollTop: tp.offset().top - 56
+                    }, 200);
+
+                    return false;
+                });
 
 
 
 
-            // variable to hold request
-            var request;
-            // bind to the submit event of our form
-            $("#foo").submit(function(event) {
-                // abort any pending request
-                if (request) {
-                    request.abort();
-                }
-                // setup some local variables
-                var $form = $(this);
-                // let's select and cache all the fields
-                var $inputs = $form.find("input, select, button, textarea");
-                // serialize the data in the form
-                var serializedData = $form.serialize();
-                // let's disable the inputs for the duration of the ajax request
-                // Note: we disable elements AFTER the form data has been serialized.
-                // Disabled form elements will not be serialized.
-                $inputs.prop("disabled", true);
-                $('#result').text('Sending data...');
-                // fire off the request to /form.php
-                request = $.ajax({
-                    // url: "https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec", // works
-                    url: "https://script.google.com/macros/s/AKfycbyiCtpf5ZYYzHTzlVCYU68frF3eYoIMANwIbvD6EOw2ljNGAFI/exec", // clone
-                    type: "post",
-                    data: serializedData
+
+
+
+
+
+
+
+
+
+
+                // variable to hold request
+                var request;
+                // bind to the submit event of our form
+                $("#foo").submit(function(event) {
+
+                    var name = document.getElementById('name').value;
+                    var project = document.getElementById('project').value;
+
+                    // Save the name in localStorage.
+                    localStorage.setItem('name', name);
+                    localStorage.setItem('project', project);
+
+
+                    // abort any pending request
+                    if (request) {
+                        request.abort();
+                    }
+
+
+                    // setup some local variables
+                    var $form = $(this);
+                    // let's select and cache all the fields
+                    var $inputs = $form.find("input, select, button, textarea");
+                    // serialize the data in the form
+                    var serializedData = $form.serialize();
+                    // let's disable the inputs for the duration of the ajax request
+                    // Note: we disable elements AFTER the form data has been serialized.
+                    // Disabled form elements will not be serialized.
+                    $inputs.prop("disabled", true);
+                    $('#result').html('<img src="img/spinner.gif">');
+                    // fire off the request to /form.php
+                    request = $.ajax({
+                        // url: "https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec", // works
+                        url: "https://script.google.com/macros/s/AKfycbyiCtpf5ZYYzHTzlVCYU68frF3eYoIMANwIbvD6EOw2ljNGAFI/exec", // clone
+                        type: "post",
+                        data: serializedData
+                    });
+                    // callback handler that will be called on success
+                    request.success(function(response, textStatus, jqXHR) {
+                        // log a message to the console
+
+
+
+                        $('#foo')[0].reset();
+
+                        $('#name').val(name);
+                        $('#project').val(project);
+
+
+                        console.log(response, textStatus, jqXHR);
+                        $('#result').html('');
+                        console.log("Hooray, it worked!");
+                    });
+                    // callback handler that will be called on failure
+                    request.fail(function(jqXHR, textStatus, errorThrown) {
+                        // log the error to the console
+                        console.error(
+                            "The following error occured: " +
+                            textStatus, errorThrown
+                        );
+                    });
+                    // callback handler that will be called regardless
+                    // if the request failed or succeeded
+                    request.always(function() {
+                        // reenable the inputs
+                        $inputs.prop("disabled", false);
+                    });
+                    // prevent default posting of form
+                    event.preventDefault();
                 });
-                // callback handler that will be called on success
-                request.done(function(response, textStatus, jqXHR) {
-                    // log a message to the console
-                    console.log(response, textStatus, jqXHR);
-                    $('#result').html('<a href="https://docs.google.com/spreadsheets/d/10tt64TiALYhPMqR2fh9JzkuhxW7oC0rXXPb_pmJ7HAY/edit?usp=sharing" target="_blank">Success - see Google Sheet</a>');
-                    console.log("Hooray, it worked!");
-                });
-                // callback handler that will be called on failure
-                request.fail(function(jqXHR, textStatus, errorThrown) {
-                    // log the error to the console
-                    console.error(
-                        "The following error occured: " +
-                        textStatus, errorThrown
-                    );
-                });
-                // callback handler that will be called regardless
-                // if the request failed or succeeded
-                request.always(function() {
-                    // reenable the inputs
-                    $inputs.prop("disabled", false);
-                });
-                // prevent default posting of form
-                event.preventDefault();
-            });
+
+
+            }
+
+
+            var name = localStorage.getItem('name');
+            var project = localStorage.getItem('project');
+
+            $('#name').val(name);
+            $('#project').val(project);
         });
         </script>
     </body>
