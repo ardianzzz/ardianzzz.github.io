@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Rubik:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+
+
+        $('.site-navigation__menu > li > a').click(function() {
+            $('.site-navigation__menu > li').removeClass('focused');
+            $(this).parent().addClass('focused');
+
+        });
+
+        $('.m-menu').click(function () {
+            $('body').toggleClass('m-menu--open');
+            $('.site-navigation__menu > li').removeClass('focused');
+        });
+
+        $('.flexslider').flexslider({
+            animation: "fade",              //String: Select your animation type, "fade" or "slide"
+easing: "swing", 
+          });
+
+    
+    });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__bar">
+                <div class="clearfix">
+                    <div class="header__logo">
+                        <a href="index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="1.2 238.9 957.6 82.3" width="408.636" height="40">
+                                <path d="M8,240.6c5.6,0,11.3,0,16.9,0c13.1,0,26.1,0,39.2,0c14.8,0,29.8,0,44.6,0c10.9,0,21.9,0,33,0 c2.3,0,4.6,0,6.7,0c1.4,0,2.3,0.8,2.1,2.3c-0.2,1.7-0.6,3.3-0.8,5c-1.7,11.6-3.4,23.3-5.1,34.8c-0.1,0.5-0.1,0.9,0,1.4 c0.2,1.1,1.5-1.6,1.6-2.1c0.9-2.3,1.9-4.4,2.9-6.7c2.4-5.6,4.8-11.2,7.1-16.8c1.8-4.2,3.6-8.6,5.5-12.8c0.6-1.3,1.1-2.6,1.7-3.9 c0.3-0.8,0.7-1.3,1.5-1.6c1.9-0.9,4.9-0.3,7-0.3c7.3,0.1,14.6,0.1,21.9,0.2c1.9,0,3.9,0,5.8,0c2.4,0,1,4.8,0.8,6 c-1.6,10.4-3.2,20.8-4.8,31.1c-0.2,1.3-0.3,2.5-0.6,3.6c-0.1,0.7-0.5,1.7,0,2.4c0.1,0.1,0.7-1,0.7-1.1c0.3-0.9,0.7-1.7,1.1-2.6 c0.8-1.9,1.6-3.8,2.4-5.7c1.9-4.4,3.9-8.9,5.8-13.3c1.9-4.4,4-8.9,5.8-13.3c0.7-1.5,1.3-3,1.9-4.4c0.3-0.9,0.7-1.6,1.6-2.2 c1.8-1.1,5-0.6,7.1-0.7c11.2-0.1,22.5-0.2,33.6-0.2c0.3,0,0.8-0.1,1.3,0c1.5,0.2,2.7,2.5,3.3,3.5c1.4,2.6,2.7,5.2,4.1,7.9 c0.3,0.6,0.5,1.3,1.1,1.6c1.3,0.8,3.1,1,4.6,1s3,0,4.4,0c12.3,0,24.7,0,37.1,0c2.1,0,3.9,0.3,5.4,1.8c1.1,1.3,2.4,2.4,3.5,3.6 c0.5,0.5,1.7,1.5,1.1,2.3c-0.6,0.9-2.7,0.5-3.6,0.5c-1.6,0-3.3,0-4.9-0.1c-1.5,0-3,0-4.4,0c-11.1,0-22.1,0-33.3,0 c-0.7,0-1.3-0.5-2.1-0.2c-0.6,0.5,0.1,1.3,0.5,1.7c1,1.6,2.1,3.3,3.2,4.9c1.4,2.2,2.7,4.2,4.2,6.4c2.4,3.6,4.8,7.3,7.2,10.9 c3,4.4,5.8,8.9,8.8,13.3c1.6,2.4,3.2,4.7,5.1,7c1.7,2.1,3.5,3.9,5.6,5.6c1.7,1.4,3.5,2.6,5.7,3c-2.7-2.7-5.5-6-6.7-9.7 c-0.9-2.7-1.6-5.7-1.1-8.6c0.3-2.3,1.1-4.4,2.2-6.4c2.5-4.7,7.2-8.4,12.3-9.7c4.7-1.1,9.9-0.3,14.1,2.1c5.2,3,9,7.5,9.9,13.6 c0.6,3.8,0.1,7.8-1.6,11.3c-1.3,2.6-3.2,5-5.5,6.8c-1.9,1.6-4.1,2.7-6.5,3.5c-0.9,0.3-1.8,0.7-2.9,0.7c-12.2,0-24.4-0.1-36.7-0.1 c-4.1,0-8.2,0.2-12.2-0.5c-8.6-1.5-16.5-5.9-21.7-13c-2.5-3.5-4.6-7.3-7-10.8c-3.9-6.2-7.9-12.2-11.7-18.4 c-5.2-8.2-10.4-16.3-15.6-24.5c-0.3-0.5-1.1-2.1-1.7-0.9c-0.7,1.3-1.4,2.6-2.1,3.9c-0.9,1.7-1.7,3.3-2.5,5c-2.2,4.7-4.4,9.4-6.6,14 c-4.4,9.6-9,19.2-13.5,28.7c-2.2,4.7-4.3,9.5-6.5,14.1c-0.3,0.9-0.9,1.6-1.8,2.1c-1,0.6-2.2,0.5-3.2,0.5c-3.3,0-6.5,0-9.8,0 c-4.8,0-9.5,0-14.3,0c-2.9,0-5.7,0-8.4,0c-2.2,0-1.3-2.5-1-4c1.8-10.9,3.5-21.8,5.4-32.7c0.1-0.7,0.1-2.1-0.7-0.9 c-1,1.4-1.6,3.1-2.3,4.7c-1,2.2-1.9,4.4-3.1,6.6c-2.5,5-5,10-7.5,15.1c-1,2.1-2.1,4-3,6c-0.7,1.4-1.4,2.7-2.1,4.1 c-0.5,1-1.6,1.1-2.6,1.1c-5.8,0-11.7,0-17.6,0c-2.6,0-5.2,0-7.9,0c-2.2,0-1.8-2.4-1.7-4c0.8-6.5,1.5-12.9,2.3-19.4 c1-9.2,2.1-18.6,3-27.8c0.6-5.2,1-10.6,1.6-15.8c0.1-0.6,0.5-1.7,0-2.3c-0.6-0.7-1.7-0.6-2.5-0.6c-2.9,0-5.8,0-8.7,0 c-11.1,0-22,0-33.1,0c-8.6,0-17.2,0-25.8,0c-10.9,0-21.9,0-32.8,0c-2.6,0-5.1,0-7.8,0c-1.1,0-3.9,0-2.1-1.8"></path>
+                                <path d="M511.8,242.4c0.9-2.5,3.4-3.5,5.9-3.5c3.2,0,6.4,0,9.6,0c2.4,0,4.8,0,7.2,0c2.9,0,1.1,4.4,0.7,5.9 c-3,9.1-5.8,18.4-8.8,27.5c-3.6,11.5-7.3,22.9-10.9,34.4c-0.7,2.2-1.4,4.3-2.1,6.6c-0.5,1.4-0.8,2.4-1.8,3.4 c-2.1,2.1-4.9,1.6-7.5,1.6c-3.5,0-7.1,0-10.5,0c-1.3,0-4.1,0.5-4.8-0.8c-0.6-0.9,0-2.2,0.2-3.2c0.5-1.4,0.9-2.9,1.4-4.2 c1.5-4.8,3.1-9.6,4.6-14.4c3.2-10,6.4-20.1,9.6-30C506.6,257.9,509.2,250.2,511.8,242.4z"></path>
+                                <path d="M541.5,252.6c0.9-2.6,1.7-5.4,2.6-8c0.7-2.2,1.1-4.6,3.6-5.5c2.1-0.8,4.8-0.3,7-0.3c3.6,0,7.3,0,10.8,0 c9.1,0,18.4,0,27.5,0c3.3,0,6.6,0,9.9,0c1.9,0,5,0.3,4.3,3.1c-1.3,5-2.5,10.1-3.6,15.2c-0.2,1-0.3,1.9-1.1,2.7 c-1,1-2.3,1.1-3.5,1.1c-3.3,0-6.5-0.1-9.8-0.1c-0.9,0-1.7,0-2.6,0.1c-2.5,0.5-4.2,2.3-4.9,4.7c-0.7,2.2-1.3,4.4-1.9,6.6 c-2.7,9.6-5.6,19.3-8.2,28.8c-0.7,2.3-1.3,4.7-1.9,7c-0.5,1.7-0.9,3.3-1.4,5c-0.2,0.9-0.5,2.1-0.9,3c-1.6,3-5.6,2.3-8.4,2.3 c-3,0-5.8,0-8.8,0c-2.2,0-4.4,0.1-6.6,0c-3.4-0.1-1.8-3.8-1.3-5.7c1.7-5.4,3.4-10.7,5.2-16.2c3.1-9.6,6.3-19.2,9.4-28.7 c0.2-0.8,0.6-1.6,0.8-2.4c0.2-0.9,0.5-2.3-0.1-3.2c-0.5-0.8-1.6-1-2.4-1.3c-2.2-0.3-4.6-0.1-6.7-0.1s-4.6,0.2-6.6-0.1 c-2.2-0.3-2.2-2.2-1.6-3.9C540.5,255.5,541.1,254.1,541.5,252.6z"></path>
+                                <g>
+                                    <path d="M658.4,315.5c-0.9-9.8-1.8-19.5-2.7-29.3c-1.1-11.6-2.2-23.3-3.3-34.8c-0.3-3.2-0.6-6.4-0.9-9.6 c-0.5-3.1-3.5-3.1-3.5-3.1h-19.8c-3.5-0.1-5.1,2.7-5.1,2.7c-5.1,9.4-10.3,18.7-15.4,28.1c-4.6,8.3-9.1,16.6-13.7,25 c-3.9,7-7.6,13.9-11.4,21c-0.9,2.3,1.6,3,1.6,3h16.3c6,0.2,8.2-2.6,8.2-2.6l1.7-3.1c1.6-3.4,5.5-3.4,5.5-3.4l17.4,0.3 c3.3,0.6,3.5,3.1,3.5,3.1l0.2,2.7c0.2,3.3,3.1,3,3.1,3h15.1C659.1,318.6,658.4,315.5,658.4,315.5z M634,293.4h-14.7 c-1.6-0.1,0.8-4.2,1.1-4.8c1.5-3.2,3.1-6.3,4.6-9.5c2.3-4.6,4.4-9.1,6.7-13.8c0.3-0.7,0.7-1.3,0.9-1.9c0,0,0.3-0.5,0.7-0.3 c0,0,0.2-0.2,0.2,1.5c0.5,9,0.9,18.1,1.3,27.1C634.9,291.6,635.2,293.5,634,293.4z"></path>
+                                </g>
+                                <path d="M693.2,241.3c0.9-1.1,2.6-2.4,4.2-2.4c1.5,0,3,0,4.4,0c1.7,0,3.4,0,5.1,0c6.4,0,12.9,0,19.3-0.1 c4.4,0,8.9,0,13.3,0c3.3,0,6.6,0,9.9,0c1.6,0,3.3-0.2,4.6,0.9c1.3,1.1,0.7,2.6,0.3,4c-0.3,1.3-0.6,2.4-0.9,3.6 c-0.8,2.9-1.5,5.7-2.3,8.7c-0.7,2.5-1.1,4.7-4.2,4.9c-2.7,0.2-5.6,0-8.3,0c-2.7,0-6.3-0.6-8.3,1.7c-1.9,2.3-2.4,5.7-3.1,8.6 c-1.4,5-2.6,9.9-4,14.9c-1.3,4.9-2.6,9.7-3.9,14.6c-1.3,4.8-2.3,9.7-3.9,14.4c-0.6,1.6-2.3,3.3-4,3.3c-0.9,0-1.8,0-2.7,0 c-3.4,0-7,0-10.4,0c-2.6,0-5.2,0-8,0c-3,0-0.9-4.3-0.5-5.7c3.1-9.5,6.2-18.8,9.2-28.3c1.6-5,3.3-9.9,4.9-14.9 c0.7-2.2,3.2-7.1,0-8.1c-1.3-0.5-2.6-0.3-4-0.3c-1.8,0-3.6,0-5.5,0c-1.8,0-4,0.3-5.8-0.1c-2.6-0.7-1-3.9-0.5-5.6 c0.9-2.7,1.8-5.4,2.6-8.1C691.4,245.2,691.8,242.8,693.2,241.3z"></path>
+                                <path d="M840,238.9c2.6,0,5.4,0,8,0c1.5,0,3,0,4.6,0c0.7,0,1.3,0,1.9,0.2c1.6,0.6,1.9,1.9,1.7,3.4 c-0.2,1.6-0.5,3.1-0.7,4.7c-0.3,2.5-0.8,5.1-1.3,7.6c-1.6,9.7-3.2,19.4-4.7,29.1c-0.5,2.9-0.9,5.7-1.4,8.4c-0.7,4.1,1,8.7,5.8,8.7 c5,0,9.7-3.9,10.5-8.8c0.5-2.5,0.9-5.1,1.4-7.6c1.9-10.7,3.8-21.4,5.7-32.2c0.3-1.8,0.7-3.5,0.9-5.4c0.3-2.1,0.3-5,1.6-6.8 c1.6-2.2,5.4-1.5,7.6-1.5c3,0,6,0,9,0c1.9,0,3.1,1.8,2.9,3.6c-0.2,1.7-0.7,3.4-1,5.1c-0.5,2.4-0.9,4.8-1.5,7.3 c-0.9,4.9-1.9,9.7-2.9,14.6c-1.9,9.7-3.5,19.4-5.9,29c-0.7,2.7-1.4,5.5-2.7,8c-2.1,3.8-5,7.1-8.7,9.2c-2.7,1.6-5.8,2.4-8.9,3.1 c-5.4,1.1-11.6,1.7-17,0.5c-3.1-0.7-6.2-2.1-8.9-3.8c-5-3.1-8.6-7.9-10.1-13.5c-1-4-0.8-7.6,0-11.6c0.7-3.8,1.5-7.5,2.2-11.3 c2.2-10.7,4.3-21.3,6.4-32C835.4,243.9,835.7,238.9,840,238.9z"></path>
+                                <g>
+                                    <path d="M958.6,316.4c-2.9-3.8-5.7-7.5-8.6-11.3c-2.1-2.7-4.2-5.5-6.3-8.2c-1-1.4-2.1-2.7-3.1-4.1 c-1.1-1.5-2.1-3.1-1.3-4.9c0.2-0.5,0.8-0.9,1.1-1.3c0.9-0.8,1.8-1.6,2.7-2.4c1.4-1.1,2.4-2.6,3.4-4.1c1.8-2.5,3.3-5,4.4-7.8 c1.8-4.6,3.2-9.2,2.9-14.3c-0.2-3.5-1.3-6.7-3.1-9.8c-6.4-9.2-16.4-9.6-16.4-9.6c-8.2,0-16.4,0-24.7,0c-3.4,0-4.7,3.2-4.7,3.2 c-0.7,1.5-0.8,3.4-1,5.1c-0.1,0.9-0.2,1.8-0.5,2.7c-0.5,2.9-1,5.7-1.5,8.4c-0.9,5.2-1.9,10.4-3,15.6c-1.8,9.2-3.9,18.5-5.9,27.7 c-1,4.4-1.9,9-3,13.5c-0.2,2.1,0.5,3.2,2.5,3.2h13.6c3.2-0.2,3.8-2.9,3.8-2.9c1-3.8,2.1-7.5,3-11.2c0.3-1.3,0.7-2.6,1-3.9 c0.3-1,0.8-2.2,1.1-3.2c0.2-0.7,0.7-3.2,1.7-3c1.4,0.2,3.9,3.4,3.9,3.4c2.4,3.6,4.8,7.3,7.2,10.9c1.4,2.2,2.7,4.2,4.2,6.3 c1.4,1.9,3.5,3.6,6,3.4h19C959.4,318.3,958.6,316.4,958.6,316.4z M935,265.9c-0.8,3.4-3.6,5.6-6.8,6.5c-0.7,0.2-7.5,1.3-7-0.3 c0.5-2.2,0.8-4.4,1.3-6.6c0.3-1.7,0.7-3.4,1-5.1c0.1-0.7,0.2-2.9,1.4-2.7c2.1,0,4.4,0.1,6.3,1C933.7,259.9,935.7,263.2,935,265.9 C934.6,268.2,935.6,263.6,935,265.9z"></path>
+                                </g>
+                                <path d="M381.2,239c2.9-0.5,6-0.1,8.9-0.1c3.1,0,6.3,0,9.4,0c3.9,0,4.1,4.6,4.7,7.4c0.6,2.7,1,5.5,1.5,8.2 c1.8,9.9,3.6,19.8,5.6,29.8c0.3,1.9,1,3.6,2.2,5.2c1.1-1.3,2.3-2.6,2.6-4.2c0.5-1.6,0.8-3.1,1.3-4.7c0.6-2.3,1.1-4.6,1.7-6.8 c1.3-5.2,2.6-10.4,3.9-15.6c1.3-5,2.5-10,3.9-14.9c0.6-2.2,1.4-4.4,4.1-4.4c2.4,0,4.7,0,7.1,0c3.4,0,6.8,0,10.3,0 c1.6,0,3.5-0.2,4.8,1c1,1,1.1,2.5,1.4,3.9c0.2,1.7,0.6,3.4,0.8,5.1c0.3,2.4,0.8,4.9,1.1,7.3c0.7,4.3,1.4,8.8,2.1,13.1 c0.9,5.7,1.6,11.5,2.6,17.1c0.1,0.6,0.2,1,0.6,1.5c0.2,0.6,0.6,1,0.9,1.5s0.3,0.6,0.8,0.2c1.7-1.5,2.4-3.4,3.1-5.5 c0.7-2.4,1.3-4.8,1.9-7.2c1.3-4.8,2.6-9.5,3.9-14.3c1.4-5.2,2.7-10.5,4.2-15.6c0.5-1.6,0.9-3.2,1.4-4.8c0.3-1,0.7-1.8,1.6-2.5 c1.5-1.3,3.8-0.8,5.6-0.8c2.1,0,4,0,6,0.1c2.4,0,4.8,0,7.3-0.1c1.6,0,5.8-0.6,4.9,2.5c-1.5,4.8-3,9.6-4.6,14.4 c-3.2,9.8-6.3,19.6-9.5,29.4c-3.2,9.7-6.3,19.5-9.5,29.2c-0.8,2.4-2.2,4-4.9,4s-5.5,0-8.2,0c-5.4,0-10.7,0-16.1-0.1 c-1.1,0-2.1-0.2-3-1c-0.9-0.9-1-2.1-1.3-3.3c-0.5-2.9-1-5.7-1.5-8.6c-0.9-5.5-1.8-11.1-2.7-16.5c-0.8-4.7-1.6-9.5-2.4-14.1 c-0.2-1-0.3-2.2-0.6-3.2c-0.2-1.1-0.2-2.7-1.4-3.4c-1.9-1.1-2.4,3.3-2.6,4.4c-2.4,11.9-4.8,23.8-7.2,35.7c-0.3,1.8-0.7,3.6-1.1,5.5 c-0.3,1.7-0.8,3.4-2.5,4.3c-1.6,0.8-4.2,0.5-5.9,0.5c-3.4,0-6.8,0-10.3,0s-6.7,0-10.1,0c-1.3,0-2.9,0.2-4.1-0.2 c-2.3-0.8-2.5-3.3-2.9-5.5c-0.5-2.7-0.9-5.4-1.4-8.1c-1.6-10.1-3.3-20.2-4.9-30.3c-1.7-10.9-3.5-21.9-5.1-32.8 C379.7,240.4,379.8,239.2,381.2,239z"></path>
+                                <g>
+                                    <path d="M802.5,240.7c-7.9-3-16.9-2.2-24.6,0.7c-9,3.3-17,9.6-22,17.8c-5.6,9.2-8,21-7.3,31.6 c0.7,9.6,4.2,19.4,12.2,25.2c17.6,12.9,41.6-0.3,51.9-16.3c5.5-8.7,8.1-19.4,7.6-29.5c-0.3-9.2-3.3-18.9-10.6-25.1 C807.7,243.2,805.2,241.7,802.5,240.7C786.8,234.8,821.1,247.8,802.5,240.7z M800.1,287.6c-4.2,8.6-14,15.4-23.8,13.5 c-10.7-2.1-12.3-14.6-9.9-23.5c2.6-9.8,10.8-18.4,21.3-18.9c4.4-0.2,9,1.3,12,4.8c3.3,3.9,4.1,9.2,3.4,14.1 C802.9,281,801.7,284.4,800.1,287.6C794.7,298.9,805.8,276,800.1,287.6z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header__line">
+                        <div class="tel">+62-21-231 2338</div>
+                        <div class="email"><a href="mailto:info@witatour.com">info@witatour.con</a></div>
+                    </div>
+
+                    <div class="header__m-menu">
+                        <a href="javascript:void(0);" class="m-search">         
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.682 18.768L15.814 13.9C16.562 12.785 17 11.444 17 10c0-3.866-3.134-7-7-7s-7 3.134-7 7 3.134 7 7 7c1.7 0 3.26-.605 4.472-1.614l4.796 4.796c.39.39 1.023.39 1.414 0s.39-1.024 0-1.414zM10 15c-2.76 0-5-2.238-5-5 0-2.76 2.24-5 5-5 2.762 0 5 2.24 5 5 0 2.762-2.238 5-5 5z"/></svg>
+                        </a>
+
+                        <a href="javascript:void(0);" class="m-menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>icon-more-line</title><path d="M5.875 17H19v-2H5v2h.875zm0-4H19v-2H5v2h.875zm0-4H19V7H5v2h.875z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <nav class="site-navigation" role="navigation">
+                    <ul class="site-navigation__menu">
+                        <li>
+                            <a href="javascript:void(0);">Tour <span class="caret"></span></a>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">Inbound</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Outbound</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">Package <span class="caret"></span></a>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">Domestic</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">International</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Cruise</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">Documents <span class="caret"></span></a>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">Visa</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Passport</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">KITAS</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">KITAB</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">Corporate <span class="caret"></span></a>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">Travel Management</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Incentive</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0);">Wita World</a></li>
+                        <li><a href="javascript:void(0);">News</a></li>
+                        <li>
+                            <a href="javascript:void(0);">About Us <span class="caret"></span></a>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">Company Profile</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Career</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- <nav class="site-navigation" role="navigation">
+        <div class="container">
+                    <ul>
+                        <li><a href="javascript:void(0);">Tour</a></li>
+                        <li><a href="#">Package</a></li>
+                        <li><a href="#">More Products</a></li>
+                        <li><a href="#">Corporate</a></li>
+                        <li><a href="#">Wita World</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                    </div>
+                </nav> -->
+    <main class="main" id="main" role="main">
+        <section class="hero">
+    <div class="hero__cover" style="background-image:url(img/sample-1.jpg)">
+        <div class="hero__border">
+            <div class="hero__caption">
+                <div class="container">
+                    <div class="hero__area">Europe</div>
+                    <h2 class="hero__title">Russia Scandinavia &amp; Fjord</h2>
+                    <div class="hero__meta">Mulai dari Rp 32.320.000</div>
+                    <div class="hero__cta">
+                        <a href="#" class="cta__btn">Booking Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__overlay" style="background-image:url(img/hero-overlay.png)"></div>
+    </div>
+</section>
+<section class="section" style="padding-bottom:0;">
+    <div class="container">
+        <div class="tour-description">
+            <p>
+                Negara adidaya Rusia yang merupakan bekas bagian dari Uni Soviet akan memukau Anda dengan peninggalan sejarahnya yang kaya, museum Hermitage yang dipenuhi dengan koleksi seni terbesar di Rusia, termasuk mengunjungi subway termewah di seluruh dunia. Anda juga akan menikmati pemandangan alam yang menakjubkan di Norwegian Fjordland dan negara-negara Scandinavia, tempat tinggal suku bangsa Viking yang legendaris.
+            </p>
+        </div>
+    </div>
+    <div class="content-tab">
+        <div class="container">
+            
+
+
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#itinerary" data-toggle="tab">Tour Program</a>
+                </li>
+                <li><a href="#pricelist" data-toggle="tab">Price Details</a></li>
+              </ul>
+
+              
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section tour-details">
+    <div class="container">
+
+
+        <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+                <section class="itinerary">
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>1</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Jakarta – Moscow</div>
+                            <div class="itinerary__description">
+                                Berkumpul di Airport Soekarno-Hatta untuk bersama-sama berangkat menuju kota Moscow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>2</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Tiba di Moscow</div>
+                            <div class="itinerary__description">
+                                Tiba di ibukota Russia, Moscow, Anda langsung diajak ke hotel untuk beristirahat.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>3</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Moscow</div>
+                            <div class="itinerary__description">
+                                Pagi ini diajak city tour mengunjungi : Red Square, The Moscow Kremlin (gedung pusat pemerintahan Russia), Bell Tower of Ivan The Great and The Armory, melewati Lenin Mousoleum, St. Basil’s Cathredal dan mencoba Moscow Metro Subway (subway termewah di dunia). Malam hari Anda diajak menonton Circus paling terkenal di Russia.
+                            </div>
+                            <!-- <div class="itinerary__meal">
+                                <div class="meal">
+                                    <div class="meal__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                                            <path d="M95.204,37.956c0.279-9.638-5.601-18.197-13.485-23.151c-18.315-11.51-43.316-1.803-55.713,13.755  c-3.46,4.342-6.172,9.222-9.574,13.609C13.167,46.38,8.285,49.19,5.995,54.118c-0.411,0.886-0.692,1.784-0.866,2.685  C4.948,57.136,4.833,57.529,4.833,58c0.009,5.91,0.136,11.819,0.164,17.73c0.026,5.37,6.215,8.497,10.664,10.394  c11.682,4.982,25.123,0.368,36.707-2.661c12.323-3.222,25.069-7.702,35.536-15.126c1.925-1.365,3.774-2.959,5.211-4.839  c2.209-2.888,1.831-4.864,1.76-8.448c-0.095-4.829,0.054-9.662,0.106-14.492C95.094,39.713,95.178,38.852,95.204,37.956z   M15.522,50.418c6.604-5.947,10.364-14.141,16.084-20.825c11.598-13.554,33.178-19.529,48.858-9.675  c6.052,3.803,9.603,10.836,9.695,17.889c-0.091,0.258-0.154,0.54-0.155,0.862c-0.003,0.725-0.017,1.451-0.025,2.176  c-0.022,0.168-0.034,0.337-0.06,0.504c-1.5,9.484-11.605,14.106-19.21,18.075c-8.698,4.539-18.009,7.739-27.622,9.653  c-7.491,1.492-17.839,3.301-25.328,0.728c-3.333-1.7-5.845-4.207-7.211-7.76C8.616,57.023,12.085,53.513,15.522,50.418z   M89.945,58.155c0.073,2.925-3.693,5.246-5.788,6.732c-8.808,6.248-19.652,9.914-29.928,12.88  c-10.541,3.042-22.983,7.344-33.934,4.685c-2.589-0.628-4.903-1.874-7.122-3.303c-3.066-1.974-3.169-3.162-3.196-6.578  c-0.006-0.8-0.019-1.6-0.027-2.4c1.655,1.715,3.582,3.135,5.567,4.106c0.109,0.053,0.216,0.083,0.323,0.12  c0.091,0.044,0.174,0.095,0.274,0.132c8.999,3.274,20.937,0.839,30.036-0.973c12.252-2.44,23.795-7.686,34.537-13.935  c3.619-2.106,6.747-4.544,9.167-7.434C89.855,54.175,89.896,56.165,89.945,58.155z"></path>
+                                            <path d="M29.166,65.952c2.9,1.363,5.44-2.947,2.524-4.317c-3.672-1.725-6.974-3.945-9.908-6.751  c-2.329-2.227-5.87,1.303-3.536,3.536C21.473,61.505,25.124,64.053,29.166,65.952z"></path>
+                                            <path d="M25.117,49.425c6.875,4.618,13.964,8.868,21.277,12.754c2.845,1.512,5.372-2.804,2.524-4.317  c-7.313-3.887-14.402-8.136-21.277-12.754C24.956,43.304,22.456,47.637,25.117,49.425z"></path>
+                                            <path d="M33.48,39.39c8.155,5.968,16.659,11.375,25.524,16.226c2.83,1.548,5.352-2.769,2.524-4.317  c-8.865-4.851-17.37-10.257-25.524-16.226C33.397,33.165,30.907,37.507,33.48,39.39z"></path>
+                                            <path d="M41.991,31.356c10.698,4.757,20.115,10.511,29.716,17.179c2.656,1.844,5.152-2.492,2.524-4.317  c-9.6-6.668-19.018-12.422-29.716-17.179C41.596,25.741,39.05,30.048,41.991,31.356z"></path>
+                                            <path d="M55.038,23.901c8.715,3.914,16.887,8.784,24.391,14.703c2.502,1.974,6.066-1.539,3.536-3.536  c-7.856-6.197-16.271-11.384-25.403-15.485C54.646,18.274,52.101,22.581,55.038,23.901z"></path>
+                                        </svg>
+                                    </div>
+                                    <span>Breakfast</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>4</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Moscow – St. Petersburg (Dengan Pesawat)</div>
+                            <div class="itinerary__description">
+                                Pagi hari dengan pesawat udara menuju St. Petersburg. Anda akan langsung diajak city tour menyaksikan arsitektur yang sangat anggun dan mengagumkan dengan melewati Concert Hall, St. Isaac’s Cathredal. Anda juga diajak mengunjungi Gereja Savior On The Blood, Paul &amp; Peters Fortress, Istana Petrodvoret (bekas istana musim panas kaisar Russia) dengan hiasan tamannya yang luas dan indah. Makan malam sambil menyaksikan Pertunjukan Kesenian yang menarik.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>5</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">St. Petersburg – Helsinki</div>
+                            <div class="itinerary__description">
+                                Pagi hari mengunjungi Hermitage Museum (bekas istana musim dingin Kaisar yang sangat megah, yang sekarang menjadi museum seni lukis terbesar di dunia, yang menyimpan koleksi hasil seniman-seniman ternama di dunia). Sore hari menuju kota Helsinki, Ibukota Finlandia dengan kereta api.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>6</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Helsinki – Stockholm</div>
+                            <div class="itinerary__description">
+                                Pagi hari city tour mengunjungi Gereja Temple Liaukio (gereja yang dibangun di dalam batu karang), The Cathredal, Lapangan Senate dan melewati Sibelius Monument, Market Square, Gedung Parlemen dan City Hall. Sore hari dengan kapal pesiar mewah menuju Stockholm, Ibukota Swedia.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>7</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Tiba di Stockholm</div>
+                            <div class="itinerary__description">
+                                Pagi hari tiba di Stockholm, Anda langsung diajak city tour untuk mengunjungi Museum Vasa untuk melihat kapal khas buatan Swedia yang pernah tenggelam selama 300 tahun pada saat mengarungi samudra dan mengunjungi City Hall (tempat perjamuan makan malam dan pemberian hadiah nobel) dengan Gold dan Blue Room-nya, Fjall Gaten untuk melihat kota Stockholm dari atas, kemudian melewati : Royal Palace, Old Town, Concert Hall, Market Square, Danau Malaren. Selanjutnya acara bebas.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>8</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Stockholm – Karlstad – Lillehammer</div>
+                            <div class="itinerary__description">
+                                Dengan bus menuju Lillehammer melalui kota Karlstad. Tiba di Lillehammer, Anda akan langsung diantar ke hotel di Lillehammer atau sekitarnya
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>9</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Lillehammer – Lom – Dalsnibba – Geiranger</div>
+                            <div class="itinerary__description">
+                                Pemandangan alam Norwegian Fjordland yang sangat menakjubkan akan Anda nikmati hari ini dalam perjalanan menuju Geiranger, kota pelabuhan kapal pesiar terbesar ketiga di Norwegia, melalui kota LOM yang terkenal dengan Gereja Stave-nya yang dibangun abad 12, dan kota Dalsniba untuk melihat pemandangan alam dan danau yang sangat indah. Sepanjang perjalanan Anda dapat menikmati pemandangan air terjun, danau dan gunung salju. Bermalam di Geiranger atau sekitarnya.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>10</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Geiranger – Bricksdalbre – Gudvangen (Sognefjord) – Flam</div>
+                            <div class="itinerary__description">
+                                Pagi hari diajak ke Bricksdalbre untuk melihat air terjun dan geyser dengan mobil terbuka. Selanjutnya menuju ke Gudvangen untuk naik kapal ferry melewati Sognefjord, fjord terpanjang dan terdalam di Norwegia, sambil melihat pemandangan alam yang indah dan rumah-rumah khas penduduk, air-air terjun di sekitar pegunungan dan juga keindahan fjord sepanjang perjalanan sampai menuju Flam. Bermalam di Flam atau sekitarnya.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>11</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Flam – Myrdal – Gol – Oslo</div>
+                            <div class="itinerary__description">
+                                Dengan menggunakan Panoramic Train dari Flam ke Myrdal, Anda akan menikmati keindahan alam yang tak terlukiskan. Tiba di Myrdal perjalanan dilanjutkan ke Gol dengan kereta api. Kemudian menuju Oslo dengan bus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>12</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Oslo – Copenhagen</div>
+                            <div class="itinerary__description">
+                                City tour hari ini mengunjungi Vigeland Sclupture Park yang mempesonakan, Holmenkollen (tempat pertandingan Ski Jump pada musim dingin), dan melewati Istana Raja, Balai Kota, Akershus Castle (benteng peninggalan abad ke-14), National Theathre (gedung kesenian), Gedung Parlemen. Sore hari dengan kapal ferry menuju ibukota Denmark, Copenhagen.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>13</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Tiba di Copenhagen</div>
+                            <div class="itinerary__description">
+                                Pagi hari tiba di Copenhagen, diajak city tour mengunjungi : Little Mermaid (Patung ikan duyung yang menjadi lambang kota Copenhagen), Sailer Quarter, Rosenberg Castle (tempat penyimpanan mahkota dan perhiasan-perhiasan Kerajaan Denmark), dan Carlsberg Brewery (pabrik bir yang terkenal), dan melewati Church Of Our Lady, City Hall, Patung H.C. Anderson (pengarang Denmark terkenal), Christianborg Palace (Gedung Parlemen), dan lain-lain.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>14</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Copenhagen – Jakarta</div>
+                            <div class="itinerary__description">
+                                Pagi hari diajak ke Amalienborg Palace untuk melihat upacara pergantian penjaga (apabila waktu memungkinkan). Siang hari kembali ke Jakarta.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary__list">
+                        <div class="itinerary__number">
+                            <em>15</em>
+                        </div>
+                        <div class="itinerary__content">
+                            <div class="itinerary__title">Tiba di Jakarta</div>
+                            <div class="itinerary__description">
+                                Dengan tibanya Anda di Jakarta, maka berakhirlah perjalanan ini. Terima kasih atas keturut-sertaan Anda bersama Wita Tour
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+            <div class="tab-pane" id="pricelist">
+                
+
+                <div class="table-wrapper">
+            <table class="table-price">
+    <tbody>
+    <tr>
+        <td><span style="font-weight: bold;">Duration</span></td>
+        <td>15 Days</td>
+    </tr>
+    <tr>
+        <td><span style="font-weight: bold;">Hotel</span></td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td><span style="font-weight: bold;">Adult Twin</span></td>
+        <td>IDR&nbsp;<span style="font-size: 11pt; line-height: 0.07in; background-color: transparent;">66.800.000</span></td>
+    </tr>
+    <tr>
+        <td><span style="font-weight: bold;">Child Twin</span></td>
+        <td>IDR&nbsp;<span style="font-size: 11pt; line-height: 0.07in; background-color: transparent;">66.500.000</span></td>
+    </tr>
+    <tr>
+        <td><span style="font-weight: bold;">Child Extra Bed (2-11 Tahun)</span></td>
+        <td>IDR&nbsp;<span style="font-size: 11pt; line-height: 0.07in; background-color: transparent;">57.600.000</span></td>
+    </tr>
+    <tr>
+    <td><span style="font-weight: bold;">Child No Bed</span></td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td><span style="font-weight: bold;">Airport Tax &amp; Fuel</span></td>
+        <td>IDR &nbsp; 6<span style="font-size: 11pt; line-height: 0.07in; background-color: transparent;">.080.000</span></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+
+<div style="margin-top:1.6rem;font-size:1.2rem;color:#808080">* Price may vary</div>
+
+            </div>
+          </div>
+
+        
+    </div>
+</section>
+    </main>
+    <footer class="footer">
+        <div class="footer__bar">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="socials">
+                        <a href="#" class="socials__facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <title>icon-social-facebook</title>
+                                <path d="M9.09 9V8c0-1.28.01-1.54.46-2.908C10.063 3.858 11.644 3 13.26 3c2.63 0 3.74.372 3.74.372l-.522 4.063s-.87-.25-1.68-.25c-.812 0-1.703.05-1.746 1.093V9h2.678l-.386 4h-2.292v8H9.09v-8H7.003L7 9h2.09z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="socials__twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <title>icon-social-twitter</title>
+                                <path d="M22 5.894c-.736.32-1.527.538-2.357.636.848-.5 1.5-1.29 1.804-2.234-.793.463-1.67.798-2.606.98C18.1 4.49 17.03 4 15.85 4c-2.265 0-4.1 1.81-4.1 4.04 0 .317.033.624.104.92-3.41-.17-6.433-1.777-8.457-4.222-.353.598-.556 1.292-.556 2.032 0 1.4.727 2.637 1.828 3.362-.672-.02-1.305-.203-1.86-.504v.05c0 1.958 1.415 3.59 3.294 3.96-.346.096-.71.143-1.082.143-.265 0-.522-.02-.772-.07.522 1.61 2.037 2.777 3.833 2.807-1.404 1.085-3.174 1.73-5.096 1.73-.332 0-.66-.018-.98-.055C3.816 19.33 5.974 20 8.29 20c7.55 0 11.675-6.153 11.675-11.493 0-.175-.003-.35-.01-.522.8-.57 1.497-1.28 2.045-2.09" />
+                            </svg>
+                        </a>
+                        <a href="#" class="socials__instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M19.005 3H4.995C3.893 3 3 3.893 3 4.995v14.01C3 20.107 3.893 21 4.995 21h14.01C20.107 21 21 20.107 21 19.005V4.995C21 3.893 20.107 3 19.005 3zM12 9c1.656 0 3 1.343 3 3 0 1.656-1.344 3-3 3-1.657 0-3-1.344-3-3 0-1.657 1.343-3 3-3zm7 10H5v-7h2c0 2.762 2.24 5 5 5 2.762 0 5-2.238 5-5h2v7zm0-11.01C19 8.55 18.557 9 17.99 9h-1.98C15.452 9 15 8.557 15 7.99V6.01c0-.56.443-1.01 1.01-1.01h1.98c.558 0 1.01.443 1.01 1.01v1.98z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="newsletter">
+                        <div class="newsletter__label">
+                            Sign up now for
+                            <br>the up to date promo &amp; news
+                        </div>
+                        <div class="newsletter__form">
+                            <input type="email" name="" class="newsletter__email" placeholder="Your email">
+                            <button type="submit" class="newsletter__btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col col--4">
+                        <ul>
+                            <li><a href="mailto:info@witatour.com" target="_top">Email: info@witatour.com</a></li>
+                            <li><a href="tel:(021)231-2338" target="_top">Tel: (021)231-2338</a></li>
+                            <li><a href="tel:(021)231-2427" target="_top">Tour Outbound: (021)231-2427</a></li>
+                            <li><a href="tel:(021)231-2428" target="_top">Ticketing, Hotel <span class="amp">&amp;</span> Package Tour: (021)231-2428</a></li>
+                            <li><a href="tel:(021)350-0503" target="_top">Fax: (021)350-0503</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col--2">
+                        <ul>
+                            <li><a href="http://witatour.com/content/company-profile" target="_top">About</a></li>
+                            <li><a href="http://witatour.com/content/career" target="_top">Career</a></li>
+                            <li><a href="http://witatour.com/content/privacy-policy" target="_top">Privacy Policy</a></li>
+                            <li><a href="http://witatour.com/content/terms-and-condition" target="_top">Terms <span class="amp">&amp;</span> Conditions</a></li>
+                            <li><a href="http://witatour.com/content/sitemap" target="_top">Sitemap</a></li>
+                            <li><a href="http://witatour.com/content/faq" target="_top">FAQ</a></li>
+                            <li><a href="http://witatour.com/content/contact-us" target="_top">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col--2">
+                        <ul>
+                            <li><a href="http://witatour.com/content/corporate" target="_top">Corporate</a></li>
+                            <li><a href="http://witatour.com/document/visa" target="_top">Visa</a></li>
+                            <li><a href="http://witatour.com/document/passport" target="_top">Passport</a></li>
+                            <li><a href="http://witatour.com/document/kitas" target="_top">KITAS</a></li>
+                            <li><a href="http://witatour.com/document/kitab" target="_top">KITAB</a></li>
+                        </ul>
+                    </div>
+                    <div class="col " style="float:right;">
+                        
+                    </div>
+                </div>
+                <div class="member-of">
+                    <a class="affiliate" href="#" target="_top"><img src="http://witatour.com//assets_static/website/img/Logo-IATA.png"></a>
+                    <a class="affiliate" href="#" target="_top"><img src="http://witatour.com//assets_static/website/img/Logo-ASEANTA.png"></a>
+                    <a class="affiliate" href="#" target="_top"><img src="http://witatour.com//assets_static/website/img/Logo-ASTINDO.png"></a>
+                    <a class="affiliate" href="#" target="_top"><img src="http://witatour.com//assets_static/website/img/Logo-ASITA.png"></a>
+                </div>
+                <div class="site-footer__fin">
+                    PT. Wisata Dewa Tour &amp; Travel Services
+                    <br> Copyright 2015&ndash;
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> &copy; All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
