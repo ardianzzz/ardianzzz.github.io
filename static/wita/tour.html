@@ -27,8 +27,13 @@
 
         $('.flexslider').flexslider({
             animation: "fade",              //String: Select your animation type, "fade" or "slide"
-easing: "swing", 
+            easing: "swing", 
           });
+
+        //$('.header').append('<div class="nav-overlay"></div>');
+        $('.nav-overlay, .site-navigation__m').click(function () {
+            $('body').removeClass('m-menu--open');
+        });
 
     
     });
@@ -67,18 +72,26 @@ easing: "swing",
                     </div>
 
                     <div class="header__m-menu">
-                        <a href="javascript:void(0);" class="m-search">         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.682 18.768L15.814 13.9C16.562 12.785 17 11.444 17 10c0-3.866-3.134-7-7-7s-7 3.134-7 7 3.134 7 7 7c1.7 0 3.26-.605 4.472-1.614l4.796 4.796c.39.39 1.023.39 1.414 0s.39-1.024 0-1.414zM10 15c-2.76 0-5-2.238-5-5 0-2.76 2.24-5 5-5 2.762 0 5 2.24 5 5 0 2.762-2.238 5-5 5z"/></svg>
-                        </a>
-
                         <a href="javascript:void(0);" class="m-menu">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>icon-more-line</title><path d="M5.875 17H19v-2H5v2h.875zm0-4H19v-2H5v2h.875zm0-4H19V7H5v2h.875z"/></svg>
+                        </a>
+                    </div>
+                    <div class="header__m-search">
+                        <a href="javascript:void(0);" class="m-search">         
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.682 18.768L15.814 13.9C16.562 12.785 17 11.444 17 10c0-3.866-3.134-7-7-7s-7 3.134-7 7 3.134 7 7 7c1.7 0 3.26-.605 4.472-1.614l4.796 4.796c.39.39 1.023.39 1.414 0s.39-1.024 0-1.414zM10 15c-2.76 0-5-2.238-5-5 0-2.76 2.24-5 5-5 2.762 0 5 2.24 5 5 0 2.762-2.238 5-5 5z"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="clearfix">
                 <nav class="site-navigation" role="navigation">
+                    <div class="site-navigation__m">
+                        Menu
+
+                        <a href="javascript:void(0);" class="site-navigation__x">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><title>icon-arrow-down</title><path d="M12.04 10.625L7.063 5.65 5.65 7.064l5.657 5.657v-.05l-.657-.65.657-.658v-.05L5.65 16.964l1.414 1.414 4.975-4.975 4.97 4.975 1.413-1.414-5.657-5.657v.05l.657.657-.657.657v.05l5.66-5.653-1.415-1.414-4.974 4.976z"/></svg>
+                        </a>
+                    </div>
                     <ul class="site-navigation__menu">
                         <li>
                             <a href="javascript:void(0);">Tour <span class="caret"></span></a>
