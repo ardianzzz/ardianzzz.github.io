@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="EN">
+
+<head>
+    <meta charset="utf-8">
+    <title>😝</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+
+
+      <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
+
+
+    <script src='js/vendor/tabletop.js'></script>
+    <script src='js/vendor/mapsheet.js'></script>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+ <style>
+      #map {
+        width: 600px;
+        height: 500px;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="content">
+        <div id="map" style="width:1000px;height:600px;"></div>
+<div id="shapesmap" style="width:1000px;height:600px;"></div>
+
+
+ <script id="popup-template" type="text/x-handlebars-template">
+      <img src="">
+      <h3></h3>
+      <p> in </p>
+    </script>
+
+<script type="text/javascript">
+
+
+
+
+
+$(document).ready(function () {
+// Make sure the spreadsheet is published!
+        var published_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1J_MvGL_e0ZVzMPAZK_Nwgg3yJt8XhMDRwMx63JygElM/pubhtml'; 
+
+
+        // Let's get the popup template and compile it using Handlebars
+        var source   = $("#popup-template").html();
+        var template = Handlebars.compile(source);
+
+        // OK, now let's make the map
+        var map = Mapsheet({
+          key: published_spreadsheet_url,
+          key: published_spreadsheet_url_2,
+          element: "map",
+          provider: Mapsheet.Providers.Leaflet,
+          popupTemplate: template
+        });
+   
+    
+
+});
+
+
+</script>
+    </div>
+</body>
+
+</html>
+
+   
+

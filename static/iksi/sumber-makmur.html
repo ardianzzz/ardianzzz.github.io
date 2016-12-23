@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="EN">
+
+<head>
+    <meta charset="utf-8">
+    <title>😝</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+
+    <script src="//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
+    <script src='//api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('ready');
+        });
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="site-header">
+
+        <a href="index.html" class="logo">
+Van Der Wijk
+        </a>
+
+</div>
+
+    <div class="wrap" id="content">
+        <div class="sidebar">
+    <ul>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sendang Pitu</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Jamur Kulon</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Jamur Wetan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Cerbonan Kulon</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Cerbonan Wetan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sedayu Rewulu</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Rewulu 1</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Rewulu 2</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Gancahan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Kergan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sedayu</a></li>
+        <li class="active"><a href="sekunder.html">Sedayu Barat</a>
+            <ul>
+                <li><a href="mardiraharjo.html">Mardiraharjo</a></li>
+                <li class="active"><a href="sumber-makmur.html">Sumber Makmur</a></li>
+                <li><a href="tirtosembodo.html">Tirtosembodo</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sedayu Selatan</a></li>
+        
+    </ul>
+</div>
+
+<div class="mainbar">
+
+
+        <div id="map"></div>
+        <ul id='coordinates' class='ui-coordinates'></ul>
+</div>
+
+
+<script type="text/javascript">
+var track = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2568337518843,-7.759936100931066,0],[110.2561826781862,-7.759441079689506,0],[110.2553110027094,-7.759193720637036,0],[110.2550383880491,-7.759119022857429,0],[110.2537887452778,-7.758739237323503,0],[110.2533789031393,-7.758633231438099,0],[110.2529746362648,-7.758789394334054,0],[110.2527995117938,-7.75892818442238,0],[110.2524560587579,-7.758865260673147,0],[110.2511368626525,-7.758496590772587,0],[110.2508136740492,-7.75913337860985,0],[110.2506824117265,-7.759257690648713,0],[110.2496816814604,-7.759000539661498,0],[110.2482870445379,-7.758092027281515,0],[110.2476168003882,-7.757342689670086,0],[110.2463341290711,-7.756882671947752,0],[110.2457512233578,-7.756690472408283,0],[110.245506091169,-7.756922594610007,0],[110.2450112040523,-7.757113364408371,0],[110.242964536314,-7.756450388536505,0],[110.2424352566888,-7.75647379178003,0],[110.2406740546932,-7.755828218162509,0],[110.236796816204,-7.75513045938634,0],[110.2363300495964,-7.756415617875076,0],[110.2353931565753,-7.759643462115234,0],[110.235006966372,-7.76092880731858,0],[110.2347682004016,-7.76165133918354,0],[110.2341147034067,-7.762337197089855,0],[110.232880914987,-7.764937466005907,0],[110.2328767575798,-7.768027596449656,0],[110.2317122646959,-7.771086168297225,0],[110.2327597994564,-7.770886839110808,0],[110.2322659961215,-7.772389001229563,0],[110.2321118286599,-7.774500537846258,0],[110.2313830488423,-7.781007420667645,0]]},"properties":{"name":"Saluran Sekunder Sedayu Barat","styleUrl":"#msn_ylw-pushpin10","styleHash":"eb4fc4f","styleMapHash":{"normal":"#sn_ylw-pushpin00","highlight":"#sh_ylw-pushpin10"},"stroke":"#0000ff","stroke-opacity":1}}]};
+
+var point = [{"nomenclature":"BSB 12","jenis":"Sadap","lat":"-7.780043967","lon":"110.2314509","notes":null,"foto":"BSB12.jpg"},{"nomenclature":"BSB 9","jenis":"Sadap","lat":"-7.770926636","lon":"110.2317771","notes":null,"foto":"BSB9.jpg"},{"nomenclature":"BSB 12a","jenis":"Sadap","lat":"-7.774532028","lon":"110.2321417","notes":null,"foto":null}];
+
+var tersier1 = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[110.2291649616617,-7.777418512393887,0],[110.2289080408694,-7.778953481915823,0],[110.2298811226807,-7.779324835693663,0],[110.2289557255524,-7.782409164956409,0],[110.2292877689168,-7.784517162585622,0],[110.2295006337537,-7.787248022175241,0],[110.230946543472,-7.787304589678466,0],[110.2322025744714,-7.786482080615824,0],[110.2322615091225,-7.785044600793882,0],[110.2324105571807,-7.782205839269025,0],[110.2312787788686,-7.781897527024455,0],[110.2313007657768,-7.780993437997774,0],[110.2320295999818,-7.781186571944128,0],[110.2321353277823,-7.780446854780982,0],[110.233087398926,-7.775580123510768,0],[110.2331967070505,-7.775289916551819,0],[110.2338503894252,-7.774612519664611,0],[110.2342349235385,-7.770912470142893,0],[110.2338949134615,-7.770616004156144,0],[110.2317749034755,-7.771175504695711,0],[110.2307343124058,-7.771552721399746,0],[110.2303597772933,-7.773471478605521,0],[110.2293556734751,-7.773957090988033,0],[110.2286128233723,-7.774546542880658,0],[110.2284130047299,-7.77480076213493,0],[110.2280953978427,-7.775438755821755,0],[110.2274737199061,-7.776771995071087,0],[110.2282386785032,-7.7771412039037,0],[110.2291649616617,-7.777418512393887,0]]]},"properties":{"name":"Sumber makmur ( B.Sb.12 Te)","styleUrl":"#msn_ylw-pushpin","styleHash":"-5069e1de","styleMapHash":{"normal":"#sn_ylw-pushpin","highlight":"#sh_ylw-pushpin"},"stroke":"#00ff00","stroke-opacity":1,"fill":"#00ff00","fill-opacity":0.09803921568627451}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2316141036803,-7.771223734570365,0],[110.2327228146391,-7.770896152632132,0],[110.2322429566003,-7.772364188231855,0],[110.232857516476,-7.772558468187237,0],[110.2329318906359,-7.773040307725106,0],[110.2331400726888,-7.773451149497972,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2328269027734,-7.772566767904417,0],[110.2322269264164,-7.773553760502983,0],[110.2321224953572,-7.774556185836144,0],[110.2314435783618,-7.781011481808994,0],[110.2320249736505,-7.781204190989133,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2314444626801,-7.780999526869722,0],[110.2302006155158,-7.781343038484458,0],[110.2289603369309,-7.782479149831103,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2314474386598,-7.781028611399232,0],[110.2310824606334,-7.783653717144909,0],[110.2305927211943,-7.78810086211974,0],[110.2302037519282,-7.788376913396386,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2310407774893,-7.783630626948359,0],[110.2302039496984,-7.784512411416046,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2310783586081,-7.783994764056829,0],[110.2319628781489,-7.78411681312225,0],[110.2318956518698,-7.785517709140983,0],[110.2318512910001,-7.785871170207033,0],[110.2321590867657,-7.786024225145408,0],[110.2325677227438,-7.786129388949155,0],[110.2326387640235,-7.786578345574847,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2316491940192,-7.771180634928673,0],[110.2307768903006,-7.771462729435038,0],[110.2305371383436,-7.773349920089895,0],[110.2301296507661,-7.776741609583446,0],[110.2300040659098,-7.77751347650223,0],[110.2299153840862,-7.77924955459169,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2315850979509,-7.771280522979986,0],[110.2312370162982,-7.772091232739345,0],[110.2311478881146,-7.772965084531016,0],[110.2311448004864,-7.77352895723303,0],[110.2304184836166,-7.774639744133991,0],[110.2288132451056,-7.775660856434737,0],[110.2281843092696,-7.77702452317526,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_U","styleHash":"-4657bfe4","styleMapHash":{"normal":"#sn_U","highlight":"#sh_U"},"stroke":"#ff0000","stroke-opacity":1}}]};
+
+
+$(document).ready(function() {
+
+
+	L.mapbox.accessToken = 'pk.eyJ1IjoiYXJkaWFuenp6IiwiYSI6InRaWW8yWFEifQ.S5eeIdeJffzKEo2dHXyBjQ';
+
+
+    var myStyle = {
+        "color": "#0087d0",
+        "weight": 3,
+        "opacity": 0.88
+    };
+
+
+     var style2 = function(feature) {
+        switch (feature.geometry.type) {
+            case 'LineString': return {color: "#f9c000", "weight": 2, "opacity": 0.88};
+            case 'Polygon':   return {color: "#96be00", "weight": 1, "opacity": 0.64};
+        }
+    };
+
+
+    var line = new L.geoJson(track, {
+        style: myStyle
+    });
+
+
+    var line1 = new L.geoJson(tersier1, {
+        style: style2
+    });
+
+
+    
+
+
+    
+
+    //var markers = L.markerClusterGroup();
+    
+
+  
+
+
+    //map.addLayer(markers);
+    //map.addLayer(line);
+    //map.fitBounds(line.getBounds());
+
+
+
+    var map = L.mapbox.map('map', 'mapbox.satellite', {
+    	tileLayer: {
+	        maxNativeZoom: 17 // The map will use zoom level 19 tiles for all zoom levels past 19
+	    }
+    })
+    	.setView([-2.5, 118], 12)
+
+
+    // var featureLayer = L.mapbox.featureLayer()
+	   //  .setGeoJSON(track)
+	   //  .addTo(map);
+
+
+
+
+
+	
+
+	var markers = new L.MarkerClusterGroup();
+	var titik = [];
+    // For each table row, create a marker.
+    for (var i = 0; i < point.length; i++) {
+        // Blank rows shouldn't be included - they're easy to detect and skip.
+        if (point[i].lon === null || point[i].lat === null) continue;
+        titik.push([point[i].lon, point[i].lat, point[i].jenis, point[i].nomenclature, point[i].notes, point[i].foto]);
+    }
+
+    for (var i = 0; i < titik.length; i++) {
+        var a = titik[i];
+        var foto = a[5];
+
+        var marker = L.marker(new L.LatLng(a[1], a[0]), {
+        	icon: L.mapbox.marker.icon({'marker-symbol': 'camera', 'marker-color': '0044FF'}),
+        	foto: foto
+        });
+        marker.bindPopup('<div class="point-data"><div class="figure"><img src="img/sekunder/sedayu-barat/' + a[5] + '"></div><div class="meta"><div class="name">' + a[3] + '</div></div><div class="lat"><span>Lat</span> :' + a[1] + '</div><div class="long"><span>Long</span> : ' + a[0] + '</div></div></div>');
+        markers.addLayer(marker);
+    }
+
+
+    map.addLayer(line);
+    map.addLayer(line1);
+    map.addLayer(markers);
+    map.fitBounds(markers.getBounds());
+
+
+
+    function onmove() {
+	    // Get the map bounds - the top-left and bottom-right locations.
+	    var inBounds = [],
+	       bounds = map.getBounds();
+           markers.eachLayer(function(marker) {
+	        // For each marker, consider whether it is currently visible by comparing
+	        // with the current map bounds.
+	        if (bounds.contains(marker.getLatLng())) {
+	            inBounds.push(marker.options.foto);
+	        }
+	    });
+	    // Display a list of markers.
+	    // document.getElementById('coordinates').innerHTML = inBounds.join('<br>');
+
+
+        // var cList = $('#coordinates')
+        // $.each(inBounds, function(i)
+        // {
+        //     var li = $('<li>'+ inBounds[i] +'</li>')
+        //         .appendTo(cList);
+        // });
+	}
+
+	map.on('move', onmove);
+
+	// call onmove off the bat so that the list is populated.
+	// otherwise, there will be no markers listed until the map is moved.
+	onmove();
+
+
+
+});
+</script>
+
+    </div>
+</body>
+
+</html>
