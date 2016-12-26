@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>😝</title>
+    <title>Penilaian Kinerja Sistem Irigasi Tersier dan Kinerja Perkumpulan Petani Pemakai Air</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,30 +11,42 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
 
     <script src="//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
     <script src='//api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
 
 
+
+
     <script type="text/javascript">
         $(document).ready(function () {
             console.log('ready');
+
+                $(".gallery__a").colorbox({rel:'group3', transition:"none", height:"75%"});
         });
     </script>
+
+
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<div class="site-header">
+<div class="site-header clearfix">
 
         <a href="index.html" class="logo">
-Van Der Wijk
+
+        <img src="https://pbs.twimg.com/profile_images/2234552519/PU_Logo_400x400.jpg">
+
+            Penilaian Kinerja Sistem Irigasi Tersier 
+            <br>
+dan Kinerja Perkumpulan Petani Pemakai Air
         </a>
 
 </div>
 
-    <div class="wrap" id="content">
+    <div class="main">
         <div class="sidebar">
     <ul>
         <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sendang Pitu</a></li>

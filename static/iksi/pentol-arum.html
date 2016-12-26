@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="EN">
+
+<head>
+    <meta charset="utf-8">
+    <title>Penilaian Kinerja Sistem Irigasi Tersier dan Kinerja Perkumpulan Petani Pemakai Air</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
+
+    <script src="//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
+    <script src='//api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('ready');
+
+                $(".gallery__a").colorbox({rel:'group3', transition:"none", height:"75%"});
+        });
+    </script>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="site-header clearfix">
+
+        <a href="index.html" class="logo">
+
+        <img src="https://pbs.twimg.com/profile_images/2234552519/PU_Logo_400x400.jpg">
+
+            Penilaian Kinerja Sistem Irigasi Tersier 
+            <br>
+dan Kinerja Perkumpulan Petani Pemakai Air
+        </a>
+
+</div>
+
+    <div class="main">
+        <div class="page-header clearfix">
+    <h1>P3A Pentol Arum</h1>
+    <div class="pull-right">
+    </div>
+</div>
+<div style="position: absolute;top:10.4rem;right:0;bottom:0;width: 50%;">
+    <div id="map"></div>
+    <ul id='coordinates' class='ui-coordinates'></ul>
+</div>
+<div style="position: absolute;top:10.4rem;left:0;bottom:0;width: 50%;overflow: auto;-webkit-overflow-scrolling:touch">
+    <div style="padding: 1.6rem;">
+        <section>
+            <table class="table-text">
+                <tbody>
+                    <tr>
+                        <td>Nama Daerah Irigasi</td>
+                        <td>:</td>
+                        <td><a href="primer.html">Van Der Wijck</a></td>
+                    </tr>
+                    <tr>
+                        <td>Luas Areal Daerah irigasi</td>
+                        <td>:</td>
+                        <td>3300 Ha</td>
+                    </tr>
+                    <tr>
+                        <td>Lokasi Kabupaten</td>
+                        <td>:</td>
+                        <td>Sleman</td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>:</td>
+                        <td>Ngijon, Sendang Arum, Minggir</td>
+                    </tr>
+                    <tr>
+                        <td>Tahun Berdiri</td>
+                        <td>:</td>
+                        <td>1994</td>
+                    </tr>
+                    <tr>
+                        <td>Luas Areal</td>
+                        <td>:</td>
+                        <td>20 Ha</td>
+                    </tr>
+                    <tr>
+                        <td>Nama Ketua P3A</td>
+                        <td>:</td>
+                        <td>Wagimin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Indeks Kinerja</h2>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Aspek Managerial dan Kelelmbagaan</td>
+                        <td>243</td>
+                    </tr>
+                    <tr>
+                        <td>Aspek Ekonomi Potensial dan Usaha Produktif</td>
+                        <td>208</td>
+                    </tr>
+                    <tr>
+                        <td>Aspek Teknik Pertanian dan Pelaksanaan OP Irigasi</td>
+                        <td>209</td>
+                    </tr>
+                    <tr>
+                        <td>Aspek Sumberdaya Manusia</td>
+                        <td>197</td>
+                    </tr>
+                    <tr>
+                        <td><b>Nilai Kinerja</b></td>
+                        <td><b>857</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Kriteria</b></td>
+                        <td style="white-space: nowrap;">Sedang berkembang</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- 
+    <div style="margin:0 0 .8rem">
+            <a href="img/tersier/sr1ki/indeks-kinerja.pdf" target="_Blank" class="btn btn--primary btn--small">
+            Laporan Kinerja Tersier
+                <div class="icon-r">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.172 13.004l-3.95 3.95 1.414 1.414 5.657-5.657.707-.7-.707-.708-5.657-5.657-1.414 1.415 3.95 3.95H4v2h12.172z"/></svg>
+                </div>
+            </a>
+        </div> -->
+        <section>
+            <h2>Tersier</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">Nama</th>
+                        <th>Luas areal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="bsr1.html">BSR1</a>
+                        </td>
+                        <td>
+                            20 Ha
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <div class="gallery__item">
+                    <a href="img/tersier/sr1ki/tersier1.jpg" title="Tersier 1" class="gallery__a">
+                        <img src="img/tersier/sr1ki/tersier1.jpg">
+                    </a>
+                </div>
+                <div class="gallery__item">
+                    <a href="img/tersier/sr1ki/tersier2.jpg" title="Tersier 2" class="gallery__a">
+                        <img src="img/tersier/sr1ki/tersier2.jpg">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+var track = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[110.2673238363386,-7.724676220820928,0],[110.2691292384803,-7.725150086593689,0],[110.2698813900581,-7.726473700668441,0],[110.2724398109389,-7.727239791089732,0],[110.2730618975737,-7.725493126520987,0],[110.2716370945518,-7.724872923495333,0],[110.2691094560201,-7.724036904720836,0],[110.2674408961876,-7.723546035524078,0],[110.2673238363386,-7.724676220820928,0]]]},"properties":{"name":"SR.1.ki","styleUrl":"#m_ylw-pushpin3","styleHash":"406990f3","styleMapHash":{"normal":"#s_ylw-pushpin10","highlight":"#s_ylw-pushpin_hl40"},"stroke":"#00ff00","stroke-opacity":1,"fill":"#00ff00","fill-opacity":0.09803921568627451}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2673270238204,-7.723807310298852,0],[110.2681561611024,-7.72381887582369,0],[110.2692664261825,-7.724642734411729,0],[110.2697709410066,-7.725043775839079,0],[110.2707162259393,-7.726251755090442,0],[110.2717815608976,-7.726708972727285,0],[110.2721479457043,-7.727120648173018,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_ylw-pushpin5","styleHash":"15445e8f","styleMapHash":{"normal":"#sn_ylw-pushpin","highlight":"#sh_ylw-pushpin3"},"stroke":"#ff0000","stroke-opacity":1}}]};
+var point = [{"nomenclature":"BSR1","lat":"-7.723797123","lon":"110.2673768","foto":"BSR1.jpg"},{"nomenclature":"tersier1","lat":"-7.724619944","lon":"110.2692729","foto":"tersier1.jpg"},{"nomenclature":"tersier2","lat":"-7.72607513","lon":"110.2706539","foto":"tersier2.jpg"}];
+
+
+$(document).ready(function() {
+
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoiYXJkaWFuenp6IiwiYSI6InRaWW8yWFEifQ.S5eeIdeJffzKEo2dHXyBjQ';
+
+
+    var myStyle = {
+        "color": "#0087d0",
+        "weight": 3,
+        "opacity": 0.88
+    };
+
+
+     var style2 = function(feature) {
+        switch (feature.geometry.type) {
+            case 'LineString': return {color: "#f9c000", "weight": 2, "opacity": 0.88};
+            case 'Polygon':   return {color: "#96be00", "weight": 1, "opacity": 0.64};
+        }
+    };
+
+
+    var line = new L.geoJson(track, {
+        style: style2
+    });
+
+
+
+    
+
+
+    
+
+    //var markers = L.markerClusterGroup();
+    
+
+  
+
+
+    //map.addLayer(markers);
+    //map.addLayer(line);
+    //map.fitBounds(line.getBounds());
+
+
+
+    var map = L.mapbox.map('map', 'mapbox.satellite', {
+        tileLayer: {
+            maxNativeZoom: 17 // The map will use zoom level 19 tiles for all zoom levels past 19
+        }
+    })
+        .setView([-2.5, 118], 12)
+
+
+    // var featureLayer = L.mapbox.featureLayer()
+       //  .setGeoJSON(track)
+       //  .addTo(map);
+
+
+
+
+
+    
+
+    var markers = new L.MarkerClusterGroup();
+    var titik = [];
+    // For each table row, create a marker.
+    for (var i = 0; i < point.length; i++) {
+        // Blank rows shouldn't be included - they're easy to detect and skip.
+        if (point[i].lon === null || point[i].lat === null) continue;
+        titik.push([point[i].lon, point[i].lat, point[i].jenis, point[i].nomenclature, point[i].notes, point[i].foto]);
+    }
+
+    for (var i = 0; i < titik.length; i++) {
+        var a = titik[i];
+        var foto = a[5];
+
+        var marker = L.marker(new L.LatLng(a[1], a[0]), {
+            icon: L.mapbox.marker.icon({'marker-symbol': 'camera', 'marker-color': '0044FF'}),
+            foto: foto
+        });
+        marker.bindPopup('<div class="point-data"><div class="figure"><img src="img/tersier/sr1ki/' + a[5] + '"></div><div class="meta"><div class="name">' + a[3] + '</div></div><div class="lat"><span>Lat</span> :' + a[1] + '</div><div class="long"><span>Long</span> : ' + a[0] + '</div></div></div>');
+        markers.addLayer(marker);
+    }
+
+
+    map.addLayer(line);
+    map.addLayer(markers);
+    map.fitBounds(markers.getBounds());
+
+
+
+    function onmove() {
+        // Get the map bounds - the top-left and bottom-right locations.
+        var inBounds = [],
+           bounds = map.getBounds();
+           markers.eachLayer(function(marker) {
+            // For each marker, consider whether it is currently visible by comparing
+            // with the current map bounds.
+            if (bounds.contains(marker.getLatLng())) {
+                inBounds.push(marker.options.foto);
+            }
+        });
+        // Display a list of markers.
+        // document.getElementById('coordinates').innerHTML = inBounds.join('<br>');
+
+
+        // var cList = $('#coordinates')
+        // $.each(inBounds, function(i)
+        // {
+        //     var li = $('<li>'+ inBounds[i] +'</li>')
+        //         .appendTo(cList);
+        // });
+    }
+
+    map.on('move', onmove);
+
+    // call onmove off the bat so that the list is populated.
+    // otherwise, there will be no markers listed until the map is moved.
+    onmove();
+
+
+
+});
+</script>
+
+    </div>
+</body>
+
+</html>

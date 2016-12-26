@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>😝</title>
+    <title>Penilaian Kinerja Sistem Irigasi Tersier dan Kinerja Perkumpulan Petani Pemakai Air</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,49 +11,78 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
 
     <script src="//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
     <script src='//api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
 
 
+
+
     <script type="text/javascript">
         $(document).ready(function () {
             console.log('ready');
+
+                $(".gallery__a").colorbox({rel:'group3', transition:"none", height:"75%"});
         });
     </script>
+
+
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<div class="site-header">
+<div class="site-header clearfix">
 
         <a href="index.html" class="logo">
-Van Der Wijk
+
+        <img src="https://pbs.twimg.com/profile_images/2234552519/PU_Logo_400x400.jpg">
+
+            Penilaian Kinerja Sistem Irigasi Tersier 
+            <br>
+dan Kinerja Perkumpulan Petani Pemakai Air
         </a>
 
 </div>
 
-    <div class="wrap" id="content">
-        <div class="sidebar">
+    <div class="main">
+        <div class="page-header clearfix">
+
+    <div class="breadcrumbs">
+        <a href="primer.html">D.I. Van Der Wijk</a>
+        <span class="arr">
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 17l5-5-5-5v10z"/></svg>
+        </span>
+        <a href="primer.html">Perkumpulan Petani Pengguna Air</a>
+    </div>
+
+
+    <div class="pull-right">
+        <a href="#" class="btn btn--default btn--small">PDF</a>
+    </div>
+</div>
+
+
+<div class="sidebar">
     <ul>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sendang Pitu</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Jamur Kulon</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Jamur Wetan</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Cerbonan Kulon</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Cerbonan Wetan</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sedayu Rewulu</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Rewulu 1</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Rewulu 2</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Gancahan</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Kergan</a></li>
-        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">Sedayu</a></li>
-        <li class="active"><a href="sekunder.html">Sedayu Barat</a>
-            <ul>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Sendang Pitu</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Jamur Kulon</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Jamur Wetan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Cerbonan Kulon</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Cerbonan Wetan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Sedayu Rewulu</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Rewulu 1</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Rewulu 2</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Gancahan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Kergan</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('data belum tersedia')">P3A Sedayu</a></li>
+        <li class="active"><a href="sekunder.html">P3A Sedayu Barat</a>
+            <!-- <ul>
                 <li><a href="mardiraharjo.html">Mardiraharjo</a></li>
                 <li><a href="sumber-makmur.html">Sumber Makmur</a></li>
                 <li><a href="tirtosembodo.html">Tirtosembodo</a></li>
-            </ul>
+            </ul> -->
         </li>
         <li><a href="#">Sedayu Selatan</a></li>
         
