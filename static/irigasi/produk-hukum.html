@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Penilaian Kinerja Sistem Irigasi Tersier</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.gallery-item').click(function() {
+            $('#modalImg').attr('src', $(this).attr('data-img-url'));
+        });
+        $('[data-tooltip=tooltip]').tooltip({
+            container: 'body'
+        });
+    });
+    </script>
+    <link href="css/map.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .ct-series .ct-line {
+        /*stroke: red;*/
+        stroke-width: 2px;
+        /*stroke-dasharray: 10px 20px;*/
+    }
+    
+    .ct-series .ct-point {
+        stroke: red;
+        stroke-width: 0px;
+        stroke-linecap: circle;
+    }
+    
+    .ct-series-a .ct-bar {
+        stroke: #f15a60;
+    }
+    
+    .ct-series-b .ct-bar {
+        stroke: #7ac36a;
+    }
+    
+    .ct-grid {
+        stroke: rgba(0, 0, 0, .05);
+        stroke-width: 1px;
+        stroke-dasharray: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="container">
+            <div class="site-header__logo">
+                <img src="img/logo-pu.jpg">
+            </div>
+            <div class="site-header__title">
+                <b>Penilaian Kinerja Sistem Irigasi Tersier</b>
+                <div>Kepentrian Pekerjaan Umum</div>
+            </div>
+           
+        </div>
+
+<div style="background:#000">
+        <div class="container">
+
+         <nav class="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Daerah Irigasi</a></li>
+                    <li><a href="#">Lookup</a></li>
+                    <li><a href="#about">Administrtor</a></li>
+                    <li><a href="#about">Berkas</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            </div>
+            </div>
+
+    </div>
+    <div class="main" id="main" role="main">
+        <div class="container">
+    <h1 class="page-header">Produk Hukum</h1>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2">
+                Berkas
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="width:1%;padding-right:0;">
+                <img src="img/icon/page_white_acrobat.png">
+                </td>
+                <td>
+                    <a href="#">Permendagri Nomor 61 Tahun 2015</a>
+                </td>
+                <td>
+                PDF
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:1%;padding-right:0;">
+                <img src="img/icon/page_white_acrobat.png">
+                </td>
+                <td>
+                    <a href="#">Perda DIY Nomor 9 Tahun 2015</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:1%;padding-right:0;">
+                <img src="img/icon/page_white_acrobat.png">
+                </td>
+                <td>
+                    <a href="#">Permendagri Nomor 65 tahun 2010</a>
+                </td>
+                <td>
+                    <img src="img/icon/disk.png">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:1%;padding-right:0;">
+                <img src="img/icon/page_white_acrobat.png">
+                </td>
+                <td>
+                    <a href="#">Lampiran Permendagri Nomor 65 tahun 2010</a>
+                </td>
+                <td>
+                   ODF
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            hello
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+Periode/Semester
+- Penduduk
+	- Jenis Kelamin
+		- Laki-laki
+		- Perempuan
+	- Agama
+		- Islam
+		- Katolik
+		- Kristen
+		- Budha
+		- Hindu
+		- Konghucu
+		- Kepercayaan 
+	- Jenis Pekerjaan
+		- Belum Bekerja
+		- Mengurus Rumah Tangga
+		- Pelajar/Mahasiswa
+		- Pensiunan
+		- ASN
+		- TNI
+		- POLRI
+		- Buruh/Tukang Berkeahlian Khusus
+		- Sektor Pertanian/Peternakan
+		- Karyawan BUMN/BUMD
+		- Karyawan Swasta
+		- Wiraswasta
+		- Tenaga Medis
+		- Lainnya
+	- Status Hubungan Dalam Keluarga
+		- Kepala Keluarga
+		- Suami
+		- Istri
+		- Anak
+		- Menantu
+		- Cucu
+		- Orang Tua
+		- Mertua
+		- Famili Lain
+		- Pembantu
+	- Status Perkawinan
+		- Belum Menikah
+		- Menikah
+		- Cerai Hidup
+		- Cerai Mati
+	- Jenjang Pendidikan
+		- Tidak Sekolah
+		- Belum Tamat SD/MI
+		- Tamat SD/MI
+		- SMP/MTs
+		- SMA/SMK/MA
+		- Diploma I/II
+		- Akademi/Dplm III/
+		- S.Mud
+		- Diploma IV/Strata I
+		- Strata II
+		- Strata III
+	- Golongan Darah
+		- A
+		- B
+		- AB
+		- O
+		- A+
+		- Tidak Diketahu
+	- Kelompok Umur
+		- 80+
+		- 78
+		- 76
+		- 74
+		- 72
+		- 70
+		- 68
+		- 66
+		- 64
+		- 62
+		- 60
+		- 58
+		- 56
+		- 54
+		- 52
+		- 50
+		- 48
+		- 46
+		- 44
+		- 42
+		- 40
+		- 38
+		- 36
+		- 34
+		- 32
+		- 30
+		- 28
+		- 26
+		- 24
+		- 22
+		- 20
+		- 18
+		- 16
+		- 14
+		- 12
+		- 10
+		- 8
+		- 6
+		- 4
+		- 2
+	- Kepemilikan Akta Kelahiran
+		- Punya
+		- Tidak punya
+	- Kepemilikan Akta Perkawinan
+		- Punya
+		- Tidak punya
+	- Disabilitas
+		- Fisik
+		- Buta/Netra
+		- Rungu/Wicara
+		- Mental/Jiwa
+		- Fisik dan Mental
+		- Lainnya
+	- Wajib KTP
+- Kepala Keluarga
+- Wajib KTP
+
+
+

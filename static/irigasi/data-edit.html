@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Penilaian Kinerja Sistem Irigasi Tersier</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.gallery-item').click(function() {
+            $('#modalImg').attr('src', $(this).attr('data-img-url'));
+        });
+        $('[data-tooltip=tooltip]').tooltip({
+            container: 'body'
+        });
+    });
+    </script>
+    <link href="css/map.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .ct-series .ct-line {
+        /*stroke: red;*/
+        stroke-width: 2px;
+        /*stroke-dasharray: 10px 20px;*/
+    }
+    
+    .ct-series .ct-point {
+        stroke: red;
+        stroke-width: 0px;
+        stroke-linecap: circle;
+    }
+    
+    .ct-series-a .ct-bar {
+        stroke: #f15a60;
+    }
+    
+    .ct-series-b .ct-bar {
+        stroke: #7ac36a;
+    }
+    
+    .ct-grid {
+        stroke: rgba(0, 0, 0, .05);
+        stroke-width: 1px;
+        stroke-dasharray: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="container">
+            <div class="site-header__logo">
+                <img src="img/logo-pu.jpg">
+            </div>
+            <div class="site-header__title">
+                <b>Penilaian Kinerja Sistem Irigasi Tersier</b>
+                <div>Kepentrian Pekerjaan Umum</div>
+            </div>
+           
+        </div>
+
+<div style="background:#000">
+        <div class="container">
+
+         <nav class="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Daerah Irigasi</a></li>
+                    <li><a href="#">Lookup</a></li>
+                    <li><a href="#about">Administrtor</a></li>
+                    <li><a href="#about">Berkas</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            </div>
+            </div>
+
+    </div>
+    <div class="main" id="main" role="main">
+        <div class="container">
+    <div class="page-header">
+        <nav class="breadcrumbs">
+            <a href="#">Beranda</a>
+        </nav>
+        <h1 class="page-header__title">Tambah Daerah Irigasi</h1>
+        <div class="page-header__control">
+            <!-- <a href="http://128.199.97.42/primer/edit/2" class="btn btn--primary">Edit Data</a> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col--6">
+            <section class="section">
+
+                <h2>Tinjauan Umum</h2>
+                    <div class="form-group">
+                        <label class="required">Nama Daerah Irigasi</label>
+                        <input type="text" class="form-control form-control--block" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Lokasi Kabupaten</label>
+                        <input type="text" class="form-control form-control--block">
+                    </div>
+                    <div class="form-group">
+                        <label>Lokasi Provinsi</label>
+                        <input type="text" class="form-control form-control--block">
+                    </div>
+                    <div class="form-group">
+                        <label>Luas Areal</label>
+                        <input type="number" class="form-control form-control--block">
+                    </div>
+            </section>
+        </div>
+        <div class="col col--6">
+            <section class="section">
+
+
+                <h2>Berkas</h2>
+
+                <table class="table table--bordered">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Type</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Skema O1</td>
+                            <td>PDF</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group" style="text-align: right;">
+                    <a href="#" class="btn btn--default" data-toggle="modal" data-target="#modalBerkas">Tambah berkas</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="section">
+        <h2>Skema Bangunan</h2>
+        <table class="table table--bordered">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tipe</th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                    <th style="width: 1%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr__primer">
+                    <td>
+                        <a href="#">Selokan Matarams</a>
+                    </td>
+                    <td>
+                        Primer
+                    </td>
+                    <td>
+                        <a href="#" class="levelPrimer addPoint" data-tooltip="tooltip" data-toggle="modal" data-target="#modalBangunan" data-title="Tambah Bangunan Sekunder" data-parent="Sal. Primer Vanderbosc">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#444" d="M17.016 12.984v-1.97h-4.03v-4.03h-1.97v4.03h-4.03v1.97h4.03v4.03h1.97v-4.03h4.03zM18.984 3q.797 0 1.406.61T21 5.014v13.97q0 .796-.61 1.405t-1.406.61H5.014q-.843 0-1.43-.61T3 18.983V5.014q0-.796.585-1.405T5.015 3h13.97z"/></svg>
+                        </a>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+
+
+                    <td>
+                        <a href="#" data-tooltip="tooltip" data-title="LatLon">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#444" d="M12 11.484q1.03 0 1.758-.727T14.485 9t-.727-1.76T12 6.515t-1.758.727T9.515 9t.727 1.757 1.758.727zm0-9.468q2.906 0 4.945 2.04T18.985 9q0 1.453-.728 3.328T16.5 15.844t-2.04 3.07-1.71 2.273l-.75.797q-.282-.328-.75-.867T9.56 18.96t-2.13-3.14-1.664-3.445T5.014 9q0-2.906 2.04-4.945t4.944-2.04z"/></svg>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="#" data-tooltip="tooltip" data-title="KML">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M15 18.984V7.124L9 5.017v11.86zM20.484 3Q21 3 21 3.516V18.61q0 .375-.375.47L15 21l-6-2.108-5.344 2.063-.14.047q-.517 0-.517-.516V5.392q0-.375.373-.47L9 3.002l6 2.11 5.343-2.064z" />
+                            </svg>
+                        </a>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 17.016q2.063 0 3.54-1.477T17.015 12 15.54 8.46 12 6.985 8.46 8.46 6.985 12t1.477 3.54T12 17.015zm-3-15h6l1.828 1.97h3.188q.797 0 1.383.608T21.983 6v12q0 .797-.586 1.406t-1.384.61H3.986q-.798 0-1.384-.61T2.016 18V6q0-.797.586-1.406t1.383-.61h3.188zM8.813 12q0-1.313.938-2.25T12 8.812t2.25.938.94 2.25-.94 2.25-2.25.938-2.25-.938T8.814 12z" />
+                        </svg>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M20.72 7.03l-1.83 1.83-3.75-3.75 1.83-1.83q.28-.28.702-.28t.703.28l2.344 2.345q.28.28.28.703t-.28.703zM3 17.25L14.063 6.187l3.75 3.75L6.75 21H3v-3.75z" />
+                        </svg>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M18.984 3.984V6H5.014V3.984h3.47L9.514 3h4.97l1.03.984h3.47zM6 18.984v-12h12v12q0 .797-.61 1.406t-1.405.61h-7.97q-.796 0-1.405-.61T6 18.984z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="tr__primer">
+                    <td>
+                        <a href="#">Saluran Van Der Wijk</a>
+                    </td>
+                    <td>
+                        Primer
+                    </td>
+                    <td>
+                        <a href="#" class="levelSekunder addPoint" data-tooltip="tooltip" data-toggle="modal" data-target="#modalBangunan" data-title="Tambah Bangunan Sekunder" data-parent="Sekunder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#444" d="M17.016 12.984v-1.97h-4.03v-4.03h-1.97v4.03h-4.03v1.97h4.03v4.03h1.97v-4.03h4.03zM18.984 3q.797 0 1.406.61T21 5.014v13.97q0 .796-.61 1.405t-1.406.61H5.014q-.843 0-1.43-.61T3 18.983V5.014q0-.796.585-1.405T5.015 3h13.97z"/></svg>
+                        </a>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <a href="#" data-tooltip="tooltip" data-title="KML">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M15 18.984V7.124L9 5.017v11.86zM20.484 3Q21 3 21 3.516V18.61q0 .375-.375.47L15 21l-6-2.108-5.344 2.063-.14.047q-.517 0-.517-.516V5.392q0-.375.373-.47L9 3.002l6 2.11 5.343-2.064z" />
+                            </svg>
+                        </a>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 17.016q2.063 0 3.54-1.477T17.015 12 15.54 8.46 12 6.985 8.46 8.46 6.985 12t1.477 3.54T12 17.015zm-3-15h6l1.828 1.97h3.188q.797 0 1.383.608T21.983 6v12q0 .797-.586 1.406t-1.384.61H3.986q-.798 0-1.384-.61T2.016 18V6q0-.797.586-1.406t1.383-.61h3.188zM8.813 12q0-1.313.938-2.25T12 8.812t2.25.938.94 2.25-.94 2.25-2.25.938-2.25-.938T8.814 12z" />
+                        </svg>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M20.72 7.03l-1.83 1.83-3.75-3.75 1.83-1.83q.28-.28.702-.28t.703.28l2.344 2.345q.28.28.28.703t-.28.703zM3 17.25L14.063 6.187l3.75 3.75L6.75 21H3v-3.75z" />
+                        </svg>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M18.984 3.984V6H5.014V3.984h3.47L9.514 3h4.97l1.03.984h3.47zM6 18.984v-12h12v12q0 .797-.61 1.406t-1.405.61h-7.97q-.796 0-1.405-.61T6 18.984z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="tr__sekunder">
+                    <td>
+                        Sekunder Sumber Rahayu
+                    </td>
+                    <td>
+                        Sekunder
+                    </td>
+                    <td>
+                        <a href="#" class="levelSekunder addPoint" data-tooltip="tooltip" data-toggle="modal" data-target="#modalBangunan" data-title="Tambah Bangunan Sekunder" data-parent="S.Sekunder Sumber Rahayu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#444" d="M17.016 12.984v-1.97h-4.03v-4.03h-1.97v4.03h-4.03v1.97h4.03v4.03h1.97v-4.03h4.03zM18.984 3q.797 0 1.406.61T21 5.014v13.97q0 .796-.61 1.405t-1.406.61H5.014q-.843 0-1.43-.61T3 18.983V5.014q0-.796.585-1.405T5.015 3h13.97z"/></svg>
+                        </a>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <a href="#" data-tooltip="tooltip" data-title="KML">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M15 18.984V7.124L9 5.017v11.86zM20.484 3Q21 3 21 3.516V18.61q0 .375-.375.47L15 21l-6-2.108-5.344 2.063-.14.047q-.517 0-.517-.516V5.392q0-.375.373-.47L9 3.002l6 2.11 5.343-2.064z" />
+                            </svg>
+                        </a>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 17.016q2.063 0 3.54-1.477T17.015 12 15.54 8.46 12 6.985 8.46 8.46 6.985 12t1.477 3.54T12 17.015zm-3-15h6l1.828 1.97h3.188q.797 0 1.383.608T21.983 6v12q0 .797-.586 1.406t-1.384.61H3.986q-.798 0-1.384-.61T2.016 18V6q0-.797.586-1.406t1.383-.61h3.188zM8.813 12q0-1.313.938-2.25T12 8.812t2.25.938.94 2.25-.94 2.25-2.25.938-2.25-.938T8.814 12z" />
+                        </svg>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M20.72 7.03l-1.83 1.83-3.75-3.75 1.83-1.83q.28-.28.702-.28t.703.28l2.344 2.345q.28.28.28.703t-.28.703zM3 17.25L14.063 6.187l3.75 3.75L6.75 21H3v-3.75z" />
+                        </svg>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M18.984 3.984V6H5.014V3.984h3.47L9.514 3h4.97l1.03.984h3.47zM6 18.984v-12h12v12q0 .797-.61 1.406t-1.405.61h-7.97q-.796 0-1.405-.61T6 18.984z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="tr__tersier">
+                    <td>
+                    BWR34
+                    </td>
+                    <td>
+                    Tersier
+                    </td>
+                    <td>
+                        <a href="#" class="levelTersier addPoint" data-tooltip="tooltip" data-toggle="modal" data-target="#modalBangunan" data-title="Tambah Bangunan Sekunder" data-parent="G.W.R (Nama Saluran Tersier)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#444" d="M17.016 12.984v-1.97h-4.03v-4.03h-1.97v4.03h-4.03v1.97h4.03v4.03h1.97v-4.03h4.03zM18.984 3q.797 0 1.406.61T21 5.014v13.97q0 .796-.61 1.405t-1.406.61H5.014q-.843 0-1.43-.61T3 18.983V5.014q0-.796.585-1.405T5.015 3h13.97z"/></svg>
+                        </a>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <a href="#" data-tooltip="tooltip" data-title="KML">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M15 18.984V7.124L9 5.017v11.86zM20.484 3Q21 3 21 3.516V18.61q0 .375-.375.47L15 21l-6-2.108-5.344 2.063-.14.047q-.517 0-.517-.516V5.392q0-.375.373-.47L9 3.002l6 2.11 5.343-2.064z" />
+                            </svg>
+                        </a>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 17.016q2.063 0 3.54-1.477T17.015 12 15.54 8.46 12 6.985 8.46 8.46 6.985 12t1.477 3.54T12 17.015zm-3-15h6l1.828 1.97h3.188q.797 0 1.383.608T21.983 6v12q0 .797-.586 1.406t-1.384.61H3.986q-.798 0-1.384-.61T2.016 18V6q0-.797.586-1.406t1.383-.61h3.188zM8.813 12q0-1.313.938-2.25T12 8.812t2.25.938.94 2.25-.94 2.25-2.25.938-2.25-.938T8.814 12z" />
+                        </svg>
+                    </td>
+                    <td style="width: 1%">
+                        <div class="td__separator"></div>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M20.72 7.03l-1.83 1.83-3.75-3.75 1.83-1.83q.28-.28.702-.28t.703.28l2.344 2.345q.28.28.28.703t-.28.703zM3 17.25L14.063 6.187l3.75 3.75L6.75 21H3v-3.75z" />
+                        </svg>
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M18.984 3.984V6H5.014V3.984h3.47L9.514 3h4.97l1.03.984h3.47zM6 18.984v-12h12v12q0 .797-.61 1.406t-1.405.61h-7.97q-.796 0-1.405-.61T6 18.984z" />
+                        </svg>
+                    </td>
+                </tr><!-- 
+                <tr class="tr__kuarter">
+                    <td>
+                        Sekunder
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+        <div class="form-group" style="text-align: right;">
+                    <a href="#" class="btn btn--default">Tambah bangunan primer</a>
+                </div>
+
+        <!-- <fieldset>
+            <div class="form-group">
+                <label class="required">Tipe</label>
+                <select class="form-control">
+                    <option>Primer</option>
+                    <option>Sekunder</option>
+                    <option>Tersier</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Lokasi Kabupaten</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Lokasi Provinsi</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Luas Areal</label>
+                <input type="number" class="form-control">
+            </div>
+        </fieldset> -->
+    </section>
+</div>
+
+
+
+
+
+ <div class="modal" id="modalBerkas" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                Tambahkan Berkas
+                </div>
+                <div class="modal-close">
+                    <a href="" class="close" data-dismiss="modal">
+                        <img src="http://mockup.sistemsista.com/icon/png/gray/icon-x.png">
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <a href="javascript:void(0);" class="btn btn--danger" data-dismiss="modal">
+                            <div class="btn__wrap">
+                                <div class="btn__text">
+                                    Batalkan PO
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a href="javascript:void(0);" class="btn btn--default" data-dismiss="modal">
+                            <div class="btn__wrap">
+                                <div class="btn__text">
+                                    Batal edit
+                                </div>
+                            </div>
+                        </a>
+                        <span>&nbsp;</span>
+                        <a href="javascript:void(0);" class="btn btn--red">
+                            <div class="btn__wrap">
+                                <div class="btn__text">
+                                    Simpan perubahan
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+ <div class="modal" id="modalBangunan" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                Tambahkan Bangunan
+                </div>
+                <div class="modal-close">
+                    <a href="" class="close" data-dismiss="modal">
+                        <img src="http://mockup.sistemsista.com/icon/png/gray/icon-x.png">
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">    
+                <div class="form-group">
+                    <label>Parent</label>
+                    <input type="text" class="form-control form-control--block" id="parentPoint" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Type Bangunan</label>
+                    <select class="form-control" id="selectType" style="width: 24rem;"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Nama Bangunan</label>
+                    <input type="text" class="form-control form-control--block" id="parentPoint" required="">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Foto Bangunan</label>
+                    <input type="file" class="" id="parentPoint" readonly >
+                </div>
+
+                <div class="form-group">
+                    <label>Latitude</label>
+                    <input type="number" class="form-control form-control--block" id="parentPoint">
+                </div>
+
+                <div class="form-group">
+                    <label>Longitude</label>
+                    <input type="number" class="form-control form-control--block" id="parentPoint">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Peta (KML/GPX)</label>
+                    <input type="file" class="" id="parentPoint" readonly >
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="clearfix">
+                    <div class="pull-right">
+                        <a href="javascript:void(0);" class="btn btn--primary">
+                            <div class="btn__wrap">
+                                <div class="btn__text">
+                                    Simpan
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.levelPrimer').click(function() {
+        $('#parentPoint').val($(this).attr('data-parent'));
+        $('#selectType option').remove();
+        $('#selectType').append('<option>Sekunder</option><option>Tersier</option>');
+    });
+    $('.levelSekunder').click(function() {
+        $('#parentPoint').val($(this).attr('data-parent'));
+        $('#selectType option').remove();
+        $('#selectType').append('<option>Tersier</option>');
+    });
+    $('.levelTersier').click(function() {
+        $('#parentPoint').val($(this).attr('data-parent'));
+        $('#selectType option').remove();
+        $('#selectType').append('<option>Kuarter</option>');
+    });
+
+    $('#modalBangunan').on('show.bs.modal', function () {
+        $('[data-tooltip=tooltip]').tooltip('hide');
+    });
+});
+</script>
+
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            hello
+        </div>
+    </footer>
+</body>
+
+</html>

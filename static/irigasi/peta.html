@@ -1,0 +1,175 @@
+
+
+<!doctype html>
+<html lang="EN">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=1024px, initial-scale=1, user-scalable=no, minimal-ui">
+    <script src="//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js"></script>
+    <script src='//api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <link href="http://irigasi.local/assets/static/css/map.css" rel="stylesheet">
+    <style type="text/css">
+    <style type="text/css">
+        * {
+            margin:0;
+            padding:0;
+            font-size: 100%;
+        }
+
+        html,body {
+            height: 100%;
+            background:#000;
+        }
+
+        #map {
+            position: absolute;
+            top:0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background:#000;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    {% raw %}
+
+<script type="text/javascript">
+
+
+var primer = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Track33","type":"TRACK"},"geometry":{"type":"LineString","coordinates":[[110.2662802019703,-7.727633410586902],[110.2663202434924,-7.727663105163126],[110.2690392706921,-7.728815778600986],[110.2701858722116,-7.729254566762277],[110.2698008834166,-7.730347848562536],[110.2705139883172,-7.731310065068253],[110.2706744023599,-7.731923240782303],[110.2709093084736,-7.732798145245432],[110.2699052549184,-7.734793412723001],[110.2697984666049,-7.735133951584068],[110.2701917776759,-7.736089230714467],[110.2704034112137,-7.736706141119584],[110.2723537660498,-7.737959892231904],[110.2726271274942,-7.738828759314647],[110.2725791962077,-7.739170150501285],[110.2732979918305,-7.740073528559585],[110.2732397293851,-7.740355797834112],[110.273508171615,-7.740934260033738],[110.2740864063181,-7.741217958639687],[110.2749284057712,-7.74174949903771],[110.2750515686971,-7.741882550637116],[110.2756496325495,-7.742264254490769],[110.2760194471169,-7.743219363358527],[110.2767284657849,-7.74391296139805],[110.277304147643,-7.744570432017791],[110.2784665984266,-7.745019148830852],[110.2787838409085,-7.745276131859549],[110.2794030336236,-7.745661338542769],[110.27958721951,-7.747307171601834],[110.2795411824664,-7.748197772829114],[110.2798666016475,-7.749482447574173],[110.2798452395288,-7.751134209278177],[110.2796610761014,-7.751538669546538],[110.2802358936869,-7.752081924713831],[110.2803808606559,-7.752488557759813],[110.2807644628865,-7.753320471464325],[110.281746769595,-7.754286230550421],[110.2821884432633,-7.754635236890793],[110.2833859471668,-7.755093487103324],[110.2844844978592,-7.754338050568854],[110.2851840725841,-7.754016887873876],[110.2858359645826,-7.75350203563858],[110.2860850060523,-7.753414493091243],[110.2864914156246,-7.753427983544459],[110.2872427591779,-7.753454824814741],[110.2880252084712,-7.753496079044359],[110.2882561435874,-7.752989003306021],[110.28903920052,-7.753191118494735],[110.2888715721329,-7.75382438613324],[110.2892030306918,-7.75524044960513],[110.2899197512804,-7.756172949300683]]}}]};
+var sekunder = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Track24","type":"TRACK"},"geometry":{"type":"LineString","coordinates":[[110.2686907539587,-7.718463277688121],[110.2682223467258,-7.71997151976406],[110.2676160871533,-7.722492885452042],[110.267224503051,-7.723670665412262],[110.2673162983163,-7.723913628267095],[110.2671512191543,-7.725162930194729],[110.2667406844478,-7.726185796447547],[110.2663288039448,-7.726892437710333],[110.2662130686995,-7.727493714184929]]}}]};
+
+var tersier = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2673270238204,-7.723807310298852,0],[110.2681561611024,-7.72381887582369,0],[110.2692664261825,-7.724642734411729,0],[110.2697709410066,-7.725043775839079,0],[110.2707162259393,-7.726251755090442,0],[110.2717815608976,-7.726708972727285,0],[110.2721479457043,-7.727120648173018,0]]},"properties":{"name":"Jalur Tanpa Judul","styleUrl":"#msn_ylw-pushpin5","styleHash":"15445e8f","styleMapHash":{"normal":"#sn_ylw-pushpin","highlight":"#sh_ylw-pushpin3"},"stroke":"#ff0000","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2678656249883,-7.723847705895434,0],[110.2677509601227,-7.724731470182873,0]]},"properties":{"name":"Kuarter 1","styleUrl":"#m_ylw-pushpin","styleHash":"5fb5e0d2","styleMapHash":{"normal":"#s_ylw-pushpin","highlight":"#s_ylw-pushpin_hl"},"stroke":"#ff007f","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2686797683123,-7.724247604429423,0],[110.2684812780639,-7.724888058559129,0]]},"properties":{"name":"Kuarter 2","styleUrl":"#m_ylw-pushpin","styleHash":"5fb5e0d2","styleMapHash":{"normal":"#s_ylw-pushpin","highlight":"#s_ylw-pushpin_hl"},"stroke":"#ff007f","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2723206381036,-7.7260847815286,0],[110.2714639512152,-7.725799447219266,0],[110.2714185264416,-7.725892841712316,0],[110.2701880290603,-7.725466883602925,0],[110.2698524793751,-7.72645396334863,0]]},"properties":{"name":"Kuarter 3","styleUrl":"#m_ylw-pushpin","styleHash":"5fb5e0d2","styleMapHash":{"normal":"#s_ylw-pushpin","highlight":"#s_ylw-pushpin_hl"},"stroke":"#ff007f","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[110.2705875933888,-7.726671231861446,0],[110.2707284196137,-7.726255055055233,0],[110.2712409067583,-7.726262864033869,0],[110.2720464380462,-7.726607031982612,0]]},"properties":{"name":"Kuarter 4","styleUrl":"#m_ylw-pushpin","styleHash":"5fb5e0d2","styleMapHash":{"normal":"#s_ylw-pushpin","highlight":"#s_ylw-pushpin_hl"},"stroke":"#ff007f","stroke-opacity":1}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[110.267338274125,-7.724694083968766,0],[110.2681378850849,-7.724893824500028,0],[110.2681367380874,-7.724840824770218,0],[110.26812887568,-7.72449454695578,0],[110.2681639510276,-7.724414756685159,0],[110.2682089171088,-7.724243003800853,0],[110.2682887319338,-7.724057037134215,0],[110.2683105508094,-7.724008531861486,0],[110.2681340726396,-7.723834387257346,0],[110.2674062523506,-7.723830822814016,0],[110.267338274125,-7.724694083968766,0]]]},"properties":{"name":"kuarter 1","styleUrl":"#msn_ylw-pushpin0","styleHash":"57e9e02a","styleMapHash":{"normal":"#sn_ylw-pushpin","highlight":"#sh_ylw-pushpin0"},"stroke":"#ffff00","stroke-opacity":1,"fill":"#00ff00","fill-opacity":0.2}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[110.2683403094232,-7.724006046046949,0],[110.2682224457527,-7.724336482289332,0],[110.2681593730962,-7.724521599338576,0],[110.268169261306,-7.724863079173709,0],[110.2688571358511,-7.725053245378851,0],[110.2689207790173,-7.725001251936436,0],[110.269071854226,-7.725067823381597,0],[110.2690935767413,-7.725050636496627,0],[110.2691315409398,-7.725010582960716,0],[110.2691474440938,-7.72498174028748,0],[110.2691627596857,-7.724935160360966,0],[110.2691613289969,-7.724899891542731,0],[110.2691606086517,-7.724882135524924,0],[110.2689748830342,-7.724787404603091,0],[110.2690767108679,-7.724453700738073,0],[110.2686756427293,-7.724337564512698,0],[110.2686447724985,-7.724213868942755,0],[110.2683403094232,-7.724006046046949,0]]]},"properties":{"name":"kuarter 2","styleUrl":"#msn_ylw-pushpin2","styleHash":"7f2e073a","styleMapHash":{"normal":"#sn_ylw-pushpin2","highlight":"#sh_ylw-pushpin1"},"stroke":"#00ff00","stroke-opacity":1,"fill":"#5500ff","fill-opacity":0.2}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[110.2698737444511,-7.726471052643706,0],[110.2705452295507,-7.72665440978858,0],[110.2707030233178,-7.726272253430855,0],[110.2713232551177,-7.726197077438744,0],[110.2714452612839,-7.725860378164161,0],[110.2722016530326,-7.726102456763345,0],[110.2727556044968,-7.726251044471964,0],[110.2730150454091,-7.725530607436586,0],[110.2716711203283,-7.724895204544274,0],[110.2716666933778,-7.724974197226517,0],[110.2715074976732,-7.725231343161354,0],[110.2706859132099,-7.725043483533531,0],[110.2703748971895,-7.725482830802149,0],[110.2701158989016,-7.72543355650283,0],[110.2698400366414,-7.726312020655657,0],[110.2698737444511,-7.726471052643706,0]]]},"properties":{"name":"kuarter 3","styleUrl":"#msn_ylw-pushpin1","styleHash":"-652504c7","styleMapHash":{"normal":"#sn_ylw-pushpin1","highlight":"#sh_ylw-pushpin"},"stroke":"#00ff00","stroke-opacity":1,"fill":"#ffaa00","fill-opacity":0.2}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[110.2706622460715,-7.726707271419975,0],[110.2724230404734,-7.727218119497935,0],[110.2727315978316,-7.726335439388727,0],[110.2726800196573,-7.726336226638027,0],[110.2725258943974,-7.726279964118596,0],[110.2720547088092,-7.726567903402531,0],[110.2719751980982,-7.726546805305119,0],[110.272021751445,-7.726349347832781,0],[110.271696764428,-7.726244838761223,0],[110.2716248734928,-7.726131160320288,0],[110.2714834834871,-7.725990128167322,0],[110.2713026048536,-7.72625972786225,0],[110.2707514968543,-7.726302272726489,0],[110.2706434011853,-7.726660931914478,0],[110.2706622460715,-7.726707271419975,0]]]},"properties":{"name":"kuarter 4","styleUrl":"#msn_ylw-pushpin","styleHash":"-36916fe8","styleMapHash":{"normal":"#sn_ylw-pushpin0","highlight":"#sh_ylw-pushpin2"},"stroke":"#00ff00","stroke-opacity":1,"fill":"#55aaff","fill-opacity":0.2}}]};
+var point = [{"nomenclature":"BSR1","lat":"-7.723797123","lon":"110.2673768","luas":null,"panjang":null,"foto":"BSR1.JPG"},{"nomenclature":"Bok Kuarter 1","lat":"-7.723827709","lon":"110.2678464","luas":"1.2 Ha","panjang":"98.6 m","foto":"kuarter1.JPG"},{"nomenclature":"Bok Kuarter 2","lat":"-7.724177295","lon":"110.268683","luas":"0.78 Ha","panjang":"74.1 m","foto":"kuarter2.JPG"},{"nomenclature":"Bok Kuarter 3","lat":"-7.725424922","lon":"110.2701861","luas":"3.66 Ha","panjang":"370 m","foto":"kuarter3.JPG"},{"nomenclature":"Bok Kuarter 4","lat":"-7.726222866","lon":"110.2707211","luas":"1.61 ha","panjang":"202 m","foto":"kuarter4.JPG"}];
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoiYXJkaWFuenp6IiwiYSI6InRaWW8yWFEifQ.S5eeIdeJffzKEo2dHXyBjQ';
+
+
+    var myStyle = {
+        "color": "#0087d0",
+        "weight": 3,
+        "opacity": 0.88
+    };
+
+
+
+
+    var myStyle2 = {
+        "color": "#00ff00",
+        "weight": 3,
+        "opacity": 0.88
+    };
+
+
+
+
+     var style2 = function(feature) {
+        switch (feature.geometry.type) {
+            case 'LineString': return {color: "#f9c000", "weight": 2, "opacity": 0.88};
+            case 'Polygon':   return {color: "#96be00", "weight": 1, "opacity": 0.64};
+        }
+    };
+
+
+    var saluranTersier = new L.geoJson(tersier, {
+        style: style2
+    });
+
+
+var saluranPrimer = new L.geoJson(primer, {
+        style: myStyle
+    });
+
+
+var saluranSekunder = new L.geoJson(sekunder, {
+        style: myStyle2
+    });
+
+    
+
+
+    
+
+    //var markers = L.markerClusterGroup();
+    
+
+  
+
+
+    //map.addLayer(markers);
+    //map.addLayer(line);
+    //map.fitBounds(line.getBounds());
+
+
+
+    var map = L.mapbox.map('map', 'mapbox.satellite', {
+        tileLayer: {
+            maxNativeZoom: 17 // The map will use zoom level 19 tiles for all zoom levels past 19
+        }
+    })
+        .setView([-2.5, 118], 12)
+
+
+    // var featureLayer = L.mapbox.featureLayer()
+       //  .setGeoJSON(track)
+       //  .addTo(map);
+
+
+
+
+
+    
+
+    var markers = new L.MarkerClusterGroup();
+    var titik = [];
+    // For each table row, create a marker.
+    for (var i = 0; i < point.length; i++) {
+        // Blank rows shouldn't be included - they're easy to detect and skip.
+        if (point[i].lon === null || point[i].lat === null) continue;
+        titik.push([point[i].lon, point[i].lat, point[i].jenis, point[i].nomenclature, point[i].notes, point[i].foto]);
+    }
+
+    for (var i = 0; i < titik.length; i++) {
+        var a = titik[i];
+        var foto = a[5];
+
+        var marker = L.marker(new L.LatLng(a[1], a[0]), {
+            icon: L.mapbox.marker.icon({'marker-symbol': 'camera', 'marker-color': '0044FF'}),
+            foto: foto
+        });
+        marker.bindPopup('<div class="point-data"><div class="figure"><img src="img/tersier/sr1ki/' + a[5] + '"></div><div class="meta"><div class="name">' + a[3] + '</div></div><div class="lat"><span>Lat</span> :' + a[1] + '</div><div class="long"><span>Long</span> : ' + a[0] + '</div></div></div>');
+        markers.addLayer(marker);
+    }
+
+
+    map.addLayer(saluranPrimer);
+    map.addLayer(saluranSekunder);
+    map.addLayer(saluranTersier);
+
+
+    map.addLayer(markers);
+    map.fitBounds(markers.getBounds());
+
+
+
+
+
+});
+</script>
+
+
+{% endraw %}
+</body>
+</html>
