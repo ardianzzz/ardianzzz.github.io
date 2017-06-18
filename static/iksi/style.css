@@ -214,7 +214,7 @@ label {
 .radio-label {
     margin: 4px 0 0;
     font-size: 12px;
-    white-space: nowrap;
+    padding:0 .6rem;
     color: #666;
     font-weight: 500;
 }
